@@ -1,13 +1,23 @@
-# PDFs originais (grandes demais para o git)
+# PDFs originais
 originais/
 
-# Saída gerada pelo quarto render (é recriada pelo CI)
+# Pasta de saída gerada pelo Quarto (publicada via GitHub Actions)
 output/
+
+# Arquivos temporários e builds locais do Quarto
+.quarto/
+*_files/
+contents/*_files/
+contents/*.html
 
 # Ambiente virtual Python local
 .venv/
+venv/
+__pycache__/
 
-# Arquivos gerados pelo Quarto dentro de contents/
-contents/*_files/
-contents/.quarto/
-contents/aula-0.html
+# Sistema operacional / IDE
+.DS_Store
+Thumbs.db
+
+/.quarto/
+**/*.quarto_ipynb

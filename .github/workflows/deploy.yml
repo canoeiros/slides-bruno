@@ -19,10 +19,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render project
-        # Quarto renders contents/ and outputs to output/ (via output-dir: ../output)
-        # The resources: [assets/] directive in _quarto.yml copies contents/assets/
-        # automatically to output/assets/ — no manual copy needed
-        run: quarto render contents/
+        run: quarto render
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

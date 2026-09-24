@@ -4,112 +4,103 @@ subtitle: "MATA38 - Projeto de Circutios Lógicos"
 author: "Dr. Bruno Pereira Santos"
 format: 
   revealjs:
-    theme: night
+    theme: white
     transition: fade
     slide-number: true
     chalkboard: true
+    incremental: true
+    navigation-mode: linear
+    controls-layout: bottom-right
 ---
 
-### Essa disciplina tem muitos nomes
-### Mas tratamos do mesmo conteúdo
->- Eletrônica Digital
->- Lógica Digital
->- Projetos Lógicos
-
+## Essa disciplina tem muitos nomes<br>mas tratamos do mesmo conteúdo
+> -   Eletrônica Digital
+> -   Lógica Digital
+> -   Projetos Lógicos
 
 # O que é um sinal?
-Função que representa qualquer **variação** de uma quantidade física com respeito a qualquer **parâmetro**
+-   Função que representa qualquer **variação** de uma quantidade física com respeito a qualquer **parâmetro**
 
----
+# Exemplos:
+-   Temperatura a cada minuto
+-   Função $f(x)=ax²+bx+c$
 
-### Exemplos:
-- Temperatura a cada minuto
-- Função f(x)=ax²+bx+c
+# Para o nosso curso:
+-   Sinais $:=$ $\Delta$ de grandeza elétrica
 
+::: fragment
+> Ex: corrente ($A$) ou voltagem ($V$)
+:::
 
-### Para o nosso curso: 
-Sinais $:=$  $\Delta$ de grandeza elétrica 
-
->Ex: corrente ($A$) ou voltagem ($V$)
-<!-- Gráfico discreto de variação de corrente elétrica  -->
-
-
-#  Sinais analógicos & Sinais digitais
+# Sinais analógicos & Sinais digitais
 
 ## Qual a diferença entre os relógios?
-::: {.columns}
 
-::: {.column}
-<iframe
-  src="https://timedate.now/widgets/digital-clock/embed/?tz=America/Bahia&theme=light"
-  width="400"
-  height="400"
-  style="border:0"
-  loading="lazy"
-  label="0"
->
+::::: columns
+::: column
+<iframe src="https://timedate.now/widgets/digital-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy" label="0">
+
 </iframe>
-
 :::
 
-::: {.column}
-<iframe
-  src="https://timedate.now/widgets/analog-clock/embed/?tz=America/Bahia&theme=light"
-  width="400"
-  height="400"
-  style="border:0"
-  loading="lazy"
-></iframe>
+::: column
+<iframe src="https://timedate.now/widgets/analog-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy">
 
-:::
-
-:::
-
----
-
-## Sinais Analógicos
-- Qualquer variação dentro do domínio temos um valor correspondente na imagem
-- Sensível a qualquer variação, mesmo que infinitezimamente pequena 
-
-
-<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="50%" style="border: none; border-radius: 12px;">
 </iframe>
+:::
+:::::
 
 
+# Sinais Analógicos
+-   Qualquer valor dentro do domínio $x$ tem um valor correspondente na imagem
+-   Sensível a qualquer variação, mesmo que infinitezimamente pequena
 
----
 
-## Sinais Digitais
-- Regista apenas um momento discreto da variação de sinais
-- Tem limite de captura e de precisão de cada variação 
+# Visualização
 
-<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="50%" style="border: none; border-radius: 12px;"></iframe>
+::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;"></iframe>
+:::
 
+
+# Sinais Digitais
+-   Regista apenas um momento discreto da variação de sinais
+-   Tem limite de captura e de precisão de cada variação
+
+
+# Visualização
+::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+</iframe>
+:::
 
 # Transdutor <br> (DAC & ADC)
 
----
+# ADC
+- Analog to Digital Converter
+- Converte um sinal analógico para um sinal digital
 
-#### ADC (Analog to Digital Converter)
-Converte um sinal analógico para um sinal digital
-
-<iframe src="../assets/aula-0/adc.html" width="100%" height="450px" style="border: none; border-radius: 12px;"></iframe>
-
----
-
-#### DAC (Digital to Analog Converter)
-Converte um sinal digital para um sinal analógico
-
-<iframe src="../assets/aula-0/dac.html" width="100%" height="450px" style="border: none; border-radius: 12px;"></iframe>
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/adc.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
+</iframe>
 
 
----
+# DAC
+- Digital to Analog Converter
+- Converte um sinal digital para um sinal analógico
 
-### Pergunta:
-O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/dac.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
+</iframe>
+
+# Pergunta:
+- O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?
+
+::: fragment
 ```{mermaid}
 graph LR
 Entrada --> ADC
 ADC --> DAC
 DAC --> Saída
 ```
+:::

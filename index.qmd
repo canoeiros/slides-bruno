@@ -1,0 +1,16 @@
+---
+title: "MATA38 - Projeto de Circuitos Lógicos"
+subtitle: "Slides interativos das aulas | Dr. Bruno Pereira Santos"
+listing:
+  contents: 
+    - "contents/*.qmd"
+  type: grid
+  sort: "title"
+  fields: [title, subtitle, author]
+  grid-columns: 2
+  image-height: "140px"
+---
+
+Bem-vindo ao portal de apresentações interativas da disciplina **MATA38 - Projeto de Circuitos Lógicos**.
+
+Selecione uma aula abaixo para abrir os slides:

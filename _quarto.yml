@@ -1,0 +1,15 @@
+project:
+  type: website
+  output-dir: output
+  resources:
+    - assets/
+
+website:
+  title: "MATA38 - Projeto de Circuitos Lógicos"
+  description: "Slides e materiais interativos da disciplina"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Início"
+      - href: contents/aula-0.qmd
+        text: "Aula 0"
