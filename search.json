@@ -1,23 +1,30 @@
 [
   {
-    "objectID": "aula-0.html#qual-a-diferença-entre-os-relógios",
-    "href": "aula-0.html#qual-a-diferença-entre-os-relógios",
+    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
     "title": "Aula 0 - Introdução",
     "section": "Qual a diferença entre os relógios?",
     "text": "Qual a diferença entre os relógios?"
   },
   {
-    "objectID": "aula-0.html#sinais-analógicos",
-    "href": "aula-0.html#sinais-analógicos",
+    "objectID": "contents/aula-0.html#sinais-analógicos",
+    "href": "contents/aula-0.html#sinais-analógicos",
     "title": "Aula 0 - Introdução",
     "section": "Sinais Analógicos",
     "text": "Sinais Analógicos\n\nQualquer variação dentro do domínio temos um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
   },
   {
-    "objectID": "aula-0.html#sinais-digitais",
-    "href": "aula-0.html#sinais-digitais",
+    "objectID": "contents/aula-0.html#sinais-digitais",
+    "href": "contents/aula-0.html#sinais-digitais",
     "title": "Aula 0 - Introdução",
     "section": "Sinais Digitais",
     "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao repositório de slides interativos da disciplina MATA38 - Projeto de Circuitos Lógicos / Eletrônica Digital.\n\n\n📖 Aula 0: Introdução\n\nO que é um sinal?\nSinais analógicos vs. Sinais digitais\nVisualizadores interativos (Relógio analógico/digital, Sinais contínuo/discreto)\nTransdutores: ADC & DAC interativos\nAbrir Apresentação em Tela Cheia →"
   }
 ]
