@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADC – Analog to Digital Converter</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #1e293b;
+      color: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 10px;
+    }
+    .card {
+      width: 100%;
+      max-width: 580px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title { font-size: 0.92rem; font-weight: 700; color: #f59e0b; }
+    .badge {
+      font-size: 0.6rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 9999px;
+      background: rgba(245,158,11,0.15); color: #fbbf24;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+
+    /* Two-panel layout */
+    .panels {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .panel {
+      flex: 1;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 6px 8px;
+    }
+    .panel-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .panel-label.analog  { color: #60a5fa; }
+    .panel-label.digital { color: #34d399; }
+    canvas { display: block; width: 100%; }
+
+    /* Binary output */
+    .bit-display {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-top: 6px;
+      min-height: 28px;
+    }
+    .bit-cell {
+      width: 22px; height: 22px;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1px solid #334155;
+      transition: background 0.2s, color 0.2s;
+    }
+    .bit-cell.one  { background: #064e3b; color: #34d399; border-color: #34d399; }
+    .bit-cell.zero { background: #1e293b; color: #64748b; }
+
+    /* Process arrow */
+    .arrow-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 4px 0 6px 0;
+      font-size: 0.68rem;
+      color: #94a3b8;
+    }
+    .arrow {
+      display: flex; align-items: center; gap: 3px;
+      font-size: 0.65rem; font-weight: 600; color: #f59e0b;
+    }
+    .step-label {
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 6px; padding: 2px 8px;
+      font-size: 0.62rem; color: #fbbf24;
+    }
+
+    .telemetry {
+      display: flex;
+      justify-content: space-between;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 7px;
+      padding: 5px 10px;
+      font-size: 0.68rem;
+      font-family: ui-monospace, monospace;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .telemetry span { color: #94a3b8; }
+    .telemetry strong { color: #fbbf24; }
+
+    .note {
+      font-size: 0.68rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      padding-top: 7px;
+      line-height: 1.45;
+    }
+    .note strong { color: #94a3b8; }
+    .note em { color: #f59e0b; font-style: normal; }
+
+    .controls {
+      display: flex; gap: 6px; margin-bottom: 8px;
+    }
+    .btn {
+      flex: 1; font-size: 0.65rem; font-weight: 600;
+      padding: 4px 6px; border-radius: 6px;
+      border: 1px solid #334155;
+      background: #1e293b; color: #94a3b8;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn:hover { background: #334155; color: #e2e8f0; }
+    .btn.active { background: #92400e; color: #fcd34d; border-color: #f59e0b; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <span class="title">ADC — Analog to Digital Converter</span>
+    <span class="badge">Amostragem + Quantização</span>
+  </div>
+
+  <div class="telemetry">
+    <span>Amostra: <strong id="sampleIdx">k = 0</strong></span>
+    <span>Amplitude: <strong id="ampVal">0.000 V</strong></span>
+    <span>Código: <strong id="binCode">0000</strong></span>
+    <span>Bits: <strong id="nBits">4</strong></span>
+  </div>
+
+  <div class="panels">
+    <!-- Left: Analog input -->
+    <div class="panel">
+      <div class="panel-label analog">① Sinal Analógico (entrada)</div>
+      <canvas id="analogCanvas" height="110"></canvas>
+    </div>
+    <!-- Right: Quantized digital -->
+    <div class="panel">
+      <div class="panel-label digital">② Quantizado → Digital</div>
+      <canvas id="digitalCanvas" height="110"></canvas>
+    </div>
+  </div>
+
+  <!-- Process steps -->
+  <div class="arrow-row">
+    <span class="step-label">① Amostragem (Sampling)</span>
+    <span style="color:#f59e0b">→</span>
+    <span class="step-label">② Quantização (Levels)</span>
+    <span style="color:#f59e0b">→</span>
+    <span class="step-label">③ Codificação Binária</span>
+  </div>
+
+  <!-- Binary output -->
+  <div style="margin-bottom:8px;">
+    <div style="font-size:0.62rem;color:#64748b;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Saída Binária (código atual)</div>
+    <div class="bit-display" id="bitDisplay"></div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="btnSlow"  class="btn active" onclick="setSpeed('slow')">Lento</button>
+    <button id="btnFast"  class="btn"        onclick="setSpeed('fast')">Rápido</button>
+    <button id="btnPause" class="btn"        onclick="togglePause()">Pausar</button>
+    <button id="btn3bit"  class="btn"        onclick="setBits(3)">3 bits</button>
+    <button id="btn4bit"  class="btn active" onclick="setBits(4)">4 bits</button>
+    <button id="btn8bit"  class="btn"        onclick="setBits(8)">8 bits</button>
+  </div>
+
+  <div class="note">
+    <strong>ADC:</strong> O sinal contínuo é <em>amostrado</em> a cada período T<sub>s</sub>, e cada amostra é <em>quantizada</em>
+    para o nível discreto mais próximo (2<sup>N</sup> níveis). O resultado é um código binário de N bits.
+    Menos bits = maior <em>erro de quantização</em>.
+  </div>
+</div>
+
+<script>
+const PAD = {t:10, r:8, b:22, l:32};
+let nBits = 4;
+let speedMs = 500;
+let isPaused = false;
+
+let activeK = 0;
+let history = [];
+let lastTick = 0;
+const N_SAMPLES = 14;
+const FREQ = 1.2;
+
+// Setup canvases
+const aC = document.getElementById('analogCanvas');
+const dC = document.getElementById('digitalCanvas');
+const aCtx = aC.getContext('2d');
+const dCtx = dC.getContext('2d');
+
+function setRes(canvas, ctx) {
+  canvas.width  = canvas.offsetWidth  * devicePixelRatio;
+  canvas.height = canvas.offsetHeight * devicePixelRatio;
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+function initCanvases() {
+  setRes(aC, aCtx);
+  setRes(dC, dCtx);
+}
+initCanvases();
+window.addEventListener('resize', initCanvases);
+
+// Compute signal
+function sig(t) { return Math.sin(2*Math.PI*FREQ*t + 0.4) * 0.82; }
+
+// Quantize
+function quantize(val) {
+  const levels = Math.pow(2, nBits);
+  const normalized = (val + 1) / 2; // map [-1,1] -> [0,1]
+  const q = Math.round(normalized * (levels-1));
+  return Math.max(0, Math.min(levels-1, q));
+}
+
+function toBinary(q) {
+  return q.toString(2).padStart(nBits, '0');
+}
+
+// Draw axes helper
+function drawAxes(ctx, w, h, midY, color) {
+  ctx.strokeStyle = color || '#334155';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(PAD.l, PAD.t); ctx.lineTo(PAD.l, h-PAD.b); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(PAD.l, midY); ctx.lineTo(w-PAD.r, midY); ctx.stroke();
+  ctx.fillStyle = '#475569';
+  ctx.font = '9px system-ui';
+  ctx.textAlign = 'right';
+  ctx.fillText('+1V', PAD.l-2, PAD.t+8);
+  ctx.fillText('0',   PAD.l-2, midY+4);
+  ctx.fillText('−1V', PAD.l-2, h-PAD.b+4);
+}
+
+// Draw quantization grid on digital panel
+function drawQuantGrid(ctx, w, h, midY, ph) {
+  const levels = Math.pow(2, nBits);
+  ctx.strokeStyle = 'rgba(52,211,153,0.1)';
+  ctx.lineWidth = 0.8;
+  for (let i = 0; i <= levels; i++) {
+    const frac = i / levels;
+    const y = (h-PAD.b) - frac * ph;
+    ctx.beginPath(); ctx.moveTo(PAD.l, y); ctx.lineTo(w-PAD.r, y); ctx.stroke();
+  }
+}
+
+function drawAnalog(ts) {
+  const w = aC.offsetWidth, h = aC.offsetHeight;
+  const ph = h - PAD.t - PAD.b;
+  const pw = w - PAD.l - PAD.r;
+  const midY = PAD.t + ph/2;
+
+  aCtx.clearRect(0,0,w,h);
+  drawAxes(aCtx, w, h, midY);
+
+  // Continuous wave
+  aCtx.beginPath();
+  for (let px=0; px<=pw; px++) {
+    const t = px/pw;
+    const y = midY - (ph/2)*sig(t);
+    px===0 ? aCtx.moveTo(PAD.l+px, y) : aCtx.lineTo(PAD.l+px, y);
+  }
+  aCtx.strokeStyle = '#60a5fa';
+  aCtx.lineWidth = 2;
+  aCtx.stroke();
+
+  // Sample needles
+  const step = pw / N_SAMPLES;
+  for (let k=0; k<N_SAMPLES; k++) {
+    const t = k / N_SAMPLES;
+    const x = PAD.l + k*step + step/2;
+    const y = midY - (ph/2)*sig(t);
+    const isActive = k===activeK;
+
+    aCtx.beginPath();
+    aCtx.setLineDash([3,2]);
+    aCtx.moveTo(x, midY);
+    aCtx.lineTo(x, y);
+    aCtx.strokeStyle = isActive ? '#f59e0b' : 'rgba(245,158,11,0.25)';
+    aCtx.lineWidth = isActive ? 1.5 : 0.8;
+    aCtx.stroke();
+    aCtx.setLineDash([]);
+
+    aCtx.beginPath();
+    aCtx.arc(x, y, isActive ? 5 : 3, 0, Math.PI*2);
+    aCtx.fillStyle = isActive ? '#f59e0b' : 'rgba(245,158,11,0.4)';
+    aCtx.fill();
+  }
+
+  // k label
+  if (activeK < N_SAMPLES) {
+    const step2 = pw / N_SAMPLES;
+    const x = PAD.l + activeK*step2 + step2/2;
+    aCtx.fillStyle = '#fbbf24';
+    aCtx.font = 'bold 9px system-ui';
+    aCtx.textAlign = 'center';
+    aCtx.fillText('k='+activeK, x, h-PAD.b+14);
+  }
+}
+
+function drawDigital() {
+  const w = dC.offsetWidth, h = dC.offsetHeight;
+  const ph = h - PAD.t - PAD.b;
+  const pw = w - PAD.l - PAD.r;
+  const midY = PAD.t + ph/2;
+  const levels = Math.pow(2, nBits);
+
+  dCtx.clearRect(0,0,w,h);
+  drawAxes(dCtx, w, h, midY);
+  drawQuantGrid(dCtx, w, h, midY, ph);
+
+  // History bars (step function)
+  const step = pw / N_SAMPLES;
+  for (let i=0; i<history.length; i++) {
+    const qVal = history[i];
+    const xLeft = PAD.l + i*step;
+    const yTop  = (h-PAD.b) - (qVal/(levels-1))*ph;
+    const barH  = (h-PAD.b) - yTop;
+    const isActive = i === history.length-1;
+
+    dCtx.fillStyle = isActive
+      ? 'rgba(52,211,153,0.35)'
+      : 'rgba(52,211,153,0.12)';
+    dCtx.fillRect(xLeft, yTop, step, barH);
+
+    dCtx.strokeStyle = isActive ? '#34d399' : 'rgba(52,211,153,0.4)';
+    dCtx.lineWidth = isActive ? 1.5 : 0.8;
+    dCtx.strokeRect(xLeft, yTop, step, barH);
+
+    // Level number
+    if (isActive) {
+      dCtx.fillStyle = '#34d399';
+      dCtx.font = 'bold 9px ui-monospace,monospace';
+      dCtx.textAlign = 'center';
+      dCtx.fillText(qVal, xLeft + step/2, yTop - 3);
+    }
+  }
+}
+
+function updateBitDisplay(bin) {
+  const el = document.getElementById('bitDisplay');
+  el.innerHTML = '';
+  for (const b of bin) {
+    const cell = document.createElement('div');
+    cell.className = 'bit-cell ' + (b==='1' ? 'one' : 'zero');
+    cell.textContent = b;
+    el.appendChild(cell);
+  }
+}
+
+function tick(ts) {
+  if (!isPaused && ts - lastTick > speedMs) {
+    lastTick = ts;
+    activeK = (activeK+1) % N_SAMPLES;
+    if (activeK === 0) history = [];
+    const t = activeK / N_SAMPLES;
+    const v = sig(t);
+    const q = quantize(v);
+    const bin = toBinary(q);
+    if (history.length >= N_SAMPLES) history = [];
+    history.push(q);
+
+    document.getElementById('sampleIdx').textContent = 'k = ' + activeK;
+    document.getElementById('ampVal').textContent = v.toFixed(3) + ' V';
+    document.getElementById('binCode').textContent = bin;
+    document.getElementById('nBits').textContent = nBits + ' bits → ' + Math.pow(2,nBits) + ' níveis';
+    updateBitDisplay(bin);
+  }
+  drawAnalog(ts);
+  drawDigital();
+  requestAnimationFrame(tick);
+}
+
+function setSpeed(s) {
+  speedMs = s==='slow' ? 500 : 120;
+  document.getElementById('btnSlow').classList.toggle('active', s==='slow');
+  document.getElementById('btnFast').classList.toggle('active', s==='fast');
+}
+
+function setBits(n) {
+  nBits = n; history = [];
+  document.getElementById('btn3bit').classList.toggle('active', n===3);
+  document.getElementById('btn4bit').classList.toggle('active', n===4);
+  document.getElementById('btn8bit').classList.toggle('active', n===8);
+}
+
+function togglePause() {
+  isPaused = !isPaused;
+  const btn = document.getElementById('btnPause');
+  btn.textContent = isPaused ? 'Retomar' : 'Pausar';
+  btn.classList.toggle('active', isPaused);
+}
+
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>

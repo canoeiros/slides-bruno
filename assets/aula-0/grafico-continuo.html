@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinal Analógico – Variação Contínua</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 8px;
+    }
+    .card {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title { font-size: 0.9rem; font-weight: 700; color: #1e3a8a; }
+    .badge {
+      font-size: 0.62rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 9999px;
+      background: #e0f2fe; color: #0284c7;
+      letter-spacing: 0.4px; text-transform: uppercase;
+    }
+    canvas { display: block; width: 100%; border-radius: 8px; }
+    .formula {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: #475569;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .formula code {
+      font-family: ui-monospace, monospace;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 5px;
+      color: #1e3a8a;
+    }
+    .note {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      color: #64748b;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 7px;
+      line-height: 1.4;
+    }
+    .note strong { color: #0f172a; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <span class="title">Sinal Analógico — Variação Contínua</span>
+    <span class="badge">Contínuo</span>
+  </div>
+  <canvas id="c" height="170"></canvas>
+  <div class="formula">
+    <code>f(t) = A·sen(2πft + φ)</code>
+    <span id="tInfo" style="color:#0369a1;font-family:monospace;font-size:0.7rem;">t = 0.000 s</span>
+  </div>
+  <div class="note">
+    <strong>Domínio contínuo:</strong> Para <em>todo</em> instante <em>t ∈ ℝ</em>, existe um valor de amplitude correspondente.
+    A curva nunca "salta" — ela percorre infinitos pontos intermediários.
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = 170 * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); });
+
+  const W = () => canvas.offsetWidth;
+  const H = () => canvas.offsetHeight;
+
+  // Axis params
+  const PAD = { t: 18, r: 18, b: 30, l: 38 };
+
+  let phase = 0;
+  const freq = 1.5;   // Hz (visual)
+  const amp  = 0.75;  // fraction of half-height
+
+  function drawGrid(w, h) {
+    const pw = w - PAD.l - PAD.r;
+    const ph = h - PAD.t - PAD.b;
+    const midY = PAD.t + ph / 2;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Grid lines
+    ctx.strokeStyle = '#f1f5f9';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const y = PAD.t + (ph / 4) * i;
+      ctx.beginPath(); ctx.moveTo(PAD.l, y); ctx.lineTo(PAD.l + pw, y); ctx.stroke();
+    }
+    for (let i = 0; i <= 8; i++) {
+      const x = PAD.l + (pw / 8) * i;
+      ctx.beginPath(); ctx.moveTo(x, PAD.t); ctx.lineTo(x, PAD.t + ph); ctx.stroke();
+    }
+
+    // Axes
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(PAD.l, PAD.t); ctx.lineTo(PAD.l, PAD.t + ph); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(PAD.l, midY); ctx.lineTo(PAD.l + pw, midY); ctx.stroke();
+
+    // Axis labels
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '10px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('t (s)', PAD.l + pw, PAD.t + ph + 18);
+    ctx.save();
+    ctx.translate(14, PAD.t + ph / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('f(t)', 0, 0);
+    ctx.restore();
+
+    // Amplitude labels
+    ctx.textAlign = 'right';
+    ctx.fillText('+A', PAD.l - 4, PAD.t + 4);
+    ctx.fillText('0',  PAD.l - 4, midY + 4);
+    ctx.fillText('−A', PAD.l - 4, PAD.t + ph + 4);
+
+    return { pw, ph, midY };
+  }
+
+  function draw(ts) {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    const { pw, ph, midY } = drawGrid(w, h);
+    const halfAmp = (ph / 2) * amp;
+
+    // Continuous sine wave
+    const grad = ctx.createLinearGradient(PAD.l, 0, PAD.l + pw, 0);
+    grad.addColorStop(0,   'rgba(37,99,235,0.15)');
+    grad.addColorStop(0.5, 'rgba(37,99,235,0.6)');
+    grad.addColorStop(1,   'rgba(37,99,235,0.15)');
+
+    ctx.beginPath();
+    for (let px = 0; px <= pw; px++) {
+      const t = px / pw;
+      const y = midY - halfAmp * Math.sin(2 * Math.PI * freq * t + phase);
+      if (px === 0) ctx.moveTo(PAD.l + px, y);
+      else          ctx.lineTo(PAD.l + px, y);
+    }
+    ctx.strokeStyle = '#2563eb';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // Fill under curve
+    ctx.lineTo(PAD.l + pw, midY);
+    ctx.lineTo(PAD.l, midY);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(37,99,235,0.06)';
+    ctx.fill();
+
+    // Animated cursor
+    const curT = ((ts * 0.00025) % 1);
+    const curX = PAD.l + curT * pw;
+    const curY = midY - halfAmp * Math.sin(2 * Math.PI * freq * curT + phase);
+
+    ctx.beginPath();
+    ctx.arc(curX, curY, 4.5, 0, Math.PI * 2);
+    ctx.fillStyle = '#dc2626';
+    ctx.fill();
+
+    // Vertical dashed projection
+    ctx.setLineDash([3, 3]);
+    ctx.strokeStyle = '#dc262666';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(curX, curY); ctx.lineTo(curX, midY); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // t readout
+    document.getElementById('tInfo').textContent = `t = ${(curT * 4).toFixed(3)} s`;
+
+    phase += 0.008;
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+</script>
+</body>
+</html>
