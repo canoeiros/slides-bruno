@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinal Digital – Variação Discreta</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 8px;
+    }
+    .card {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title { font-size: 0.9rem; font-weight: 700; color: #047857; }
+    .badge {
+      font-size: 0.62rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 9999px;
+      background: #dcfce7; color: #15803d;
+      letter-spacing: 0.4px; text-transform: uppercase;
+    }
+    canvas { display: block; width: 100%; border-radius: 8px; }
+    .formula {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: #475569;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .formula code {
+      font-family: ui-monospace, monospace;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 5px;
+      color: #047857;
+    }
+    .note {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      color: #64748b;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 7px;
+      line-height: 1.4;
+    }
+    .note strong { color: #0f172a; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <span class="title">Sinal Digital — Variação Discreta</span>
+    <span class="badge">Discreto</span>
+  </div>
+  <canvas id="c" height="170"></canvas>
+  <div class="formula">
+    <code>f[k] = A·sen(2πf·kT),  k ∈ ℤ</code>
+    <span id="kInfo" style="color:#047857;font-family:monospace;font-size:0.7rem;">k = 0</span>
+  </div>
+  <div class="note">
+    <strong>Domínio discreto:</strong> O sinal só existe em instantes <em>t<sub>k</sub> = k·T</em> igualmente espaçados.
+    Entre amostras, <em>nenhuma informação</em> é registrada — os valores intermediários são descartados.
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('c');
+  const ctx    = canvas.getContext('2d');
+  const kInfoEl = document.getElementById('kInfo');
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = 170 * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const W = () => canvas.offsetWidth;
+  const H = () => canvas.offsetHeight;
+  const PAD = { t: 18, r: 18, b: 30, l: 38 };
+
+  const N_SAMPLES = 16;   // number of discrete samples
+  const freq  = 1.5;
+  const amp   = 0.75;
+
+  let activeK = 0;
+  let lastTick = 0;
+  const TICK_MS = 420; // ms per sample step
+
+  function drawGrid(w, h) {
+    const pw = w - PAD.l - PAD.r;
+    const ph = h - PAD.t - PAD.b;
+    const midY = PAD.t + ph / 2;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Grid
+    ctx.strokeStyle = '#f1f5f9';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const y = PAD.t + (ph / 4) * i;
+      ctx.beginPath(); ctx.moveTo(PAD.l, y); ctx.lineTo(PAD.l + pw, y); ctx.stroke();
+    }
+    for (let i = 0; i <= N_SAMPLES; i++) {
+      const x = PAD.l + (pw / N_SAMPLES) * i;
+      ctx.beginPath(); ctx.moveTo(x, PAD.t); ctx.lineTo(x, PAD.t + ph); ctx.stroke();
+    }
+
+    // Axes
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(PAD.l, PAD.t); ctx.lineTo(PAD.l, PAD.t + ph); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(PAD.l, midY); ctx.lineTo(PAD.l + pw, midY); ctx.stroke();
+
+    // Labels
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '10px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('k (amostras)', PAD.l + pw, PAD.t + ph + 18);
+    ctx.save();
+    ctx.translate(14, PAD.t + ph / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('f[k]', 0, 0);
+    ctx.restore();
+
+    ctx.textAlign = 'right';
+    ctx.fillText('+A', PAD.l - 4, PAD.t + 4);
+    ctx.fillText('0',  PAD.l - 4, midY + 4);
+    ctx.fillText('−A', PAD.l - 4, PAD.t + ph + 4);
+
+    return { pw, ph, midY };
+  }
+
+  // Faint ghost of continuous signal
+  function drawGhost(pw, ph, midY) {
+    const halfAmp = (ph / 2) * amp;
+    ctx.beginPath();
+    for (let px = 0; px <= pw; px++) {
+      const t = px / pw;
+      const y = midY - halfAmp * Math.sin(2 * Math.PI * freq * t);
+      if (px === 0) ctx.moveTo(PAD.l + px, y);
+      else          ctx.lineTo(PAD.l + px, y);
+    }
+    ctx.strokeStyle = 'rgba(37,99,235,0.13)';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  function draw(ts) {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    const { pw, ph, midY } = drawGrid(w, h);
+    const halfAmp = (ph / 2) * amp;
+    const step = pw / N_SAMPLES;
+
+    // Advance active sample
+    if (ts - lastTick > TICK_MS) {
+      activeK = (activeK + 1) % N_SAMPLES;
+      lastTick = ts;
+    }
+
+    drawGhost(pw, ph, midY);
+
+    // Draw stem plot
+    for (let k = 0; k < N_SAMPLES; k++) {
+      const t = k / N_SAMPLES;
+      const xk = PAD.l + k * step + step / 2;
+      const yk = midY - halfAmp * Math.sin(2 * Math.PI * freq * t);
+      const isActive = k === activeK;
+
+      // Stem line
+      ctx.beginPath();
+      ctx.moveTo(xk, midY);
+      ctx.lineTo(xk, yk);
+      ctx.strokeStyle = isActive ? '#16a34a' : 'rgba(22,163,74,0.45)';
+      ctx.lineWidth   = isActive ? 2 : 1.2;
+      ctx.stroke();
+
+      // Sample dot
+      ctx.beginPath();
+      ctx.arc(xk, yk, isActive ? 5.5 : 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = isActive ? '#16a34a' : 'rgba(22,163,74,0.55)';
+      ctx.fill();
+
+      if (isActive) {
+        // Glow ring
+        ctx.beginPath();
+        ctx.arc(xk, yk, 9, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(22,163,74,0.25)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // k index label
+        ctx.fillStyle = '#15803d';
+        ctx.font = 'bold 9px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText('k=' + k, xk, PAD.t + ph + 15);
+        kInfoEl.textContent = 'k = ' + k;
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+</script>
+</body>
+</html>

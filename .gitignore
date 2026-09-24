@@ -1,0 +1,13 @@
+# PDFs originais (grandes demais para o git)
+originais/
+
+# Saída gerada pelo quarto render (é recriada pelo CI)
+output/
+
+# Ambiente virtual Python local
+.venv/
+
+# Arquivos gerados pelo Quarto dentro de contents/
+contents/*_files/
+contents/.quarto/
+contents/aula-0.html

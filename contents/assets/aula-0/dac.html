@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAC – Digital to Analog Converter</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 10px;
+    }
+    .card {
+      width: 100%;
+      max-width: 580px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title { font-size: 0.92rem; font-weight: 700; color: #a78bfa; }
+    .badge {
+      font-size: 0.6rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 9999px;
+      background: rgba(167,139,250,0.15); color: #c4b5fd;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      border: 1px solid rgba(167,139,250,0.3);
+    }
+    .panels {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .panel {
+      flex: 1;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 6px 8px;
+    }
+    .panel-label {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .panel-label.digital  { color: #34d399; }
+    .panel-label.analog   { color: #a78bfa; }
+    canvas { display: block; width: 100%; }
+
+    /* Binary input row */
+    .bit-input-row {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .bit-cell {
+      width: 22px; height: 22px; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem; font-weight: 700;
+      border: 1px solid #334155;
+      transition: background 0.2s, color 0.2s;
+    }
+    .bit-cell.one  { background: #064e3b; color: #34d399; border-color: #34d399; }
+    .bit-cell.zero { background: #1e293b; color: #64748b; }
+
+    .arrow-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; padding: 4px 0 6px 0;
+      font-size: 0.65rem; color: #94a3b8;
+    }
+    .step-label {
+      background: rgba(167,139,250,0.12);
+      border: 1px solid rgba(167,139,250,0.3);
+      border-radius: 6px; padding: 2px 8px;
+      font-size: 0.62rem; color: #c4b5fd;
+    }
+    .telemetry {
+      display: flex; justify-content: space-between;
+      background: #0f172a; border: 1px solid #334155;
+      border-radius: 7px; padding: 5px 10px;
+      font-size: 0.68rem; font-family: ui-monospace, monospace;
+      color: #64748b; margin-bottom: 8px;
+    }
+    .telemetry span { color: #94a3b8; }
+    .telemetry strong { color: #a78bfa; }
+    .controls {
+      display: flex; gap: 6px; margin-bottom: 8px;
+    }
+    .btn {
+      flex: 1; font-size: 0.65rem; font-weight: 600;
+      padding: 4px 6px; border-radius: 6px;
+      border: 1px solid #334155;
+      background: #1e293b; color: #94a3b8;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn:hover { background: #334155; color: #e2e8f0; }
+    .btn.active { background: #2e1065; color: #c4b5fd; border-color: #7c3aed; }
+    .note {
+      font-size: 0.68rem; color: #64748b;
+      border-top: 1px solid #1e293b; padding-top: 7px; line-height: 1.45;
+    }
+    .note strong { color: #94a3b8; }
+    .note em { color: #a78bfa; font-style: normal; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <span class="title">DAC — Digital to Analog Converter</span>
+    <span class="badge">Decodificação + Reconstrução</span>
+  </div>
+
+  <div class="telemetry">
+    <span>Amostra: <strong id="sampleIdx">k = 0</strong></span>
+    <span>Código: <strong id="binCode">0000</strong></span>
+    <span>Nível: <strong id="qLevel">0</strong></span>
+    <span>Saída: <strong id="vOut">0.000 V</strong></span>
+  </div>
+
+  <!-- Binary input display -->
+  <div style="margin-bottom:6px;">
+    <div style="font-size:0.62rem;color:#64748b;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Entrada Binária (código atual)</div>
+    <div class="bit-input-row" id="bitDisplay"></div>
+  </div>
+
+  <div class="panels">
+    <!-- Left: Digital samples input -->
+    <div class="panel">
+      <div class="panel-label digital">① Amostras Digitais (entrada)</div>
+      <canvas id="digitalCanvas" height="110"></canvas>
+    </div>
+    <!-- Right: Reconstructed analog output -->
+    <div class="panel">
+      <div class="panel-label analog">② Sinal Reconstruído (saída)</div>
+      <canvas id="analogCanvas" height="110"></canvas>
+    </div>
+  </div>
+
+  <div class="arrow-row">
+    <span class="step-label">① Código Binário</span>
+    <span style="color:#a78bfa">→</span>
+    <span class="step-label">② Decodificação (N → V)</span>
+    <span style="color:#a78bfa">→</span>
+    <span class="step-label">③ Hold + Filtro</span>
+  </div>
+
+  <div class="controls">
+    <button id="btnSlow"  class="btn active" onclick="setSpeed('slow')">Lento</button>
+    <button id="btnFast"  class="btn"        onclick="setSpeed('fast')">Rápido</button>
+    <button id="btnPause" class="btn"        onclick="togglePause()">Pausar</button>
+    <button id="btnZOH"   class="btn active" onclick="setMode('zoh')">Zero-Order Hold</button>
+    <button id="btnSmooth" class="btn"       onclick="setMode('smooth')">+ Filtro (LP)</button>
+  </div>
+
+  <div class="note">
+    <strong>DAC:</strong> O código binário é <em>decodificado</em> em um nível de tensão proporcional.
+    Com <em>Zero-Order Hold</em> mantém-se o valor até a próxima amostra (escada); um <em>filtro passa-baixa</em>
+    suaviza o sinal reconstruído, mas perdas de resolução (<em>erro de quantização</em>) são irreversíveis.
+  </div>
+</div>
+
+<script>
+const PAD = {t:10, r:8, b:22, l:32};
+let nBits = 4;
+let speedMs = 500;
+let isPaused = false;
+let mode = 'zoh'; // 'zoh' | 'smooth'
+
+let activeK = 0;
+let history = []; // { q, v }
+let lastTick = 0;
+const N_SAMPLES = 14;
+const FREQ = 1.2;
+
+const dC = document.getElementById('digitalCanvas');
+const aC = document.getElementById('analogCanvas');
+const dCtx = dC.getContext('2d');
+const aCtx = aC.getContext('2d');
+
+function setRes(canvas, ctx) {
+  canvas.width  = canvas.offsetWidth  * devicePixelRatio;
+  canvas.height = canvas.offsetHeight * devicePixelRatio;
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+function initCanvases() { setRes(dC, dCtx); setRes(aC, aCtx); }
+initCanvases();
+window.addEventListener('resize', initCanvases);
+
+function sig(t) { return Math.sin(2*Math.PI*FREQ*t + 0.4) * 0.82; }
+function quantize(v) {
+  const levels = Math.pow(2, nBits);
+  const norm = (v+1)/2;
+  return Math.max(0, Math.min(levels-1, Math.round(norm*(levels-1))));
+}
+function qToV(q) { return (q/(Math.pow(2,nBits)-1))*2 - 1; }
+function toBinary(q) { return q.toString(2).padStart(nBits,'0'); }
+
+function drawAxes(ctx, w, h, midY, accentColor) {
+  ctx.strokeStyle = '#334155';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(PAD.l, PAD.t); ctx.lineTo(PAD.l, h-PAD.b); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(PAD.l, midY);  ctx.lineTo(w-PAD.r, midY); ctx.stroke();
+  ctx.fillStyle = '#475569';
+  ctx.font = '9px system-ui';
+  ctx.textAlign = 'right';
+  ctx.fillText('+1V', PAD.l-2, PAD.t+8);
+  ctx.fillText('0',   PAD.l-2, midY+4);
+  ctx.fillText('−1V', PAD.l-2, h-PAD.b+4);
+}
+
+function drawDigital() {
+  const w = dC.offsetWidth, h = dC.offsetHeight;
+  const ph = h-PAD.t-PAD.b, pw = w-PAD.l-PAD.r;
+  const midY = PAD.t + ph/2;
+  const levels = Math.pow(2, nBits);
+  const step = pw / N_SAMPLES;
+
+  dCtx.clearRect(0,0,w,h);
+  drawAxes(dCtx, w, h, midY);
+
+  // Quant grid
+  dCtx.strokeStyle = 'rgba(52,211,153,0.08)';
+  dCtx.lineWidth = 0.6;
+  for (let i=0; i<=levels; i++) {
+    const y = (h-PAD.b) - (i/levels)*ph;
+    dCtx.beginPath(); dCtx.moveTo(PAD.l,y); dCtx.lineTo(w-PAD.r,y); dCtx.stroke();
+  }
+
+  for (let i=0; i<history.length; i++) {
+    const {q} = history[i];
+    const x = PAD.l + i*step;
+    const y = (h-PAD.b) - (q/(levels-1))*ph;
+    const isActive = i===history.length-1;
+
+    // Stem
+    dCtx.beginPath();
+    dCtx.moveTo(x + step/2, midY);
+    dCtx.lineTo(x + step/2, y);
+    dCtx.strokeStyle = isActive ? '#34d399' : 'rgba(52,211,153,0.4)';
+    dCtx.lineWidth = isActive ? 1.8 : 0.9;
+    dCtx.stroke();
+
+    // Dot
+    dCtx.beginPath();
+    dCtx.arc(x + step/2, y, isActive ? 5 : 3, 0, Math.PI*2);
+    dCtx.fillStyle = isActive ? '#34d399' : 'rgba(52,211,153,0.5)';
+    dCtx.fill();
+
+    if (isActive) {
+      dCtx.fillStyle = '#34d399';
+      dCtx.font = 'bold 9px ui-monospace,monospace';
+      dCtx.textAlign = 'center';
+      dCtx.fillText(q, x+step/2, y-4);
+      dCtx.fillStyle = '#64748b';
+      dCtx.font = '9px system-ui';
+      dCtx.fillText('k='+i, x+step/2, h-PAD.b+14);
+    }
+  }
+}
+
+function drawAnalog() {
+  const w = aC.offsetWidth, h = aC.offsetHeight;
+  const ph = h-PAD.t-PAD.b, pw = w-PAD.l-PAD.r;
+  const midY = PAD.t + ph/2;
+  const levels = Math.pow(2, nBits);
+  const step = pw / N_SAMPLES;
+
+  aCtx.clearRect(0,0,w,h);
+  drawAxes(aCtx, w, h, midY);
+
+  // Ghost original signal
+  aCtx.beginPath();
+  for (let px=0; px<=pw; px++) {
+    const t = px/pw;
+    const y = midY - (ph/2)*sig(t);
+    px===0 ? aCtx.moveTo(PAD.l+px,y) : aCtx.lineTo(PAD.l+px,y);
+  }
+  aCtx.strokeStyle = 'rgba(96,165,250,0.2)';
+  aCtx.lineWidth = 1.2;
+  aCtx.setLineDash([4,3]);
+  aCtx.stroke();
+  aCtx.setLineDash([]);
+
+  if (history.length === 0) return;
+
+  if (mode === 'zoh') {
+    // Zero-order hold (staircase)
+    aCtx.beginPath();
+    for (let i=0; i<history.length; i++) {
+      const {v} = history[i];
+      const xLeft = PAD.l + i*step;
+      const xRight = PAD.l + (i+1)*step;
+      const y = midY - (ph/2)*v;
+      if (i===0) aCtx.moveTo(xLeft, y);
+      aCtx.lineTo(xLeft, y);
+      aCtx.lineTo(xRight, y);
+    }
+    aCtx.strokeStyle = '#a78bfa';
+    aCtx.lineWidth = 2.2;
+    aCtx.stroke();
+
+    // Fill under staircase
+    const lastX = PAD.l + history.length * step;
+    aCtx.lineTo(lastX, midY);
+    aCtx.lineTo(PAD.l, midY);
+    aCtx.closePath();
+    aCtx.fillStyle = 'rgba(167,139,250,0.07)';
+    aCtx.fill();
+
+  } else {
+    // Smooth interpolation (LP filter simulation via Catmull-Rom-like spline)
+    const pts = history.map((h2, i) => ({
+      x: PAD.l + i*step + step/2,
+      y: midY - (ph/2)*h2.v
+    }));
+    if (pts.length < 2) return;
+    aCtx.beginPath();
+    aCtx.moveTo(pts[0].x, pts[0].y);
+    for (let i=0; i<pts.length-1; i++) {
+      const p0 = pts[Math.max(0,i-1)];
+      const p1 = pts[i];
+      const p2 = pts[i+1];
+      const p3 = pts[Math.min(pts.length-1, i+2)];
+      const cp1x = p1.x + (p2.x-p0.x)/6;
+      const cp1y = p1.y + (p2.y-p0.y)/6;
+      const cp2x = p2.x - (p3.x-p1.x)/6;
+      const cp2y = p2.y - (p3.y-p1.y)/6;
+      aCtx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+    }
+    aCtx.strokeStyle = '#a78bfa';
+    aCtx.lineWidth = 2.2;
+    aCtx.stroke();
+
+    aCtx.lineTo(pts[pts.length-1].x, midY);
+    aCtx.lineTo(pts[0].x, midY);
+    aCtx.closePath();
+    aCtx.fillStyle = 'rgba(167,139,250,0.07)';
+    aCtx.fill();
+  }
+
+  // Active sample marker
+  if (history.length > 0) {
+    const last = history[history.length-1];
+    const x = PAD.l + (history.length-1)*step + step/2;
+    const y = midY - (ph/2)*last.v;
+    aCtx.beginPath();
+    aCtx.arc(x, y, 5, 0, Math.PI*2);
+    aCtx.fillStyle = '#f0abfc';
+    aCtx.fill();
+  }
+}
+
+function updateBitDisplay(bin) {
+  const el = document.getElementById('bitDisplay');
+  el.innerHTML = '';
+  for (const b of bin) {
+    const cell = document.createElement('div');
+    cell.className = 'bit-cell ' + (b==='1' ? 'one' : 'zero');
+    cell.textContent = b;
+    el.appendChild(cell);
+  }
+}
+
+function tick(ts) {
+  if (!isPaused && ts-lastTick > speedMs) {
+    lastTick = ts;
+    activeK = (activeK+1) % N_SAMPLES;
+    if (activeK===0) history = [];
+    const t = activeK / N_SAMPLES;
+    const v = sig(t);
+    const q = quantize(v);
+    const vOut = qToV(q);
+    const bin = toBinary(q);
+    history.push({q, v: vOut});
+
+    document.getElementById('sampleIdx').textContent = 'k = '+activeK;
+    document.getElementById('binCode').textContent = bin;
+    document.getElementById('qLevel').textContent = q + ' / '+(Math.pow(2,nBits)-1);
+    document.getElementById('vOut').textContent = vOut.toFixed(3)+' V';
+    updateBitDisplay(bin);
+  }
+  drawDigital();
+  drawAnalog();
+  requestAnimationFrame(tick);
+}
+
+function setSpeed(s) {
+  speedMs = s==='slow' ? 500 : 120;
+  document.getElementById('btnSlow').classList.toggle('active', s==='slow');
+  document.getElementById('btnFast').classList.toggle('active', s==='fast');
+}
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('btnZOH').classList.toggle('active', m==='zoh');
+  document.getElementById('btnSmooth').classList.toggle('active', m==='smooth');
+}
+
+function togglePause() {
+  isPaused = !isPaused;
+  const btn = document.getElementById('btnPause');
+  btn.textContent = isPaused ? 'Retomar' : 'Pausar';
+  btn.classList.toggle('active', isPaused);
+}
+
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
