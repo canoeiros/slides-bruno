@@ -1,24 +1,17 @@
 [
   {
+    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "title": "Aula 0 - Introdução",
+    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
+    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
+  },
+  {
     "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
     "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
     "title": "Aula 0 - Introdução",
     "section": "Qual a diferença entre os relógios?",
     "text": "Qual a diferença entre os relógios?"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-analógicos",
-    "href": "contents/aula-0.html#sinais-analógicos",
-    "title": "Aula 0 - Introdução",
-    "section": "Sinais Analógicos",
-    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-digitais",
-    "href": "contents/aula-0.html#sinais-digitais",
-    "title": "Aula 0 - Introdução",
-    "section": "Sinais Digitais",
-    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
   },
   {
     "objectID": "index.html",
