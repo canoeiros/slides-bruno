@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Dr.&nbsp;Bruno Pereira Santos">
@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-422092a5e00d6ffa3175d97bbb8f7ab9.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -133,7 +133,7 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -157,9 +157,9 @@ Dr.&nbsp;Bruno Pereira Santos
 <blockquote>
 
 <ul>
-<li>Eletrônica Digital</li>
-<li>Lógica Digital</li>
-<li>Projetos Lógicos</li>
+<li class="fragment">Eletrônica Digital</li>
+<li class="fragment">Lógica Digital</li>
+<li class="fragment">Projetos Lógicos</li>
 </ul>
 
 </blockquote>
@@ -167,20 +167,29 @@ Dr.&nbsp;Bruno Pereira Santos
 <section>
 <section id="o-que-é-um-sinal" class="title-slide slide level1 center">
 <h1>O que é um sinal?</h1>
-<p>Função que representa qualquer <strong>variação</strong> de uma quantidade física com respeito a qualquer <strong>parâmetro</strong></p>
+<ul>
+<li class="fragment">Função que representa qualquer <strong>variação</strong> de uma quantidade física com respeito a qualquer <strong>parâmetro</strong></li>
+</ul>
 </section>
 <section class="slide level2">
 
 <h3 id="exemplos">Exemplos:</h3>
 <ul>
-<li>Temperatura a cada minuto</li>
-<li>Função f(x)=ax²+bx+c</li>
+<li class="fragment">Temperatura a cada minuto</li>
+<li class="fragment">Função <span class="math inline">\(f(x)=ax²+bx+c\)</span></li>
 </ul>
+</section>
+<section class="slide level2">
+
 <h3 id="para-o-nosso-curso">Para o nosso curso:</h3>
-<p>Sinais <span class="math inline">\(:=\)</span> <span class="math inline">\(\Delta\)</span> de grandeza elétrica</p>
+<ul>
+<li class="fragment">Sinais <span class="math inline">\(:=\)</span> <span class="math inline">\(\Delta\)</span> de grandeza elétrica</li>
+</ul>
+<div class="fragment">
 <blockquote>
-<p>Ex: corrente (<span class="math inline">\(A\)</span>) ou voltagem (<span class="math inline">\(V\)</span>) <!-- Gráfico discreto de variação de corrente elétrica  --></p>
+<p>Ex: corrente (<span class="math inline">\(A\)</span>) ou voltagem (<span class="math inline">\(V\)</span>)</p>
 </blockquote>
+</div>
 </section></section>
 <section>
 <section id="sinais-analógicos-sinais-digitais" class="title-slide slide level1 center">
@@ -201,20 +210,24 @@ Dr.&nbsp;Bruno Pereira Santos
 <section id="sinais-analógicos" class="slide level2">
 <h2>Sinais Analógicos</h2>
 <ul>
-<li>Qualquer variação dentro do domínio temos um valor correspondente na imagem</li>
-<li>Sensível a qualquer variação, mesmo que infinitezimamente pequena</li>
+<li class="fragment">Qualquer valor dentro do domínio <span class="math inline">\(x\)</span> tem um valor correspondente na imagem</li>
+<li class="fragment">Sensível a qualquer variação, mesmo que infinitezimamente pequena</li>
 </ul>
+<div class="fragment" style="height: 80vh">
 <iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="50%" style="border: none; border-radius: 12px;">
 </iframe>
+</div>
 </section>
 <section id="sinais-digitais" class="slide level2">
 <h2>Sinais Digitais</h2>
 <ul>
-<li>Regista apenas um momento discreto da variação de sinais</li>
-<li>Tem limite de captura e de precisão de cada variação</li>
+<li class="fragment">Regista apenas um momento discreto da variação de sinais</li>
+<li class="fragment">Tem limite de captura e de precisão de cada variação</li>
 </ul>
+<div class="fragment" style="height: 80vh">
 <iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="50%" style="border: none; border-radius: 12px;">
 </iframe>
+</div>
 </section></section>
 <section>
 <section id="transdutor-dac-adc" class="title-slide slide level1 center">
@@ -224,30 +237,40 @@ Dr.&nbsp;Bruno Pereira Santos
 <section class="slide level2">
 
 <h4 id="adc-analog-to-digital-converter">ADC (Analog to Digital Converter)</h4>
-<p>Converte um sinal analógico para um sinal digital</p>
+<ul>
+<li class="fragment">Converte um sinal analógico para um sinal digital</li>
+</ul>
+<div class="fragment" style="height: 80vh">
 <iframe src="../assets/aula-0/adc.html" width="100%" height="450px" style="border: none; border-radius: 12px;">
 </iframe>
+</div>
 </section>
 <section class="slide level2">
 
 <h4 id="dac-digital-to-analog-converter">DAC (Digital to Analog Converter)</h4>
-<p>Converte um sinal digital para um sinal analógico</p>
+<ul>
+<li class="fragment">Converte um sinal digital para um sinal analógico</li>
+</ul>
+<div class="fragment" style="height: 80vh">
 <iframe src="../assets/aula-0/dac.html" width="100%" height="450px" style="border: none; border-radius: 12px;">
 </iframe>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="pergunta">Pergunta:</h3>
-<p>O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?</p>
+<ul>
+<li class="fragment">O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?</li>
+</ul>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">graph LR
-Entrada --&gt; ADC
-ADC --&gt; DAC
-DAC --&gt; Saída
+<pre class="mermaid mermaid-js">  graph LR
+  Entrada --&gt; ADC
+  ADC --&gt; DAC
+  DAC --&gt; Saída
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -302,10 +325,10 @@ DAC --&gt; Saída
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
+        controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
+        controlsLayout: 'bottom-right',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -315,7 +338,7 @@ DAC --&gt; Saída
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -356,7 +379,7 @@ DAC --&gt; Saída
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
+        navigationMode: 'default',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
