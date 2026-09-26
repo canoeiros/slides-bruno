@@ -1,7 +1,7 @@
 ---
 title: "Aula 0 - Introdução"
+author: "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
 subtitle: "MATA38 - Projeto de Circutios Lógicos"
-author: "Dr. Bruno Pereira Santos"
 format: 
   revealjs:
     transition: fade
@@ -10,6 +10,7 @@ format:
     theme: [default, ../assets/global/theme.scss]
     navigation-mode: linear
     controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
 ---
 
 ## Essa disciplina tem muitos nomes<br>mas tratamos do mesmo conteúdo
@@ -19,91 +20,65 @@ format:
 > -   Projetos Lógicos
 
 # O que é um sinal?
-
 -   Função que representa qualquer **variação** de uma quantidade física com respeito a qualquer **parâmetro**
 
-# Exemplos:
-
+## Exemplos:
 -   Temperatura a cada minuto
 -   Função $f(x)=ax²+bx+c$
 
-# Para o nosso curso:
-
+## Para o nosso curso:
 -   Sinais $:=$ $\Delta$ de grandeza elétrica
-
-::: fragment
-> Ex: corrente ($A$) ou voltagem ($V$)
-:::
+-  Ex: corrente ($A$) ou voltagem ($V$)
 
 # Sinais analógicos & Sinais digitais
-
 ## Qual a diferença entre os relógios?
-
-::::: columns
+::: columns
 ::: column
-<iframe src="https://timedate.now/widgets/digital-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy" label="0">
-
-</iframe>
+<iframe src="https://timedate.now/widgets/digital-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy" label="0"></iframe>
 :::
 
 ::: column
-<iframe src="https://timedate.now/widgets/analog-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy">
-
-</iframe>
+<iframe src="https://timedate.now/widgets/analog-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy"></iframe>
 :::
-:::::
+:::
 
-# Sinais Analógicos
-
+## Sinais Analógicos
 -   Qualquer valor dentro do domínio $x$ tem um valor correspondente na imagem
 -   Sensível a qualquer variação, mesmo que infinitezimamente pequena
 
----
-
-::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 <iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
-
 </iframe>
-:::
 
-# Sinais Digitais
-
+## Sinais Digitais
 -   Regista apenas um momento discreto da variação de sinais
 -   Tem limite de captura e de precisão de cada variação
 
----
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;"></iframe>
 
-::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+# Transdutor <br> (ADC & DAC)
 
-</iframe>
-:::
-
-# Transdutor <br> (DAC & ADC)
-
-# ADC
-
+## ADC
 -   Analog to Digital Converter
 -   Converte um sinal analógico para um sinal digital
 
-#  {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 <iframe src="../assets/aula-0/adc.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
-
 </iframe>
 
-# DAC
+## DAC
 
 -   Digital to Analog Converter
 -   Converte um sinal digital para um sinal analógico
 
-#  {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 
 <iframe src="../assets/aula-0/dac.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
 
 </iframe>
 
-# Pergunta:
+## Pergunta:
 
 -   O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?
 

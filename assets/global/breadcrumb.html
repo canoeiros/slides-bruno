@@ -1,0 +1,75 @@
+<script>
+(function () {
+
+  function initBreadcrumb() {
+    if (typeof Reveal === 'undefined') {
+      setTimeout(initBreadcrumb, 80);
+      return;
+    }
+
+    // Cria o elemento de cabeçalho fixo no body para evitar transform do Reveal
+    var bar = document.getElementById('slide-breadcrumb');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'slide-breadcrumb';
+      document.body.appendChild(bar);
+    }
+
+    function update() {
+      var currentSlide = Reveal.getCurrentSlide();
+      if (!currentSlide) return;
+
+      // Oculta apenas na capa principal (slide de título da apresentação)
+      if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block')) {
+        bar.style.display = 'none';
+        return;
+      }
+
+      var allSlides = Reveal.getSlides();
+      var currentIndex = allSlides.indexOf(currentSlide);
+      if (currentIndex === -1) currentIndex = allSlides.length - 1;
+
+      var topic = '';
+
+      // Percorre os slides do atual para trás procurando o último h1 de seção
+      for (var i = currentIndex; i >= 0; i--) {
+        var slide = allSlides[i];
+        if (!slide || slide.id === 'title-slide') continue;
+
+        var h1 = slide.querySelector('h1:not(.title)');
+        if (!h1) {
+          // Caso o h1 não tenha a classe .title mas não seja do title-slide
+          var anyH1 = slide.querySelector('h1');
+          if (anyH1 && !anyH1.classList.contains('title')) {
+            h1 = anyH1;
+          }
+        }
+
+        if (h1) {
+          var text = h1.innerText.replace(/\s+/g, ' ').trim();
+          if (text) {
+            topic = text;
+            break;
+          }
+        }
+      }
+
+      if (topic) {
+        bar.textContent = topic;
+        bar.style.display = 'block';
+      } else {
+        bar.style.display = 'none';
+      }
+    }
+
+    if (Reveal.isReady()) {
+      update();
+    } else {
+      Reveal.on('ready', update);
+    }
+    Reveal.on('slidechanged', update);
+  }
+
+  initBreadcrumb();
+})();
+</script>
