@@ -367,3 +367,29 @@ $border-radius: 8px;
 .reveal pre::-webkit-scrollbar-thumb:hover {
   background: $primary;
 }
+
+// ---- Cabeçalho de seção (breadcrumb) ---------------------------------------
+
+#slide-breadcrumb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: none;  // controlado via JS
+  padding: 6px 24px;
+  background: rgba(#FAFAFA, 0.92);
+  border-bottom: 2px solid rgba($primary, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s ease;
+}
