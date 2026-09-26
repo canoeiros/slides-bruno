@@ -46,7 +46,7 @@ format:
 -   Qualquer valor dentro do domínio $x$ tem um valor correspondente na imagem
 -   Sensível a qualquer variação, mesmo que infinitezimamente pequena
 
-# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+## Visualização Analógica {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 <iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
 </iframe>
 
@@ -54,7 +54,7 @@ format:
 -   Regista apenas um momento discreto da variação de sinais
 -   Tem limite de captura e de precisão de cada variação
 
-# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+## Visualização Digital {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 <iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;"></iframe>
 
 # Transdutor <br> (ADC & DAC)
@@ -63,7 +63,7 @@ format:
 -   Analog to Digital Converter
 -   Converte um sinal analógico para um sinal digital
 
-# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+## Visualização ADC {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
 <iframe src="../assets/aula-0/adc.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
 </iframe>
 
@@ -72,14 +72,10 @@ format:
 -   Digital to Analog Converter
 -   Converte um sinal digital para um sinal analógico
 
-# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-
-<iframe src="../assets/aula-0/dac.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
-
-</iframe>
+## Visualização DAC {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<iframe src="../assets/aula-0/dac.html" width="100%" height="100%" style="border: none; border-radius: 12px;"></iframe>
 
 ## Pergunta:
-
 -   O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?
 
 ::: fragment
