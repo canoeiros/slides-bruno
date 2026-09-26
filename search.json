@@ -7,11 +7,60 @@
     "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
   },
   {
+    "objectID": "contents/aula-0.html#exemplos",
+    "href": "contents/aula-0.html#exemplos",
+    "title": "Aula 0 - Introdução",
+    "section": "Exemplos:",
+    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
+  },
+  {
+    "objectID": "contents/aula-0.html#para-o-nosso-curso",
+    "href": "contents/aula-0.html#para-o-nosso-curso",
+    "title": "Aula 0 - Introdução",
+    "section": "Para o nosso curso:",
+    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
+  },
+  {
     "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
     "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
     "title": "Aula 0 - Introdução",
     "section": "Qual a diferença entre os relógios?",
     "text": "Qual a diferença entre os relógios?"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-analógicos",
+    "href": "contents/aula-0.html#sinais-analógicos",
+    "title": "Aula 0 - Introdução",
+    "section": "Sinais Analógicos",
+    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-digitais",
+    "href": "contents/aula-0.html#sinais-digitais",
+    "title": "Aula 0 - Introdução",
+    "section": "Sinais Digitais",
+    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+  },
+  {
+    "objectID": "contents/aula-0.html#adc",
+    "href": "contents/aula-0.html#adc",
+    "title": "Aula 0 - Introdução",
+    "section": "ADC",
+    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#dac",
+    "href": "contents/aula-0.html#dac",
+    "title": "Aula 0 - Introdução",
+    "section": "DAC",
+    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+  },
+  {
+    "objectID": "contents/aula-0.html#pergunta",
+    "href": "contents/aula-0.html#pergunta",
+    "title": "Aula 0 - Introdução",
+    "section": "Pergunta:",
+    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   },
   {
     "objectID": "index.html",

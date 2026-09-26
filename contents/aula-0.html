@@ -35,12 +35,10 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-71070114918a4c3933567cf61b318c0a.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -162,33 +160,27 @@ Dr.&nbsp;Bruno Pereira Santos
 
 </blockquote>
 </section>
+<section>
 <section id="o-que-é-um-sinal" class="title-slide slide level1 center">
 <h1>O que é um sinal?</h1>
 <ul>
 <li class="fragment">Função que representa qualquer <strong>variação</strong> de uma quantidade física com respeito a qualquer <strong>parâmetro</strong></li>
 </ul>
 </section>
-
-<section id="exemplos" class="title-slide slide level1 center">
-<h1>Exemplos:</h1>
+<section id="exemplos" class="slide level2">
+<h2>Exemplos:</h2>
 <ul>
 <li class="fragment">Temperatura a cada minuto</li>
 <li class="fragment">Função <span class="math inline">\(f(x)=ax²+bx+c\)</span></li>
 </ul>
 </section>
-
-<section id="para-o-nosso-curso" class="title-slide slide level1 center">
-<h1>Para o nosso curso:</h1>
+<section id="para-o-nosso-curso" class="slide level2">
+<h2>Para o nosso curso:</h2>
 <ul>
 <li class="fragment">Sinais <span class="math inline">\(:=\)</span> <span class="math inline">\(\Delta\)</span> de grandeza elétrica</li>
+<li class="fragment">Ex: corrente (<span class="math inline">\(A\)</span>) ou voltagem (<span class="math inline">\(V\)</span>)</li>
 </ul>
-<div class="fragment">
-<blockquote>
-<p>Ex: corrente (<span class="math inline">\(A\)</span>) ou voltagem (<span class="math inline">\(V\)</span>)</p>
-</blockquote>
-</div>
-</section>
-
+</section></section>
 <section>
 <section id="sinais-analógicos-sinais-digitais" class="title-slide slide level1 center">
 <h1>Sinais analógicos &amp; Sinais digitais</h1>
@@ -204,74 +196,60 @@ Dr.&nbsp;Bruno Pereira Santos
 <iframe src="https://timedate.now/widgets/analog-clock/embed/?tz=America/Bahia&amp;theme=light" width="400" height="400" style="border:0" loading="lazy">
 </iframe>
 </div></div>
-</section></section>
-<section id="sinais-analógicos" class="title-slide slide level1 center">
-<h1>Sinais Analógicos</h1>
+</section>
+<section id="sinais-analógicos" class="slide level2">
+<h2>Sinais Analógicos</h2>
 <ul>
 <li class="fragment">Qualquer valor dentro do domínio <span class="math inline">\(x\)</span> tem um valor correspondente na imagem</li>
 <li class="fragment">Sensível a qualquer variação, mesmo que infinitezimamente pequena</li>
 </ul>
-</section>
-
-<section id="visualização" class="title-slide slide level1 center">
-<h1>Visualização</h1>
-<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
-<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+<h3 style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%" id="section"></h3>
+<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
 </iframe>
-</div>
 </section>
-
-<section id="sinais-digitais" class="title-slide slide level1 center">
-<h1>Sinais Digitais</h1>
+<section id="sinais-digitais" class="slide level2">
+<h2>Sinais Digitais</h2>
 <ul>
 <li class="fragment">Regista apenas um momento discreto da variação de sinais</li>
 <li class="fragment">Tem limite de captura e de precisão de cada variação</li>
 </ul>
-</section>
-
-<section id="visualização-1" class="title-slide slide level1 center">
-<h1>Visualização</h1>
-<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
-<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+<h3 style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%" id="section-1"></h3>
+<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
 </iframe>
-</div>
-</section>
-
+</section></section>
+<section>
 <section id="transdutor-dac-adc" class="title-slide slide level1 center">
 <h1>Transdutor <br> (DAC &amp; ADC)</h1>
 
 </section>
-
-<section id="adc" class="title-slide slide level1 center">
-<h1>ADC</h1>
+<section id="adc" class="slide level2">
+<h2>ADC</h2>
 <ul>
 <li class="fragment">Analog to Digital Converter</li>
 <li class="fragment">Converte um sinal analógico para um sinal digital</li>
 </ul>
-</section>
-
-<section id="section" class="title-slide slide level1 center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+</section></section>
+<section>
+<section id="section-2" class="title-slide slide level1 center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
 <h1></h1>
 <iframe src="../assets/aula-0/adc.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
 </iframe>
 </section>
-
-<section id="dac" class="title-slide slide level1 center">
-<h1>DAC</h1>
+<section id="dac" class="slide level2">
+<h2>DAC</h2>
 <ul>
 <li class="fragment">Digital to Analog Converter</li>
 <li class="fragment">Converte um sinal digital para um sinal analógico</li>
 </ul>
-</section>
-
-<section id="section-1" class="title-slide slide level1 center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
+</section></section>
+<section>
+<section id="section-3" class="title-slide slide level1 center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%">
 <h1></h1>
 <iframe src="../assets/aula-0/dac.html" width="100%" height="100%" style="border: none; border-radius: 12px;">
 </iframe>
 </section>
-
-<section id="pergunta" class="title-slide slide level1 center">
-<h1>Pergunta:</h1>
+<section id="pergunta" class="slide level2">
+<h2>Pergunta:</h2>
 <ul>
 <li class="fragment">O que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?</li>
 </ul>
@@ -294,7 +272,7 @@ DAC --&gt; Saída
 </div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -309,7 +287,6 @@ DAC --&gt; Saída
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -331,8 +308,7 @@ DAC --&gt; Saída
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -503,7 +479,7 @@ DAC --&gt; Saída
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -511,6 +487,81 @@ DAC --&gt; Saída
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    (function () {
+
+      function initBreadcrumb() {
+        if (typeof Reveal === 'undefined') {
+          setTimeout(initBreadcrumb, 80);
+          return;
+        }
+
+        // Cria o elemento de cabeçalho fixo no body para evitar transform do Reveal
+        var bar = document.getElementById('slide-breadcrumb');
+        if (!bar) {
+          bar = document.createElement('div');
+          bar.id = 'slide-breadcrumb';
+          document.body.appendChild(bar);
+        }
+
+        function update() {
+          var currentSlide = Reveal.getCurrentSlide();
+          if (!currentSlide) return;
+
+          // Oculta apenas na capa principal (slide de título da apresentação)
+          if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block')) {
+            bar.style.display = 'none';
+            return;
+          }
+
+          var allSlides = Reveal.getSlides();
+          var currentIndex = allSlides.indexOf(currentSlide);
+          if (currentIndex === -1) currentIndex = allSlides.length - 1;
+
+          var topic = '';
+
+          // Percorre os slides do atual para trás procurando o último h1 de seção
+          for (var i = currentIndex; i >= 0; i--) {
+            var slide = allSlides[i];
+            if (!slide || slide.id === 'title-slide') continue;
+
+            var h1 = slide.querySelector('h1:not(.title)');
+            if (!h1) {
+              // Caso o h1 não tenha a classe .title mas não seja do title-slide
+              var anyH1 = slide.querySelector('h1');
+              if (anyH1 && !anyH1.classList.contains('title')) {
+                h1 = anyH1;
+              }
+            }
+
+            if (h1) {
+              var text = h1.innerText.replace(/\s+/g, ' ').trim();
+              if (text) {
+                topic = text;
+                break;
+              }
+            }
+          }
+
+          if (topic) {
+            bar.textContent = topic;
+            bar.style.display = 'block';
+          } else {
+            bar.style.display = 'none';
+          }
+        }
+
+        if (Reveal.isReady()) {
+          update();
+        } else {
+          Reveal.on('ready', update);
+        }
+        Reveal.on('slidechanged', update);
+      }
+
+      initBreadcrumb();
+    })();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
