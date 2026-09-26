@@ -1,0 +1,369 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// TEMA PERSONALIZADO — slides-bruno
+// Fonte: JetBrains Mono (Google Fonts)
+// =============================================================================
+
+// --- Google Fonts -----------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+// --- Paleta de cores --------------------------------------------------------
+$primary:        #6D28D9;   // Violeta profundo
+$secondary:      #7C3AED;   // Violeta médio
+$accent:         #059669;   // Verde esmeralda escuro
+$danger:         #DC2626;   // Vermelho
+
+$background:     #FAFAFA;   // Fundo branco suave
+$surface:        #F1F5F9;   // Superfície de cards / blocos
+$surface-2:      #E2E8F0;   // Superfície secundária
+
+$text-main:      #0F172A;   // Texto principal (quase preto)
+$text-muted:     #475569;   // Texto secundário
+$text-inverse:   #FAFAFA;   // Texto sobre fundo escuro
+
+$border-color:   #CBD5E1;   // Bordas sutis
+
+// --- Tipografia -------------------------------------------------------------
+$font-family-sans-serif: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+$font-family-monospace:  'JetBrains Mono', monospace;
+$presentation-font-size-root: 34px;
+
+// --- Variáveis do Reveal.js (Quarto) ----------------------------------------
+
+// Cores base
+$body-bg:                  $background;
+$body-color:               $text-main;
+$link-color:               #A78BFA;
+$link-color-hover:         $secondary;
+$selection-bg:             $primary;
+$selection-color:          #ffffff;
+
+// Cabeçalhos
+$presentation-heading-font:             'JetBrains Mono', monospace;
+$presentation-heading-color:            $text-main;
+$presentation-heading-font-weight:      700;
+$presentation-heading-line-height:      1.2;
+$presentation-heading-letter-spacing:   -0.02em;
+$presentation-heading-text-shadow:      none;
+$presentation-heading-text-transform:   none;
+
+$h1-font-size: 2.0em;
+$h2-font-size: 1.4em;
+$h3-font-size: 1.1em;
+$h4-font-size: 0.95em;
+
+// Blocos de código
+$code-block-bg:            $surface;
+$code-color:               $secondary;
+$code-block-border-color:  $border-color;
+$code-block-font-size:     0.78em;
+
+// Callouts
+$callout-color-note:       #60A5FA;
+$callout-color-tip:        $accent;
+$callout-color-caution:    #FBBF24;
+$callout-color-warning:    #F97316;
+$callout-color-important:  $danger;
+
+// Bordas
+$border-radius: 8px;
+
+/*-- scss:rules --*/
+
+// =============================================================================
+// REGRAS GLOBAIS
+// =============================================================================
+
+// Fundo do slide
+.reveal-viewport {
+  background: $background;
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba($primary, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba($accent, 0.08) 0%, transparent 50%);
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+// ---- Cabeçalhos ------------------------------------------------------------
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: $text-main;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.reveal h1 {
+  font-size: 1.9em;
+  background: linear-gradient(135deg, $text-main 30%, $secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reveal h2 {
+  font-size: 1.3em;
+  color: $secondary;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h3 {
+  font-size: 1.05em;
+  color: $accent;
+}
+
+// ---- Parágrafos e texto ----------------------------------------------------
+
+.reveal p,
+.reveal li {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  line-height: 1.7;
+  color: $text-main;
+}
+
+.reveal strong {
+  color: $secondary;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: $accent;
+  font-style: italic;
+}
+
+// ---- Links -----------------------------------------------------------------
+
+.reveal a {
+  color: #A78BFA;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(#A78BFA, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.reveal a:hover {
+  color: $secondary;
+  border-bottom-color: $secondary;
+}
+
+// ---- Listas ----------------------------------------------------------------
+
+.reveal ul,
+.reveal ol {
+  margin-left: 1.2em;
+}
+
+.reveal ul li::marker {
+  color: $primary;
+}
+
+.reveal ol li::marker {
+  color: $accent;
+  font-weight: 700;
+}
+
+// ---- Blocos de citação (blockquote) ----------------------------------------
+
+.reveal blockquote {
+  background: $surface;
+  border-left: 4px solid $primary;
+  border-radius: 0 $border-radius $border-radius 0;
+  padding: 0.6em 1em;
+  margin: 1em 0;
+  color: $text-muted;
+  font-style: normal;
+  font-size: 0.9em;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+// ---- Código inline ---------------------------------------------------------
+
+.reveal code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba($primary, 0.15);
+  color: $secondary;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+// ---- Blocos de código (pre/code) -------------------------------------------
+
+.reveal pre {
+  background: $surface;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  margin: 0.8em 0;
+}
+
+.reveal pre code {
+  background: transparent;
+  color: $text-main;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78em;
+  padding: 0;
+  border-radius: 0;
+}
+
+// ---- Tabelas ---------------------------------------------------------------
+
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85em;
+}
+
+.reveal table th {
+  background: $primary;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5em 0.8em;
+  text-align: left;
+}
+
+.reveal table td {
+  border-bottom: 1px solid $border-color;
+  padding: 0.45em 0.8em;
+  color: $text-main;
+}
+
+.reveal table tr:nth-child(even) td {
+  background: rgba($surface, 0.6);
+}
+
+.reveal table tr:hover td {
+  background: rgba($primary, 0.12);
+}
+
+// ---- Slide de título (title slide) -----------------------------------------
+
+.reveal .title-slide,
+.reveal .quarto-title-block {
+  text-align: center;
+}
+
+.reveal .title {
+  font-size: 2.2em;
+  font-weight: 800;
+  background: linear-gradient(135deg, $text-main 0%, $secondary 60%, $accent 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3em;
+}
+
+.reveal .subtitle {
+  color: $text-muted;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.reveal .author {
+  color: $accent;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+// ---- Numeração de slides ---------------------------------------------------
+
+.reveal .slide-number {
+  background: rgba($surface, 0.8);
+  color: $text-muted;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6em;
+  padding: 4px 8px;
+  backdrop-filter: blur(4px);
+}
+
+// ---- Progress bar ----------------------------------------------------------
+
+.reveal .progress {
+  background: rgba($primary, 0.2);
+  color: $primary;
+  height: 3px;
+}
+
+// ---- Controles de navegação ------------------------------------------------
+
+.reveal .controls {
+  color: $primary;
+}
+
+.reveal .controls button:hover {
+  color: $secondary;
+}
+
+// ---- Fragmentos (animação de entrada) --------------------------------------
+
+.reveal .fragment {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+  transform: none;
+}
+
+// ---- Callouts do Quarto ----------------------------------------------------
+
+.reveal .callout {
+  border-radius: $border-radius;
+  background: $surface;
+  border-left-width: 4px;
+  margin: 0.8em 0;
+}
+
+.reveal .callout-title {
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+// ---- Colunas (layout columns) ----------------------------------------------
+
+.reveal .columns {
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+// ---- Destaque / highlight --------------------------------------------------
+
+.reveal mark {
+  background: rgba($primary, 0.35);
+  color: $text-main;
+  border-radius: 3px;
+  padding: 0.05em 0.2em;
+}
+
+// ---- Scrollbar (para blocos de código longos) ------------------------------
+
+.reveal pre::-webkit-scrollbar {
+  height: 5px;
+}
+
+.reveal pre::-webkit-scrollbar-track {
+  background: $surface;
+}
+
+.reveal pre::-webkit-scrollbar-thumb {
+  background: $border-color;
+  border-radius: 3px;
+}
+
+.reveal pre::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}

@@ -11,5 +11,3 @@ website:
     left:
       - href: index.qmd
         text: "Início"
-      - href: contents/aula-0.qmd
-        text: "Aula 0"

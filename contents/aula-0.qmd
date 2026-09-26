@@ -4,11 +4,10 @@ subtitle: "MATA38 - Projeto de Circutios Lógicos"
 author: "Dr. Bruno Pereira Santos"
 format: 
   revealjs:
-    theme: white
     transition: fade
     slide-number: true
-    chalkboard: true
     incremental: true
+    theme: [default, ../assets/global/theme.scss]
     navigation-mode: linear
     controls-layout: bottom-right
 ---
