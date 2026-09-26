@@ -35,11 +35,25 @@
     "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
   },
   {
+    "objectID": "contents/aula-0.html#visualização-analógica",
+    "href": "contents/aula-0.html#visualização-analógica",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização Analógica",
+    "text": "Visualização Analógica"
+  },
+  {
     "objectID": "contents/aula-0.html#sinais-digitais",
     "href": "contents/aula-0.html#sinais-digitais",
     "title": "Aula 0 - Introdução",
     "section": "Sinais Digitais",
     "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-digital",
+    "href": "contents/aula-0.html#visualização-digital",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização Digital",
+    "text": "Visualização Digital"
   },
   {
     "objectID": "contents/aula-0.html#adc",
@@ -49,11 +63,25 @@
     "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
   },
   {
+    "objectID": "contents/aula-0.html#visualização-adc",
+    "href": "contents/aula-0.html#visualização-adc",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização ADC",
+    "text": "Visualização ADC"
+  },
+  {
     "objectID": "contents/aula-0.html#dac",
     "href": "contents/aula-0.html#dac",
     "title": "Aula 0 - Introdução",
     "section": "DAC",
     "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-dac",
+    "href": "contents/aula-0.html#visualização-dac",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização DAC",
+    "text": "Visualização DAC"
   },
   {
     "objectID": "contents/aula-0.html#pergunta",
