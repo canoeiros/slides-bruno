@@ -58,10 +58,10 @@ format:
 -   Qualquer valor dentro do domínio $x$ tem um valor correspondente na imagem
 -   Sensível a qualquer variação, mesmo que infinitezimamente pequena
 
-# Visualização
+---
 
 ::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
 
 </iframe>
 :::
@@ -71,10 +71,10 @@ format:
 -   Regista apenas um momento discreto da variação de sinais
 -   Tem limite de captura e de precisão de cada variação
 
-# Visualização
+---
 
 ::: {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="400px" style="max-width: 900px; border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
 
 </iframe>
 :::
