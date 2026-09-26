@@ -24,7 +24,7 @@ CONTENTS_DIR = ROOT_DIR / "contents"
 ASSETS_DIR = ROOT_DIR / "assets"
 OUTPUT_DIR = ROOT_DIR / "output"
 
-DEFAULT_AUTHOR = "Dr. Bruno Pereira Santos"
+DEFAULT_AUTHOR = "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
 DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos"
 
 # ==============================================================================
@@ -34,12 +34,15 @@ SLIDE_TEMPLATE = """---
 title: "{title}"
 subtitle: "{subtitle}"
 author: "{author}"
-format:
+format: 
   revealjs:
-    theme: night
     transition: fade
     slide-number: true
-    chalkboard: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
 ---
 
 """
