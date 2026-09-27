@@ -1,0 +1,142 @@
+---
+title: "Aula 2 - Álgebra Booleana"
+subtitle: "MATA38 - Projeto de Circuitos Lógicos"
+author: "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+---
+
+# Propriedades <br> Álgebra Booleana
+## Lei Distributiva: 
+$$
+\begin{aligned}
+A \cdot (B + C) &= A \cdot B + A \cdot C \\
+A + (B \cdot C) &= (A+B) \cdot (A+C)
+\end{aligned}
+$$
+
+
+::: {.columns}
+
+::: {.column .callout-note}
+## Exemplo
+$$
+\begin{aligned}
+A + \bar{A}B = &\underbrace{(A+\bar{A})} \cdot
+(A+B) \\
+&= 1 \cdot (A+B) \\
+&= A+B
+\end{aligned}
+$$
+
+:::
+
+::: {.column .callout-note}
+## Importante
+$$
+\begin{aligned}
+& A + \bar{A}B = A+B \\
+& \bar{A} + AB = \bar{A}+B
+\end{aligned}
+$$
+
+:::
+
+:::
+
+## Lei Comutativa: 
+$$
+\begin{aligned}
+A+B &= B+A \\
+A \cdot B &= B \cdot A
+\end{aligned}
+$$
+
+## Lei Associativa:
+$$
+\begin{aligned}
+(A+B)+C &= A+(B+C) \\
+(A \cdot B) \cdot C &= A \cdot (B \cdot C)
+\end{aligned}
+$$
+
+## Lei De Morgan:
+$$
+\begin{aligned}
+\overline{(A+B)} &= \bar{A} \cdot \bar{B} \\
+\overline{(A \cdot B)} &= \bar{A} + \bar{B}
+\end{aligned}
+$$
+
+
+::: {.fragment .list-table}
+
+* - $A$
+  - $B$
+  - $A+B$
+  - $\overline{A+B}$
+  - $\bar{A}$
+  - $\bar{B}$
+  - $\bar{A} \cdot \bar{B}$
+* - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+* - 0
+  - 1
+  - 1
+  - 0
+  - 1
+  - 0
+  - 0
+* - 1
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 0
+* - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+
+:::
+
+# Lei de Precedência
+1. NOT
+2. AND
+3. OR
+
+# {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
+<video data-autoplay loop controls width="100%" style="border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.5);">
+  <source src="../assets/aula-2/reducao.mp4" type="video/mp4">
+</video>
+
+## Regras
+- Complemento: $(\bar{\bar{A}}) = A$
+- AND:
+  * $A \cdot A = A$
+  * $A \cdot 0 = 0$
+  * $A \cdot 1 = A$
+  * $A \cdot \bar{A} = 0$
+
+## Regras
+- OR:
+  * $A + A = A$
+  * $A + 0 = A$
+  * $A + 1 = 1$
+  * $A + \bar{A} = 1$

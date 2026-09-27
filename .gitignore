@@ -9,15 +9,28 @@ output/
 *_files/
 contents/*_files/
 contents/*.html
+**/*.quarto_ipynb
 
-# Ambiente virtual Python local
+# Manim caches e renderizações temporárias
+**/media/
+media/
+
+# Ambiente virtual Python local e caches
 .venv/
 venv/
+ENV/
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 
 # Sistema operacional / IDE
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+.luarc.json
+
 
 /.quarto/
-**/*.quarto_ipynb

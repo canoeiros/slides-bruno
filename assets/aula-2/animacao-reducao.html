@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animação - Redução em Álgebra Booleana</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: transparent;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 12px;
+    }
+
+    .title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #a78bfa;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(124, 58, 237, 0.18);
+      color: #c4b5fd;
+      border: 1px solid rgba(124, 58, 237, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Stage Area */
+    .stage {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      min-height: 190px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .equation-box {
+      font-size: 1.75rem;
+      color: #f8fafc;
+      transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      z-index: 1;
+      padding: 10px 18px;
+      border-radius: 10px;
+    }
+
+    .equation-box.final {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1.5px solid #10b981;
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Explanation Banner */
+    .explanation {
+      background: #111827;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .exp-text {
+      font-size: 0.88rem;
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .exp-rule {
+      font-size: 0.75rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Progress & Controls */
+    .controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 4px;
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      height: 6px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7c3aed, #059669);
+      width: 20%;
+      transition: width 0.4s ease;
+      border-radius: 999px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid #475569;
+      background: #1e293b;
+      color: #f1f5f9;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    button:hover:not(:disabled) {
+      background: #334155;
+      border-color: #64748b;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    button.primary {
+      background: #7c3aed;
+      border-color: #8b5cf6;
+      color: #ffffff;
+    }
+
+    button.primary:hover:not(:disabled) {
+      background: #6d28d9;
+      box-shadow: 0 0 16px rgba(124, 58, 237, 0.4);
+    }
+
+    .step-indicator {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-weight: 600;
+      min-width: 80px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="title">
+      <span>⚡</span> Redução Passo a Passo
+    </div>
+    <span class="badge" id="badge-step">Passo 1 de 5</span>
+  </div>
+
+  <!-- Stage -->
+  <div class="stage">
+    <div id="equation" class="equation-box"></div>
+  </div>
+
+  <!-- Explanation -->
+  <div class="explanation">
+    <div class="exp-text" id="exp-text">Identificando termos comuns...</div>
+    <div class="exp-rule" id="exp-rule">Expressão Inicial</div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-row">
+    <div class="btn-group">
+      <button id="btn-prev" onclick="prevStep()">◀ Anterior</button>
+      <button id="btn-play" class="primary" onclick="togglePlay()">⏸ Pausar</button>
+      <button id="btn-next" onclick="nextStep()">Próximo ▶</button>
+      <button onclick="resetAnimation()">↺ Reiniciar</button>
+    </div>
+
+    <div class="progress-bar-container">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="step-indicator" id="step-indicator">Passo 1/5</div>
+  </div>
+</div>
+
+<script>
+  const steps = [
+    {
+      latex: "Y = B \\color{#38bdf8}{\\underline{A\\bar{C}}} + \\bar{B} \\color{#38bdf8}{\\underline{A\\bar{C}}} + \\bar{B}C",
+      rule: "Expressão Original",
+      desc: "Identificamos o termo comum <strong>A\\bar{C}</strong> nos dois primeiros blocos."
+    },
+    {
+      latex: "Y = A\\bar{C} \\cdot \\color{#a78bfa}{(B + \\bar{B})} + B\\bar{C}",
+      rule: "Lei Distributiva (Fatoração)",
+      desc: "Colocamos <strong>A\\bar{C}</strong> em evidência agrupando <strong>(B + \\bar{B})</strong>."
+    },
+    {
+      latex: "Y = A\\bar{C} \\cdot \\color{#34d399}{1} + B\\bar{C}",
+      rule: "Lei do Complemento",
+      desc: "Aplicamos <strong>B + \\bar{B} = 1</strong>."
+    },
+    {
+      latex: "Y = A\\color{#38bdf8}{\\bar{C}} + B\\color{#38bdf8}{\\bar{C}}",
+      rule: "Elemento Neutro do AND",
+      desc: "Multiplicação por 1: <strong>A\\bar{C} \\cdot 1 = A\\bar{C}</strong>."
+    },
+    {
+      latex: "Y = \\bar{C}[A + B]",
+      rule: "Forma Reduzida Final",
+      desc: "Colocamos <strong>\\bar{C}</strong> em evidência para a simplificação máxima!",
+      isFinal: true
+    }
+  ];
+
+  let currentIdx = 0;
+  let isPlaying = true;
+  let timer = null;
+
+  function renderCurrentStep() {
+    const eqEl = document.getElementById("equation");
+    const expText = document.getElementById("exp-text");
+    const expRule = document.getElementById("exp-rule");
+    const progressFill = document.getElementById("progress-fill");
+    const stepIndicator = document.getElementById("step-indicator");
+    const badgeStep = document.getElementById("badge-step");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+
+    const step = steps[currentIdx];
+
+    // Render KaTeX
+    if (window.katex) {
+      katex.render(step.latex, eqEl, { throwOnError: false, displayMode: true });
+    } else {
+      eqEl.textContent = step.latex;
+    }
+
+    if (step.isFinal) {
+      eqEl.classList.add("final");
+    } else {
+      eqEl.classList.remove("final");
+    }
+
+    expText.innerHTML = step.desc;
+    expRule.textContent = step.rule;
+
+    const percent = ((currentIdx + 1) / steps.length) * 100;
+    progressFill.style.width = percent + "%";
+    stepIndicator.textContent = `Passo ${currentIdx + 1}/${steps.length}`;
+    badgeStep.textContent = `Passo ${currentIdx + 1} de ${steps.length}`;
+
+    btnPrev.disabled = currentIdx === 0;
+    btnNext.disabled = currentIdx === steps.length - 1;
+  }
+
+  function nextStep() {
+    if (currentIdx < steps.length - 1) {
+      currentIdx++;
+      renderCurrentStep();
+    } else if (isPlaying) {
+      currentIdx = 0;
+      renderCurrentStep();
+    }
+  }
+
+  function prevStep() {
+    if (currentIdx > 0) {
+      currentIdx--;
+      renderCurrentStep();
+    }
+  }
+
+  function resetAnimation() {
+    currentIdx = 0;
+    renderCurrentStep();
+  }
+
+  function togglePlay() {
+    isPlaying = !isPlaying;
+    const btn = document.getElementById("btn-play");
+    if (isPlaying) {
+      btn.textContent = "⏸ Pausar";
+      startAutoPlay();
+    } else {
+      btn.textContent = "▶ Executar";
+      stopAutoPlay();
+    }
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    timer = setInterval(() => {
+      if (isPlaying) {
+        nextStep();
+      }
+    }, 2800);
+  }
+
+  function stopAutoPlay() {
+    if (timer) clearInterval(timer);
+  }
+
+  window.addEventListener('load', () => {
+    renderCurrentStep();
+    startAutoPlay();
+  });
+</script>
+
+</body>
+</html>

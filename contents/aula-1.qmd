@@ -1,0 +1,56 @@
+---
+title: "Aula 1 - Portas Lógicas e Álgebra Booleana"
+subtitle: "MATA38 - Projeto de Circuitos Lógicos"
+author: "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+---
+
+# Relembrando Sinais
+
+-   Na vida real temos sinais analógicos
+-   Para processar sinais analógicos em sistemas digitais temos que seguir o seguinte fluxo:
+
+```{=html}
+<!-- 
+Adicionar gráfico de fluxo de conversão de sinais analógicos para processamento de sistemas digitais
+-->
+```
+
+# Intuição:<br> Switch & Bits
+
+## Vantagens dos sistemas digitais
+
+-   Redução de Ruido
+-   Uso de menos banda
+-   Criptografia
+-   Eficiência para transmissões de longa distância
+
+## Níveis e Precisão
+
+-   Quanto mais precisão de medida, mais níveis são necessários
+
+## Switch/Bits
+
+-   Podemos representar um bit com um switch
+-   Circuito Aberto = $0$
+-   Circuito Fechado = $1$
+
+```{=html}
+<!-- 
+Adicionar minicircuito com um switch
+-->
+```
+
+## Bits e níveis
+-   Quanto mais bits, mais níveis podem ser representados
+
+<!-- Pulei alguns slides -->
+
