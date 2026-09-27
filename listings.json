@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/contents/aula-0.html"
+      "/contents/aula-0.html",
+      "/contents/aula-1.html",
+      "/contents/aula-2.html"
     ]
   }
 ]
