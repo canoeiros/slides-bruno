@@ -50,7 +50,89 @@ Adicionar minicircuito com um switch
 ```
 
 ## Bits e níveis
--   Quanto mais bits, mais níveis podem ser representados
+- Quanto mais bits, mais níveis podem ser representados
+- Representação com 2 switches:
 
-<!-- Pulei alguns slides -->
+::: {.fragment}
+::: {.list-table}
+- - $SW_{1}$
+  - $SW_{2}$
+- - OFF
+  - OFF
+- - OFF
+  - ON
+- - ON
+  - OFF
+- - ON
+  - ON
+:::
+:::
+
+## Bits e Níveis
+- Generalizando: $n = 2^{m}$
+  - $n :=$ # de nívies
+  - $m :=$ # de switches
+
+
+::: {.callout-note .fragment}
+## Exemplo
+
+$$
+m = 3 \to n = 2^{3} = 8 \text{ níveis}
+$$
+:::
+
+
+# Números Binários
+
+## Representação dos números
+- Já conhecemos o sistema decimal:
+  - $(327)_{10} = 3 \cdot 10^{2} + 2 \cdot 10^{1} + 7 \cdot 10^{0}$ 
+- No sistema binário:
+  - Um dígito é chamado de *bit*
+    - $(234)_{10} \text{ tem 3 dígitos}$   
+    - $(101)_{2} \text{ tem 3 bits}$   
+
+## Representar quantidades
+- Um número de 2 bits tem 4 possiveis representações:
+  - $\uparrow \text{SW} = \uparrow \text{ bits} = \uparrow \text{ mais precisão}$
+  - Logo é possível representar 4 valores diferentes com a representação
+
+## Bits e Bytes
+- Um conjunto de $8$ *bits* $(b)$ forma um *byte* $(B)$ 
+$$
+\begin{aligned}
+8 \text{ bits} = 1 \text{ byte} \\
+\end{aligned}
+$$
+
+- É possível adicionar sufixos para a representação
+
+# 
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+```{mermaid}
+flowchart TD
+BYTE --> |x1024| MEGABYTE
+MEGABYTE --> |x1024| GIGABYTE
+GIGABYTE --> |x1024| TERABYTE
+
+TERABYTE --> |/1024| GIGABYTE
+GIGABYTE --> |/1024| MEGABYTE
+MEGABYTE --> |/1024| BYTE  
+```
+
+:::
+
+::: {.column width="70%"}
+
+<!-- Adicionar tabela de conversão de bits e bytes-->
+
+:::
+
+:::
+
 

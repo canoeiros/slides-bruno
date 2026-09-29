@@ -13,6 +13,92 @@ format:
     include-after-body: ../assets/global/breadcrumb.html
 ---
 
+# Introdução
+## Informações Gerais: 
+- Introduzido pelo matemático [George Boole](https://pt.wikipedia.org/wiki/George_Boole){preview-link="true"}
+- Conjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade
+
+<!-- Remover o breadcrumb  nesse slide -->
+
+
+::: {.fragment}
+::: {.callout-tip}
+
+## Exemplo:
+
+$$
+F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= and}} + \underbrace{ABC}_{\text{= and}}}_{\text{= or}}
+$$
+
+:::
+:::
+
+## Uso
+- Usamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)
+- Para nº maiores se usa o **Mapa de Karnaugh**
+
+## Razões
+- Reduzir:
+  - nº de portas
+  - Custo
+  - Calor nos componentes
+
+
+
+## Exemplo: Levar ou não o guarda-chuva
+
+```{mermaid}
+flowchart LR
+  A((A)) --> |Rain| OR
+  B((B)) --> |Rain Forecast| OR
+  C((C)) --> |Take car| NOT
+  OR --> |A+B| AND
+  NOT --> |~C| AND
+  AND --> |Take umbrella| Y((Y))
+```
+
+
+# Operações Básicas
+## Not
+- Operação complementar
+- Sempre inverte a entrada: $NOT(A) = \bar{A}$
+- $\bar{A} = A' = NOT(A)$
+
+::: fragment
+
+::: {.list-table}
+
+- - $A$
+  - $NOT(A)$
+- - 0
+  - 1
+- - 1
+  - 0
+
+:::
+
+:::
+
+## And
+- Saída alta apenas se ambas entradas altas
+
+::: fragment
+
+::: {.list-table}
+
+- - $A$
+  - $AND(A)$
+- - 0
+  - 0
+- - 0
+  - 1
+
+:::
+
+:::
+
+## Or
+
 # Propriedades <br> Álgebra Booleana
 ## Lei Distributiva: 
 $$
@@ -21,6 +107,18 @@ A \cdot (B + C) &= A \cdot B + A \cdot C \\
 A + (B \cdot C) &= (A+B) \cdot (A+C)
 \end{aligned}
 $$
+
+
+
+# Propriedades <br> Álgebra Booleana
+## Lei Distributiva: 
+$$
+\begin{aligned}
+A \cdot (B + C) &= A \cdot B + A \cdot C \\
+A + (B \cdot C) &= (A+B) \cdot (A+C)
+\end{aligned}
+$$
+
 
 
 ::: {.columns}
