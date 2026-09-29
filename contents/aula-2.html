@@ -226,7 +226,7 @@ F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= a
 <h2>Not</h2>
 <ul>
 <li class="fragment">Operação complementar</li>
-<li class="fragment">Sempre inverte a entrada: <span class="math inline">\(NOT(A) = \bar{A}\)</span></li>
+<li class="fragment">Sempre inverte a entrada</li>
 <li class="fragment"><span class="math inline">\(\bar{A} = A' = NOT(A)\)</span></li>
 </ul>
 <div class="fragment">
@@ -234,7 +234,7 @@ F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= a
 <thead>
 <tr class="header">
 <th><span class="math inline">\(A\)</span></th>
-<th><span class="math inline">\(NOT(A)\)</span></th>
+<th><span class="math inline">\(\bar{A}\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -260,16 +260,29 @@ F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= a
 <thead>
 <tr class="header">
 <th><span class="math inline">\(A\)</span></th>
-<th><span class="math inline">\(AND(A)\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(A \cdot B\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>0</td>
 <td>0</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
 <td>1</td>
 </tr>
 </tbody>
@@ -278,27 +291,49 @@ F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= a
 </section>
 <section id="or" class="slide level2">
 <h2>Or</h2>
+<ul>
+<li class="fragment">Saída alta apenas com qualquer entrada alta</li>
+</ul>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(A + B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section></section>
 <section>
-<section id="propriedades-álgebra-booleana" class="title-slide slide level1 center">
-<h1>Propriedades <br> Álgebra Booleana</h1>
+<section id="propriedades" class="title-slide slide level1 center">
+<h1>Propriedades</h1>
 
 </section>
 <section id="lei-distributiva" class="slide level2">
-<h2>Lei Distributiva:</h2>
-<p><span class="math display">\[
-\begin{aligned}
-A \cdot (B + C) &amp;= A \cdot B + A \cdot C \\
-A + (B \cdot C) &amp;= (A+B) \cdot (A+C)
-\end{aligned}
-\]</span></p>
-</section></section>
-<section>
-<section id="propriedades-álgebra-booleana-1" class="title-slide slide level1 center">
-<h1>Propriedades <br> Álgebra Booleana</h1>
-
-</section>
-<section id="lei-distributiva-1" class="slide level2">
 <h2>Lei Distributiva:</h2>
 <p><span class="math display">\[
 \begin{aligned}
@@ -446,7 +481,7 @@ A \cdot B &amp;= B \cdot A
 <section id="regras" class="slide level2">
 <h2>Regras</h2>
 <ul>
-<li class="fragment">Complemento: <span class="math inline">\((\bar{\bar{A}}) = A\)</span></li>
+<li class="fragment">Complemento: <span class="math inline">\((\overline{\overline{A}}) = A\)</span></li>
 <li class="fragment">AND:
 <ul>
 <li class="fragment"><span class="math inline">\(A \cdot A = A\)</span></li>

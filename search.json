@@ -123,32 +123,25 @@
     "href": "contents/aula-2.html#not",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Not",
-    "text": "Not\n\nOperação complementar\nSempre inverte a entrada: \\(NOT(A) = \\bar{A}\\)\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(NOT(A)\\)\n\n\n\n\n0\n1\n\n\n1\n0"
+    "text": "Not\n\nOperação complementar\nSempre inverte a entrada\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(\\bar{A}\\)\n\n\n\n\n0\n1\n\n\n1\n0"
   },
   {
     "objectID": "contents/aula-2.html#and",
     "href": "contents/aula-2.html#and",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "And",
-    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(AND(A)\\)\n\n\n\n\n0\n0\n\n\n0\n1"
+    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
   },
   {
     "objectID": "contents/aula-2.html#or",
     "href": "contents/aula-2.html#or",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Or",
-    "text": "Or"
+    "text": "Or\n\nSaída alta apenas com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
   },
   {
     "objectID": "contents/aula-2.html#lei-distributiva",
     "href": "contents/aula-2.html#lei-distributiva",
-    "title": "Aula 2 - Álgebra Booleana",
-    "section": "Lei Distributiva:",
-    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-distributiva-1",
-    "href": "contents/aula-2.html#lei-distributiva-1",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Lei Distributiva:",
     "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
@@ -179,7 +172,7 @@
     "href": "contents/aula-2.html#regras",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Regras",
-    "text": "Regras\n\nComplemento: \\((\\bar{\\bar{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
+    "text": "Regras\n\nComplemento: \\((\\overline{\\overline{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
   },
   {
     "objectID": "contents/aula-2.html#regras-1",
