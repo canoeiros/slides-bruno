@@ -61,7 +61,7 @@ flowchart LR
 # Operações Básicas
 ## Not
 - Operação complementar
-- Sempre inverte a entrada: $NOT(A) = \bar{A}$
+- Sempre inverte a entrada
 - $\bar{A} = A' = NOT(A)$
 
 ::: fragment
@@ -69,7 +69,7 @@ flowchart LR
 ::: {.list-table}
 
 - - $A$
-  - $NOT(A)$
+  - $\bar{A}$
 - - 0
   - 1
 - - 1
@@ -87,10 +87,19 @@ flowchart LR
 ::: {.list-table}
 
 - - $A$
-  - $AND(A)$
+  - $B$
+  - $A \cdot B$
 - - 0
   - 0
+  - 0
 - - 0
+  - 1
+  - 0
+- - 1
+  - 0
+  - 0
+- - 1
+  - 1
   - 1
 
 :::
@@ -98,8 +107,34 @@ flowchart LR
 :::
 
 ## Or
+- Saída alta apenas com qualquer entrada alta
 
-# Propriedades <br> Álgebra Booleana
+::: fragment
+
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $A + B$
+- - 0
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+- - 1
+  - 0
+  - 1
+- - 1
+  - 1
+  - 1
+
+:::
+
+:::
+
+
+# Propriedades
 ## Lei Distributiva: 
 $$
 \begin{aligned}
@@ -107,18 +142,6 @@ A \cdot (B + C) &= A \cdot B + A \cdot C \\
 A + (B \cdot C) &= (A+B) \cdot (A+C)
 \end{aligned}
 $$
-
-
-
-# Propriedades <br> Álgebra Booleana
-## Lei Distributiva: 
-$$
-\begin{aligned}
-A \cdot (B + C) &= A \cdot B + A \cdot C \\
-A + (B \cdot C) &= (A+B) \cdot (A+C)
-\end{aligned}
-$$
-
 
 
 ::: {.columns}
@@ -225,7 +248,7 @@ $$
 </video>
 
 ## Regras
-- Complemento: $(\bar{\bar{A}}) = A$
+- Complemento: $(\overline{\overline{A}}) = A$
 - AND:
   * $A \cdot A = A$
   * $A \cdot 0 = 0$
