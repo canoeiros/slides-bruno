@@ -127,6 +127,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -191,11 +194,137 @@ Adicionar minicircuito com um switch
 <h2>Bits e níveis</h2>
 <ul>
 <li class="fragment">Quanto mais bits, mais níveis podem ser representados</li>
+<li class="fragment">Representação com 2 switches:</li>
 </ul>
-<!-- Pulei alguns slides -->
-
-
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(SW_{1}\)</span></th>
+<th><span class="math inline">\(SW_{2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OFF</td>
+<td>OFF</td>
+</tr>
+<tr class="even">
+<td>OFF</td>
+<td>ON</td>
+</tr>
+<tr class="odd">
+<td>ON</td>
+<td>OFF</td>
+</tr>
+<tr class="even">
+<td>ON</td>
+<td>ON</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bits-e-níveis-1" class="slide level2">
+<h2>Bits e Níveis</h2>
+<ul>
+<li class="fragment">Generalizando: <span class="math inline">\(n = 2^{m}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(n :=\)</span> # de nívies</li>
+<li class="fragment"><span class="math inline">\(m :=\)</span> # de switches</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exemplo</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[
+m = 3 \to n = 2^{3} = 8 \text{ níveis}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
+<section>
+<section id="números-binários" class="title-slide slide level1 center">
+<h1>Números Binários</h1>
+
+</section>
+<section id="representação-dos-números" class="slide level2">
+<h2>Representação dos números</h2>
+<ul>
+<li class="fragment">Já conhecemos o sistema decimal:
+<ul>
+<li class="fragment"><span class="math inline">\((327)_{10} = 3 \cdot 10^{2} + 2 \cdot 10^{1} + 7 \cdot 10^{0}\)</span></li>
+</ul></li>
+<li class="fragment">No sistema binário:
+<ul>
+<li class="fragment">Um dígito é chamado de <em>bit</em>
+<ul>
+<li class="fragment"><span class="math inline">\((234)_{10} \text{ tem 3 dígitos}\)</span><br>
+</li>
+<li class="fragment"><span class="math inline">\((101)_{2} \text{ tem 3 bits}\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="representar-quantidades" class="slide level2">
+<h2>Representar quantidades</h2>
+<ul>
+<li class="fragment">Um número de 2 bits tem 4 possiveis representações:
+<ul>
+<li class="fragment"><span class="math inline">\(\uparrow \text{SW} = \uparrow \text{ bits} = \uparrow \text{ mais precisão}\)</span></li>
+<li class="fragment">Logo é possível representar 4 valores diferentes com a representação</li>
+</ul></li>
+</ul>
+</section>
+<section id="bits-e-bytes" class="slide level2">
+<h2>Bits e Bytes</h2>
+<ul>
+<li class="fragment"><p>Um conjunto de <span class="math inline">\(8\)</span> <em>bits</em> <span class="math inline">\((b)\)</span> forma um <em>byte</em> <span class="math inline">\((B)\)</span> <span class="math display">\[
+\begin{aligned}
+8 \text{ bits} = 1 \text{ byte} \\
+\end{aligned}
+\]</span></p></li>
+<li class="fragment"><p>É possível adicionar sufixos para a representação</p></li>
+</ul>
+</section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+BYTE --&gt; |x1024| MEGABYTE
+MEGABYTE --&gt; |x1024| GIGABYTE
+GIGABYTE --&gt; |x1024| TERABYTE
+
+TERABYTE --&gt; |/1024| GIGABYTE
+GIGABYTE --&gt; |/1024| MEGABYTE
+MEGABYTE --&gt; |/1024| BYTE  
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:70%;">
+<!-- Adicionar tabela de conversão de bits e bytes-->
+</div></div>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

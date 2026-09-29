@@ -127,6 +127,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -146,11 +149,156 @@ Dr.&nbsp;Bruno Pereira Santos <br> Caio Sereno Santos Rebouças
 
 </section>
 <section>
+<section id="introdução" class="title-slide slide level1 center">
+<h1>Introdução</h1>
+
+</section>
+<section id="informações-gerais" class="slide level2">
+<h2>Informações Gerais:</h2>
+<ul>
+<li class="fragment">Introduzido pelo matemático <a href="https://pt.wikipedia.org/wiki/George_Boole" data-preview-link="true">George Boole</a></li>
+<li class="fragment">Conjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade</li>
+</ul>
+<!-- Remover o breadcrumb  nesse slide -->
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exemplo:</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[
+F = \underbrace{\underbrace{\bar{A}B}_{\text{= and}}+ \underbrace{BC}_{\text{= and}} + \underbrace{ABC}_{\text{= and}}}_{\text{= or}}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="uso" class="slide level2">
+<h2>Uso</h2>
+<ul>
+<li class="fragment">Usamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)</li>
+<li class="fragment">Para nº maiores se usa o <strong>Mapa de Karnaugh</strong></li>
+</ul>
+</section>
+<section id="razões" class="slide level2">
+<h2>Razões</h2>
+<ul>
+<li class="fragment">Reduzir:
+<ul>
+<li class="fragment">nº de portas</li>
+<li class="fragment">Custo</li>
+<li class="fragment">Calor nos componentes</li>
+</ul></li>
+</ul>
+</section>
+<section id="exemplo-levar-ou-não-o-guarda-chuva" class="slide level2">
+<h2>Exemplo: Levar ou não o guarda-chuva</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A((A)) --&gt; |Rain| OR
+  B((B)) --&gt; |Rain Forecast| OR
+  C((C)) --&gt; |Take car| NOT
+  OR --&gt; |A+B| AND
+  NOT --&gt; |~C| AND
+  AND --&gt; |Take umbrella| Y((Y))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="operações-básicas" class="title-slide slide level1 center">
+<h1>Operações Básicas</h1>
+
+</section>
+<section id="not" class="slide level2">
+<h2>Not</h2>
+<ul>
+<li class="fragment">Operação complementar</li>
+<li class="fragment">Sempre inverte a entrada: <span class="math inline">\(NOT(A) = \bar{A}\)</span></li>
+<li class="fragment"><span class="math inline">\(\bar{A} = A' = NOT(A)\)</span></li>
+</ul>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(NOT(A)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="and" class="slide level2">
+<h2>And</h2>
+<ul>
+<li class="fragment">Saída alta apenas se ambas entradas altas</li>
+</ul>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(AND(A)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="or" class="slide level2">
+<h2>Or</h2>
+</section></section>
+<section>
 <section id="propriedades-álgebra-booleana" class="title-slide slide level1 center">
 <h1>Propriedades <br> Álgebra Booleana</h1>
 
 </section>
 <section id="lei-distributiva" class="slide level2">
+<h2>Lei Distributiva:</h2>
+<p><span class="math display">\[
+\begin{aligned}
+A \cdot (B + C) &amp;= A \cdot B + A \cdot C \\
+A + (B \cdot C) &amp;= (A+B) \cdot (A+C)
+\end{aligned}
+\]</span></p>
+</section></section>
+<section>
+<section id="propriedades-álgebra-booleana-1" class="title-slide slide level1 center">
+<h1>Propriedades <br> Álgebra Booleana</h1>
+
+</section>
+<section id="lei-distributiva-1" class="slide level2">
 <h2>Lei Distributiva:</h2>
 <p><span class="math display">\[
 \begin{aligned}

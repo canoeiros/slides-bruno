@@ -91,8 +91,64 @@
     "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   },
   {
+    "objectID": "contents/aula-2.html#informações-gerais",
+    "href": "contents/aula-2.html#informações-gerais",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Informações Gerais:",
+    "text": "Informações Gerais:\n\nIntroduzido pelo matemático George Boole\nConjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade\n\n\n\n\n\n\n\n\n\nExemplo:\n\n\n\\[\nF = \\underbrace{\\underbrace{\\bar{A}B}_{\\text{= and}}+ \\underbrace{BC}_{\\text{= and}} + \\underbrace{ABC}_{\\text{= and}}}_{\\text{= or}}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#uso",
+    "href": "contents/aula-2.html#uso",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Uso",
+    "text": "Uso\n\nUsamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)\nPara nº maiores se usa o Mapa de Karnaugh"
+  },
+  {
+    "objectID": "contents/aula-2.html#razões",
+    "href": "contents/aula-2.html#razões",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Razões",
+    "text": "Razões\n\nReduzir:\n\nnº de portas\nCusto\nCalor nos componentes"
+  },
+  {
+    "objectID": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "href": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Exemplo: Levar ou não o guarda-chuva",
+    "text": "Exemplo: Levar ou não o guarda-chuva\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; |Rain| OR\n  B((B)) --&gt; |Rain Forecast| OR\n  C((C)) --&gt; |Take car| NOT\n  OR --&gt; |A+B| AND\n  NOT --&gt; |~C| AND\n  AND --&gt; |Take umbrella| Y((Y))"
+  },
+  {
+    "objectID": "contents/aula-2.html#not",
+    "href": "contents/aula-2.html#not",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Not",
+    "text": "Not\n\nOperação complementar\nSempre inverte a entrada: \\(NOT(A) = \\bar{A}\\)\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(NOT(A)\\)\n\n\n\n\n0\n1\n\n\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-2.html#and",
+    "href": "contents/aula-2.html#and",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "And",
+    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(AND(A)\\)\n\n\n\n\n0\n0\n\n\n0\n1"
+  },
+  {
+    "objectID": "contents/aula-2.html#or",
+    "href": "contents/aula-2.html#or",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Or",
+    "text": "Or"
+  },
+  {
     "objectID": "contents/aula-2.html#lei-distributiva",
     "href": "contents/aula-2.html#lei-distributiva",
+    "title": "Aula 2 - Álgebra Booleana",
+    "section": "Lei Distributiva:",
+    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#lei-distributiva-1",
+    "href": "contents/aula-2.html#lei-distributiva-1",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Lei Distributiva:",
     "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
@@ -165,6 +221,34 @@
     "href": "contents/aula-1.html#bits-e-níveis",
     "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
     "section": "Bits e níveis",
-    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados"
+    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-níveis-1",
+    "href": "contents/aula-1.html#bits-e-níveis-1",
+    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "section": "Bits e Níveis",
+    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-1.html#representação-dos-números",
+    "href": "contents/aula-1.html#representação-dos-números",
+    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "section": "Representação dos números",
+    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
+  },
+  {
+    "objectID": "contents/aula-1.html#representar-quantidades",
+    "href": "contents/aula-1.html#representar-quantidades",
+    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "section": "Representar quantidades",
+    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-bytes",
+    "href": "contents/aula-1.html#bits-e-bytes",
+    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "section": "Bits e Bytes",
+    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
   }
 ]
