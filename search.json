@@ -186,61 +186,61 @@
     "href": "index.html",
     "title": "MATA38 - Projeto de Circuitos Lógicos",
     "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\nMATA38 - Projeto de Circutios Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Portas Lógicas e Álgebra Booleana\n\n\nMATA38 - Projeto de Circuitos Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\nMATA38 - Projeto de Circuitos Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\nNo matching items"
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\nMATA38 - Projeto de Circutios Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Números Binários\n\n\nMATA38 - Projeto de Circuitos Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\nMATA38 - Projeto de Circuitos Lógicos\n\n\n\nDr. Bruno Pereira Santos  Caio Sereno Santos Rebouças\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
     "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Vantagens dos sistemas digitais",
     "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
   },
   {
     "objectID": "contents/aula-1.html#níveis-e-precisão",
     "href": "contents/aula-1.html#níveis-e-precisão",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Níveis e Precisão",
     "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
   },
   {
     "objectID": "contents/aula-1.html#switchbits",
     "href": "contents/aula-1.html#switchbits",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Switch/Bits",
     "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
   },
   {
     "objectID": "contents/aula-1.html#bits-e-níveis",
     "href": "contents/aula-1.html#bits-e-níveis",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Bits e níveis",
     "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
   },
   {
     "objectID": "contents/aula-1.html#bits-e-níveis-1",
     "href": "contents/aula-1.html#bits-e-níveis-1",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Bits e Níveis",
     "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
   },
   {
     "objectID": "contents/aula-1.html#representação-dos-números",
     "href": "contents/aula-1.html#representação-dos-números",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Representação dos números",
     "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
   },
   {
     "objectID": "contents/aula-1.html#representar-quantidades",
     "href": "contents/aula-1.html#representar-quantidades",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Representar quantidades",
     "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
   },
   {
     "objectID": "contents/aula-1.html#bits-e-bytes",
     "href": "contents/aula-1.html#bits-e-bytes",
-    "title": "Aula 1 - Portas Lógicas e Álgebra Booleana",
+    "title": "Aula 1 - Números Binários",
     "section": "Bits e Bytes",
     "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
   }
