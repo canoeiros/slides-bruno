@@ -4,6 +4,9 @@ originais/
 # Pasta de saída gerada pelo Quarto (publicada via GitHub Actions)
 output/
 
+# Prints de acess
+assets/aula-*/sources/
+
 # Arquivos temporários e builds locais do Quarto
 .quarto/
 *_files/
@@ -24,6 +27,9 @@ __pycache__/
 *.pyo
 *.pyd
 .pytest_cache/
+
+# Variáveis de ambiente (chaves de API)
+.env
 
 # Sistema operacional / IDE
 .DS_Store
