@@ -1,13 +1,14 @@
 ---
 title: "MATA38 - Projeto de Circuitos Lógicos"
 subtitle: "Slides interativos das aulas"
-author: "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
+author: ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
+lang: "pt-BR"
 listing:
   contents: 
     - "contents/*.qmd"
   type: grid
   sort: "title"
-  fields: [title, subtitle, author]
+  fields: [title, author]
   grid-columns: 2
   image-height: "140px"
 ---
