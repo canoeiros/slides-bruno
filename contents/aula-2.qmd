@@ -1,7 +1,7 @@
 ---
 title: "Aula 2 - Álgebra Booleana"
 author: ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
-subtitle: "MATA38 - Projeto de Circuitos Lógicos< br> <a href='../../..'>Página Inicial</a>"
+subtitle: "MATA38 - Projeto de Circuitos Lógicos <br> <a href='../../..'>Página Inicial</a>"
 lang: "pt-BR"
 format: 
   revealjs:
@@ -108,7 +108,7 @@ flowchart LR
 :::
 
 ## Or
-- Saída alta apenas com qualquer entrada alta
+- Saída alta com qualquer entrada alta
 
 ::: fragment
 

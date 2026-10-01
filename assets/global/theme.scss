@@ -273,8 +273,10 @@ $border-radius: 8px;
   margin-top: 0.5em;
 }
 
-.quarto-title-block .quarto-title-authors {
-  display: none;
+.reveal .quarto-title-block .quarto-title-authors {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 // ---- Numeração de slides ---------------------------------------------------
