@@ -137,7 +137,7 @@
     "href": "contents/aula-2.html#or",
     "title": "Aula 2 - Álgebra Booleana",
     "section": "Or",
-    "text": "Or\n\nSaída alta apenas com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
+    "text": "Or\n\nSaída alta com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
   },
   {
     "objectID": "contents/aula-2.html#lei-distributiva",
