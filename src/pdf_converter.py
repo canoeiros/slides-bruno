@@ -2,9 +2,9 @@ import sys
 from pathlib import Path
 from src import config
 
-def load_convert_prompt(slug: str) -> str:
+def ORIGINAIS_DIR(slug: str) -> str:
     """Carrega o prompt de conversão e substitui o placeholder {slug}."""
-    prompt_file = config.PROMPTS_DIR / "convert.md"
+    prompt_file = config.PROMPTS_DIR / "convert.txt"
     if not prompt_file.exists():
         print(f"❌ Erro: Prompt de conversão não encontrado: {prompt_file}")
         sys.exit(1)

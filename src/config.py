@@ -10,8 +10,8 @@ OUTPUT_DIR = ROOT_DIR / "output"
 ORIGINAIS_DIR = ROOT_DIR / "originais"
 PROMPTS_DIR = ROOT_DIR / "prompts"
 
-DEFAULT_AUTHOR = "Dr. Bruno Pereira Santos <br> Caio Sereno Santos Rebouças"
-DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos"
+DEFAULT_AUTHOR = ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
+DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
 
 # ==============================================================================
 # TEMPLATES
@@ -19,7 +19,8 @@ DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos"
 SLIDE_TEMPLATE = """---
 title: "{title}"
 subtitle: "{subtitle}"
-author: "{author}"
+author: {author}
+lang: "pt-BR"
 format: 
   revealjs:
     transition: fade
@@ -29,6 +30,6 @@ format:
     navigation-mode: linear
     controls-layout: bottom-right
     include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
 ---
-
 """
