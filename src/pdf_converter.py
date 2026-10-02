@@ -2,16 +2,26 @@ import sys
 from pathlib import Path
 from src import config
 
-def ORIGINAIS_DIR(slug: str) -> str:
-    """Carrega o prompt de conversão e substitui o placeholder {slug}."""
-    prompt_file = config.PROMPTS_DIR / "convert.txt"
-    if not prompt_file.exists():
-        print(f"❌ Erro: Prompt de conversão não encontrado: {prompt_file}")
+def load_convert_prompt(slug: str, prompt_file: str | Path = "convert.txt") -> str:
+    """Carrega o prompt de conversão (padrão: prompts/convert.txt) e substitui o placeholder {slug}."""
+    file_path = Path(prompt_file)
+    if not file_path.exists():
+        file_path = config.PROMPTS_DIR / prompt_file
+    if not file_path.exists():
+        file_path = config.ROOT_DIR / prompt_file
+    if not file_path.exists():
+        file_path = config.PROMPTS_DIR / "convert.txt"
+
+    if not file_path.exists():
+        print(f"❌ Erro: Prompt de conversão não encontrado: {file_path}")
         sys.exit(1)
 
-    prompt = prompt_file.read_text(encoding="utf-8")
+    prompt = file_path.read_text(encoding="utf-8")
     prompt = prompt.replace("{slug}", slug)
     return prompt
+
+# Alias para compatibilidade
+ORIGINAIS_DIR = load_convert_prompt
 
 def render_pdf_pages(pdf_path: Path, output_dir: Path, scale: float = 2.0) -> list[Path]:
     """Renderiza cada página do PDF como imagem PNG de alta resolução."""

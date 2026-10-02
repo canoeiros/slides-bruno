@@ -49,7 +49,7 @@ def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = No
     aula_assets.mkdir(parents=True, exist_ok=True)
     config.CONTENTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    final_title = title if title else f"Aula - {slug.replace('-', ' ').title()}"
+    final_title = utils.format_lesson_title(slug, title=title)
     final_subtitle = subtitle if subtitle else config.DEFAULT_SUBTITLE
     final_author = author if author else config.DEFAULT_AUTHOR
 
@@ -69,9 +69,26 @@ def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = No
     print(f"\n💡 Para editar e visualizar em tempo real:")
     print(f"   python dev.py preview {slug}")
 
-def cmd_convert(pdf_path: str, force: bool = False, model: str = "gemini-2.5-flash"):
+def cmd_convert(
+    pdf_path: str,
+    force: bool = False,
+    model: str = "gemini-2.5-flash",
+    title: str = None,
+    prompt_file: str = "convert.txt",
+):
     """Converte um PDF do Notability em slide .qmd usando modelo multimodal Gemini."""
     
+    # Tratamento defensivo caso prompt_file seja passado na posição de force
+    if isinstance(force, str):
+        prompt_file = force
+        force = False
+
+    # Validação caso o usuário passe diretamente o arquivo de prompt em vez do PDF
+    if pdf_path.endswith(".txt") or Path(pdf_path).name == "convert.txt":
+        print(f"❌ '{pdf_path}' é um arquivo de prompt, não um PDF.")
+        print("   Uso: python dev.py convert <arquivo.pdf> [convert.txt]")
+        sys.exit(1)
+
     # Resolver o caminho do PDF
     pdf = Path(pdf_path)
     if not pdf.exists():
@@ -116,8 +133,8 @@ def cmd_convert(pdf_path: str, force: bool = False, model: str = "gemini-2.5-fla
     sources_dir = aula_assets / "sources"
     image_paths = pdf_converter.render_pdf_pages(pdf, sources_dir)
 
-    # 3. Carregar e montar o prompt
-    prompt = pdf_converter.load_convert_prompt(slug)
+    # 3. Carregar e montar o prompt a partir de convert.txt ou arquivo customizado
+    prompt = pdf_converter.load_convert_prompt(slug, prompt_file=prompt_file)
 
     # Adicionar exemplo de referência
     example = pdf_converter.load_example_slide()
@@ -129,15 +146,12 @@ def cmd_convert(pdf_path: str, force: bool = False, model: str = "gemini-2.5-fla
     slide_content = utils.clean_model_output(raw_output)
 
     # 5. Determinar o título da aula
-    title = config.AULA_TITLES.get(slug)
-    if not title:
-        # Extrair do slug
-        num = slug.replace("aula-", "").replace("-", ".")
-        title = f"Aula {num}"
-
-    # Montar número legível para o título
-    aula_num = slug.replace("aula-", "")
-    final_title = f"Aula {aula_num} - {title}" if title != f"Aula {aula_num}" else title
+    final_title = utils.format_lesson_title(slug, title=title)
+    clean_num = slug.lower().replace("aula-", "").replace("aula_", "").replace("-", ".")
+    if final_title == f"Aula {clean_num}" and not title:
+        extracted = utils.extract_title_from_content(slide_content)
+        if extracted:
+            final_title = utils.format_lesson_title(slug, title=extracted)
 
     # 6. Montar o arquivo .qmd com cabeçalho YAML
     full_content = config.SLIDE_TEMPLATE.format(
@@ -161,7 +175,11 @@ def cmd_convert(pdf_path: str, force: bool = False, model: str = "gemini-2.5-fla
     print(f"   2. Visualize com: python dev.py preview {slug}")
     print(f"   3. Ajuste manualmente se necessário (fórmulas, diagramas)")
 
-def cmd_convert_all(force: bool = False, model: str = "gemini-2.5-flash"):
+def cmd_convert_all(
+    force: bool = False,
+    model: str = "gemini-2.5-flash",
+    prompt_file: str = "convert.txt",
+):
     """Converte todos os PDFs em originais/ que ainda não possuem .qmd correspondente."""
     pdfs = sorted(config.ORIGINAIS_DIR.glob("*.pdf"))
     if not pdfs:
@@ -190,7 +208,7 @@ def cmd_convert_all(force: bool = False, model: str = "gemini-2.5-flash"):
         print(f"\n[{i}/{len(to_convert)}] {pdf.name}")
         print("-" * 40)
         try:
-            cmd_convert(str(pdf), force=True, model=model)
+            cmd_convert(str(pdf), force=True, model=model, prompt_file=prompt_file)
         except Exception as e:
             print(f"❌ Erro ao converter {pdf.name}: {e}")
             continue

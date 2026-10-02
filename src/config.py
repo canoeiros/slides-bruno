@@ -13,6 +13,18 @@ PROMPTS_DIR = ROOT_DIR / "prompts"
 DEFAULT_AUTHOR = ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
 DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
 
+# Títulos pré-definidos das aulas
+AULA_TITLES = {
+    "aula-0": "Introdução",
+    "aula-1": "Números Binários",
+    "aula-2": "Álgebra Booleana",
+    "aula-3": "Soma de Produtos",
+    "aula-4": "Portas Lógicas",
+    "aula-5": "Portas Lógicas II",
+    "aula-6": "Mapa de Karnaugh",
+    "aula-6-1": "Display de 7 Segmentos",
+}
+
 # ==============================================================================
 # TEMPLATES
 # ==============================================================================

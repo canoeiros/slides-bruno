@@ -15,6 +15,66 @@ def pdf_name_to_slug(pdf_name: str) -> str:
     """Converte nome de PDF para slug (ex: 'Aula-3.pdf' -> 'aula-3')."""
     return pdf_name.replace(".pdf", "").lower()
 
+def format_lesson_title(slug: str, title: str | None = None) -> str:
+    """
+    Gera o título padronizado da aula (ex: 'Aula 3 - Soma de Produtos' ou 'Aula 6.1 - Display de 7 Segmentos').
+    """
+    # Determina o número da aula formatado (ex: 'aula-3' -> '3', 'aula-6-1' -> '6.1')
+    clean_num = slug.lower().replace("aula-", "").replace("aula_", "")
+    aula_num = clean_num.replace("-", ".")
+    prefix = f"Aula {aula_num}"
+
+    # Se nenhum título foi fornecido, consulta config.AULA_TITLES
+    if not title:
+        aula_titles = getattr(config, "AULA_TITLES", {})
+        title = aula_titles.get(slug) or aula_titles.get(slug.lower())
+
+    if not title:
+        return prefix
+
+    title = title.strip()
+
+    # Se já estiver formatado corretamente como "Aula X - Título"
+    pattern_correct = rf"^aula\s+{re.escape(aula_num)}\s*[-–—]\s*(.+)$"
+    m = re.match(pattern_correct, title, flags=re.IGNORECASE)
+    if m:
+        return f"{prefix} - {m.group(1).strip()}"
+
+    # Se estiver com hífen no número (ex: "Aula 6-1 - Título"), ajusta para ponto "Aula 6.1 - Título"
+    pattern_hyphen = rf"^aula\s+{re.escape(clean_num)}\s*[-–—]\s*(.+)$"
+    m_hyphen = re.match(pattern_hyphen, title, flags=re.IGNORECASE)
+    if m_hyphen:
+        return f"{prefix} - {m_hyphen.group(1).strip()}"
+
+    # Se o título for apenas o prefixo ("Aula 3" ou "Aula 6.1" ou "Aula 6-1")
+    if title.lower() in (prefix.lower(), f"aula {clean_num}".lower()):
+        return prefix
+
+    # Se começar com "Aula - " ou "Aula: "
+    pattern_generic = r"^aula\s*[-–—:]\s*(.+)$"
+    m_gen = re.match(pattern_generic, title, flags=re.IGNORECASE)
+    if m_gen:
+        cleaned = m_gen.group(1).strip()
+        cleaned = re.sub(rf"^aula\s*{re.escape(clean_num)}\s*", "", cleaned, flags=re.IGNORECASE).strip()
+        cleaned = re.sub(rf"^aula\s*{re.escape(aula_num)}\s*", "", cleaned, flags=re.IGNORECASE).strip()
+        if cleaned:
+            return f"{prefix} - {cleaned}"
+        return prefix
+
+    return f"{prefix} - {title}"
+
+def extract_title_from_content(content: str) -> str | None:
+    """Tenta extrair o título do primeiro cabeçalho de seção (# ou ##) do conteúdo gerado."""
+    for line in content.splitlines():
+        line = line.strip()
+        if line.startswith("# ") and not line.startswith("## "):
+            heading = line.lstrip("#").strip()
+            heading = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", heading)
+            heading = heading.replace("**", "").replace("*", "").strip()
+            if heading:
+                return heading
+    return None
+
 def check_quarto():
     """Verifica se o binário do Quarto está instalado e disponível no PATH."""
     if not shutil.which("quarto"):
