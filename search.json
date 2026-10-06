@@ -1,94 +1,164 @@
 [
   {
-    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "title": "Aula 0 - Introdução",
-    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
-    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
+    "objectID": "contents/aula-3.html#total-de-combinações",
+    "href": "contents/aula-3.html#total-de-combinações",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Total de Combinações",
+    "text": "Total de Combinações\n\nO número total de combinações para \\(n\\) variáveis é \\(2^n\\). Para 3 variáveis (A, B, C), temos \\(2^3 = 8\\) combinações."
   },
   {
-    "objectID": "contents/aula-0.html#exemplos",
-    "href": "contents/aula-0.html#exemplos",
-    "title": "Aula 0 - Introdução",
-    "section": "Exemplos:",
-    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
+    "objectID": "contents/aula-3.html#total-de-combinações-1",
+    "href": "contents/aula-3.html#total-de-combinações-1",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Total de Combinações",
+    "text": "Total de Combinações\n\n\n\n\\(m_x\\)\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\n\n\n\n\n\\(m_0\\)\n0\n0\n0\n0\n\n\n\\(m_1\\)\n0\n0\n1\n0\n\n\n\\(m_2\\)\n0\n1\n0\n1\n\n\n\\(m_3\\)\n0\n1\n1\n0\n\n\n\\(m_4\\)\n1\n0\n0\n1\n\n\n\\(m_5\\)\n1\n0\n1\n1\n\n\n\\(m_6\\)\n1\n1\n0\n1\n\n\n\\(m_7\\)\n1\n1\n1\n1"
   },
   {
-    "objectID": "contents/aula-0.html#para-o-nosso-curso",
-    "href": "contents/aula-0.html#para-o-nosso-curso",
-    "title": "Aula 0 - Introdução",
-    "section": "Para o nosso curso:",
-    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
+    "objectID": "contents/aula-3.html#formas-de-expressão",
+    "href": "contents/aula-3.html#formas-de-expressão",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Formas de Expressão",
+    "text": "Formas de Expressão\nPodemos expressar uma função \\(F\\) de duas maneiras: - 1ª FORMA: SOP (Soma de Produtos) - 2ª FORMA: POS (Produtos de Soma)"
   },
   {
-    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "title": "Aula 0 - Introdução",
-    "section": "Qual a diferença entre os relógios?",
-    "text": "Qual a diferença entre os relógios?"
+    "objectID": "contents/aula-3.html#sop-soma-de-produtos",
+    "href": "contents/aula-3.html#sop-soma-de-produtos",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "SOP: Soma de Produtos",
+    "text": "SOP: Soma de Produtos\n\nÉ escrita quando a função está em ALTO (1).\nPara a tabela anterior, as linhas onde \\(F=1\\) são: \\(m_2, m_4, m_5, m_6, m_7\\)."
   },
   {
-    "objectID": "contents/aula-0.html#sinais-analógicos",
-    "href": "contents/aula-0.html#sinais-analógicos",
-    "title": "Aula 0 - Introdução",
-    "section": "Sinais Analógicos",
-    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
+    "objectID": "contents/aula-3.html#section",
+    "href": "contents/aula-3.html#section",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "",
+    "text": "\\(m_x\\)\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\n\n\n\n\n\\(m_0\\)\n0\n0\n0\n0\n\n\n\\(m_1\\)\n0\n0\n1\n0\n\n\n\\(m_2\\)\n0\n1\n0\n1\n\n\n\\(m_3\\)\n0\n1\n1\n0\n\n\n\\(m_4\\)\n1\n0\n0\n1\n\n\n\\(m_5\\)\n1\n0\n1\n1\n\n\n\\(m_6\\)\n1\n1\n0\n1\n\n\n\\(m_7\\)\n1\n1\n1\n1"
   },
   {
-    "objectID": "contents/aula-0.html#visualização-analógica",
-    "href": "contents/aula-0.html#visualização-analógica",
-    "title": "Aula 0 - Introdução",
-    "section": "Visualização Analógica",
-    "text": "Visualização Analógica"
+    "objectID": "contents/aula-3.html#sop-form",
+    "href": "contents/aula-3.html#sop-form",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "SOP-Form",
+    "text": "SOP-Form\n\nForma Padrão/Canônica: Derivada diretamente da tabela-verdade, incluindo todos os minterms onde \\(F=1\\). \\[\nF = \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC\n\\]"
   },
   {
-    "objectID": "contents/aula-0.html#sinais-digitais",
-    "href": "contents/aula-0.html#sinais-digitais",
-    "title": "Aula 0 - Introdução",
-    "section": "Sinais Digitais",
-    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+    "objectID": "contents/aula-3.html#literal",
+    "href": "contents/aula-3.html#literal",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Literal",
+    "text": "Literal\n\nÉ uma variável Booleana, incluindo seu complemento.\nEx: \\(B\\) é um literal.\n\\(\\bar{B}\\) também é um literal."
   },
   {
-    "objectID": "contents/aula-0.html#visualização-digital",
-    "href": "contents/aula-0.html#visualização-digital",
-    "title": "Aula 0 - Introdução",
-    "section": "Visualização Digital",
-    "text": "Visualização Digital"
+    "objectID": "contents/aula-3.html#minterm-mintermo",
+    "href": "contents/aula-3.html#minterm-mintermo",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Minterm (mintermo)",
+    "text": "Minterm (mintermo)\n\nÉ um produto de literais.\nCada variável aparece exatamente uma vez, em sua forma normal ou complementada, mas não ambas.\nEx: \\(A \\cdot B\\), \\(\\bar{A} \\cdot B\\), \\(A \\cdot \\bar{B}\\), etc.\nCada termo individual de uma função na forma SOP é chamado de minterm."
   },
   {
-    "objectID": "contents/aula-0.html#adc",
-    "href": "contents/aula-0.html#adc",
-    "title": "Aula 0 - Introdução",
-    "section": "ADC",
-    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
+    "objectID": "contents/aula-3.html#minterms-a-partir-dos-valores-das-variáveis",
+    "href": "contents/aula-3.html#minterms-a-partir-dos-valores-das-variáveis",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Minterms a partir dos valores das variáveis:",
+    "text": "Minterms a partir dos valores das variáveis:\n\nSe o valor da variável é 1: “pegamos” a variável em sua forma normal.\nSe o valor da variável é 0: “pegamos” o complemento da variável."
   },
   {
-    "objectID": "contents/aula-0.html#visualização-adc",
-    "href": "contents/aula-0.html#visualização-adc",
-    "title": "Aula 0 - Introdução",
-    "section": "Visualização ADC",
-    "text": "Visualização ADC"
+    "objectID": "contents/aula-3.html#maxterm-maxtermo",
+    "href": "contents/aula-3.html#maxterm-maxtermo",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Maxterm (maxtermo)",
+    "text": "Maxterm (maxtermo)\n\nÉ uma soma de literais.\nEx: \\(A+B\\), \\(\\bar{A}+B\\), \\(A+\\bar{B}\\), etc.\nÉ o oposto do minterm.\n\n\nMaxterms a partir dos valores das variáveis:\n\nSe o valor da variável é 1: “pegamos” o complemento da variável.\nSe o valor da variável é 0: “pegamos” a variável em sua forma normal."
   },
   {
-    "objectID": "contents/aula-0.html#dac",
-    "href": "contents/aula-0.html#dac",
-    "title": "Aula 0 - Introdução",
-    "section": "DAC",
-    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+    "objectID": "contents/aula-3.html#tabela-de-minterms-e-maxterms-2-variáveis",
+    "href": "contents/aula-3.html#tabela-de-minterms-e-maxterms-2-variáveis",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Tabela de Minterms e Maxterms (2 variáveis)",
+    "text": "Tabela de Minterms e Maxterms (2 variáveis)\n\n\n\nVARS\nMINTERM (SOP)\nMAXTERM (POS)\n\n\n\n\n\\(A B\\)\n\n\n\n\n0 0\n\\(\\bar{A}\\bar{B} \\rightarrow m_0\\)\n\\(A+B \\rightarrow M_0\\)\n\n\n0 1\n\\(\\bar{A}B \\rightarrow m_1\\)\n\\(A+\\bar{B} \\rightarrow M_1\\)\n\n\n1 0\n\\(A\\bar{B} \\rightarrow m_2\\)\n\\(\\bar{A}+B \\rightarrow M_2\\)\n\n\n1 1\n\\(AB \\rightarrow m_3\\)\n\\(\\bar{A}+\\bar{B} \\rightarrow M_3\\)"
   },
   {
-    "objectID": "contents/aula-0.html#visualização-dac",
-    "href": "contents/aula-0.html#visualização-dac",
-    "title": "Aula 0 - Introdução",
-    "section": "Visualização DAC",
-    "text": "Visualização DAC"
+    "objectID": "contents/aula-3.html#exemplo-de-minimização-sop",
+    "href": "contents/aula-3.html#exemplo-de-minimização-sop",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Exemplo de Minimização SOP",
+    "text": "Exemplo de Minimização SOP\nMinimizando a expressão: \\[\nF = \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC\n\\]"
   },
   {
-    "objectID": "contents/aula-0.html#pergunta",
-    "href": "contents/aula-0.html#pergunta",
-    "title": "Aula 0 - Introdução",
-    "section": "Pergunta:",
-    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
+    "objectID": "contents/aula-3.html#section-1",
+    "href": "contents/aula-3.html#section-1",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "",
+    "text": "\\[\n\\begin{aligned}\nF &= \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC \\\\\nF &= \\bar{A}B\\bar{C} + A\\bar{B}(\\bar{C}+C) + AB(\\bar{C}+C) \\\\\nF &= \\bar{A}B\\bar{C} + A\\bar{B}(1) + AB(1) \\\\\nF &= \\bar{A}B\\bar{C} + A\\bar{B} + AB \\\\\nF &= \\bar{A}B\\bar{C} + A(\\bar{B}+B) \\\\\nF &= \\bar{A}B\\bar{C} + A(1) \\\\\nF &= \\bar{A}B\\bar{C} + A \\\\\nF &= A + \\bar{A}B\\bar{C} \\\\\nF &= A + B\\bar{C} \\quad \\text{(Usando a identidade } X + \\bar{X}Y = X+Y \\text{)}\n\\end{aligned}\n\\]\n\nA forma minimal SOP é: \\[\nF = A + B\\bar{C}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#desafio",
+    "href": "contents/aula-3.html#desafio",
+    "title": "Aula 3 - Soma de Produtos",
+    "section": "Desafio:",
+    "text": "Desafio:\n\nO desafio é partir da forma SOP minimal para a canônica."
+  },
+  {
+    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "title": "Aula 1 - Números Binários",
+    "section": "Vantagens dos sistemas digitais",
+    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
+  },
+  {
+    "objectID": "contents/aula-1.html#níveis-e-precisão",
+    "href": "contents/aula-1.html#níveis-e-precisão",
+    "title": "Aula 1 - Números Binários",
+    "section": "Níveis e Precisão",
+    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
+  },
+  {
+    "objectID": "contents/aula-1.html#switchbits",
+    "href": "contents/aula-1.html#switchbits",
+    "title": "Aula 1 - Números Binários",
+    "section": "Switch/Bits",
+    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-níveis",
+    "href": "contents/aula-1.html#bits-e-níveis",
+    "title": "Aula 1 - Números Binários",
+    "section": "Bits e níveis",
+    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-níveis-1",
+    "href": "contents/aula-1.html#bits-e-níveis-1",
+    "title": "Aula 1 - Números Binários",
+    "section": "Bits e Níveis",
+    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-1.html#representação-dos-números",
+    "href": "contents/aula-1.html#representação-dos-números",
+    "title": "Aula 1 - Números Binários",
+    "section": "Representação dos números",
+    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
+  },
+  {
+    "objectID": "contents/aula-1.html#representar-quantidades",
+    "href": "contents/aula-1.html#representar-quantidades",
+    "title": "Aula 1 - Números Binários",
+    "section": "Representar quantidades",
+    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-bytes",
+    "href": "contents/aula-1.html#bits-e-bytes",
+    "title": "Aula 1 - Números Binários",
+    "section": "Bits e Bytes",
+    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3 - Soma de Produtos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
     "objectID": "contents/aula-2.html#informações-gerais",
@@ -182,66 +252,94 @@
     "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MATA38 - Projeto de Circuitos Lógicos",
-    "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
+    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "title": "Aula 0 - Introdução",
+    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
+    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
   },
   {
-    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "title": "Aula 1 - Números Binários",
-    "section": "Vantagens dos sistemas digitais",
-    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
+    "objectID": "contents/aula-0.html#exemplos",
+    "href": "contents/aula-0.html#exemplos",
+    "title": "Aula 0 - Introdução",
+    "section": "Exemplos:",
+    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
   },
   {
-    "objectID": "contents/aula-1.html#níveis-e-precisão",
-    "href": "contents/aula-1.html#níveis-e-precisão",
-    "title": "Aula 1 - Números Binários",
-    "section": "Níveis e Precisão",
-    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
+    "objectID": "contents/aula-0.html#para-o-nosso-curso",
+    "href": "contents/aula-0.html#para-o-nosso-curso",
+    "title": "Aula 0 - Introdução",
+    "section": "Para o nosso curso:",
+    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
   },
   {
-    "objectID": "contents/aula-1.html#switchbits",
-    "href": "contents/aula-1.html#switchbits",
-    "title": "Aula 1 - Números Binários",
-    "section": "Switch/Bits",
-    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
+    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "title": "Aula 0 - Introdução",
+    "section": "Qual a diferença entre os relógios?",
+    "text": "Qual a diferença entre os relógios?"
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-níveis",
-    "href": "contents/aula-1.html#bits-e-níveis",
-    "title": "Aula 1 - Números Binários",
-    "section": "Bits e níveis",
-    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
+    "objectID": "contents/aula-0.html#sinais-analógicos",
+    "href": "contents/aula-0.html#sinais-analógicos",
+    "title": "Aula 0 - Introdução",
+    "section": "Sinais Analógicos",
+    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-níveis-1",
-    "href": "contents/aula-1.html#bits-e-níveis-1",
-    "title": "Aula 1 - Números Binários",
-    "section": "Bits e Níveis",
-    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
+    "objectID": "contents/aula-0.html#visualização-analógica",
+    "href": "contents/aula-0.html#visualização-analógica",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização Analógica",
+    "text": "Visualização Analógica"
   },
   {
-    "objectID": "contents/aula-1.html#representação-dos-números",
-    "href": "contents/aula-1.html#representação-dos-números",
-    "title": "Aula 1 - Números Binários",
-    "section": "Representação dos números",
-    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
+    "objectID": "contents/aula-0.html#sinais-digitais",
+    "href": "contents/aula-0.html#sinais-digitais",
+    "title": "Aula 0 - Introdução",
+    "section": "Sinais Digitais",
+    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
   },
   {
-    "objectID": "contents/aula-1.html#representar-quantidades",
-    "href": "contents/aula-1.html#representar-quantidades",
-    "title": "Aula 1 - Números Binários",
-    "section": "Representar quantidades",
-    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+    "objectID": "contents/aula-0.html#visualização-digital",
+    "href": "contents/aula-0.html#visualização-digital",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização Digital",
+    "text": "Visualização Digital"
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-bytes",
-    "href": "contents/aula-1.html#bits-e-bytes",
-    "title": "Aula 1 - Números Binários",
-    "section": "Bits e Bytes",
-    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+    "objectID": "contents/aula-0.html#adc",
+    "href": "contents/aula-0.html#adc",
+    "title": "Aula 0 - Introdução",
+    "section": "ADC",
+    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-adc",
+    "href": "contents/aula-0.html#visualização-adc",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização ADC",
+    "text": "Visualização ADC"
+  },
+  {
+    "objectID": "contents/aula-0.html#dac",
+    "href": "contents/aula-0.html#dac",
+    "title": "Aula 0 - Introdução",
+    "section": "DAC",
+    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-dac",
+    "href": "contents/aula-0.html#visualização-dac",
+    "title": "Aula 0 - Introdução",
+    "section": "Visualização DAC",
+    "text": "Visualização DAC"
+  },
+  {
+    "objectID": "contents/aula-0.html#pergunta",
+    "href": "contents/aula-0.html#pergunta",
+    "title": "Aula 0 - Introdução",
+    "section": "Pergunta:",
+    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   }
 ]
