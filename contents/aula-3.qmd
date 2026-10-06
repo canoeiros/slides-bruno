@@ -1,0 +1,222 @@
+---
+title: "Aula 3 - Soma de Produtos"
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+---
+# SOMA DE PRODUTOS (Sum of Products - SOP)
+
+## Total de Combinações
+
+::: {.fragment}
+O número total de combinações para $n$ variáveis é $2^n$.
+Para 3 variáveis (A, B, C), temos $2^3 = 8$ combinações.
+:::
+
+## Total de Combinações
+::: {.list-table}
+
+- - $m_x$
+  - $A$
+  - $B$
+  - $C$
+  - $F$
+- - $m_0$
+  - 0
+  - 0
+  - 0
+  - 0
+- - $m_1$
+  - 0
+  - 0
+  - 1
+  - 0
+- - $m_2$
+  - 0
+  - 1
+  - 0
+  - 1
+- - $m_3$
+  - 0
+  - 1
+  - 1
+  - 0
+- - $m_4$
+  - 1
+  - 0
+  - 0
+  - 1
+- - $m_5$
+  - 1
+  - 0
+  - 1
+  - 1
+- - $m_6$
+  - 1
+  - 1
+  - 0
+  - 1
+- - $m_7$
+  - 1
+  - 1
+  - 1
+  - 1
+:::
+
+## Formas de Expressão
+Podemos expressar uma função $F$ de duas maneiras:
+-   **1ª FORMA:** SOP (Soma de Produtos)
+-   **2ª FORMA:** POS (Produtos de Soma)
+
+
+## SOP: Soma de Produtos
+-   É escrita quando a função está em ALTO (1).
+-   Para a tabela anterior, as linhas onde $F=1$ são: $m_2, m_4, m_5, m_6, m_7$.
+
+##
+::: {.list-table}
+
+- - $m_x$
+  - $A$
+  - $B$
+  - $C$
+  - $F$
+- - $m_0$
+  - 0
+  - 0
+  - 0
+  - 0
+- - $m_1$
+  - 0
+  - 0
+  - 1
+  - 0
+- - $m_2$
+  - 0
+  - 1
+  - 0
+  - 1
+- - $m_3$
+  - 0
+  - 1
+  - 1
+  - 0
+- - $m_4$
+  - 1
+  - 0
+  - 0
+  - 1
+- - $m_5$
+  - 1
+  - 0
+  - 1
+  - 1
+- - $m_6$
+  - 1
+  - 1
+  - 0
+  - 1
+- - $m_7$
+  - 1
+  - 1
+  - 1
+  - 1
+
+:::
+
+## SOP-Form
+-   **Forma Padrão/Canônica:** Derivada diretamente da tabela-verdade, incluindo todos os minterms onde $F=1$.
+$$
+F = \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC
+$$
+
+## Literal
+-   É uma variável Booleana, incluindo seu complemento.
+-   Ex: $B$ é um literal.
+-   $\bar{B}$ também é um literal.
+
+## Minterm (mintermo)
+-   É um produto de literais.
+-   Cada variável aparece exatamente uma vez, em sua forma normal ou complementada, mas não ambas.
+-   Ex: $A \cdot B$, $\bar{A} \cdot B$, $A \cdot \bar{B}$, etc.
+-   Cada termo individual de uma função na forma SOP é chamado de minterm.
+
+## Minterms a partir dos valores das variáveis:
+-   Se o valor da variável é 1: "pegamos" a variável em sua forma normal.
+-   Se o valor da variável é 0: "pegamos" o complemento da variável.
+
+## Maxterm (maxtermo)
+-   É uma soma de literais.
+-   Ex: $A+B$, $\bar{A}+B$, $A+\bar{B}$, etc.
+-   É o oposto do minterm.
+
+
+::: {.fragment}
+### Maxterms a partir dos valores das variáveis:
+-   Se o valor da variável é 1: "pegamos" o complemento da variável.
+-   Se o valor da variável é 0: "pegamos" a variável em sua forma normal.
+:::
+
+
+## Tabela de Minterms e Maxterms (2 variáveis)
+::: {.list-table}
+- - VARS
+  - MINTERM (SOP)
+  - MAXTERM (POS)
+- - $A B$
+  -
+  -
+- - 0 0
+  - $\bar{A}\bar{B} \rightarrow m_0$
+  - $A+B \rightarrow M_0$
+- - 0 1
+  - $\bar{A}B \rightarrow m_1$
+  - $A+\bar{B} \rightarrow M_1$
+- - 1 0
+  - $A\bar{B} \rightarrow m_2$
+  - $\bar{A}+B \rightarrow M_2$
+- - 1 1
+  - $AB \rightarrow m_3$
+  - $\bar{A}+\bar{B} \rightarrow M_3$
+:::
+
+## Exemplo de Minimização SOP
+Minimizando a expressão:
+$$
+F = \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC
+$$
+
+## {.smaller}
+$$
+\begin{aligned}
+F &= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
+F &= \bar{A}B\bar{C} + A\bar{B}(\bar{C}+C) + AB(\bar{C}+C) \\
+F &= \bar{A}B\bar{C} + A\bar{B}(1) + AB(1) \\
+F &= \bar{A}B\bar{C} + A\bar{B} + AB \\
+F &= \bar{A}B\bar{C} + A(\bar{B}+B) \\
+F &= \bar{A}B\bar{C} + A(1) \\
+F &= \bar{A}B\bar{C} + A \\
+F &= A + \bar{A}B\bar{C} \\
+F &= A + B\bar{C} \quad \text{(Usando a identidade } X + \bar{X}Y = X+Y \text{)}
+\end{aligned}
+$$
+
+::: {.fragment}
+A forma minimal SOP é:
+$$
+F = A + B\bar{C}
+$$
+:::
+
+## Desafio:
+-   O desafio é partir da forma SOP minimal para a canônica.
