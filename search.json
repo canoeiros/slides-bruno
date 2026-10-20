@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3 - Soma de Produtos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
     "objectID": "contents/aula-3.html#total-de-combinações",
     "href": "contents/aula-3.html#total-de-combinações",
     "title": "Aula 3 - Soma de Produtos",
@@ -152,13 +159,6 @@
     "title": "Aula 1 - Números Binários",
     "section": "Bits e Bytes",
     "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MATA38 - Projeto de Circuitos Lógicos",
-    "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0 - Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1 - Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2 - Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3 - Soma de Produtos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
     "objectID": "contents/aula-2.html#informações-gerais",
