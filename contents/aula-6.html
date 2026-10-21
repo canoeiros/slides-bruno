@@ -36,7 +36,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-9803c42950ebba8236e89745ffdf425f.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1e3d63864ec3274a6c1147115e237435.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -257,10 +257,11 @@ Caio Sereno Santos Rebouças
 <li class="fragment">Expandindo: <span class="math display">\[F = \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC\]</span></li>
 </ul>
 </section>
-<section id="simplificação-algébrica" class="slide level2">
+<section id="simplificação-algébrica" class="slide level2 smaller">
 <h2>Simplificação Algébrica</h2>
-<ul>
-<li class="fragment">Podemos simplificar a forma canônica usando identidades da Álgebra Booleana: <span class="math display">\[
+<div class="columns">
+<div class="column">
+<p><span class="math display">\[
 \begin{aligned}
 F &amp;= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
 &amp;= \bar{A}B\bar{C} + A(\bar{B}\bar{C} + \bar{B}C + B\bar{C} + BC) \\
@@ -270,9 +271,8 @@ F &amp;= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
 &amp;= \bar{A}B\bar{C} + A(1) \\
 &amp;= A + \bar{A}B\bar{C}
 \end{aligned}
-\]</span></li>
-</ul>
-<div class="fragment">
+\]</span></p>
+</div><div class="column fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -286,7 +286,7 @@ F &amp;= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
 </div>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section id="k-map-representação-visual" class="slide level2">
 <h2>K-Map: Representação Visual</h2>
@@ -435,7 +435,7 @@ F &amp;= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
 </ul></li>
 </ol>
 </section>
-<section id="estrutura-da-grade-3-variáveis" class="slide level2">
+<section id="estrutura-da-grade-3-variáveis" class="slide level2 smaller">
 <h2>Estrutura da Grade (3 Variáveis)</h2>
 <ul>
 <li class="fragment"><span class="math inline">\(2^3 = 8\)</span> células organizadas em uma matriz <span class="math inline">\(2 \times 4\)</span>:
@@ -444,6 +444,7 @@ F &amp;= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
 <li class="fragment">Colunas: variáveis <span class="math inline">\(BC \in \{00, 01, 11, 10\}\)</span> (Código Gray)</li>
 </ul></li>
 </ul>
+<div class="fragment">
 <div style="display: flex; justify-content: center; margin: 1.2rem auto; max-width: 620px;">
 <table style="border-collapse: separate; border-spacing: 8px; width: 100%; font-family: 'JetBrains Mono', monospace; text-align: center; border: none; background: transparent;">
 <thead>
@@ -503,6 +504,8 @@ m₆ <span style="font-size:0.7em; color:#64748B;">(110)</span>
 </tbody>
 </table>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -513,6 +516,7 @@ m₆ <span style="font-size:0.7em; color:#64748B;">(110)</span>
 </div>
 <div class="callout-content">
 <p>Atenção à troca de posição entre a 3ª e a 4ª coluna: <span class="math inline">\(11\)</span> vem antes de <span class="math inline">\(10\)</span> para manter a diferença de apenas 1 bit!</p>
+</div>
 </div>
 </div>
 </div>
@@ -670,17 +674,9 @@ A &nbsp;BC
 <p>Resultado Mínimo: <span class="math inline">\(F = A + B\bar{C}\)</span></p>
 </div>
 </section>
-<section id="resolução-com-asset-global" class="slide level2">
-<h2>Resolução com Asset Global</h2>
-<ul>
-<li class="fragment">O asset interativo valida e gera os enlaçamentos toroidais em tempo real:</li>
-</ul>
-<iframe src="../assets/global/karnaugh.html?vars=3&amp;m=2,4,5,6,7&amp;names=A,B,C&amp;hide=panels" width="100%" height="480px" style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);">
-</iframe>
-</section>
-<section id="demonstração-interativa" class="slide level2" data-fullscreen="true">
+<section id="demonstração-interativa" class="slide level2 embed">
 <h2>Demonstração Interativa</h2>
-<iframe src="../assets/global/karnaugh.html?vars=3&amp;m=2,4,5,6,7&amp;names=A,B,C&amp;hide=panels">
+<iframe src="../assets/global/karnaugh.html?vars=3&amp;m=2,4,5,6,7&amp;names=A,B,C&amp;hide=panels" width="100%" height="80%">
 </iframe>
 </section></section>
 <section>
@@ -700,7 +696,10 @@ A &nbsp;BC
 <li class="fragment"><span class="math inline">\(C = 1\)</span> permanece constante <span class="math inline">\(\Rightarrow\)</span> <strong><span class="math inline">\(F = C\)</span></strong></li>
 </ul></li>
 </ul>
-<iframe src="../assets/global/karnaugh.html?vars=3&amp;m=1,3,5,7&amp;names=A,B,C&amp;hide=panels" width="100%" height="420px" style="border: none; border-radius: 12px; margin-top: 0.5rem;">
+</section>
+<section id="exemplo-1" class="slide level2 embed">
+<h2>Exemplo 1:</h2>
+<iframe src="../assets/global/karnaugh.html?vars=3&amp;m=1,3,5,7&amp;names=A,B,C&amp;hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;">
 </iframe>
 </section>
 <section id="exemplo-2-adjacência-cilíndrica-bordas" class="slide level2 smaller">
@@ -713,11 +712,16 @@ A &nbsp;BC
 </ul></li>
 <li class="fragment">Para <span class="math inline">\(f(A,B,C) = \Sigma m(0, 2, 4, 6)\)</span>, os 4 cantos formam uma quadra simplificada em <strong><span class="math inline">\(\bar{C}\)</span></strong>:</li>
 </ul>
-<iframe src="../assets/global/karnaugh.html?vars=3&amp;preset=wrap_3var&amp;hide=panels" width="100%" height="420px" style="border: none; border-radius: 12px; margin-top: 0.5rem;">
+</section>
+<section id="exemplo-2" class="slide level2 embed">
+<h2>Exemplo 2:</h2>
+<iframe src="../assets/global/karnaugh.html??vars=3&amp;m=0,2,4,6&amp;hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;">
 </iframe>
 </section>
 <section id="exemplo-3-teorema-do-consenso-redundância" class="slide level2 smaller">
 <h2>Exemplo 3: Teorema do Consenso (Redundância)</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li class="fragment">Função: <span class="math inline">\(f(A,B,C) = \Sigma m(1, 3, 6, 7)\)</span></li>
 <li class="fragment">Possíveis agrupamentos:
@@ -727,6 +731,7 @@ A &nbsp;BC
 <li class="fragment">Grupo III: <span class="math inline">\(m(3, 7) \Rightarrow BC\)</span> (<strong>Redundante!</strong>)</li>
 </ul></li>
 </ul>
+</div><div class="column fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -740,6 +745,7 @@ A &nbsp;BC
 </div>
 </div>
 </div>
+</div></div>
 
 
 </section></section>

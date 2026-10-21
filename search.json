@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "MATA38 - Projeto de Circuitos Lógicos",
     "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6.1  Display de 7 Segmentos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
     "objectID": "contents/aula-5.html#porta-xor-definição-e-expressão",
@@ -39,7 +39,7 @@
     "href": "contents/aula-5.html#porta-xor-circuito-interno",
     "title": "Aula 5  Portas Lógicas II",
     "section": "Porta XOR: Circuito Interno",
-    "text": "Porta XOR: Circuito Interno\n\nA porta XOR pode ser implementada usando portas AND, OR e NOT:\n\n\n\nCircuito interno da porta XOR"
+    "text": "Porta XOR: Circuito Interno\n\\[Y = A \\oplus B = A\\bar{B} + \\bar{A}B\\]"
   },
   {
     "objectID": "contents/aula-5.html#porta-xor-propriedade-chave",
@@ -61,349 +61,6 @@
     "title": "Aula 5  Portas Lógicas II",
     "section": "Porta XOR: Propriedades (Parte 2)",
     "text": "Porta XOR: Propriedades (Parte 2)\n\nAssociatividade e Comutatividade:\n\nA operação XOR é comutativa: \\(A \\oplus B = B \\oplus A\\)\nA operação XOR é associativa:"
-  },
-  {
-    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "title": "Aula 0  Introdução",
-    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
-    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
-  },
-  {
-    "objectID": "contents/aula-0.html#exemplos",
-    "href": "contents/aula-0.html#exemplos",
-    "title": "Aula 0  Introdução",
-    "section": "Exemplos:",
-    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
-  },
-  {
-    "objectID": "contents/aula-0.html#para-o-nosso-curso",
-    "href": "contents/aula-0.html#para-o-nosso-curso",
-    "title": "Aula 0  Introdução",
-    "section": "Para o nosso curso:",
-    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
-  },
-  {
-    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "title": "Aula 0  Introdução",
-    "section": "Qual a diferença entre os relógios?",
-    "text": "Qual a diferença entre os relógios?"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-analógicos",
-    "href": "contents/aula-0.html#sinais-analógicos",
-    "title": "Aula 0  Introdução",
-    "section": "Sinais Analógicos",
-    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-analógica",
-    "href": "contents/aula-0.html#visualização-analógica",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização Analógica",
-    "text": "Visualização Analógica"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-digitais",
-    "href": "contents/aula-0.html#sinais-digitais",
-    "title": "Aula 0  Introdução",
-    "section": "Sinais Digitais",
-    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-digital",
-    "href": "contents/aula-0.html#visualização-digital",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização Digital",
-    "text": "Visualização Digital"
-  },
-  {
-    "objectID": "contents/aula-0.html#adc",
-    "href": "contents/aula-0.html#adc",
-    "title": "Aula 0  Introdução",
-    "section": "ADC",
-    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-adc",
-    "href": "contents/aula-0.html#visualização-adc",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização ADC",
-    "text": "Visualização ADC"
-  },
-  {
-    "objectID": "contents/aula-0.html#dac",
-    "href": "contents/aula-0.html#dac",
-    "title": "Aula 0  Introdução",
-    "section": "DAC",
-    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-dac",
-    "href": "contents/aula-0.html#visualização-dac",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização DAC",
-    "text": "Visualização DAC"
-  },
-  {
-    "objectID": "contents/aula-0.html#pergunta",
-    "href": "contents/aula-0.html#pergunta",
-    "title": "Aula 0  Introdução",
-    "section": "Pergunta:",
-    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
-  },
-  {
-    "objectID": "contents/aula-3.html#função-f",
-    "href": "contents/aula-3.html#função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Função \\(F\\)",
-    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-3.html#representar-a-função-f",
-    "href": "contents/aula-3.html#representar-a-função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Representar a função \\(F\\)",
-    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
-  },
-  {
-    "objectID": "contents/aula-3.html#forma-sop",
-    "href": "contents/aula-3.html#forma-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma SOP",
-    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#forma-pos",
-    "href": "contents/aula-3.html#forma-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma POS",
-    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#literal",
-    "href": "contents/aula-3.html#literal",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Literal",
-    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
-  },
-  {
-    "objectID": "contents/aula-3.html#minterm-mintermo",
-    "href": "contents/aula-3.html#minterm-mintermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Minterm (Mintermo)",
-    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
-  },
-  {
-    "objectID": "contents/aula-3.html#maxterm-maxtermo",
-    "href": "contents/aula-3.html#maxterm-maxtermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Maxterm (Maxtermo)",
-    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
-  },
-  {
-    "objectID": "contents/aula-3.html#comparativo",
-    "href": "contents/aula-3.html#comparativo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Comparativo",
-    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização",
-    "href": "contents/aula-3.html#aplicando-minimização",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-1",
-    "href": "contents/aula-3.html#aplicando-minimização-1",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-2",
-    "href": "contents/aula-3.html#aplicando-minimização-2",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-3",
-    "href": "contents/aula-3.html#aplicando-minimização-3",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-4",
-    "href": "contents/aula-3.html#aplicando-minimização-4",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
-    "href": "contents/aula-3.html#conversão-pos-to-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão POS \\(\\to\\) SOP",
-    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
-    "href": "contents/aula-3.html#conversão-sop-to-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão SOP \\(\\to\\) POS",
-    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "title": "Aula 1  Números Binários",
-    "section": "Vantagens dos sistemas digitais",
-    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
-  },
-  {
-    "objectID": "contents/aula-1.html#níveis-e-precisão",
-    "href": "contents/aula-1.html#níveis-e-precisão",
-    "title": "Aula 1  Números Binários",
-    "section": "Níveis e Precisão",
-    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
-  },
-  {
-    "objectID": "contents/aula-1.html#switchbits",
-    "href": "contents/aula-1.html#switchbits",
-    "title": "Aula 1  Números Binários",
-    "section": "Switch/Bits",
-    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-níveis",
-    "href": "contents/aula-1.html#bits-e-níveis",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e níveis",
-    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-níveis-1",
-    "href": "contents/aula-1.html#bits-e-níveis-1",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Níveis",
-    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-1.html#representação-dos-números",
-    "href": "contents/aula-1.html#representação-dos-números",
-    "title": "Aula 1  Números Binários",
-    "section": "Representação dos números",
-    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
-  },
-  {
-    "objectID": "contents/aula-1.html#representar-quantidades",
-    "href": "contents/aula-1.html#representar-quantidades",
-    "title": "Aula 1  Números Binários",
-    "section": "Representar quantidades",
-    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-bytes",
-    "href": "contents/aula-1.html#bits-e-bytes",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Bytes",
-    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
-  },
-  {
-    "objectID": "contents/aula-2.html#informações-gerais",
-    "href": "contents/aula-2.html#informações-gerais",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Informações Gerais:",
-    "text": "Informações Gerais:\n\nIntroduzido pelo matemático George Boole\nConjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade\n\n\n\n\n\n\n\n\n\nExemplo:\n\n\n\\[\nF = \\underbrace{\\underbrace{\\bar{A}B}_{\\text{= and}}+ \\underbrace{BC}_{\\text{= and}} + \\underbrace{ABC}_{\\text{= and}}}_{\\text{= or}}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#uso",
-    "href": "contents/aula-2.html#uso",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Uso",
-    "text": "Uso\n\nUsamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)\nPara nº maiores se usa o Mapa de Karnaugh"
-  },
-  {
-    "objectID": "contents/aula-2.html#razões",
-    "href": "contents/aula-2.html#razões",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Razões",
-    "text": "Razões\n\nReduzir:\n\nnº de portas\nCusto\nCalor nos componentes"
-  },
-  {
-    "objectID": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
-    "href": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Exemplo: Levar ou não o guarda-chuva",
-    "text": "Exemplo: Levar ou não o guarda-chuva\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; |Rain| OR\n  B((B)) --&gt; |Rain Forecast| OR\n  C((C)) --&gt; |Take car| NOT\n  OR --&gt; |A+B| AND\n  NOT --&gt; |~C| AND\n  AND --&gt; |Take umbrella| Y((Y))"
-  },
-  {
-    "objectID": "contents/aula-2.html#not",
-    "href": "contents/aula-2.html#not",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Not",
-    "text": "Not\n\nOperação complementar\nSempre inverte a entrada\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(\\bar{A}\\)\n\n\n\n\n0\n1\n\n\n1\n0"
-  },
-  {
-    "objectID": "contents/aula-2.html#and",
-    "href": "contents/aula-2.html#and",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "And",
-    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-2.html#or",
-    "href": "contents/aula-2.html#or",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Or",
-    "text": "Or\n\nSaída alta com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-distributiva",
-    "href": "contents/aula-2.html#lei-distributiva",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Distributiva:",
-    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-comutativa",
-    "href": "contents/aula-2.html#lei-comutativa",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Comutativa:",
-    "text": "Lei Comutativa:\n\\[\n\\begin{aligned}\nA+B &= B+A \\\\\nA \\cdot B &= B \\cdot A\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-associativa",
-    "href": "contents/aula-2.html#lei-associativa",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Associativa:",
-    "text": "Lei Associativa:\n\\[\n\\begin{aligned}\n(A+B)+C &= A+(B+C) \\\\\n(A \\cdot B) \\cdot C &= A \\cdot (B \\cdot C)\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-de-morgan",
-    "href": "contents/aula-2.html#lei-de-morgan",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei De Morgan:",
-    "text": "Lei De Morgan:\n\\[\n\\begin{aligned}\n\\overline{(A+B)} &= \\bar{A} \\cdot \\bar{B} \\\\\n\\overline{(A \\cdot B)} &= \\bar{A} + \\bar{B}\n\\end{aligned}\n\\]\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A+B\\)\n\\(\\overline{A+B}\\)\n\\(\\bar{A}\\)\n\\(\\bar{B}\\)\n\\(\\bar{A} \\cdot \\bar{B}\\)\n\n\n\n\n0\n0\n0\n1\n1\n1\n1\n\n\n0\n1\n1\n0\n1\n0\n0\n\n\n1\n0\n1\n0\n0\n1\n0\n\n\n1\n1\n1\n0\n0\n0\n0"
-  },
-  {
-    "objectID": "contents/aula-2.html#regras",
-    "href": "contents/aula-2.html#regras",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Regras",
-    "text": "Regras\n\nComplemento: \\((\\overline{\\overline{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
-  },
-  {
-    "objectID": "contents/aula-2.html#regras-1",
-    "href": "contents/aula-2.html#regras-1",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Regras",
-    "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
   },
   {
     "objectID": "contents/aula-4.html#o-que-é-uma-porta-lógica",
@@ -658,144 +315,347 @@
     "text": "Comparação de Símbolos\n\n\n\n\n\n\nNota\n\n\nO padrão IEEE 91-1984 utiliza notação funcional: & para conjunção, ≥1 para disjunção (pelo menos um) e =1 para disjunção exclusiva."
   },
   {
-    "objectID": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
-    "href": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "O que é um Display de 7 Segmentos?",
-    "text": "O que é um Display de 7 Segmentos?\n\nDispositivo eletrônico para exibir dígitos decimais (0-9).\nComposto por 7 LEDs individuais (segmentos a a g).\nCada segmento pode ser ligado ou desligado para formar o dígito.\n\n\n\nDisplay de 7 Segmentos"
+    "objectID": "contents/aula-2.html#informações-gerais",
+    "href": "contents/aula-2.html#informações-gerais",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Informações Gerais:",
+    "text": "Informações Gerais:\n\nIntroduzido pelo matemático George Boole\nConjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade\n\n\n\n\n\n\n\n\n\nExemplo:\n\n\n\\[\nF = \\underbrace{\\underbrace{\\bar{A}B}_{\\text{= and}}+ \\underbrace{BC}_{\\text{= and}} + \\underbrace{ABC}_{\\text{= and}}}_{\\text{= or}}\n\\]"
   },
   {
-    "objectID": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
-    "href": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Exemplo: Representando o Dígito ‘1’",
-    "text": "Exemplo: Representando o Dígito ‘1’\n\nPara exibir o dígito ‘1’, apenas os segmentos b e c são ativados.\nA entrada binária 0001 (decimal 1) acende b e c."
+    "objectID": "contents/aula-2.html#uso",
+    "href": "contents/aula-2.html#uso",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Uso",
+    "text": "Uso\n\nUsamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)\nPara nº maiores se usa o Mapa de Karnaugh"
   },
   {
-    "objectID": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
-    "href": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Decodificador BCD para 7 Segmentos",
-    "text": "Decodificador BCD para 7 Segmentos\n\nConverte uma entrada BCD (Binary-Coded Decimal) de 4 bits.\nGera as 7 saídas (a a g) para acionar os segmentos do display.\n\n\n\n\n\n\nflowchart LR\n  subgraph Entradas BCD\n    b3((b3))\n    b2((b2))\n    b1((b1))\n    b0((b0))\n  end\n\n  subgraph Decodificador 7-Seg\n    b3 --&gt; Decoder\n    b2 --&gt; Decoder\n    b1 --&gt; Decoder\n    b0 --&gt; Decoder\n  end\n\n  subgraph Saídas dos Segmentos\n    Decoder --&gt; a((a))\n    Decoder --&gt; b((b))\n    Decoder --&gt; c((c))\n    Decoder --&gt; d((d))\n    Decoder --&gt; e((e))\n    Decoder --&gt; f((f))\n    Decoder --&gt; g((g))\n  end"
+    "objectID": "contents/aula-2.html#razões",
+    "href": "contents/aula-2.html#razões",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Razões",
+    "text": "Razões\n\nReduzir:\n\nnº de portas\nCusto\nCalor nos componentes"
   },
   {
-    "objectID": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
-    "href": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos",
-    "text": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos\n\nDefine quais segmentos devem acender para cada dígito decimal (0-9).\nAs entradas binárias de 10 a 15 são “Não Importa” (Don’t Care).\n\n\n\n\n\nDecimal\n\\(b_3\\)\n\\(b_2\\)\n\\(b_1\\)\n\\(b_0\\)\n\\(a\\)\n\\(b\\)\n\\(c\\)\n\\(d\\)\n\\(e\\)\n\\(f\\)\n\\(g\\)\n\n\n\n\n0\n0\n0\n0\n0\n1\n1\n1\n1\n1\n1\n0\n\n\n1\n0\n0\n0\n1\n0\n1\n1\n0\n0\n0\n0\n\n\n2\n0\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n\n\n3\n0\n0\n1\n1\n1\n1\n1\n1\n0\n0\n1\n\n\n4\n0\n1\n0\n0\n0\n1\n1\n0\n0\n1\n1\n\n\n5\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n\n\n6\n0\n1\n1\n0\n1\n0\n1\n1\n1\n1\n1\n\n\n7\n0\n1\n1\n1\n1\n1\n1\n0\n0\n0\n0\n\n\n8\n1\n0\n0\n0\n1\n1\n1\n1\n1\n1\n1\n\n\n9\n1\n0\n0\n1\n1\n1\n1\n1\n0\n1\n1\n\n\n10-15\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX"
+    "objectID": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "href": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Exemplo: Levar ou não o guarda-chuva",
+    "text": "Exemplo: Levar ou não o guarda-chuva\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; |Rain| OR\n  B((B)) --&gt; |Rain Forecast| OR\n  C((C)) --&gt; |Take car| NOT\n  OR --&gt; |A+B| AND\n  NOT --&gt; |~C| AND\n  AND --&gt; |Take umbrella| Y((Y))"
   },
   {
-    "objectID": "contents/aula-6-1.html#representação-visual-dos-dígitos",
-    "href": "contents/aula-6-1.html#representação-visual-dos-dígitos",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Representação Visual dos Dígitos",
-    "text": "Representação Visual dos Dígitos\n\nA combinação dos segmentos a a g forma cada dígito.\n\n\n\nDígitos 0-9"
+    "objectID": "contents/aula-2.html#not",
+    "href": "contents/aula-2.html#not",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Not",
+    "text": "Not\n\nOperação complementar\nSempre inverte a entrada\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(\\bar{A}\\)\n\n\n\n\n0\n1\n\n\n1\n0"
   },
   {
-    "objectID": "contents/aula-6-1.html#nota-importante",
-    "href": "contents/aula-6-1.html#nota-importante",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Nota Importante",
-    "text": "Nota Importante\n\n\n\n\n\n\nNúmeros Maiores que 9\n\n\nPara representar números maiores que 9, como 10, 11, etc., precisamos de dois ou mais displays de 7 segmentos conectados a decodificadores separados."
+    "objectID": "contents/aula-2.html#and",
+    "href": "contents/aula-2.html#and",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "And",
+    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-a",
-    "href": "contents/aula-6-1.html#segmento-a",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘a’",
-    "text": "Segmento ‘a’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[a = b_3 + b_2 + b_1 \\cdot b_0 + b_2 \\cdot b_0\\]"
+    "objectID": "contents/aula-2.html#or",
+    "href": "contents/aula-2.html#or",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Or",
+    "text": "Or\n\nSaída alta com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-2.html#lei-distributiva",
+    "href": "contents/aula-2.html#lei-distributiva",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Distributiva:",
+    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-b",
-    "href": "contents/aula-6-1.html#segmento-b",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘b’",
-    "text": "Segmento ‘b’\n\nMintermos: \\(m(0, 1, 2, 3, 4, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[b = b_3 + b_2 + b_1 \\cdot b_0 + b_1 \\cdot \\overline{b_0} \\quad \\Rightarrow \\quad b = b_3 + b_2 + b_1\\]"
+    "objectID": "contents/aula-2.html#lei-comutativa",
+    "href": "contents/aula-2.html#lei-comutativa",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Comutativa:",
+    "text": "Lei Comutativa:\n\\[\n\\begin{aligned}\nA+B &= B+A \\\\\nA \\cdot B &= B \\cdot A\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-2.html#lei-associativa",
+    "href": "contents/aula-2.html#lei-associativa",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Associativa:",
+    "text": "Lei Associativa:\n\\[\n\\begin{aligned}\n(A+B)+C &= A+(B+C) \\\\\n(A \\cdot B) \\cdot C &= A \\cdot (B \\cdot C)\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-c",
-    "href": "contents/aula-6-1.html#segmento-c",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘c’",
-    "text": "Segmento ‘c’\n\nMintermos: \\(m(0, 1, 3, 4, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[c = b_3 + b_2 + b_1 + b_0\\]"
+    "objectID": "contents/aula-2.html#lei-de-morgan",
+    "href": "contents/aula-2.html#lei-de-morgan",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei De Morgan:",
+    "text": "Lei De Morgan:\n\\[\n\\begin{aligned}\n\\overline{(A+B)} &= \\bar{A} \\cdot \\bar{B} \\\\\n\\overline{(A \\cdot B)} &= \\bar{A} + \\bar{B}\n\\end{aligned}\n\\]\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A+B\\)\n\\(\\overline{A+B}\\)\n\\(\\bar{A}\\)\n\\(\\bar{B}\\)\n\\(\\bar{A} \\cdot \\bar{B}\\)\n\n\n\n\n0\n0\n0\n1\n1\n1\n1\n\n\n0\n1\n1\n0\n1\n0\n0\n\n\n1\n0\n1\n0\n0\n1\n0\n\n\n1\n1\n1\n0\n0\n0\n0"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-2.html#regras",
+    "href": "contents/aula-2.html#regras",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Regras",
+    "text": "Regras\n\nComplemento: \\((\\overline{\\overline{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-d",
-    "href": "contents/aula-6-1.html#segmento-d",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘d’",
-    "text": "Segmento ‘d’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[d = b_3 + \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0} + \\overline{b_1} \\cdot b_0\\]"
+    "objectID": "contents/aula-2.html#regras-1",
+    "href": "contents/aula-2.html#regras-1",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Regras",
+    "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "title": "Aula 1  Números Binários",
+    "section": "Vantagens dos sistemas digitais",
+    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-e",
-    "href": "contents/aula-6-1.html#segmento-e",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘e’",
-    "text": "Segmento ‘e’\n\nMintermos: \\(m(0, 2, 6, 8)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[e = \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0}\\]"
+    "objectID": "contents/aula-1.html#níveis-e-precisão",
+    "href": "contents/aula-1.html#níveis-e-precisão",
+    "title": "Aula 1  Números Binários",
+    "section": "Níveis e Precisão",
+    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-1.html#switchbits",
+    "href": "contents/aula-1.html#switchbits",
+    "title": "Aula 1  Números Binários",
+    "section": "Switch/Bits",
+    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-f",
-    "href": "contents/aula-6-1.html#segmento-f",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘f’",
-    "text": "Segmento ‘f’\n\nMintermos: \\(m(0, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[f = b_3 + b_2 \\cdot \\overline{b_1} + b_2 \\cdot \\overline{b_0}\\]"
+    "objectID": "contents/aula-1.html#bits-e-níveis",
+    "href": "contents/aula-1.html#bits-e-níveis",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e níveis",
+    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-1.html#bits-e-níveis-1",
+    "href": "contents/aula-1.html#bits-e-níveis-1",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Níveis",
+    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
   },
   {
-    "objectID": "contents/aula-6-1.html#segmento-g",
-    "href": "contents/aula-6-1.html#segmento-g",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Segmento ‘g’",
-    "text": "Segmento ‘g’\n\nMintermos: \\(m(2, 3, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[g = b_3 + b_1 \\cdot \\overline{b_0} + \\overline{b_2} \\cdot b_1\\]"
+    "objectID": "contents/aula-1.html#representação-dos-números",
+    "href": "contents/aula-1.html#representação-dos-números",
+    "title": "Aula 1  Números Binários",
+    "section": "Representação dos números",
+    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
   },
   {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
-    "title": "Aula 6.1  Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
+    "objectID": "contents/aula-1.html#representar-quantidades",
+    "href": "contents/aula-1.html#representar-quantidades",
+    "title": "Aula 1  Números Binários",
+    "section": "Representar quantidades",
+    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-bytes",
+    "href": "contents/aula-1.html#bits-e-bytes",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Bytes",
+    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+  },
+  {
+    "objectID": "contents/aula-3.html#função-f",
+    "href": "contents/aula-3.html#função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Função \\(F\\)",
+    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-3.html#representar-a-função-f",
+    "href": "contents/aula-3.html#representar-a-função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Representar a função \\(F\\)",
+    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-sop",
+    "href": "contents/aula-3.html#forma-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma SOP",
+    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-pos",
+    "href": "contents/aula-3.html#forma-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma POS",
+    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#literal",
+    "href": "contents/aula-3.html#literal",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Literal",
+    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
+  },
+  {
+    "objectID": "contents/aula-3.html#minterm-mintermo",
+    "href": "contents/aula-3.html#minterm-mintermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Minterm (Mintermo)",
+    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
+  },
+  {
+    "objectID": "contents/aula-3.html#maxterm-maxtermo",
+    "href": "contents/aula-3.html#maxterm-maxtermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Maxterm (Maxtermo)",
+    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
+  },
+  {
+    "objectID": "contents/aula-3.html#comparativo",
+    "href": "contents/aula-3.html#comparativo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Comparativo",
+    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização",
+    "href": "contents/aula-3.html#aplicando-minimização",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-1",
+    "href": "contents/aula-3.html#aplicando-minimização-1",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-2",
+    "href": "contents/aula-3.html#aplicando-minimização-2",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-3",
+    "href": "contents/aula-3.html#aplicando-minimização-3",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-4",
+    "href": "contents/aula-3.html#aplicando-minimização-4",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
+    "href": "contents/aula-3.html#conversão-pos-to-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão POS \\(\\to\\) SOP",
+    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
+    "href": "contents/aula-3.html#conversão-sop-to-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão SOP \\(\\to\\) POS",
+    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "title": "Aula 0  Introdução",
+    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
+    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
+  },
+  {
+    "objectID": "contents/aula-0.html#exemplos",
+    "href": "contents/aula-0.html#exemplos",
+    "title": "Aula 0  Introdução",
+    "section": "Exemplos:",
+    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
+  },
+  {
+    "objectID": "contents/aula-0.html#para-o-nosso-curso",
+    "href": "contents/aula-0.html#para-o-nosso-curso",
+    "title": "Aula 0  Introdução",
+    "section": "Para o nosso curso:",
+    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
+  },
+  {
+    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "title": "Aula 0  Introdução",
+    "section": "Qual a diferença entre os relógios?",
+    "text": "Qual a diferença entre os relógios?"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-analógicos",
+    "href": "contents/aula-0.html#sinais-analógicos",
+    "title": "Aula 0  Introdução",
+    "section": "Sinais Analógicos",
+    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-analógica",
+    "href": "contents/aula-0.html#visualização-analógica",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização Analógica",
+    "text": "Visualização Analógica"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-digitais",
+    "href": "contents/aula-0.html#sinais-digitais",
+    "title": "Aula 0  Introdução",
+    "section": "Sinais Digitais",
+    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-digital",
+    "href": "contents/aula-0.html#visualização-digital",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização Digital",
+    "text": "Visualização Digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#adc",
+    "href": "contents/aula-0.html#adc",
+    "title": "Aula 0  Introdução",
+    "section": "ADC",
+    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-adc",
+    "href": "contents/aula-0.html#visualização-adc",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização ADC",
+    "text": "Visualização ADC"
+  },
+  {
+    "objectID": "contents/aula-0.html#dac",
+    "href": "contents/aula-0.html#dac",
+    "title": "Aula 0  Introdução",
+    "section": "DAC",
+    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-dac",
+    "href": "contents/aula-0.html#visualização-dac",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização DAC",
+    "text": "Visualização DAC"
+  },
+  {
+    "objectID": "contents/aula-0.html#pergunta",
+    "href": "contents/aula-0.html#pergunta",
+    "title": "Aula 0  Introdução",
+    "section": "Pergunta:",
+    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   },
   {
     "objectID": "contents/aula-6.html#introdução-à-minimização",
@@ -830,7 +690,7 @@
     "href": "contents/aula-6.html#simplificação-algébrica",
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Simplificação Algébrica",
-    "text": "Simplificação Algébrica\n\nPodemos simplificar a forma canônica usando identidades da Álgebra Booleana: \\[\n\\begin{aligned}\nF &= \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}\\bar{C} + \\bar{B}C + B\\bar{C} + BC) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(\\bar{C}+C) + B(\\bar{C}+C)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(1) + B(1)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B} + B) \\\\\n&= \\bar{A}B\\bar{C} + A(1) \\\\\n&= A + \\bar{A}B\\bar{C}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nIdentidade Útil\n\n\nLembre-se da identidade: \\(X + \\bar{X}Y = X+Y\\). Aplicando-a, \\(A + \\bar{A}(B\\bar{C}) = A + B\\bar{C}\\)."
+    "text": "Simplificação Algébrica\n\n\n\\[\n\\begin{aligned}\nF &= \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}\\bar{C} + \\bar{B}C + B\\bar{C} + BC) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(\\bar{C}+C) + B(\\bar{C}+C)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(1) + B(1)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B} + B) \\\\\n&= \\bar{A}B\\bar{C} + A(1) \\\\\n&= A + \\bar{A}B\\bar{C}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nIdentidade Útil\n\n\nLembre-se da identidade: \\(X + \\bar{X}Y = X+Y\\). Aplicando-a, \\(A + \\bar{A}(B\\bar{C}) = A + B\\bar{C}\\)."
   },
   {
     "objectID": "contents/aula-6.html#k-map-representação-visual",
@@ -886,7 +746,7 @@
     "href": "contents/aula-6.html#estrutura-da-grade-3-variáveis",
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Estrutura da Grade (3 Variáveis)",
-    "text": "Estrutura da Grade (3 Variáveis)\n\n\\(2^3 = 8\\) células organizadas em uma matriz \\(2 \\times 4\\):\n\nLinhas: variável \\(A \\in \\{0, 1\\}\\)\nColunas: variáveis \\(BC \\in \\{00, 01, 11, 10\\}\\) (Código Gray)\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\nm₀ (000)\n\n\nm₁ (001)\n\n\nm₃ (011)\n\n\nm₂ (010)\n\n\n\n\n1\n\n\nm₄ (100)\n\n\nm₅ (101)\n\n\nm₇ (111)\n\n\nm₆ (110)\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nAtenção à troca de posição entre a 3ª e a 4ª coluna: \\(11\\) vem antes de \\(10\\) para manter a diferença de apenas 1 bit!"
+    "text": "Estrutura da Grade (3 Variáveis)\n\n\\(2^3 = 8\\) células organizadas em uma matriz \\(2 \\times 4\\):\n\nLinhas: variável \\(A \\in \\{0, 1\\}\\)\nColunas: variáveis \\(BC \\in \\{00, 01, 11, 10\\}\\) (Código Gray)\n\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\nm₀ (000)\n\n\nm₁ (001)\n\n\nm₃ (011)\n\n\nm₂ (010)\n\n\n\n\n1\n\n\nm₄ (100)\n\n\nm₅ (101)\n\n\nm₇ (111)\n\n\nm₆ (110)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nAtenção à troca de posição entre a 3ª e a 4ª coluna: \\(11\\) vem antes de \\(10\\) para manter a diferença de apenas 1 bit!"
   },
   {
     "objectID": "contents/aula-6.html#preenchimento-da-função-fabc",
@@ -903,13 +763,6 @@
     "text": "Agrupamentos com Cores Highlight\n\nPareamento de maior tamanho possível (\\(2^n\\)) com sobreposição:\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n\n0 m₀\n\n\n\n0 m₁\n\n\n\n0 m₃\n\n\n\n1 m₂\n\n\n\n\n1\n\n\n\n1 m₄\n\n\n\n1 m₅\n\n\n\n1 m₇\n\n\n\n1 m₆\n\n\n\n\n\n\n\n\n■ Grupo I (Quadra - Verde): \\(m(4,5,6,7) \\Rightarrow\\) Linha \\(A=1\\) inteira. Elimina \\(B\\) e \\(C\\) \\(\\Rightarrow\\) termo \\(A\\).\n\n\n\n■ Grupo II (Par - Rosa): \\(m(2,6) \\Rightarrow\\) Coluna \\(BC=10\\). \\(A\\) varia (\\(0 \\to 1\\)) \\(\\Rightarrow\\) termo \\(B\\bar{C}\\).\n\n\n\nResultado Mínimo: \\(F = A + B\\bar{C}\\)"
   },
   {
-    "objectID": "contents/aula-6.html#resolução-com-asset-global",
-    "href": "contents/aula-6.html#resolução-com-asset-global",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Resolução com Asset Global",
-    "text": "Resolução com Asset Global\n\nO asset interativo valida e gera os enlaçamentos toroidais em tempo real:"
-  },
-  {
     "objectID": "contents/aula-6.html#demonstração-interativa",
     "href": "contents/aula-6.html#demonstração-interativa",
     "title": "Aula 6  Mapa de Karnaugh",
@@ -924,6 +777,13 @@
     "text": "Exemplo 1: Quadra nas Colunas\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 5, 7)\\)\n\\(n = 3 \\Rightarrow 2^3 = 8\\) células.\nColunas \\(01\\) e \\(11\\) formam um grupo de 4 células:\n\n\\(A\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(B\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(C = 1\\) permanece constante \\(\\Rightarrow\\) \\(F = C\\)"
   },
   {
+    "objectID": "contents/aula-6.html#exemplo-1",
+    "href": "contents/aula-6.html#exemplo-1",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 1:",
+    "text": "Exemplo 1:"
+  },
+  {
     "objectID": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
     "href": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
     "title": "Aula 6  Mapa de Karnaugh",
@@ -931,10 +791,17 @@
     "text": "Exemplo 2: Adjacência Cilíndrica (Bordas)\n\nNo toro de Karnaugh, as colunas extremas (\\(00\\) e \\(10\\)) são adjacentes:\n\n\\(m_0\\) é vizinho de \\(m_2\\)\n\\(m_4\\) é vizinho de \\(m_6\\)\n\nPara \\(f(A,B,C) = \\Sigma m(0, 2, 4, 6)\\), os 4 cantos formam uma quadra simplificada em \\(\\bar{C}\\):"
   },
   {
+    "objectID": "contents/aula-6.html#exemplo-2",
+    "href": "contents/aula-6.html#exemplo-2",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 2:",
+    "text": "Exemplo 2:"
+  },
+  {
     "objectID": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
     "href": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Exemplo 3: Teorema do Consenso (Redundância)",
-    "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
+    "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\n\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
   }
 ]
