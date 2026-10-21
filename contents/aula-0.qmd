@@ -1,5 +1,5 @@
 ---
-title: "Aula 0 - Introdução"
+title: "Aula 0 <br> Introdução"
 author: ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
 subtitle: "MATA38 - Projeto de Circuitos Lógicos <br> <a href='../'>Página Inicial</a>" 
 lang: "pt-BR"
@@ -49,7 +49,7 @@ format:
 -   Sensível a qualquer variação, mesmo que infinitezimamente pequena
 
 ## Visualização Analógica {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;">
+<iframe src="../assets/aula-0/grafico-continuo.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.6); transform-origin: center center;">
 </iframe>
 
 ## Sinais Digitais
@@ -57,7 +57,7 @@ format:
 -   Tem limite de captura e de precisão de cada variação
 
 ## Visualização Digital {style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%"}
-<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.3); transform-origin: center center;"></iframe>
+<iframe src="../assets/aula-0/grafico-discreto.html" width="100%" height="100%" style="border: none; border-radius: 12px; transform: scale(1.6); transform-origin: center center;"></iframe>
 
 # Transdutor <br> (ADC & DAC)
 

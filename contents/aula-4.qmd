@@ -1,0 +1,409 @@
+---
+title: "Aula 4 - Portas Lógicas"
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+
+# Introdução às Portas Lógicas
+
+## O que é uma Porta Lógica?
+- É um **dispositivo físico** (hardware eletrônico)
+- Que executa uma **operação lógica booleana**
+- Opera sobre **uma ou mais entradas** digitais (níveis 0 ou 1)
+- Produz uma **única saída** lógica correspondente
+
+## Modelo Geral de uma Porta
+```{mermaid}
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'fontFamily': 'JetBrains Mono, monospace',
+    'fontSize': '15px',
+    'primaryColor': '#EDE9FE',
+    'primaryTextColor': '#3B0764',
+    'primaryBorderColor': '#7C3AED',
+    'lineColor': '#6D28D9',
+    'edgeLabelBackground': '#FAFAFA'
+  }
+}}%%
+flowchart LR
+  subgraph Entradas[" Entradas "]
+    A((Entrada A)):::inNode
+    B((Entrada B)):::inNode
+  end
+  subgraph Circuito[" Processamento "]
+    PL["Porta Lógica"]:::gateNode
+  end
+  subgraph Saida[" Saída "]
+    Y((Saída Y)):::outNode
+  end
+
+  A --> PL
+  B --> PL
+  PL --> Y
+
+  classDef inNode fill:#EDE9FE,stroke:#7C3AED,stroke-width:2px,color:#4C1D95,font-weight:600
+  classDef gateNode fill:#6D28D9,stroke:#4C1D95,stroke-width:2px,color:#FFFFFF,font-weight:700
+  classDef outNode fill:#D1FAE5,stroke:#059669,stroke-width:2px,color:#065F46,font-weight:600
+
+  style Entradas fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569
+  style Circuito fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569
+  style Saida fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569
+```
+
+
+## Famílias de Portas Lógicas {.smaller}
+
+
+::: {.columns}
+
+::: {.column}
+
+
+- **Portas Básicas:**
+  - NOT (Inversão)
+  - AND (Multiplicação)
+  - OR (Soma)
+- **Portas Universais:**
+  - NAND
+  - NOR
+- **Portas Aritméticas:**
+  - XOR
+  - XNOR
+
+:::
+
+::: {.column}
+
+::: {.callout-note .fragment}
+Portas universais (**NAND** e **NOR**) permitem construir qualquer outra função lógica.
+:::
+
+:::
+
+:::
+
+
+# Porta NOT (Inversor)
+
+## Definição da Porta NOT
+
+- Também conhecida como **inversor**.
+- Converte o nível lógico alto (1) em baixo (0) e vice-versa.
+- Expressão booleana: $Y = \bar{A}$ ou $Y = A'$
+
+## Demonstração {data-fullscreen="true"}
+<iframe src="../assets/global/simulador-logico.html?preset=gates&gate=NOT&hide=panels"></iframe>
+
+## Tabela Verdade
+
+- Descreve a saída para cada valor de entrada possível:
+
+::: {.fragment}
+| Entrada ($A$) | Saída ($Y = \bar{A}$) |
+| :---: | :---: |
+| 0 | 1 |
+| 1 | 0 |
+:::
+
+## O Buffer
+
+- Um **buffer** não inverte o nível lógico: a saída é idêntica à entrada ($Y = A$).
+- Utilizado para amplificação de corrente, isolamento de circuitos e temporização.
+
+::: {.fragment}
+```{mermaid}
+flowchart LR
+  A((A)) --> BUF[BUFFER] --> Y((Y = A))
+```
+:::
+- Símbolo idêntico ao inversor, porém **sem a bolinha** inversora na saída.
+
+## Inversores em Cascata
+
+- Dois inversores em série anulam a inversão mútua:
+
+::: {.fragment}
+```{mermaid}
+flowchart LR
+  A((A)) --> NOT1[NOT] --> NOT2[NOT] --> Y((Y = A))
+```
+:::
+
+- Se $A = 0 \implies \text{NOT1} = 1 \implies Y = 0$
+- Se $A = 1 \implies \text{NOT1} = 0 \implies Y = 1$
+- O circuito atua funcionalmente como um **buffer**.
+
+# Circuitos e Temporização
+
+## Oscilador em Anel (Multivibrador Astável) {.smaller}
+
+::: {.columns}
+
+::: {.column}
+
+- Um número **ímpar** de inversores conectados em ciclo fecha uma realimentação instável:
+- Não possui estado estável permanente: fica alternando entre 0 e 1 continuamente.
+- Atua como um **gerador de clock natural** (onda quadrada).
+
+:::
+
+::: {.column .fragment}
+
+```{mermaid}
+flowchart LR
+  N1[NOT 1] --> N2[NOT 2]
+  N2 --> N3[NOT 3]
+  N3 -->|Realimentação| N1
+```
+
+:::
+
+:::
+
+## Circuitos Biestáveis
+
+- Diferente do circuito astável, o **biestável** possui dois estados estáveis (0 e 1).
+- Permanece em um estado até que um sinal externo force a transição.
+- Constitui a base das células de memória digital (**Latches** e **Flip-Flops**).
+
+## Tempo de Propagação ($t_{pd}$)
+
+- É o tempo físico necessário para que uma mudança na entrada se reflita na saída da porta.
+
+
+::: {.fragment}
+
+```{mermaid}
+flowchart LR
+  A --> N
+  N --> Y
+```
+
+:::
+
+- Nenhuma porta lógica é instantânea.
+- Em portas em série, os atrasos se acumulam somando os tempos individuais.
+
+## Período e Frequência do Oscilador
+
+- Para um anel com $n$ portas inversoras ($n$ ímpar):
+  - A transição precisa percorrer o anel duas vezes para completar um ciclo ($0 \to 1$ e $1 \to 0$).
+- **Período da onda ($T$):**
+  $$T = 2 \cdot n \cdot t_{pd}$$
+- **Frequência de oscilação ($f$):**
+  $$f = \frac{1}{T} = \frac{1}{2 \cdot n \cdot t_{pd}}$$
+
+## Exercício de Temporização
+
+- Um oscilador em anel é formado por **5 inversores**, cada um com $t_{pd} = 100\text{ ps}$.
+- Qual é a frequência $f$ da onda gerada?
+
+- **Cálculo do período:**
+  $$T = 2 \cdot 5 \cdot 100\text{ ps} = 1000\text{ ps} = 1\text{ ns}$$
+- **Frequência:**
+  $$f = \frac{1}{1\text{ ns}} = 1\text{ GHz}$$
+
+# Porta AND
+
+## Operador Lógico AND
+
+- A saída é **1** se, e somente se, **todas** as entradas forem 1.
+- Representada matematicamente pela multiplicação lógica:
+  $$Y = A \cdot B \quad \text{ou} \quad Y = AB$$
+
+## Demonstração {data-fullscreen="true"}
+<iframe src="../assets/global/simulador-logico.html?preset=gates&gate=AND&hide=panels"></iframe>
+
+## Tabela Verdade (Porta AND)
+
+| Entrada $A$ | Entrada $B$ | Saída $Y = A \cdot B$ |
+| :---: | :---: | :---: |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+## Propriedades da Porta AND
+
+- **Comutativa:**
+  $$A \cdot B = B \cdot A$$
+- **Associativa:**
+  $$(A \cdot B) \cdot C = A \cdot (B \cdot C)$$
+- Permite expandir portas AND para 3, 4 ou mais entradas associadas.
+
+## Controle de Sinal na Porta AND {.smaller}
+
+- Usando a entrada $B$ como controle:
+
+::: {.columns}
+
+::: {.column}
+
+- **$B = 0$ (Disable / Desabilitado):**
+  - A saída fica fixa em 0, independente do valor de $A$.
+  - Bloqueia a passagem do sinal.
+
+
+:::
+
+::: {.column}
+
+- **$B = 1$ (Enable / Habilitado):**
+  - A saída segue fielmente a entrada: $Y = A \cdot 1 = A$.
+  - Atua como uma chave aberta permitindo o sinal passar (buffer).
+
+:::
+
+:::
+
+# Porta OR
+
+## Operador Lógico OR
+
+- A saída é **1** se **pelo menos uma** das entradas for 1.
+- Representada pela soma booleana:
+  $$Y = A + B$$
+
+## Demonstração {data-fullscreen="true"}
+<iframe src="../assets/global/simulador-logico.html?preset=gates&gate=OR&hide=panels"></iframe>
+
+## Tabela Verdade (Porta OR)
+
+| Entrada $A$ | Entrada $B$ | Saída $Y = A + B$ |
+| :---: | :---: | :---: |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+## Propriedades da Porta OR
+
+- **Comutativa:**
+  $$A + B = B + A$$
+- **Associativa:**
+  $$(A + B) + C = A + (B + C)$$
+- Pode ser expandida para múltiplos sinais somados.
+
+## Controle de Sinal na Porta OR
+
+- Usando a entrada $B$ como controle:
+
+- **$B = 0$ (Enable / Habilitado):**
+  - A saída segue a entrada $A$: $Y = A + 0 = A$.
+  - Deixa o sinal passar sem alteração.
+
+- **$B = 1$ (Disable / Desabilitado):**
+  - A saída fica forçada em 1: $Y = A + 1 = 1$.
+  - O sinal de $A$ é mascarado.
+
+# Portas Universais: NAND e NOR
+
+## O que é uma Porta NAND?
+
+- Equivale a uma porta **AND** seguida de um **NOT**:
+  $$Y = \overline{A \cdot B}$$
+- Pelo **Teorema de De Morgan**:
+  $$\overline{A \cdot B} = \bar{A} + \bar{B}$$
+
+## Demonstração {data-fullscreen="true"}
+<iframe src="../assets/global/simulador-logico.html?preset=gates&gate=NAND&hide=panels"></iframe>
+
+## Tabela Verdade da Porta NAND
+
+| Entrada $A$ | Entrada $B$ | AND ($A \cdot B$) | NAND ($Y = \overline{A \cdot B}$) |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+
+## Controle de Sinal (NAND)
+
+- **$B = 1$ (Enable):**
+  - $Y = \overline{A \cdot 1} = \bar{A}$
+  - Comporta-se como um **inversor (NOT)**.
+
+- **$B = 0$ (Disable):**
+  - $Y = \overline{A \cdot 0} = \bar{0} = 1$
+  - Saída fixa em **1**.
+
+## O que é uma Porta NOR?
+
+- Equivale a uma porta **OR** seguida de um **NOT**:
+  $$Y = \overline{A + B}$$
+- Pelo **Teorema de De Morgan**:
+  $$\overline{A + B} = \bar{A} \cdot \bar{B}$$
+
+## Demonstração {data-fullscreen="true"}
+<iframe src="../assets/global/simulador-logico.html?preset=gates&gate=NOR&hide=panels"></iframe>
+
+## Tabela Verdade da Porta NOR
+
+| Entrada $A$ | Entrada $B$ | OR ($A + B$) | NOR ($Y = \overline{A + B}$) |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | 1 |
+| 0 | 1 | 1 | 0 |
+| 1 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 0 |
+
+## Controle de Sinal (NOR)
+
+- **$B = 0$ (Enable):**
+  - $Y = \overline{A + 0} = \bar{A}$
+  - Comporta-se como um **inversor (NOT)**.
+
+- **$B = 1$ (Disable):**
+  - $Y = \overline{A + 1} = \bar{1} = 0$
+  - Saída fixa em **0**.
+
+# Propriedades de NAND e NOR
+
+## Comutatividade e Associatividade
+
+- **Comutatividade ($\checkmark$):**
+  - Tanto NAND quanto NOR **são comutativas**:
+    $$\overline{A \cdot B} = \overline{B \cdot A} \quad \text{e} \quad \overline{A + B} = \overline{B + A}$$
+
+## Comutatividade e Associatividade
+- **Associatividade ($\times$):**
+  - NAND e NOR **NÃO são associativas**:
+    $$\overline{(A \cdot B) \cdot C} \neq \overline{A \cdot (B \cdot C)}$$
+  - Na prática, portas NAND/NOR de 3 entradas não são cascata de portas de 2 entradas.
+
+# Simbologia Padrão IEEE/ANSI
+
+## Comparação de Símbolos
+
+| Porta | Símbolo Tradicional (Militar/ANSI) | Padrão IEEE/ANSI 91-1984 |
+| :---: | :---: | :---: |
+| **NOT** | Triângulo com bolha na ponta | Caixa retangular com símbolo `1` |
+| **AND** | Curva reta com arco frontal | Caixa retangular com símbolo `&` |
+| **OR** | Arco curvo pontiagudo | Caixa retangular com símbolo `≥1` |
+
+
+## Comparação de Símbolos
+
+| Porta | Símbolo Tradicional (Militar/ANSI) | Padrão IEEE/ANSI 91-1984 |
+| :---: | :---: | :---: |
+| **NAND** | Símbolo AND com bolha de saída | Caixa com `&` e indicador de negação |
+| **NOR** | Símbolo OR com bolha de saída | Caixa com `≥1` e indicador de negação |
+| **XOR** | Arco duplo com ponta | Caixa retangular com símbolo `=1` |
+
+## Comparação de Símbolos
+::: {.callout-note}
+O padrão IEEE 91-1984 utiliza notação funcional: `&` para conjunção, `≥1` para disjunção (pelo menos um) e `=1` para disjunção exclusiva.
+:::

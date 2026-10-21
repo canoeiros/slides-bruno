@@ -1,5 +1,5 @@
 ---
-title: "Aula 3 - Formas SOP e POS"
+title: "Aula 3 <br> Formas SOP e POS"
 subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
 author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
 lang: "pt-BR"
