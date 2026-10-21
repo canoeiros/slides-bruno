@@ -184,7 +184,7 @@ Apenas utilize a imagem original do caderno manuscrito quando o desenho for invi
 
 ```markdown
 <!-- FIGURE: page-N - Descrição breve do que a figura mostra -->
-![Descrição](../assets/{slug}/page-N.png)
+![Descrição](../assets/{slug}/sources/page-N.png)
 ```
 
 **Casos onde a imagem deve ser mantida:**

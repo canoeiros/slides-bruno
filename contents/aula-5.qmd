@@ -80,7 +80,7 @@ flowchart LR
 - A porta XOR pode ser implementada usando portas AND, OR e NOT:
 
 <!-- FIGURE: page-1 - Circuito interno da porta XOR (A.B' + A'.B) -->
-![Circuito interno da porta XOR](../assets/aula-5/page-1.png)
+![Circuito interno da porta XOR](../assets/aula-5/sources/page-1.png)
 
 ## Porta XOR: Propriedade Chave
 - A porta XOR é um **detector de "1" ímpar**.
