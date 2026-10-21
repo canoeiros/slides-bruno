@@ -127,7 +127,13 @@ body {
   padding: 4px;
 }
 
-.is-compact-topbar .tabs,
+.is-compact-topbar .tabs {
+  display: none !important;
+}
+.is-compact-topbar .tabs-select {
+  display: inline-block !important;
+}
+
 @media (max-width: 860px) {
   .tabs {
     display: none !important;
@@ -136,6 +142,7 @@ body {
     display: inline-block !important;
   }
 }
+
 
 .tab {
   flex: 0 0 auto;
