@@ -388,7 +388,7 @@ Y &= \overline{\bar{A}\bar{B}\bar{C}} \cdot
 \overline{\bar{A}\bar{B}C} \cdot
 \overline{\bar{A}BC} \cdot
 
-Y &= A\bar{B}\bar{C}} \cdot
+Y &= A\bar{B}\bar{C} \cdot
 \overline{\bar{A}\bar{B}C} \cdot
 \overline{\bar{A}BC} \cdot
 \end{aligned}
