@@ -17,7 +17,7 @@ def pdf_name_to_slug(pdf_name: str) -> str:
 
 def format_lesson_title(slug: str, title: str | None = None) -> str:
     """
-    Gera o título padronizado da aula (ex: 'Aula 3 - Soma de Produtos' ou 'Aula 6.1 - Display de 7 Segmentos').
+    Gera o título padronizado da aula (ex: 'Aula 3 <br> Soma de Produtos' ou 'Aula 6.1 - Display de 7 Segmentos').
     """
     # Determina o número da aula formatado (ex: 'aula-3' -> '3', 'aula-6-1' -> '6.1')
     clean_num = slug.lower().replace("aula-", "").replace("aula_", "")

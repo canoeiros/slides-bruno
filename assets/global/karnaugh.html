@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Karnaugh — Visualizador & Simplificador Interativo</title>
+  
+  <!-- Tipografia JetBrains Mono (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos do Mapa de Karnaugh -->
+  <link rel="stylesheet" href="karnaugh/karnaugh.css">
+</head>
+<body class="theme-dark">
+  <div class="k-card" id="kCard">
+    <!-- 1. Cabeçalho Superior -->
+    <header class="k-topbar" id="kTopbar">
+      <div class="k-brand">
+        <span class="k-brand-icon">K</span>
+        <span id="kBrandTitle">Mapa de Karnaugh</span>
+      </div>
+
+      <div class="k-topbar-controls">
+        <!-- Seletor de Variáveis -->
+        <div class="k-btn-group" role="group" aria-label="Número de Variáveis">
+          <button type="button" class="k-pill-btn k-var-btn" data-vars="2" title="2 Variáveis (2x2)">2V</button>
+          <button type="button" class="k-pill-btn k-var-btn" data-vars="3" title="3 Variáveis (2x4)">3V</button>
+          <button type="button" class="k-pill-btn k-var-btn active" data-vars="4" title="4 Variáveis (4x4)">4V</button>
+        </div>
+
+        <!-- Seletor de Exemplos / Presets -->
+        <select class="k-select" id="presetSelect" aria-label="Exemplos Pré-carregados">
+          <option value="">-- Carregar Exemplo --</option>
+        </select>
+
+        <!-- Alternância SOP / POS -->
+        <button type="button" class="k-btn" id="btnTypeToggle" title="Alternar entre Soma de Produtos (SOP) e Produto de Somas (POS)">Σ SOP</button>
+
+        <!-- Alternância Modo Automático / Prática -->
+        <button type="button" class="k-btn" id="btnModeToggle" title="Alternar entre Resolução Automática e Modo de Prática/Seleção Manual">🤖 Auto</button>
+
+        <!-- Alternância de Tema -->
+        <button type="button" class="k-btn" id="btnThemeToggle" title="Alternar tema claro/escuro">🌙 Escuro</button>
+
+        <!-- Alternar Painel Lateral -->
+        <button type="button" class="k-btn" id="btnSideToggle" title="Ocultar / Exibir painel lateral">◀ Painel</button>
+      </div>
+    </header>
+
+    <!-- 2. Área Principal (Palco) -->
+    <main class="k-stage" id="kStage">
+      <!-- Painel do Mapa e Controles (Esquerda) -->
+      <section class="k-map-panel" id="mapPanel">
+        <!-- Barra de Expressão Simplificada -->
+        <div class="k-expr-card" id="exprCard">
+          <div class="k-expr-left">
+            <span class="k-expr-label">Expressão Mínima:</span>
+            <div class="k-expr-value" id="exprFormula">F = ...</div>
+          </div>
+          <div class="k-expr-badges" id="exprBadges"></div>
+        </div>
+
+        <!-- Banner do Modo Prática / Manual -->
+        <div class="k-manual-banner" id="manualBanner" style="display: none;">
+          <span style="font-weight: 700;">✏️ Modo Prática:</span>
+          <span class="k-manual-status" id="manualStatus">Clique nas células para testar um agrupamento.</span>
+        </div>
+
+        <!-- Grade de Karnaugh com Enlaçamentos SVG -->
+        <div class="k-grid-container" id="gridContainer">
+          <div class="k-matrix-wrap" id="matrixWrap">
+            <!-- Gerado dinamicamente via JavaScript -->
+          </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Ações Rápidas -->
+        <div class="k-actions-bar" id="actionsBar">
+          <div class="k-actions-left">
+            <button type="button" class="k-btn" id="btnClear" title="Limpar todos os valores (todos 0)">🗑️ Zerar</button>
+            <button type="button" class="k-btn" id="btnFill" title="Preencher todo o mapa com 1s">🟩 Tudo 1</button>
+            <button type="button" class="k-btn" id="btnInvert" title="Inverter valores (0 vira 1, 1 vira 0)">🔄 Inverter</button>
+            <button type="button" class="k-btn" id="btnRandom" title="Gerar valores aleatórios">🎲 Aleatório</button>
+            <button type="button" class="k-btn" id="btnPromptM" title="Digitar lista de mintermos numéricos">⌨️ Mintermos...</button>
+          </div>
+          <div class="k-actions-right">
+            <button type="button" class="k-btn" id="btnCopyLatex" title="Copiar fórmula em LaTeX para os slides">📋 Copiar LaTeX</button>
+            <button type="button" class="k-btn" id="btnCopyIframe" title="Copiar tag de iframe para incluir no slide Quarto">🌐 Copiar iframe</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Painel Lateral (Direita: Implicantes, Tabela Verdade, Regras) -->
+      <aside class="k-side-panel" id="sidePanel">
+        <div class="k-side-header">
+          <button type="button" class="k-side-tab active" data-tab="groups">Grupos</button>
+          <button type="button" class="k-side-tab" data-tab="truthTable">Tabela Verdade</button>
+          <button type="button" class="k-side-tab" data-tab="rules">Didática</button>
+        </div>
+
+        <div class="k-side-content">
+          <!-- Aba 1: Implicantes e Grupos -->
+          <div id="tabGroups">
+            <div id="groupsList">
+              <!-- Gerado dinamicamente -->
+            </div>
+          </div>
+
+          <!-- Aba 2: Tabela Verdade Sincronizada -->
+          <div id="tabTruthTable" style="display: none;">
+            <div id="truthTableWrap">
+              <!-- Gerado dinamicamente -->
+            </div>
+          </div>
+
+          <!-- Aba 3: Regras Didáticas -->
+          <div id="tabRules" style="display: none;">
+            <div class="k-guide-card">
+              <div class="k-guide-title">📏 1. Tamanho dos Grupos</div>
+              <div>Grupos devem conter sempre uma <strong>potência de 2</strong> células: 1, 2, 4, 8 ou 16 células.</div>
+            </div>
+
+            <div class="k-guide-card">
+              <div class="k-guide-title">📐 2. Geometria Toroidal</div>
+              <div>As células devem formar <strong>retângulos ou quadrados</strong>. O mapa é contínuo nas bordas (cilindro e toro): primeira e última linha/coluna são vizinhas, e os 4 cantos formam um grupo!</div>
+            </div>
+
+            <div class="k-guide-card">
+              <div class="k-guide-title">🎯 3. Eliminação de Variáveis</div>
+              <div>
+                • Grupo de <strong>2</strong> elimina <strong>1</strong> variável.<br>
+                • Grupo de <strong>4</strong> elimina <strong>2</strong> variáveis.<br>
+                • Grupo de <strong>8</strong> elimina <strong>3</strong> variáveis.<br>
+                <em>Quanto maior o grupo, mais simples a expressão!</em>
+              </div>
+            </div>
+
+            <div class="k-guide-card">
+              <div class="k-guide-title">⚡ 4. Don't Care (X)</div>
+              <div>Células com <strong>X</strong> (indiferença) podem ser consideradas 1 se ajudarem a formar um grupo maior, ou 0 se não forem necessárias.</div>
+            </div>
+
+            <div class="k-guide-card">
+              <div class="k-guide-title">💡 5. Cobertura Mínima</div>
+              <div>Todos os 1s devem estar cobertos por pelo menos um grupo. Grupos redundantes cujos 1s já estão todos cobertos por outros grupos devem ser descartados.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- Scripts do Mapa de Karnaugh -->
+  <script src="karnaugh/solver.js"></script>
+  <script src="karnaugh/presets.js"></script>
+  <script src="karnaugh/ui.js"></script>
+</body>
+</html>

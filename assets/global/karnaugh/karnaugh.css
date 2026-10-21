@@ -1,0 +1,814 @@
+/* ==========================================================================
+   MAPA DE KARNAUGH - ESTILOS PRINCIPAIS
+   Estilo moderno, responsivo, dark/light theme, JetBrains Mono, paleta rica
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 8px;
+  background: transparent;
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* -------------------------------------------------------- Variáveis de Tema */
+body.theme-dark {
+  --bg-card: linear-gradient(180deg, #18233c 0%, #101827 100%);
+  --bg-surface: #0f172a;
+  --bg-surface-hover: #1e293b;
+  --bg-panel: rgba(15, 23, 42, 0.75);
+  --border-main: #334155;
+  --border-subtle: rgba(51, 65, 85, 0.5);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #a78bfa;
+  --accent-hover: #7c3aed;
+  --cell-bg: #1e293b;
+  --cell-border: #334155;
+  --cell-hover: #27354f;
+  --val-one: #34d399;
+  --val-one-bg: rgba(16, 185, 129, 0.12);
+  --val-zero: #64748b;
+  --val-dc: #fbbf24;
+  --val-dc-bg: rgba(245, 158, 11, 0.12);
+  --badge-bg: rgba(139, 92, 246, 0.15);
+  --badge-border: rgba(139, 92, 246, 0.35);
+  --card-shadow: 0 16px 48px rgba(2, 6, 23, 0.7);
+  --tooltip-bg: #020617;
+  --tooltip-border: #475569;
+}
+
+body.theme-light {
+  --bg-card: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-surface-hover: #f1f5f9;
+  --bg-panel: rgba(248, 250, 252, 0.85);
+  --border-main: #cbd5e1;
+  --border-subtle: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-faint: #94a3b8;
+  --accent-primary: #6d28d9;
+  --accent-secondary: #7c3aed;
+  --accent-hover: #5b21b6;
+  --cell-bg: #f8fafc;
+  --cell-border: #cbd5e1;
+  --cell-hover: #e0e7ff;
+  --val-one: #059669;
+  --val-one-bg: rgba(5, 150, 105, 0.1);
+  --val-zero: #94a3b8;
+  --val-dc: #d97706;
+  --val-dc-bg: rgba(217, 119, 6, 0.1);
+  --badge-bg: rgba(109, 40, 217, 0.1);
+  --badge-border: rgba(109, 40, 217, 0.25);
+  --card-shadow: 0 12px 36px rgba(15, 23, 42, 0.1);
+  --tooltip-bg: #1e293b;
+  --tooltip-border: #cbd5e1;
+}
+
+/* ----------------------------------------------------------- Container Card */
+.k-card {
+  width: min(1200px, 100%);
+  height: min(720px, 100%);
+  padding: 10px 14px 12px;
+  border: 1px solid var(--border-main);
+  border-radius: 16px;
+  background: var(--bg-card);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+/* ------------------------------------------------------------------- Topbar */
+.k-topbar {
+  flex: 0 0 auto;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 8px;
+}
+
+.k-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.k-brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+}
+
+.k-topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.k-btn-group {
+  display: inline-flex;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.k-pill-btn {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.k-pill-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-surface-hover);
+}
+
+.k-pill-btn.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.35);
+}
+
+.k-select {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.k-select:focus {
+  border-color: var(--accent-primary);
+}
+
+.k-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.k-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--accent-primary);
+}
+
+.k-btn-primary {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+}
+
+.k-btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+/* ------------------------------------------------------------ Palco Principal */
+.k-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* Painel do Mapa (Esquerda) */
+.k-map-panel {
+  flex: 1 1 65%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+/* Barra da Expressão Simplificada */
+.k-expr-card {
+  flex: 0 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.k-expr-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.k-expr-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.k-expr-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.expr-term {
+  padding: 2px 6px;
+  border-radius: 6px;
+  border-bottom: 2px solid var(--group-color, var(--accent-primary));
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: transparent;
+}
+
+.expr-term:hover,
+.expr-term.is-hovered {
+  background: var(--group-color);
+  color: #ffffff !important;
+  box-shadow: 0 0 10px var(--group-color);
+}
+
+.k-not {
+  text-decoration: overline;
+  font-weight: 800;
+}
+
+.k-expr-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.k-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--accent-secondary);
+  border: 1px solid var(--badge-border);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ Grade de Karnaugh */
+.k-grid-container {
+  flex: 1 1 auto;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  border-radius: 14px;
+  padding: 20px 24px;
+  overflow: auto;
+}
+
+.k-matrix-wrap {
+  position: relative;
+  display: inline-grid;
+  margin: auto;
+}
+
+/* Rótulo de variáveis do canto superior esquerdo */
+.k-corner-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.k-corner-label svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.k-corner-row-var {
+  position: absolute;
+  bottom: 2px;
+  left: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.k-corner-col-var {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Cabeçalhos de Código de Gray */
+.k-col-header,
+.k-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding: 4px;
+}
+
+.k-col-header {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.k-row-header {
+  border-right: 1px solid var(--border-subtle);
+}
+
+/* Área das Células */
+.k-cells-grid {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  padding: 6px;
+}
+
+/* Cada Célula do Mapa */
+.k-cell {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  background: var(--cell-bg);
+  border: 1.5px solid var(--cell-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  z-index: 2;
+}
+
+.k-cell:hover {
+  background: var(--cell-hover);
+  border-color: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+.k-cell:active {
+  transform: scale(0.95);
+}
+
+/* Valor da Célula (0, 1 ou X) */
+.k-cell-val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.k-cell[data-val="1"] {
+  background: var(--val-one-bg);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.k-cell[data-val="1"] .k-cell-val {
+  color: var(--val-one);
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.k-cell[data-val="0"] .k-cell-val {
+  color: var(--val-zero);
+}
+
+.k-cell[data-val="X"] {
+  background: var(--val-dc-bg);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.k-cell[data-val="X"] .k-cell-val {
+  color: var(--val-dc);
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+/* Índice Decimal do Mintermo */
+.k-cell-m {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  opacity: 0.75;
+}
+
+/* Tooltip / Código binário */
+.k-cell-bin {
+  position: absolute;
+  bottom: 3px;
+  font-size: 0.52rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.k-cell:hover .k-cell-bin {
+  opacity: 1;
+}
+
+/* Destaque quando o grupo ou termo é focado */
+.k-cell.highlight-group {
+  box-shadow: 0 0 14px var(--highlight-color, var(--accent-primary));
+  border-color: var(--highlight-color, var(--accent-primary)) !important;
+  z-index: 5;
+}
+
+/* Célula selecionada no modo Manual */
+.k-cell.is-manual-selected {
+  outline: 2px dashed var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------- Camada SVG de Enlaçamentos */
+.k-svg-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.k-loop-path {
+  fill: var(--group-fill);
+  stroke: var(--group-stroke);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.k-loop-path:hover,
+.k-loop-path.is-hovered {
+  stroke-width: 4px;
+  filter: drop-shadow(0 0 10px var(--group-stroke));
+}
+
+/* Indicador de wrap-around toroidal nas bordas */
+.k-wrap-connector {
+  stroke: var(--group-stroke);
+  stroke-width: 2px;
+  stroke-dasharray: 4 4;
+  fill: none;
+  opacity: 0.75;
+}
+
+/* Barra de Ações Rápidas do Mapa */
+.k-actions-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.k-actions-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.k-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------- Painel Lateral (Direita) */
+.k-side-panel {
+  flex: 1 1 35%;
+  min-width: 260px;
+  max-width: 380px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.k-side-header {
+  flex: 0 0 auto;
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.k-side-tab {
+  flex: 1;
+  padding: 8px 6px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.k-side-tab:hover {
+  color: var(--text-main);
+  background: var(--bg-surface-hover);
+}
+
+.k-side-tab.active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background: var(--bg-surface);
+}
+
+.k-side-content {
+  flex: 1 1 auto;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Lista de Implicantes / Grupos */
+.k-group-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-left: 4px solid var(--group-color, var(--accent-primary));
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.k-group-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--group-color);
+}
+
+.k-group-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.k-group-term {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.k-group-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--accent-secondary);
+}
+
+.k-group-details {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.k-group-cells {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Tabela Verdade Sincronizada */
+.k-truth-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.k-truth-table th {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--border-main);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.k-truth-table td {
+  padding: 4px 4px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.k-truth-table tr:hover td {
+  background: var(--cell-hover);
+}
+
+.k-truth-table .col-out {
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.k-truth-table .col-out[data-val="1"] {
+  color: var(--val-one);
+}
+
+.k-truth-table .col-out[data-val="0"] {
+  color: var(--val-zero);
+}
+
+.k-truth-table .col-out[data-val="X"] {
+  color: var(--val-dc);
+}
+
+/* Painel de Dicas e Regras Didáticas */
+.k-guide-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.k-guide-title {
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ------------------------------------------------ Modo Manual / Prática */
+.k-manual-banner {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid var(--badge-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.68rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.k-manual-status {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.k-manual-status.valid {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--val-one);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.k-manual-status.invalid {
+  background: rgba(244, 63, 94, 0.15);
+  color: #f43f5e;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+/* ------------------------------------------------ Modo Embed / Slide Limpo */
+body.embed-mode {
+  padding: 0;
+}
+
+body.embed-mode .k-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------- Responsividade e Telas */
+@media (max-width: 860px) {
+  .k-stage {
+    flex-direction: column;
+  }
+  .k-side-panel {
+    max-width: 100%;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 580px) {
+  .k-cell {
+    width: 48px;
+    height: 48px;
+  }
+  .k-cell-val {
+    font-size: 1.3rem;
+  }
+  .k-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

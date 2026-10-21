@@ -19,8 +19,8 @@
       var currentSlide = Reveal.getCurrentSlide();
       if (!currentSlide) return;
 
-      // Oculta apenas na capa principal (slide de título da apresentação)
-      if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block')) {
+      // Oculta na capa principal ou em slides em tela cheia (fullscreen)
+      if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block') || currentSlide.hasAttribute('data-fullscreen')) {
         bar.style.display = 'none';
         return;
       }

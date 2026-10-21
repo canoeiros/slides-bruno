@@ -36,7 +36,11 @@ window.SimUI = (() => {
         topbar: true,
         circuitPanel: true,
         side: true,
-        bottom: true
+        bottom: true,
+        palette: true,
+        head: true,
+        controls: true,
+        floatingBtn: true
       };
 
       // Parâmetros de Redimensionamento
@@ -87,21 +91,55 @@ window.SimUI = (() => {
           }
         }
 
-        // B. Ocultar seções (?hide=topbar,bottom ou ?topbar=0, etc.)
+        // B. Ocultar seções (?hide=topbar,bottom ou ?hide=panels ou ?only=circuit etc.)
+        if (params.get('only') === 'circuit' || params.get('circuitOnly') === '1' || params.get('embed') === '1') {
+          this.sectionConfig.topbar = false;
+          this.sectionConfig.side = false;
+          this.sectionConfig.bottom = false;
+          this.sectionConfig.palette = false;
+          this.sectionConfig.head = false;
+          this.sectionConfig.floatingBtn = false;
+        }
+
         if (params.has('hide')) {
           const list = params.get('hide').split(',').map(s => s.trim().toLowerCase());
+          if (list.includes('panels') || list.includes('all')) {
+            this.sectionConfig.topbar = false;
+            this.sectionConfig.side = false;
+            this.sectionConfig.bottom = false;
+            this.sectionConfig.palette = false;
+            this.sectionConfig.head = false;
+            this.sectionConfig.floatingBtn = false;
+          }
           list.forEach(k => {
             if (k === 'topbar' || k === 'header') this.sectionConfig.topbar = false;
             if (k === 'circuit' || k === 'circuit-panel') this.sectionConfig.circuitPanel = false;
             if (k === 'side' || k === 'aside') this.sectionConfig.side = false;
             if (k === 'bottom' || k === 'wave' || k === 'timeline') this.sectionConfig.bottom = false;
+            if (k === 'palette') this.sectionConfig.palette = false;
+            if (k === 'head' || k === 'scenehead' || k === 'scene-head') this.sectionConfig.head = false;
+            if (k === 'controls' || k === 'zoom') this.sectionConfig.controls = false;
+            if (k === 'floating' || k === 'floatingbtn' || k === 'floating-btn' || k === 'btn') this.sectionConfig.floatingBtn = false;
           });
         }
-        ['topbar', 'circuitPanel', 'side', 'bottom'].forEach(k => {
+        ['topbar', 'circuitPanel', 'side', 'bottom', 'palette', 'head', 'controls', 'floatingBtn'].forEach(k => {
           if (params.get(k) === '0' || params.get(`hide${k[0].toUpperCase()}${k.slice(1)}`) === '1') {
             this.sectionConfig[k] = false;
           }
         });
+
+        // Quando os painéis forem desativados juntos, ocultar botão flutuante e paleta por padrão (modo limpo/slide)
+        if (!this.sectionConfig.topbar && !this.sectionConfig.side && !this.sectionConfig.bottom) {
+          if (!params.has('floatingBtn') && !params.has('floating')) {
+            this.sectionConfig.floatingBtn = false;
+          }
+          if (!params.has('palette') && !params.has('hidePalette') && !params.has('showPalette')) {
+            this.sectionConfig.palette = false;
+          }
+          if (!params.has('head') && !params.has('hideHead') && (params.get('hide') || '').includes('panels')) {
+            this.sectionConfig.head = false;
+          }
+        }
 
         // C. Parâmetro de redimensionamento (?resizable=1/0 ou ?resize=true/false)
         if (params.has('resizable') || params.has('resize')) {
@@ -250,6 +288,22 @@ window.SimUI = (() => {
       card.classList.toggle('hide-circuit', !this.sectionConfig.circuitPanel);
       card.classList.toggle('hide-side', !this.sectionConfig.side);
       card.classList.toggle('hide-bottom', !this.sectionConfig.bottom);
+      card.classList.toggle('hide-palette', !this.sectionConfig.palette);
+      card.classList.toggle('hide-head', !this.sectionConfig.head);
+      card.classList.toggle('hide-controls', !this.sectionConfig.controls);
+
+      const pal = $('#compPalette');
+      const btnOpen = $('#btnOpenPalette');
+      if (!this.sectionConfig.palette) {
+        if (pal) pal.classList.add('is-collapsed');
+        if (btnOpen) btnOpen.style.display = 'none';
+      }
+
+      const floatingBtn = $('#floatingViewBtn');
+      if (floatingBtn) {
+        floatingBtn.style.display = this.sectionConfig.floatingBtn ? '' : 'none';
+      }
+      document.body.classList.toggle('hide-floating-btn', !this.sectionConfig.floatingBtn);
 
       // Mostrar/ocultar splitters se desativado por parâmetro
       if (resizerH) resizerH.style.display = this.resizeConfig.enabled ? '' : 'none';
@@ -265,7 +319,7 @@ window.SimUI = (() => {
 
       const badge = $('#hiddenCountBadge');
       if (badge) {
-        if (hiddenCount > 0) {
+        if (hiddenCount > 0 && this.sectionConfig.floatingBtn) {
           badge.textContent = String(hiddenCount);
           badge.style.display = 'inline-block';
         } else {

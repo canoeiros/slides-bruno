@@ -43,5 +43,7 @@ format:
     controls-layout: bottom-right
     include-after-body: ../assets/global/breadcrumb.html
     footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
 ---
 """

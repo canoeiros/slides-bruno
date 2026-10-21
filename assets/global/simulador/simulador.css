@@ -1371,6 +1371,37 @@ table.tt tr.active td:first-child {
   flex: 1 1 100% !important;
 }
 
+.card.hide-palette .component-palette,
+.card.hide-palette .palette-collapsed-opener {
+  display: none !important;
+}
+
+.card.hide-head .scene-head {
+  display: none !important;
+}
+
+.card.hide-controls .canvas-controls {
+  display: none !important;
+}
+
+.card.hide-topbar.hide-side.hide-bottom {
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.card.hide-topbar.hide-side.hide-bottom .circuit-panel {
+  border: none !important;
+  border-radius: 12px;
+}
+
+body.hide-floating-btn .floating-view-btn,
+.hide-floating-btn .floating-view-btn,
+.floating-view-btn.is-hidden {
+  display: none !important;
+}
+
 /* ---------------------------------------------- Modals & Floating Menus */
 .floating-view-btn {
   position: fixed;
