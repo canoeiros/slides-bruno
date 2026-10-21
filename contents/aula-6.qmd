@@ -440,8 +440,7 @@ Resultado Mínimo: $F = A + B\bar{C}$
 
 ## Exemplo 2: {.embed}
 
-<iframe src="../assets/global/karnaugh.html??vars=3&m=0,2,4,6&hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
-
+<iframe src="../assets/global/karnaugh.html?vars=4&m=0,2,4,6&hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
 
 ## Exemplo 3: Teorema do Consenso (Redundância) {.smaller}
 ::: {.columns}
