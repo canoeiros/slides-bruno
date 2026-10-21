@@ -80,26 +80,34 @@ Para funções com muitas variáveis, a simplificação algébrica pode ser comp
 -   Expandindo:
     $$F = \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC$$
 
-## Simplificação Algébrica
--   Podemos simplificar a forma canônica usando identidades da Álgebra Booleana:
-    $$
-    \begin{aligned}
-    F &= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
-    &= \bar{A}B\bar{C} + A(\bar{B}\bar{C} + \bar{B}C + B\bar{C} + BC) \\
-    &= \bar{A}B\bar{C} + A(\bar{B}(\bar{C}+C) + B(\bar{C}+C)) \\
-    &= \bar{A}B\bar{C} + A(\bar{B}(1) + B(1)) \\
-    &= \bar{A}B\bar{C} + A(\bar{B} + B) \\
-    &= \bar{A}B\bar{C} + A(1) \\
-    &= A + \bar{A}B\bar{C}
-    \end{aligned}
-    $$
+## Simplificação Algébrica {.smaller}
 
-::: {.fragment}
-::: {.callout-tip}
+::: {.columns}
+
+::: {.column}
+
+$$
+\begin{aligned}
+F &= \bar{A}B\bar{C} + A\bar{B}\bar{C} + A\bar{B}C + AB\bar{C} + ABC \\
+&= \bar{A}B\bar{C} + A(\bar{B}\bar{C} + \bar{B}C + B\bar{C} + BC) \\
+&= \bar{A}B\bar{C} + A(\bar{B}(\bar{C}+C) + B(\bar{C}+C)) \\
+&= \bar{A}B\bar{C} + A(\bar{B}(1) + B(1)) \\
+&= \bar{A}B\bar{C} + A(\bar{B} + B) \\
+&= \bar{A}B\bar{C} + A(1) \\
+&= A + \bar{A}B\bar{C}
+\end{aligned}
+$$
+
+:::
+
+::: {.column .callout-tip .fragment}
+
 ## Identidade Útil
 Lembre-se da identidade: $X + \bar{X}Y = X+Y$.
 Aplicando-a, $A + \bar{A}(B\bar{C}) = A + B\bar{C}$.
+
 :::
+
 :::
 
 ## K-Map: Representação Visual
@@ -217,11 +225,12 @@ Aplicando-a, $A + \bar{A}(B\bar{C}) = A + B\bar{C}$.
     -   O pareamento pode se **sobrepor**.
     -   Todos os '1's devem ser cobertos por pelo menos um grupo.
 
-## Estrutura da Grade (3 Variáveis)
+## Estrutura da Grade (3 Variáveis) {.smaller}
 - $2^3 = 8$ células organizadas em uma matriz $2 \times 4$:
   - Linhas: variável $A \in \{0, 1\}$
   - Colunas: variáveis $BC \in \{00, 01, 11, 10\}$ (Código Gray)
 
+::: {.fragment}
 <div style="display: flex; justify-content: center; margin: 1.2rem auto; max-width: 620px;">
   <table style="border-collapse: separate; border-spacing: 8px; width: 100%; font-family: 'JetBrains Mono', monospace; text-align: center; border: none; background: transparent;">
     <thead>
@@ -252,7 +261,9 @@ Aplicando-a, $A + \bar{A}(B\bar{C}) = A + B\bar{C}$.
   </table>
 </div>
 
-::: {.callout-note}
+::: 
+
+::: {.callout-note .fragment}
 Atenção à troca de posição entre a 3ª e a 4ª coluna: $11$ vem antes de $10$ para manter a diferença de apenas 1 bit!
 :::
 
@@ -402,13 +413,8 @@ $A$ varia ($0 \to 1$) $\Rightarrow$ termo **$B\bar{C}$**.
 Resultado Mínimo: $F = A + B\bar{C}$
 </div>
 
-## Resolução com Asset Global
-- O asset interativo valida e gera os enlaçamentos toroidais em tempo real:
-
-<iframe src="../assets/global/karnaugh.html?vars=3&m=2,4,5,6,7&names=A,B,C&hide=panels" width="100%" height="480px" style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);"></iframe>
-
-## Demonstração Interativa {data-fullscreen="true"}
-<iframe src="../assets/global/karnaugh.html?vars=3&m=2,4,5,6,7&names=A,B,C&hide=panels"></iframe>
+## Demonstração Interativa {.embed}
+<iframe src="../assets/global/karnaugh.html?vars=3&m=2,4,5,6,7&names=A,B,C&hide=panels" width="100%" height="80%"></iframe>
 
 # Exemplos Práticos de Agrupamento
 
@@ -420,27 +426,44 @@ Resultado Mínimo: $F = A + B\bar{C}$
   - $B$ varia ($0$ e $1$) $\Rightarrow$ eliminado
   - $C = 1$ permanece constante $\Rightarrow$ **$F = C$**
 
-<iframe src="../assets/global/karnaugh.html?vars=3&m=1,3,5,7&names=A,B,C&hide=panels" width="100%" height="420px" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
+## Exemplo 1: {.embed}
+
+<iframe src="../assets/global/karnaugh.html?vars=3&m=1,3,5,7&names=A,B,C&hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
 
 ## Exemplo 2: Adjacência Cilíndrica (Bordas) {.smaller}
+
 - No toro de Karnaugh, as colunas extremas ($00$ e $10$) são **adjacentes**:
   - $m_0$ é vizinho de $m_2$
   - $m_4$ é vizinho de $m_6$
 - Para $f(A,B,C) = \Sigma m(0, 2, 4, 6)$, os 4 cantos formam uma quadra simplificada em **$\bar{C}$**:
 
-<iframe src="../assets/global/karnaugh.html?vars=3&preset=wrap_3var&hide=panels" width="100%" height="420px" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
+
+## Exemplo 2: {.embed}
+
+<iframe src="../assets/global/karnaugh.html??vars=3&m=0,2,4,6&hide=panels" width="100%" height="80%" style="border: none; border-radius: 12px; margin-top: 0.5rem;"></iframe>
+
 
 ## Exemplo 3: Teorema do Consenso (Redundância) {.smaller}
+::: {.columns}
+
+
+::: {.column}
+
 - Função: $f(A,B,C) = \Sigma m(1, 3, 6, 7)$
 - Possíveis agrupamentos:
   - Grupo I: $m(6, 7) \Rightarrow AB$
   - Grupo II: $m(1, 3) \Rightarrow \bar{A}C$
   - Grupo III: $m(3, 7) \Rightarrow BC$ (**Redundante!**)
 
-::: {.callout-note}
+:::
+
+::: {.column .callout-note .fragment}
+
 ## Termo Redundante
 O grupo $m(3, 7)$ não é necessário porque $m_1$ e $m_3$ já estão cobertos pelo Grupo II e $m_7$ está coberto pelo Grupo I. Logo, a expressão mínima é:
 $$F = AB + \bar{A}C$$
+
 :::
 
+:::
 

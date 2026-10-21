@@ -62,7 +62,8 @@ Sempre que a aula introduzir ou analisar portas lógicas ou circuitos básicos (
 - `gate=XOR` (Porta OU Exclusivo)
 - `gate=XNOR` (Porta Coincidência / Não-OU Exclusivo)
 
-**Circuitos de Memória / Latches suportados (`preset=...`):**
+**Circuitos Combinacionais e de Memória suportados (`preset=...`):**
+- `preset=xorCircuit` (Circuito interno da porta XOR usando AND, OR e NOT: $Y = A\bar{B} + \bar{A}B$)
 - `preset=srNor` (Latch SR com portas NOR)
 - `preset=srNand` (Latch SR com portas NAND)
 - `preset=dLatch` (Latch D transparente sensível a nível)

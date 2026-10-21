@@ -77,10 +77,9 @@ flowchart LR
 <iframe src="../assets/global/simulador-logico.html?preset=gates&gate=XOR&hide=panels"></iframe>
 
 ## Porta XOR: Circuito Interno
-- A porta XOR pode ser implementada usando portas AND, OR e NOT:
+  $$Y = A \oplus B = A\bar{B} + \bar{A}B$$
 
-<!-- FIGURE: page-1 - Circuito interno da porta XOR (A.B' + A'.B) -->
-![Circuito interno da porta XOR](../assets/aula-5/sources/page-1.png)
+<iframe src="../assets/global/simulador-logico.html?preset=xorCircuit&hide=panels" width="100%" height="500px" style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);"></iframe>
 
 ## Porta XOR: Propriedade Chave
 - A porta XOR é um **detector de "1" ímpar**.

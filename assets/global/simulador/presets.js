@@ -59,6 +59,41 @@ window.SimPresets = (() => {
       create: (options = {}) => createGatesPreset(options.gate || 'AND')
     },
 
+    xorCircuit: {
+      tab: 'XOR Interno',
+      title: 'Circuito Interno da Porta XOR',
+      formula: 'Y = A·B̄ + Ā·B',
+      clock: null,
+      create: () => ({
+        tab: 'XOR Interno',
+        title: 'Porta XOR com Portas AND, OR e NOT',
+        formula: 'Y = A·B̄ + Ā·B',
+        clock: null,
+        components: [
+          { id: 'swA', type: 'SWITCH', x: 120, y: 110, rotation: 0, customLabel: 'A', state: 0 },
+          { id: 'swB', type: 'SWITCH', x: 120, y: 290, rotation: 0, customLabel: 'B', state: 0 },
+          { id: 'notTop', type: 'NOT', x: 260, y: 155, rotation: 0, customLabel: 'NOT B' },
+          { id: 'notBot', type: 'NOT', x: 260, y: 245, rotation: 0, customLabel: 'NOT A' },
+          { id: 'andTop', type: 'AND', x: 410, y: 125, rotation: 0, customLabel: 'A·B̄' },
+          { id: 'andBot', type: 'AND', x: 410, y: 275, rotation: 0, customLabel: 'Ā·B' },
+          { id: 'orGate', type: 'OR', x: 550, y: 200, rotation: 0, customLabel: 'OR' },
+          { id: 'lampY', type: 'LAMP', x: 670, y: 200, rotation: 0, customLabel: 'Y' }
+        ],
+        wires: [
+          { id: 'w1', fromComp: 'swA', fromPin: 'out0', toComp: 'andTop', toPin: 'in0' },
+          { id: 'w2', fromComp: 'swA', fromPin: 'out0', toComp: 'notBot', toPin: 'in0' },
+          { id: 'w3', fromComp: 'swB', fromPin: 'out0', toComp: 'notTop', toPin: 'in0' },
+          { id: 'w4', fromComp: 'swB', fromPin: 'out0', toComp: 'andBot', toPin: 'in1' },
+          { id: 'w5', fromComp: 'notTop', fromPin: 'out0', toComp: 'andTop', toPin: 'in1' },
+          { id: 'w6', fromComp: 'notBot', fromPin: 'out0', toComp: 'andBot', toPin: 'in0' },
+          { id: 'w7', fromComp: 'andTop', fromPin: 'out0', toComp: 'orGate', toPin: 'in0' },
+          { id: 'w8', fromComp: 'andBot', fromPin: 'out0', toComp: 'orGate', toPin: 'in1' },
+          { id: 'w9', fromComp: 'orGate', fromPin: 'out0', toComp: 'lampY', toPin: 'in0' }
+        ],
+        note: '<b>Circuito Interno da Porta XOR.</b> Implementação direta da expressão <b>Y = A·B̄ + Ā·B</b> usando inversores NOT, duas portas AND e uma porta OR final.'
+      })
+    },
+
     srNor: {
       tab: 'SR NOR',
       title: 'Latch SR — NOR',
@@ -278,7 +313,7 @@ window.SimPresets = (() => {
   };
 
   const TAB_GROUPS = [
-    ['gates'],
+    ['gates', 'xorCircuit'],
     ['srNor', 'srNand', 'dLatch'],
     ['srff', 'dff', 'jk', 'tff'],
     ['custom']
