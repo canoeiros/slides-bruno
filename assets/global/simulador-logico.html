@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Lógico — Portas, Latches e Flip-Flops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="simulador/simulador.css">
+</head>
+<body class="theme-light">
+  <div class="card" id="simCard">
+    <!-- 1. Cabeçalho e Abas de Circuitos -->
+    <header class="topbar" id="secTopbar">
+      <nav class="tabs" id="tabs" aria-label="Circuitos Pré-carregados"></nav>
+      <!-- Seletor responsivo para telas menores -->
+      <select class="tabs-select" id="tabsSelect" aria-label="Selecionar Circuito"></select>
+      <div class="topbar-actions">
+        <button class="btn btn-sm" id="btnThemeToggle" type="button" title="Alternar entre tema claro e escuro">🌙 Escuro</button>
+        <button class="btn btn-sm" id="btnSectionsEditor" type="button" title="Editor de seções (visibilidade e dimensões)">📐 Seções</button>
+        <button class="btn-sec-hide" data-hide-sec="topbar" type="button" title="Ocultar cabeçalho">✕</button>
+      </div>
+    </header>
+
+    <!-- 2. Área Principal (Canva + Painel Lateral) -->
+    <main class="stage" id="secStage">
+      <!-- Painel do Circuito (Canva Logic.ly) -->
+      <section class="circuit-panel" id="secCircuit">
+        <div class="scene-head" id="sceneHead"></div>
+
+        <!-- Paleta Lateral de Componentes (Esquerda / Ocultável) -->
+        <aside class="component-palette vertical-palette" id="compPalette" role="toolbar" aria-label="Paleta de Componentes">
+          <div class="palette-header">
+            <span class="palette-title">Componentes</span>
+            <button type="button" class="palette-toggle-btn" id="btnTogglePalette" title="Ocultar / Expandir Paleta">◀</button>
+          </div>
+          <div class="palette-content">
+            <div class="palette-group">
+              <span class="palette-label">Entradas:</span>
+              <button type="button" class="palette-btn" data-add-type="SWITCH" title="Chave Alternadora 0/1">⚡ Chave</button>
+              <button type="button" class="palette-btn" data-add-type="BUTTON" title="Botão de Pulso">⏻ Botão</button>
+              <button type="button" class="palette-btn" data-add-type="CLOCK" title="Gerador de Clock">∿ Clock</button>
+            </div>
+            <div class="palette-sep"></div>
+            <div class="palette-group">
+              <span class="palette-label">Portas:</span>
+              <div class="palette-grid-2">
+                <button type="button" class="palette-btn" data-add-type="AND" title="Porta AND">AND</button>
+                <button type="button" class="palette-btn" data-add-type="OR" title="Porta OR">OR</button>
+                <button type="button" class="palette-btn" data-add-type="NOT" title="Porta NOT">NOT</button>
+                <button type="button" class="palette-btn" data-add-type="NAND" title="Porta NAND">NAND</button>
+                <button type="button" class="palette-btn" data-add-type="NOR" title="Porta NOR">NOR</button>
+                <button type="button" class="palette-btn" data-add-type="XOR" title="Porta XOR">XOR</button>
+                <button type="button" class="palette-btn" data-add-type="XNOR" title="Porta XNOR">XNOR</button>
+              </div>
+            </div>
+            <div class="palette-sep"></div>
+            <div class="palette-group">
+              <span class="palette-label">Saídas & Displays:</span>
+              <button type="button" class="palette-btn" data-add-type="LAMP" title="Lâmpada Indicadora">💡 Lâmpada</button>
+              <button type="button" class="palette-btn" data-add-type="PROBE" title="Ponto de Saída / Probe Digital">● Saída (Probe)</button>
+              <button type="button" class="palette-btn" data-add-type="SEVEN_SEGMENT" title="Display de 7 Segmentos (a..g)">🔢 Display 7-Seg</button>
+            </div>
+            <div class="palette-sep"></div>
+            <div class="palette-group">
+              <span class="palette-label">Blocos:</span>
+              <div class="palette-grid-2">
+                <button type="button" class="palette-btn" data-add-type="SR_LATCH" title="Latch SR">SR</button>
+                <button type="button" class="palette-btn" data-add-type="D_LATCH" title="Latch D">Latch D</button>
+                <button type="button" class="palette-btn" data-add-type="SR_FF" title="Flip-Flop SR por Clock">FF SR</button>
+                <button type="button" class="palette-btn" data-add-type="D_FF" title="Flip-Flop D">FF D</button>
+                <button type="button" class="palette-btn" data-add-type="JK_FF" title="Flip-Flop JK">FF JK</button>
+                <button type="button" class="palette-btn" data-add-type="T_FF" title="Flip-Flop T">FF T</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Botão para reabrir a paleta quando colapsada -->
+        <button type="button" class="palette-collapsed-opener" id="btnOpenPalette" title="Mostrar Paleta de Componentes" style="display: none;">▶ Componentes</button>
+
+        <!-- Canva Interativo de Fios e Componentes -->
+        <div class="canvas-wrap" id="canvasWrap"></div>
+
+        <!-- Ferramentas de Zoom e Navegação do Canva -->
+        <div class="canvas-controls" role="toolbar" aria-label="Controles do Canva">
+          <button type="button" class="canvas-tool-btn" id="btnZoomIn" title="Aumentar Zoom">+</button>
+          <button type="button" class="canvas-tool-btn" id="btnZoomOut" title="Diminuir Zoom">−</button>
+          <button type="button" class="canvas-tool-btn" id="btnZoomReset" title="Resetar Zoom (100%)">100%</button>
+        </div>
+      </section>
+
+      <!-- Divisor Redimensionável Horizontal (Splitter) -->
+      <div class="resizer-h" id="resizerH" title="Arraste para redimensionar a barra lateral"></div>
+
+      <!-- 3. Painel Lateral (Estado, Tabela Verdade, Notas) -->
+      <aside class="side" id="secSide">
+        <div class="side-header">
+          <span class="side-head-title">Painel Lateral</span>
+          <button class="btn-sec-hide" data-hide-sec="side" type="button" title="Ocultar painel lateral">✕</button>
+        </div>
+        <div class="side-block">
+          <div class="side-title">Estado atual</div>
+          <div class="chips" id="chips"></div>
+          <div id="behavior" class="beh info">—</div>
+        </div>
+        <div class="side-block">
+          <div class="side-title" id="tableTitle">Tabela verdade</div>
+          <div id="tableWrap"></div>
+        </div>
+        <div class="note" id="note"></div>
+      </aside>
+    </main>
+
+    <!-- Divisor Redimensionável Vertical (Splitter) -->
+    <div class="resizer-v" id="resizerV" title="Arraste para redimensionar a linha do tempo"></div>
+
+    <!-- 4. Linha do Tempo (Cronograma / Oscilograma) -->
+    <footer class="bottom" id="secBottom">
+      <div class="wave-head">
+        <span class="wave-title">Linha do tempo</span>
+        <span class="legend"><i class="hi"></i>1<i class="lo"></i>0</span>
+        <div class="wave-actions">
+          <span class="hint" id="hint">Clique nas chaves para alternar 0/1</span>
+          <!-- Seletor do Tipo de Disparo do Clock -->
+          <select id="selectClockType" class="select-clock-type" title="Tipo de Disparo do Relógio">
+            <option value="rising">↑ Borda de Subida</option>
+            <option value="falling">↓ Borda de Descida</option>
+            <option value="level">⎍ Nível (Estado)</option>
+          </select>
+          <button class="btn primary" id="btnPulse" type="button">Pulso</button>
+          <button class="btn" id="btnAuto" type="button">Auto</button>
+          <button class="btn" id="btnReset" type="button">Reset</button>
+          <button class="btn-sec-hide" data-hide-sec="bottom" type="button" title="Ocultar linha do tempo">✕</button>
+        </div>
+      </div>
+      <canvas id="wave"></canvas>
+    </footer>
+  </div>
+
+  <!-- Botão Flutuante para Gerenciar Seções Ocultas -->
+  <button id="floatingViewBtn" class="floating-view-btn" type="button" title="Editor de seções">
+    <span>📐 Seções</span>
+    <span id="hiddenCountBadge" class="badge-count" style="display: none;">0</span>
+  </button>
+
+  <!-- Modal Unificado: Editor de Seções (Visibilidade e Redimensionamento) -->
+  <div id="sectionsEditorModal" class="sections-editor-modal" style="display: none;" role="dialog" aria-label="Editor de Seções">
+    <div class="modal-header">
+      <span>📐 Editor de Seções</span>
+      <button class="btn-sec-hide" id="btnCloseSecEditor" type="button">✕</button>
+    </div>
+
+    <!-- Bloco 1: Visibilidade -->
+    <div class="editor-sub-sec">
+      <div class="sub-sec-title">Visibilidade das Seções:</div>
+      <div class="checks-grid">
+        <label class="section-check-item">
+          <input type="checkbox" id="chkSecTopbar" checked>
+          <span>Cabeçalho (Abas)</span>
+        </label>
+        <label class="section-check-item">
+          <input type="checkbox" id="chkSecCircuit" checked>
+          <span>Painel do Circuito</span>
+        </label>
+        <label class="section-check-item">
+          <input type="checkbox" id="chkSecSide" checked>
+          <span>Painel Lateral</span>
+        </label>
+        <label class="section-check-item">
+          <input type="checkbox" id="chkSecBottom" checked>
+          <span>Linha do Tempo (Ondas)</span>
+        </label>
+      </div>
+      <button class="btn btn-sm" id="btnRestoreAllSec" type="button" style="margin-top: 6px; width: 100%;">Mostrar Todas as Seções</button>
+    </div>
+
+    <!-- Bloco 2: Dimensões -->
+    <div class="editor-sub-sec">
+      <div class="sub-sec-title">Dimensões & Presets Rápidos:</div>
+      <div class="presets-row">
+        <button type="button" class="btn btn-sm" data-resize-preset="default">Equilibrado</button>
+        <button type="button" class="btn btn-sm" data-resize-preset="expandCircuit">Canva Amplo</button>
+        <button type="button" class="btn btn-sm" data-resize-preset="expandSide">Tabela Ampla</button>
+        <button type="button" class="btn btn-sm" data-resize-preset="expandBottom">Ondas Altas</button>
+      </div>
+      <div class="sliders-list">
+        <label class="slider-row">
+          <span>Largura Painel Lateral:</span>
+          <input type="range" id="sliderSideWidth" min="180" max="550" step="10" value="318">
+        </label>
+        <label class="slider-row">
+          <span>Altura Linha do Tempo:</span>
+          <input type="range" id="sliderBottomHeight" min="60" max="320" step="10" value="128">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script src="simulador/components.js"></script>
+  <script src="simulador/engine.js"></script>
+  <script src="simulador/presets.js"></script>
+  <script src="simulador/canvas.js"></script>
+  <script src="simulador/ui.js"></script>
+
+  <!-- Inicialização do Simulador -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const engine = new window.SimEngine.CircuitEngine();
+      const canvasWrap = document.getElementById('canvasWrap');
+      const canvas = new window.SimCanvas.CircuitCanvas(canvasWrap, engine);
+      const ui = new window.SimUI.SimulatorUI(engine, canvas);
+
+      // Conectar botões de zoom do canvas
+      document.getElementById('btnZoomIn').addEventListener('click', () => canvas.zoomIn());
+      document.getElementById('btnZoomOut').addEventListener('click', () => canvas.zoomOut());
+      document.getElementById('btnZoomReset').addEventListener('click', () => canvas.resetZoom());
+
+      // Carregar preset inicial (da URL ou padrão 'gates')
+      ui.loadPreset(ui.currentScene, ui.currentGate);
+    });
+  </script>
+</body>
+</html>
