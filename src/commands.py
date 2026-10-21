@@ -219,8 +219,8 @@ def cmd_convert_all(
 def cmd_build():
     """Compila o projeto completo para output/."""
     utils.check_quarto()
-    print("🔨 Compilando conteúdo em contents/ com Quarto...")
-    res = subprocess.run(["quarto", "render", str(config.CONTENTS_DIR)], cwd=config.ROOT_DIR)
+    print("🔨 Compilando o projeto completo com Quarto...")
+    res = subprocess.run(["quarto", "render"], cwd=config.ROOT_DIR)
     if res.returncode == 0:
         print(f"\n✨ Build finalizado com sucesso em: {config.OUTPUT_DIR.relative_to(config.ROOT_DIR)}/")
     else:

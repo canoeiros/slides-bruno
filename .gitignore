@@ -4,11 +4,9 @@ originais/
 # Pasta de saída gerada pelo Quarto (publicada via GitHub Actions)
 output/
 
-# Prints de acess
-assets/aula-*/sources/
-
 # Arquivos temporários e builds locais do Quarto
 .quarto/
+_quarto_internal_scss_error.scss
 *_files/
 contents/*_files/
 contents/*.html

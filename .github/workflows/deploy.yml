@@ -8,22 +8,41 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.6.42"
 
       - name: Render project
         run: quarto render
+
+      - name: Verify build artifacts
+        run: |
+          test -f output/index.html || (echo "❌ Erro: index.html não foi gerado!" && exit 1)
+          test -f output/contents/aula-5.html || (echo "❌ Erro: aula-5.html não foi gerado!" && exit 1)
+          test -f output/contents/aula-6.html || (echo "❌ Erro: aula-6.html não foi gerado!" && exit 1)
+          test -f output/assets/global/simulador-logico.html || (echo "❌ Erro: simulador-logico.html não foi copiado!" && exit 1)
+          test -f output/assets/global/karnaugh.html || (echo "❌ Erro: karnaugh.html não foi copiado!" && exit 1)
+          echo "✅ Todos os artefatos e slides foram validados com sucesso!"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
 

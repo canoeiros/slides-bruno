@@ -95,4 +95,4 @@ flowchart LR
 ## Porta XOR: Propriedades (Parte 2)
 - **Associatividade e Comutatividade**:
   - A operação XOR é **comutativa**: $A \oplus B = B \oplus A$
-  - A operação XOR é **associativa**:
+  - A operação XOR é **associativa**: $(A \oplus B) \oplus C = A \oplus (B \oplus C)$
