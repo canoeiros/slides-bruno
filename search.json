@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MATA38 - Projeto de Circuitos Lógicos",
-    "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
-  },
-  {
     "objectID": "contents/aula-5.html#porta-xor-definição-e-expressão",
     "href": "contents/aula-5.html#porta-xor-definição-e-expressão",
     "title": "Aula 5  Portas Lógicas II",
@@ -61,6 +54,342 @@
     "title": "Aula 5  Portas Lógicas II",
     "section": "Porta XOR: Propriedades (Parte 2)",
     "text": "Porta XOR: Propriedades (Parte 2)\n\nAssociatividade e Comutatividade:\n\nA operação XOR é comutativa: \\(A \\oplus B = B \\oplus A\\)\nA operação XOR é associativa:"
+  },
+  {
+    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
+    "title": "Aula 0  Introdução",
+    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
+    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
+  },
+  {
+    "objectID": "contents/aula-0.html#exemplos",
+    "href": "contents/aula-0.html#exemplos",
+    "title": "Aula 0  Introdução",
+    "section": "Exemplos:",
+    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
+  },
+  {
+    "objectID": "contents/aula-0.html#para-o-nosso-curso",
+    "href": "contents/aula-0.html#para-o-nosso-curso",
+    "title": "Aula 0  Introdução",
+    "section": "Para o nosso curso:",
+    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
+  },
+  {
+    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
+    "title": "Aula 0  Introdução",
+    "section": "Qual a diferença entre os relógios?",
+    "text": "Qual a diferença entre os relógios?"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-analógicos",
+    "href": "contents/aula-0.html#sinais-analógicos",
+    "title": "Aula 0  Introdução",
+    "section": "Sinais Analógicos",
+    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-analógica",
+    "href": "contents/aula-0.html#visualização-analógica",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização Analógica",
+    "text": "Visualização Analógica"
+  },
+  {
+    "objectID": "contents/aula-0.html#sinais-digitais",
+    "href": "contents/aula-0.html#sinais-digitais",
+    "title": "Aula 0  Introdução",
+    "section": "Sinais Digitais",
+    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-digital",
+    "href": "contents/aula-0.html#visualização-digital",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização Digital",
+    "text": "Visualização Digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#adc",
+    "href": "contents/aula-0.html#adc",
+    "title": "Aula 0  Introdução",
+    "section": "ADC",
+    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-adc",
+    "href": "contents/aula-0.html#visualização-adc",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização ADC",
+    "text": "Visualização ADC"
+  },
+  {
+    "objectID": "contents/aula-0.html#dac",
+    "href": "contents/aula-0.html#dac",
+    "title": "Aula 0  Introdução",
+    "section": "DAC",
+    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
+  },
+  {
+    "objectID": "contents/aula-0.html#visualização-dac",
+    "href": "contents/aula-0.html#visualização-dac",
+    "title": "Aula 0  Introdução",
+    "section": "Visualização DAC",
+    "text": "Visualização DAC"
+  },
+  {
+    "objectID": "contents/aula-0.html#pergunta",
+    "href": "contents/aula-0.html#pergunta",
+    "title": "Aula 0  Introdução",
+    "section": "Pergunta:",
+    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
+  },
+  {
+    "objectID": "contents/aula-2.html#informações-gerais",
+    "href": "contents/aula-2.html#informações-gerais",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Informações Gerais:",
+    "text": "Informações Gerais:\n\nIntroduzido pelo matemático George Boole\nConjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade\n\n\n\n\n\n\n\n\n\nExemplo:\n\n\n\\[\nF = \\underbrace{\\underbrace{\\bar{A}B}_{\\text{= and}}+ \\underbrace{BC}_{\\text{= and}} + \\underbrace{ABC}_{\\text{= and}}}_{\\text{= or}}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#uso",
+    "href": "contents/aula-2.html#uso",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Uso",
+    "text": "Uso\n\nUsamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)\nPara nº maiores se usa o Mapa de Karnaugh"
+  },
+  {
+    "objectID": "contents/aula-2.html#razões",
+    "href": "contents/aula-2.html#razões",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Razões",
+    "text": "Razões\n\nReduzir:\n\nnº de portas\nCusto\nCalor nos componentes"
+  },
+  {
+    "objectID": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "href": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Exemplo: Levar ou não o guarda-chuva",
+    "text": "Exemplo: Levar ou não o guarda-chuva\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; |Rain| OR\n  B((B)) --&gt; |Rain Forecast| OR\n  C((C)) --&gt; |Take car| NOT\n  OR --&gt; |A+B| AND\n  NOT --&gt; |~C| AND\n  AND --&gt; |Take umbrella| Y((Y))"
+  },
+  {
+    "objectID": "contents/aula-2.html#not",
+    "href": "contents/aula-2.html#not",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Not",
+    "text": "Not\n\nOperação complementar\nSempre inverte a entrada\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(\\bar{A}\\)\n\n\n\n\n0\n1\n\n\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-2.html#and",
+    "href": "contents/aula-2.html#and",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "And",
+    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-2.html#or",
+    "href": "contents/aula-2.html#or",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Or",
+    "text": "Or\n\nSaída alta com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-2.html#lei-distributiva",
+    "href": "contents/aula-2.html#lei-distributiva",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Distributiva:",
+    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#lei-comutativa",
+    "href": "contents/aula-2.html#lei-comutativa",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Comutativa:",
+    "text": "Lei Comutativa:\n\\[\n\\begin{aligned}\nA+B &= B+A \\\\\nA \\cdot B &= B \\cdot A\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#lei-associativa",
+    "href": "contents/aula-2.html#lei-associativa",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei Associativa:",
+    "text": "Lei Associativa:\n\\[\n\\begin{aligned}\n(A+B)+C &= A+(B+C) \\\\\n(A \\cdot B) \\cdot C &= A \\cdot (B \\cdot C)\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-2.html#lei-de-morgan",
+    "href": "contents/aula-2.html#lei-de-morgan",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Lei De Morgan:",
+    "text": "Lei De Morgan:\n\\[\n\\begin{aligned}\n\\overline{(A+B)} &= \\bar{A} \\cdot \\bar{B} \\\\\n\\overline{(A \\cdot B)} &= \\bar{A} + \\bar{B}\n\\end{aligned}\n\\]\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A+B\\)\n\\(\\overline{A+B}\\)\n\\(\\bar{A}\\)\n\\(\\bar{B}\\)\n\\(\\bar{A} \\cdot \\bar{B}\\)\n\n\n\n\n0\n0\n0\n1\n1\n1\n1\n\n\n0\n1\n1\n0\n1\n0\n0\n\n\n1\n0\n1\n0\n0\n1\n0\n\n\n1\n1\n1\n0\n0\n0\n0"
+  },
+  {
+    "objectID": "contents/aula-2.html#regras",
+    "href": "contents/aula-2.html#regras",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Regras",
+    "text": "Regras\n\nComplemento: \\((\\overline{\\overline{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
+  },
+  {
+    "objectID": "contents/aula-2.html#regras-1",
+    "href": "contents/aula-2.html#regras-1",
+    "title": "Aula 2  Álgebra Booleana",
+    "section": "Regras",
+    "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
+  },
+  {
+    "objectID": "contents/aula-6.html#introdução-à-minimização",
+    "href": "contents/aula-6.html#introdução-à-minimização",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Introdução à Minimização",
+    "text": "Introdução à Minimização\n\nEstudamos inicialmente a minimização de expressões usando Álgebra Booleana.\nO objetivo é sempre obter um resultado MÍNIMO para a função lógica.\n\n\n\n\n\n\n\n\nLimitação da Álgebra Booleana\n\n\nPara funções com muitas variáveis, a simplificação algébrica pode ser complexa e nem sempre garante a forma mais mínima."
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-função-fabc",
+    "href": "contents/aula-6.html#exemplo-função-fabc",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo: Função F(A,B,C)",
+    "text": "Exemplo: Função F(A,B,C)\n\nVamos iniciar com a função e sua Tabela-Verdade: \\[F = A + B\\bar{C}\\]"
+  },
+  {
+    "objectID": "contents/aula-6.html#tabela-verdade-de-fabc",
+    "href": "contents/aula-6.html#tabela-verdade-de-fabc",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Tabela-Verdade de F(A,B,C)",
+    "text": "Tabela-Verdade de F(A,B,C)\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-6.html#forma-canônica-sop-soma-de-produtos",
+    "href": "contents/aula-6.html#forma-canônica-sop-soma-de-produtos",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Forma Canônica SOP (Soma de Produtos)",
+    "text": "Forma Canônica SOP (Soma de Produtos)\n\nA partir da Tabela-Verdade, identificamos os mintermos onde \\(F=1\\): \\[F(A,B,C) = \\Sigma m(2,4,5,6,7)\\]\nExpandindo: \\[F = \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC\\]"
+  },
+  {
+    "objectID": "contents/aula-6.html#simplificação-algébrica",
+    "href": "contents/aula-6.html#simplificação-algébrica",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Simplificação Algébrica",
+    "text": "Simplificação Algébrica\n\n\n\\[\n\\begin{aligned}\nF &= \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}\\bar{C} + \\bar{B}C + B\\bar{C} + BC) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(\\bar{C}+C) + B(\\bar{C}+C)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(1) + B(1)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B} + B) \\\\\n&= \\bar{A}B\\bar{C} + A(1) \\\\\n&= A + \\bar{A}B\\bar{C}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nIdentidade Útil\n\n\nLembre-se da identidade: \\(X + \\bar{X}Y = X+Y\\). Aplicando-a, \\(A + \\bar{A}(B\\bar{C}) = A + B\\bar{C}\\)."
+  },
+  {
+    "objectID": "contents/aula-6.html#k-map-representação-visual",
+    "href": "contents/aula-6.html#k-map-representação-visual",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "K-Map: Representação Visual",
+    "text": "K-Map: Representação Visual\n\nO K-Map organiza as células da Tabela-Verdade de forma que células adjacentes diferem em apenas um bit.\nIsso permite a simplificação visual de expressões lógicas."
+  },
+  {
+    "objectID": "contents/aula-6.html#mapeamento-da-tabela-verdade",
+    "href": "contents/aula-6.html#mapeamento-da-tabela-verdade",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Mapeamento da Tabela-Verdade",
+    "text": "Mapeamento da Tabela-Verdade\n\nCada linha da Tabela-Verdade corresponde a uma célula no K-Map."
+  },
+  {
+    "objectID": "contents/aula-6.html#tabela-verdade-com-mintermos",
+    "href": "contents/aula-6.html#tabela-verdade-com-mintermos",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Tabela-Verdade com Mintermos",
+    "text": "Tabela-Verdade com Mintermos\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\nMintermo\n\n\n\n\n0\n0\n0\n0\n\\(m_0\\)\n\n\n0\n0\n1\n0\n\\(m_1\\)\n\n\n0\n1\n0\n1\n\\(m_2\\)\n\n\n0\n1\n1\n0\n\\(m_3\\)\n\n\n1\n0\n0\n1\n\\(m_4\\)\n\n\n1\n0\n1\n1\n\\(m_5\\)\n\n\n1\n1\n0\n1\n\\(m_6\\)\n\n\n1\n1\n1\n1\n\\(m_7\\)"
+  },
+  {
+    "objectID": "contents/aula-6.html#estrutura-do-k-map-3-variáveis",
+    "href": "contents/aula-6.html#estrutura-do-k-map-3-variáveis",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Estrutura do K-Map (3 Variáveis)",
+    "text": "Estrutura do K-Map (3 Variáveis)\n\nAs variáveis são organizadas usando o Código Gray para garantir que células adjacentes (incluindo as que “enrolam” nas bordas) difiram em apenas 1 bit.\n\n\n\nOrdem Incorreta (NÃO FAZER) - Usa ordem binária sequencial. - Células adjacentes podem diferir em mais de 1 bit.\n\n\n\n\nK-map incorrect order"
+  },
+  {
+    "objectID": "contents/aula-6.html#estrutura-do-k-map-3-variáveis-1",
+    "href": "contents/aula-6.html#estrutura-do-k-map-3-variáveis-1",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Estrutura do K-Map (3 Variáveis)",
+    "text": "Estrutura do K-Map (3 Variáveis)\n\nAs variáveis são organizadas usando o Código Gray para garantir que células adjacentes (incluindo as que “enrolam” nas bordas) difiram em apenas 1 bit.\n\n\n\nOrdem Correta (Código Gray) - Garante que adjacências (horizontal, vertical, e “enrolando”) diferem em 1 bit.\n\n\n\n\nK-map correct order"
+  },
+  {
+    "objectID": "contents/aula-6.html#por-que-código-gray",
+    "href": "contents/aula-6.html#por-que-código-gray",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Por que Código Gray?",
+    "text": "Por que Código Gray?\n\nA diferença de 1 bit entre células adjacentes é crucial para a simplificação.\nPermite aplicar a propriedade da Álgebra Booleana: \\[X\\bar{Y} + XY = X( \\bar{Y} + Y ) = X(1) = X\\]\nIsso elimina a variável que muda de valor entre as células agrupadas."
+  },
+  {
+    "objectID": "contents/aula-6.html#etapas-para-simplificação",
+    "href": "contents/aula-6.html#etapas-para-simplificação",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Etapas para Simplificação",
+    "text": "Etapas para Simplificação\n\nCriar o Mapa: Desenhe a grade do K-Map com as variáveis organizadas em Código Gray.\nPreencher o Mapa: Coloque ‘1’ nas células correspondentes aos mintermos da função e ‘0’ nas demais.\nFazer Pareamento (Agrupamento): Agrupe os ’1’s em potências de 2 (\\(2^n\\), ou seja, 1, 2, 4, 8, 16, etc.).\nMaximizar Agrupamentos: Tente parear a maior quantidade possível de ’1’s primeiro (8s, depois 4s, depois 2s, e por último 1s isolados).\nRegras de Agrupamento:\n\nSó podemos agrupar na horizontal e vertical.\nO pareamento pode se sobrepor.\nTodos os ’1’s devem ser cobertos por pelo menos um grupo."
+  },
+  {
+    "objectID": "contents/aula-6.html#estrutura-da-grade-3-variáveis",
+    "href": "contents/aula-6.html#estrutura-da-grade-3-variáveis",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Estrutura da Grade (3 Variáveis)",
+    "text": "Estrutura da Grade (3 Variáveis)\n\n\\(2^3 = 8\\) células organizadas em uma matriz \\(2 \\times 4\\):\n\nLinhas: variável \\(A \\in \\{0, 1\\}\\)\nColunas: variáveis \\(BC \\in \\{00, 01, 11, 10\\}\\) (Código Gray)\n\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\nm₀ (000)\n\n\nm₁ (001)\n\n\nm₃ (011)\n\n\nm₂ (010)\n\n\n\n\n1\n\n\nm₄ (100)\n\n\nm₅ (101)\n\n\nm₇ (111)\n\n\nm₆ (110)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nAtenção à troca de posição entre a 3ª e a 4ª coluna: \\(11\\) vem antes de \\(10\\) para manter a diferença de apenas 1 bit!"
+  },
+  {
+    "objectID": "contents/aula-6.html#preenchimento-da-função-fabc",
+    "href": "contents/aula-6.html#preenchimento-da-função-fabc",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Preenchimento da Função: \\(F(A,B,C)\\)",
+    "text": "Preenchimento da Função: \\(F(A,B,C)\\)\n\nFunção do exemplo: \\(F(A,B,C) = \\Sigma m(2, 4, 5, 6, 7)\\)\nCélulas com ‘1’: \\(m_2, m_4, m_5, m_6, m_7\\)\nCélulas com ‘0’: \\(m_0, m_1, m_3\\)\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n0 m₀\n\n\n0 m₁\n\n\n0 m₃\n\n\n1 m₂\n\n\n\n\n1\n\n\n1 m₄\n\n\n1 m₅\n\n\n1 m₇\n\n\n1 m₆"
+  },
+  {
+    "objectID": "contents/aula-6.html#agrupamentos-com-cores-highlight",
+    "href": "contents/aula-6.html#agrupamentos-com-cores-highlight",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Agrupamentos com Cores Highlight",
+    "text": "Agrupamentos com Cores Highlight\n\nPareamento de maior tamanho possível (\\(2^n\\)) com sobreposição:\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n\n0 m₀\n\n\n\n0 m₁\n\n\n\n0 m₃\n\n\n\n1 m₂\n\n\n\n\n1\n\n\n\n1 m₄\n\n\n\n1 m₅\n\n\n\n1 m₇\n\n\n\n1 m₆\n\n\n\n\n\n\n\n\n■ Grupo I (Quadra - Verde): \\(m(4,5,6,7) \\Rightarrow\\) Linha \\(A=1\\) inteira. Elimina \\(B\\) e \\(C\\) \\(\\Rightarrow\\) termo \\(A\\).\n\n\n\n■ Grupo II (Par - Rosa): \\(m(2,6) \\Rightarrow\\) Coluna \\(BC=10\\). \\(A\\) varia (\\(0 \\to 1\\)) \\(\\Rightarrow\\) termo \\(B\\bar{C}\\).\n\n\n\nResultado Mínimo: \\(F = A + B\\bar{C}\\)"
+  },
+  {
+    "objectID": "contents/aula-6.html#demonstração-interativa",
+    "href": "contents/aula-6.html#demonstração-interativa",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Demonstração Interativa",
+    "text": "Demonstração Interativa"
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-1-quadra-nas-colunas",
+    "href": "contents/aula-6.html#exemplo-1-quadra-nas-colunas",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 1: Quadra nas Colunas",
+    "text": "Exemplo 1: Quadra nas Colunas\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 5, 7)\\)\n\\(n = 3 \\Rightarrow 2^3 = 8\\) células.\nColunas \\(01\\) e \\(11\\) formam um grupo de 4 células:\n\n\\(A\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(B\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(C = 1\\) permanece constante \\(\\Rightarrow\\) \\(F = C\\)"
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-1",
+    "href": "contents/aula-6.html#exemplo-1",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 1:",
+    "text": "Exemplo 1:"
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
+    "href": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 2: Adjacência Cilíndrica (Bordas)",
+    "text": "Exemplo 2: Adjacência Cilíndrica (Bordas)\n\nNo toro de Karnaugh, as colunas extremas (\\(00\\) e \\(10\\)) são adjacentes:\n\n\\(m_0\\) é vizinho de \\(m_2\\)\n\\(m_4\\) é vizinho de \\(m_6\\)\n\nPara \\(f(A,B,C) = \\Sigma m(0, 2, 4, 6)\\), os 4 cantos formam uma quadra simplificada em \\(\\bar{C}\\):"
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-2",
+    "href": "contents/aula-6.html#exemplo-2",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 2:",
+    "text": "Exemplo 2:"
+  },
+  {
+    "objectID": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
+    "href": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
+    "title": "Aula 6  Mapa de Karnaugh",
+    "section": "Exemplo 3: Teorema do Consenso (Redundância)",
+    "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\n\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
     "objectID": "contents/aula-4.html#o-que-é-uma-porta-lógica",
@@ -315,97 +644,6 @@
     "text": "Comparação de Símbolos\n\n\n\n\n\n\nNota\n\n\nO padrão IEEE 91-1984 utiliza notação funcional: & para conjunção, ≥1 para disjunção (pelo menos um) e =1 para disjunção exclusiva."
   },
   {
-    "objectID": "contents/aula-2.html#informações-gerais",
-    "href": "contents/aula-2.html#informações-gerais",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Informações Gerais:",
-    "text": "Informações Gerais:\n\nIntroduzido pelo matemático George Boole\nConjunto de regras usadas para uma dada expressão lógica sem mudar sua funcionalidade\n\n\n\n\n\n\n\n\n\nExemplo:\n\n\n\\[\nF = \\underbrace{\\underbrace{\\bar{A}B}_{\\text{= and}}+ \\underbrace{BC}_{\\text{= and}} + \\underbrace{ABC}_{\\text{= and}}}_{\\text{= or}}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#uso",
-    "href": "contents/aula-2.html#uso",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Uso",
-    "text": "Uso\n\nUsamos algebra booleana para nº de variáveis pequenas (até 3 variáveis)\nPara nº maiores se usa o Mapa de Karnaugh"
-  },
-  {
-    "objectID": "contents/aula-2.html#razões",
-    "href": "contents/aula-2.html#razões",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Razões",
-    "text": "Razões\n\nReduzir:\n\nnº de portas\nCusto\nCalor nos componentes"
-  },
-  {
-    "objectID": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
-    "href": "contents/aula-2.html#exemplo-levar-ou-não-o-guarda-chuva",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Exemplo: Levar ou não o guarda-chuva",
-    "text": "Exemplo: Levar ou não o guarda-chuva\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; |Rain| OR\n  B((B)) --&gt; |Rain Forecast| OR\n  C((C)) --&gt; |Take car| NOT\n  OR --&gt; |A+B| AND\n  NOT --&gt; |~C| AND\n  AND --&gt; |Take umbrella| Y((Y))"
-  },
-  {
-    "objectID": "contents/aula-2.html#not",
-    "href": "contents/aula-2.html#not",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Not",
-    "text": "Not\n\nOperação complementar\nSempre inverte a entrada\n\\(\\bar{A} = A' = NOT(A)\\)\n\n\n\n\n\n\\(A\\)\n\\(\\bar{A}\\)\n\n\n\n\n0\n1\n\n\n1\n0"
-  },
-  {
-    "objectID": "contents/aula-2.html#and",
-    "href": "contents/aula-2.html#and",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "And",
-    "text": "And\n\nSaída alta apenas se ambas entradas altas\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-2.html#or",
-    "href": "contents/aula-2.html#or",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Or",
-    "text": "Or\n\nSaída alta com qualquer entrada alta\n\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-distributiva",
-    "href": "contents/aula-2.html#lei-distributiva",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Distributiva:",
-    "text": "Lei Distributiva:\n\\[\n\\begin{aligned}\nA \\cdot (B + C) &= A \\cdot B + A \\cdot C \\\\\nA + (B \\cdot C) &= (A+B) \\cdot (A+C)\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\n\\begin{aligned}\nA + \\bar{A}B = &\\underbrace{(A+\\bar{A})} \\cdot\n(A+B) \\\\\n&= 1 \\cdot (A+B) \\\\\n&= A+B\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\\[\n\\begin{aligned}\n& A + \\bar{A}B = A+B \\\\\n& \\bar{A} + AB = \\bar{A}+B\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-comutativa",
-    "href": "contents/aula-2.html#lei-comutativa",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Comutativa:",
-    "text": "Lei Comutativa:\n\\[\n\\begin{aligned}\nA+B &= B+A \\\\\nA \\cdot B &= B \\cdot A\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-associativa",
-    "href": "contents/aula-2.html#lei-associativa",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei Associativa:",
-    "text": "Lei Associativa:\n\\[\n\\begin{aligned}\n(A+B)+C &= A+(B+C) \\\\\n(A \\cdot B) \\cdot C &= A \\cdot (B \\cdot C)\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-2.html#lei-de-morgan",
-    "href": "contents/aula-2.html#lei-de-morgan",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Lei De Morgan:",
-    "text": "Lei De Morgan:\n\\[\n\\begin{aligned}\n\\overline{(A+B)} &= \\bar{A} \\cdot \\bar{B} \\\\\n\\overline{(A \\cdot B)} &= \\bar{A} + \\bar{B}\n\\end{aligned}\n\\]\n\n\n\n\\(A\\)\n\\(B\\)\n\\(A+B\\)\n\\(\\overline{A+B}\\)\n\\(\\bar{A}\\)\n\\(\\bar{B}\\)\n\\(\\bar{A} \\cdot \\bar{B}\\)\n\n\n\n\n0\n0\n0\n1\n1\n1\n1\n\n\n0\n1\n1\n0\n1\n0\n0\n\n\n1\n0\n1\n0\n0\n1\n0\n\n\n1\n1\n1\n0\n0\n0\n0"
-  },
-  {
-    "objectID": "contents/aula-2.html#regras",
-    "href": "contents/aula-2.html#regras",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Regras",
-    "text": "Regras\n\nComplemento: \\((\\overline{\\overline{A}}) = A\\)\nAND:\n\n\\(A \\cdot A = A\\)\n\\(A \\cdot 0 = 0\\)\n\\(A \\cdot 1 = A\\)\n\\(A \\cdot \\bar{A} = 0\\)"
-  },
-  {
-    "objectID": "contents/aula-2.html#regras-1",
-    "href": "contents/aula-2.html#regras-1",
-    "title": "Aula 2  Álgebra Booleana",
-    "section": "Regras",
-    "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
-  },
-  {
     "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
     "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
     "title": "Aula 1  Números Binários",
@@ -565,243 +803,5 @@
     "title": "Aula 3  Formas SOP e POS",
     "section": "Conversão SOP \\(\\to\\) POS",
     "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "href": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
-    "title": "Aula 0  Introdução",
-    "section": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo",
-    "text": "Essa disciplina tem muitos nomesmas tratamos do mesmo conteúdo\n\n\n\nEletrônica Digital\nLógica Digital\nProjetos Lógicos"
-  },
-  {
-    "objectID": "contents/aula-0.html#exemplos",
-    "href": "contents/aula-0.html#exemplos",
-    "title": "Aula 0  Introdução",
-    "section": "Exemplos:",
-    "text": "Exemplos:\n\nTemperatura a cada minuto\nFunção \\(f(x)=ax²+bx+c\\)"
-  },
-  {
-    "objectID": "contents/aula-0.html#para-o-nosso-curso",
-    "href": "contents/aula-0.html#para-o-nosso-curso",
-    "title": "Aula 0  Introdução",
-    "section": "Para o nosso curso:",
-    "text": "Para o nosso curso:\n\nSinais \\(:=\\) \\(\\Delta\\) de grandeza elétrica\nEx: corrente (\\(A\\)) ou voltagem (\\(V\\))"
-  },
-  {
-    "objectID": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "href": "contents/aula-0.html#qual-a-diferença-entre-os-relógios",
-    "title": "Aula 0  Introdução",
-    "section": "Qual a diferença entre os relógios?",
-    "text": "Qual a diferença entre os relógios?"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-analógicos",
-    "href": "contents/aula-0.html#sinais-analógicos",
-    "title": "Aula 0  Introdução",
-    "section": "Sinais Analógicos",
-    "text": "Sinais Analógicos\n\nQualquer valor dentro do domínio \\(x\\) tem um valor correspondente na imagem\nSensível a qualquer variação, mesmo que infinitezimamente pequena"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-analógica",
-    "href": "contents/aula-0.html#visualização-analógica",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização Analógica",
-    "text": "Visualização Analógica"
-  },
-  {
-    "objectID": "contents/aula-0.html#sinais-digitais",
-    "href": "contents/aula-0.html#sinais-digitais",
-    "title": "Aula 0  Introdução",
-    "section": "Sinais Digitais",
-    "text": "Sinais Digitais\n\nRegista apenas um momento discreto da variação de sinais\nTem limite de captura e de precisão de cada variação"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-digital",
-    "href": "contents/aula-0.html#visualização-digital",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização Digital",
-    "text": "Visualização Digital"
-  },
-  {
-    "objectID": "contents/aula-0.html#adc",
-    "href": "contents/aula-0.html#adc",
-    "title": "Aula 0  Introdução",
-    "section": "ADC",
-    "text": "ADC\n\nAnalog to Digital Converter\nConverte um sinal analógico para um sinal digital"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-adc",
-    "href": "contents/aula-0.html#visualização-adc",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização ADC",
-    "text": "Visualização ADC"
-  },
-  {
-    "objectID": "contents/aula-0.html#dac",
-    "href": "contents/aula-0.html#dac",
-    "title": "Aula 0  Introdução",
-    "section": "DAC",
-    "text": "DAC\n\nDigital to Analog Converter\nConverte um sinal digital para um sinal analógico"
-  },
-  {
-    "objectID": "contents/aula-0.html#visualização-dac",
-    "href": "contents/aula-0.html#visualização-dac",
-    "title": "Aula 0  Introdução",
-    "section": "Visualização DAC",
-    "text": "Visualização DAC"
-  },
-  {
-    "objectID": "contents/aula-0.html#pergunta",
-    "href": "contents/aula-0.html#pergunta",
-    "title": "Aula 0  Introdução",
-    "section": "Pergunta:",
-    "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
-  },
-  {
-    "objectID": "contents/aula-6.html#introdução-à-minimização",
-    "href": "contents/aula-6.html#introdução-à-minimização",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Introdução à Minimização",
-    "text": "Introdução à Minimização\n\nEstudamos inicialmente a minimização de expressões usando Álgebra Booleana.\nO objetivo é sempre obter um resultado MÍNIMO para a função lógica.\n\n\n\n\n\n\n\n\nLimitação da Álgebra Booleana\n\n\nPara funções com muitas variáveis, a simplificação algébrica pode ser complexa e nem sempre garante a forma mais mínima."
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-função-fabc",
-    "href": "contents/aula-6.html#exemplo-função-fabc",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo: Função F(A,B,C)",
-    "text": "Exemplo: Função F(A,B,C)\n\nVamos iniciar com a função e sua Tabela-Verdade: \\[F = A + B\\bar{C}\\]"
-  },
-  {
-    "objectID": "contents/aula-6.html#tabela-verdade-de-fabc",
-    "href": "contents/aula-6.html#tabela-verdade-de-fabc",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Tabela-Verdade de F(A,B,C)",
-    "text": "Tabela-Verdade de F(A,B,C)\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-6.html#forma-canônica-sop-soma-de-produtos",
-    "href": "contents/aula-6.html#forma-canônica-sop-soma-de-produtos",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Forma Canônica SOP (Soma de Produtos)",
-    "text": "Forma Canônica SOP (Soma de Produtos)\n\nA partir da Tabela-Verdade, identificamos os mintermos onde \\(F=1\\): \\[F(A,B,C) = \\Sigma m(2,4,5,6,7)\\]\nExpandindo: \\[F = \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC\\]"
-  },
-  {
-    "objectID": "contents/aula-6.html#simplificação-algébrica",
-    "href": "contents/aula-6.html#simplificação-algébrica",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Simplificação Algébrica",
-    "text": "Simplificação Algébrica\n\n\n\\[\n\\begin{aligned}\nF &= \\bar{A}B\\bar{C} + A\\bar{B}\\bar{C} + A\\bar{B}C + AB\\bar{C} + ABC \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}\\bar{C} + \\bar{B}C + B\\bar{C} + BC) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(\\bar{C}+C) + B(\\bar{C}+C)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B}(1) + B(1)) \\\\\n&= \\bar{A}B\\bar{C} + A(\\bar{B} + B) \\\\\n&= \\bar{A}B\\bar{C} + A(1) \\\\\n&= A + \\bar{A}B\\bar{C}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nIdentidade Útil\n\n\nLembre-se da identidade: \\(X + \\bar{X}Y = X+Y\\). Aplicando-a, \\(A + \\bar{A}(B\\bar{C}) = A + B\\bar{C}\\)."
-  },
-  {
-    "objectID": "contents/aula-6.html#k-map-representação-visual",
-    "href": "contents/aula-6.html#k-map-representação-visual",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "K-Map: Representação Visual",
-    "text": "K-Map: Representação Visual\n\nO K-Map organiza as células da Tabela-Verdade de forma que células adjacentes diferem em apenas um bit.\nIsso permite a simplificação visual de expressões lógicas."
-  },
-  {
-    "objectID": "contents/aula-6.html#mapeamento-da-tabela-verdade",
-    "href": "contents/aula-6.html#mapeamento-da-tabela-verdade",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Mapeamento da Tabela-Verdade",
-    "text": "Mapeamento da Tabela-Verdade\n\nCada linha da Tabela-Verdade corresponde a uma célula no K-Map."
-  },
-  {
-    "objectID": "contents/aula-6.html#tabela-verdade-com-mintermos",
-    "href": "contents/aula-6.html#tabela-verdade-com-mintermos",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Tabela-Verdade com Mintermos",
-    "text": "Tabela-Verdade com Mintermos\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C\\)\n\\(F\\)\nMintermo\n\n\n\n\n0\n0\n0\n0\n\\(m_0\\)\n\n\n0\n0\n1\n0\n\\(m_1\\)\n\n\n0\n1\n0\n1\n\\(m_2\\)\n\n\n0\n1\n1\n0\n\\(m_3\\)\n\n\n1\n0\n0\n1\n\\(m_4\\)\n\n\n1\n0\n1\n1\n\\(m_5\\)\n\n\n1\n1\n0\n1\n\\(m_6\\)\n\n\n1\n1\n1\n1\n\\(m_7\\)"
-  },
-  {
-    "objectID": "contents/aula-6.html#estrutura-do-k-map-3-variáveis",
-    "href": "contents/aula-6.html#estrutura-do-k-map-3-variáveis",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Estrutura do K-Map (3 Variáveis)",
-    "text": "Estrutura do K-Map (3 Variáveis)\n\nAs variáveis são organizadas usando o Código Gray para garantir que células adjacentes (incluindo as que “enrolam” nas bordas) difiram em apenas 1 bit.\n\n\n\nOrdem Incorreta (NÃO FAZER) - Usa ordem binária sequencial. - Células adjacentes podem diferir em mais de 1 bit.\n\n\n\n\nK-map incorrect order"
-  },
-  {
-    "objectID": "contents/aula-6.html#estrutura-do-k-map-3-variáveis-1",
-    "href": "contents/aula-6.html#estrutura-do-k-map-3-variáveis-1",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Estrutura do K-Map (3 Variáveis)",
-    "text": "Estrutura do K-Map (3 Variáveis)\n\nAs variáveis são organizadas usando o Código Gray para garantir que células adjacentes (incluindo as que “enrolam” nas bordas) difiram em apenas 1 bit.\n\n\n\nOrdem Correta (Código Gray) - Garante que adjacências (horizontal, vertical, e “enrolando”) diferem em 1 bit.\n\n\n\n\nK-map correct order"
-  },
-  {
-    "objectID": "contents/aula-6.html#por-que-código-gray",
-    "href": "contents/aula-6.html#por-que-código-gray",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Por que Código Gray?",
-    "text": "Por que Código Gray?\n\nA diferença de 1 bit entre células adjacentes é crucial para a simplificação.\nPermite aplicar a propriedade da Álgebra Booleana: \\[X\\bar{Y} + XY = X( \\bar{Y} + Y ) = X(1) = X\\]\nIsso elimina a variável que muda de valor entre as células agrupadas."
-  },
-  {
-    "objectID": "contents/aula-6.html#etapas-para-simplificação",
-    "href": "contents/aula-6.html#etapas-para-simplificação",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Etapas para Simplificação",
-    "text": "Etapas para Simplificação\n\nCriar o Mapa: Desenhe a grade do K-Map com as variáveis organizadas em Código Gray.\nPreencher o Mapa: Coloque ‘1’ nas células correspondentes aos mintermos da função e ‘0’ nas demais.\nFazer Pareamento (Agrupamento): Agrupe os ’1’s em potências de 2 (\\(2^n\\), ou seja, 1, 2, 4, 8, 16, etc.).\nMaximizar Agrupamentos: Tente parear a maior quantidade possível de ’1’s primeiro (8s, depois 4s, depois 2s, e por último 1s isolados).\nRegras de Agrupamento:\n\nSó podemos agrupar na horizontal e vertical.\nO pareamento pode se sobrepor.\nTodos os ’1’s devem ser cobertos por pelo menos um grupo."
-  },
-  {
-    "objectID": "contents/aula-6.html#estrutura-da-grade-3-variáveis",
-    "href": "contents/aula-6.html#estrutura-da-grade-3-variáveis",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Estrutura da Grade (3 Variáveis)",
-    "text": "Estrutura da Grade (3 Variáveis)\n\n\\(2^3 = 8\\) células organizadas em uma matriz \\(2 \\times 4\\):\n\nLinhas: variável \\(A \\in \\{0, 1\\}\\)\nColunas: variáveis \\(BC \\in \\{00, 01, 11, 10\\}\\) (Código Gray)\n\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\nm₀ (000)\n\n\nm₁ (001)\n\n\nm₃ (011)\n\n\nm₂ (010)\n\n\n\n\n1\n\n\nm₄ (100)\n\n\nm₅ (101)\n\n\nm₇ (111)\n\n\nm₆ (110)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nAtenção à troca de posição entre a 3ª e a 4ª coluna: \\(11\\) vem antes de \\(10\\) para manter a diferença de apenas 1 bit!"
-  },
-  {
-    "objectID": "contents/aula-6.html#preenchimento-da-função-fabc",
-    "href": "contents/aula-6.html#preenchimento-da-função-fabc",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Preenchimento da Função: \\(F(A,B,C)\\)",
-    "text": "Preenchimento da Função: \\(F(A,B,C)\\)\n\nFunção do exemplo: \\(F(A,B,C) = \\Sigma m(2, 4, 5, 6, 7)\\)\nCélulas com ‘1’: \\(m_2, m_4, m_5, m_6, m_7\\)\nCélulas com ‘0’: \\(m_0, m_1, m_3\\)\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n0 m₀\n\n\n0 m₁\n\n\n0 m₃\n\n\n1 m₂\n\n\n\n\n1\n\n\n1 m₄\n\n\n1 m₅\n\n\n1 m₇\n\n\n1 m₆"
-  },
-  {
-    "objectID": "contents/aula-6.html#agrupamentos-com-cores-highlight",
-    "href": "contents/aula-6.html#agrupamentos-com-cores-highlight",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Agrupamentos com Cores Highlight",
-    "text": "Agrupamentos com Cores Highlight\n\nPareamento de maior tamanho possível (\\(2^n\\)) com sobreposição:\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n\n0 m₀\n\n\n\n0 m₁\n\n\n\n0 m₃\n\n\n\n1 m₂\n\n\n\n\n1\n\n\n\n1 m₄\n\n\n\n1 m₅\n\n\n\n1 m₇\n\n\n\n1 m₆\n\n\n\n\n\n\n\n\n■ Grupo I (Quadra - Verde): \\(m(4,5,6,7) \\Rightarrow\\) Linha \\(A=1\\) inteira. Elimina \\(B\\) e \\(C\\) \\(\\Rightarrow\\) termo \\(A\\).\n\n\n\n■ Grupo II (Par - Rosa): \\(m(2,6) \\Rightarrow\\) Coluna \\(BC=10\\). \\(A\\) varia (\\(0 \\to 1\\)) \\(\\Rightarrow\\) termo \\(B\\bar{C}\\).\n\n\n\nResultado Mínimo: \\(F = A + B\\bar{C}\\)"
-  },
-  {
-    "objectID": "contents/aula-6.html#demonstração-interativa",
-    "href": "contents/aula-6.html#demonstração-interativa",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Demonstração Interativa",
-    "text": "Demonstração Interativa"
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-1-quadra-nas-colunas",
-    "href": "contents/aula-6.html#exemplo-1-quadra-nas-colunas",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo 1: Quadra nas Colunas",
-    "text": "Exemplo 1: Quadra nas Colunas\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 5, 7)\\)\n\\(n = 3 \\Rightarrow 2^3 = 8\\) células.\nColunas \\(01\\) e \\(11\\) formam um grupo de 4 células:\n\n\\(A\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(B\\) varia (\\(0\\) e \\(1\\)) \\(\\Rightarrow\\) eliminado\n\\(C = 1\\) permanece constante \\(\\Rightarrow\\) \\(F = C\\)"
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-1",
-    "href": "contents/aula-6.html#exemplo-1",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo 1:",
-    "text": "Exemplo 1:"
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
-    "href": "contents/aula-6.html#exemplo-2-adjacência-cilíndrica-bordas",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo 2: Adjacência Cilíndrica (Bordas)",
-    "text": "Exemplo 2: Adjacência Cilíndrica (Bordas)\n\nNo toro de Karnaugh, as colunas extremas (\\(00\\) e \\(10\\)) são adjacentes:\n\n\\(m_0\\) é vizinho de \\(m_2\\)\n\\(m_4\\) é vizinho de \\(m_6\\)\n\nPara \\(f(A,B,C) = \\Sigma m(0, 2, 4, 6)\\), os 4 cantos formam uma quadra simplificada em \\(\\bar{C}\\):"
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-2",
-    "href": "contents/aula-6.html#exemplo-2",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo 2:",
-    "text": "Exemplo 2:"
-  },
-  {
-    "objectID": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
-    "href": "contents/aula-6.html#exemplo-3-teorema-do-consenso-redundância",
-    "title": "Aula 6  Mapa de Karnaugh",
-    "section": "Exemplo 3: Teorema do Consenso (Redundância)",
-    "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\n\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
   }
 ]
