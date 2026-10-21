@@ -36,7 +36,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-73690482f24602a9e269cb2e3f168454.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-9803c42950ebba8236e89745ffdf425f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -821,8 +821,8 @@ Y &amp;= A\bar{B}\bar{C}} \cdot
           var currentSlide = Reveal.getCurrentSlide();
           if (!currentSlide) return;
 
-          // Oculta apenas na capa principal (slide de título da apresentação)
-          if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block')) {
+          // Oculta na capa principal ou em slides em tela cheia (fullscreen)
+          if (currentSlide.id === 'title-slide' || currentSlide.classList.contains('quarto-title-block') || currentSlide.hasAttribute('data-fullscreen')) {
             bar.style.display = 'none';
             return;
           }
