@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6.1  Display de 7 Segmentos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
     "objectID": "contents/aula-5.html#porta-xor-definição-e-expressão",
     "href": "contents/aula-5.html#porta-xor-definição-e-expressão",
     "title": "Aula 5  Portas Lógicas II",
@@ -147,6 +154,167 @@
     "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   },
   {
+    "objectID": "contents/aula-3.html#função-f",
+    "href": "contents/aula-3.html#função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Função \\(F\\)",
+    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-3.html#representar-a-função-f",
+    "href": "contents/aula-3.html#representar-a-função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Representar a função \\(F\\)",
+    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-sop",
+    "href": "contents/aula-3.html#forma-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma SOP",
+    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-pos",
+    "href": "contents/aula-3.html#forma-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma POS",
+    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#literal",
+    "href": "contents/aula-3.html#literal",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Literal",
+    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
+  },
+  {
+    "objectID": "contents/aula-3.html#minterm-mintermo",
+    "href": "contents/aula-3.html#minterm-mintermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Minterm (Mintermo)",
+    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
+  },
+  {
+    "objectID": "contents/aula-3.html#maxterm-maxtermo",
+    "href": "contents/aula-3.html#maxterm-maxtermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Maxterm (Maxtermo)",
+    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
+  },
+  {
+    "objectID": "contents/aula-3.html#comparativo",
+    "href": "contents/aula-3.html#comparativo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Comparativo",
+    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização",
+    "href": "contents/aula-3.html#aplicando-minimização",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-1",
+    "href": "contents/aula-3.html#aplicando-minimização-1",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-2",
+    "href": "contents/aula-3.html#aplicando-minimização-2",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-3",
+    "href": "contents/aula-3.html#aplicando-minimização-3",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-4",
+    "href": "contents/aula-3.html#aplicando-minimização-4",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
+    "href": "contents/aula-3.html#conversão-pos-to-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão POS \\(\\to\\) SOP",
+    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
+    "href": "contents/aula-3.html#conversão-sop-to-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão SOP \\(\\to\\) POS",
+    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "title": "Aula 1  Números Binários",
+    "section": "Vantagens dos sistemas digitais",
+    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
+  },
+  {
+    "objectID": "contents/aula-1.html#níveis-e-precisão",
+    "href": "contents/aula-1.html#níveis-e-precisão",
+    "title": "Aula 1  Números Binários",
+    "section": "Níveis e Precisão",
+    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
+  },
+  {
+    "objectID": "contents/aula-1.html#switchbits",
+    "href": "contents/aula-1.html#switchbits",
+    "title": "Aula 1  Números Binários",
+    "section": "Switch/Bits",
+    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-níveis",
+    "href": "contents/aula-1.html#bits-e-níveis",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e níveis",
+    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-níveis-1",
+    "href": "contents/aula-1.html#bits-e-níveis-1",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Níveis",
+    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-1.html#representação-dos-números",
+    "href": "contents/aula-1.html#representação-dos-números",
+    "title": "Aula 1  Números Binários",
+    "section": "Representação dos números",
+    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
+  },
+  {
+    "objectID": "contents/aula-1.html#representar-quantidades",
+    "href": "contents/aula-1.html#representar-quantidades",
+    "title": "Aula 1  Números Binários",
+    "section": "Representar quantidades",
+    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+  },
+  {
+    "objectID": "contents/aula-1.html#bits-e-bytes",
+    "href": "contents/aula-1.html#bits-e-bytes",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Bytes",
+    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+  },
+  {
     "objectID": "contents/aula-2.html#informações-gerais",
     "href": "contents/aula-2.html#informações-gerais",
     "title": "Aula 2  Álgebra Booleana",
@@ -236,6 +404,398 @@
     "title": "Aula 2  Álgebra Booleana",
     "section": "Regras",
     "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
+  },
+  {
+    "objectID": "contents/aula-4.html#o-que-é-uma-porta-lógica",
+    "href": "contents/aula-4.html#o-que-é-uma-porta-lógica",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "O que é uma Porta Lógica?",
+    "text": "O que é uma Porta Lógica?\n\nÉ um dispositivo físico (hardware eletrônico)\nQue executa uma operação lógica booleana\nOpera sobre uma ou mais entradas digitais (níveis 0 ou 1)\nProduz uma única saída lógica correspondente"
+  },
+  {
+    "objectID": "contents/aula-4.html#modelo-geral-de-uma-porta",
+    "href": "contents/aula-4.html#modelo-geral-de-uma-porta",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Modelo Geral de uma Porta",
+    "text": "Modelo Geral de uma Porta\n\n\n\n\n\n%%{init: {\n  'theme': 'base',\n  'themeVariables': {\n    'fontFamily': 'JetBrains Mono, monospace',\n    'fontSize': '15px',\n    'primaryColor': '#EDE9FE',\n    'primaryTextColor': '#3B0764',\n    'primaryBorderColor': '#7C3AED',\n    'lineColor': '#6D28D9',\n    'edgeLabelBackground': '#FAFAFA'\n  }\n}}%%\nflowchart LR\n  subgraph Entradas[\" Entradas \"]\n    A((Entrada A)):::inNode\n    B((Entrada B)):::inNode\n  end\n  subgraph Circuito[\" Processamento \"]\n    PL[\"Porta Lógica\"]:::gateNode\n  end\n  subgraph Saida[\" Saída \"]\n    Y((Saída Y)):::outNode\n  end\n\n  A --&gt; PL\n  B --&gt; PL\n  PL --&gt; Y\n\n  classDef inNode fill:#EDE9FE,stroke:#7C3AED,stroke-width:2px,color:#4C1D95,font-weight:600\n  classDef gateNode fill:#6D28D9,stroke:#4C1D95,stroke-width:2px,color:#FFFFFF,font-weight:700\n  classDef outNode fill:#D1FAE5,stroke:#059669,stroke-width:2px,color:#065F46,font-weight:600\n\n  style Entradas fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569\n  style Circuito fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569\n  style Saida fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569"
+  },
+  {
+    "objectID": "contents/aula-4.html#famílias-de-portas-lógicas",
+    "href": "contents/aula-4.html#famílias-de-portas-lógicas",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Famílias de Portas Lógicas",
+    "text": "Famílias de Portas Lógicas\n\n\n\nPortas Básicas:\n\nNOT (Inversão)\nAND (Multiplicação)\nOR (Soma)\n\nPortas Universais:\n\nNAND\nNOR\n\nPortas Aritméticas:\n\nXOR\nXNOR\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nPortas universais (NAND e NOR) permitem construir qualquer outra função lógica."
+  },
+  {
+    "objectID": "contents/aula-4.html#definição-da-porta-not",
+    "href": "contents/aula-4.html#definição-da-porta-not",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Definição da Porta NOT",
+    "text": "Definição da Porta NOT\n\nTambém conhecida como inversor.\nConverte o nível lógico alto (1) em baixo (0) e vice-versa.\nExpressão booleana: \\(Y = \\bar{A}\\) ou \\(Y = A'\\)"
+  },
+  {
+    "objectID": "contents/aula-4.html#demonstração",
+    "href": "contents/aula-4.html#demonstração",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Demonstração",
+    "text": "Demonstração"
+  },
+  {
+    "objectID": "contents/aula-4.html#tabela-verdade",
+    "href": "contents/aula-4.html#tabela-verdade",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tabela Verdade",
+    "text": "Tabela Verdade\n\nDescreve a saída para cada valor de entrada possível:\n\n\n\n\n\nEntrada (\\(A\\))\nSaída (\\(Y = \\bar{A}\\))\n\n\n\n\n0\n1\n\n\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-4.html#o-buffer",
+    "href": "contents/aula-4.html#o-buffer",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "O Buffer",
+    "text": "O Buffer\n\nUm buffer não inverte o nível lógico: a saída é idêntica à entrada (\\(Y = A\\)).\nUtilizado para amplificação de corrente, isolamento de circuitos e temporização.\n\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; BUF[BUFFER] --&gt; Y((Y = A))\n\n\n\n\n\n\n\n\nSímbolo idêntico ao inversor, porém sem a bolinha inversora na saída."
+  },
+  {
+    "objectID": "contents/aula-4.html#inversores-em-cascata",
+    "href": "contents/aula-4.html#inversores-em-cascata",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Inversores em Cascata",
+    "text": "Inversores em Cascata\n\nDois inversores em série anulam a inversão mútua:\n\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; NOT1[NOT] --&gt; NOT2[NOT] --&gt; Y((Y = A))\n\n\n\n\n\n\n\n\nSe \\(A = 0 \\implies \\text{NOT1} = 1 \\implies Y = 0\\)\nSe \\(A = 1 \\implies \\text{NOT1} = 0 \\implies Y = 1\\)\nO circuito atua funcionalmente como um buffer."
+  },
+  {
+    "objectID": "contents/aula-4.html#oscilador-em-anel-multivibrador-astável",
+    "href": "contents/aula-4.html#oscilador-em-anel-multivibrador-astável",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Oscilador em Anel (Multivibrador Astável)",
+    "text": "Oscilador em Anel (Multivibrador Astável)\n\n\n\nUm número ímpar de inversores conectados em ciclo fecha uma realimentação instável:\nNão possui estado estável permanente: fica alternando entre 0 e 1 continuamente.\nAtua como um gerador de clock natural (onda quadrada).\n\n\n\n\n\n\n\nflowchart LR\n  N1[NOT 1] --&gt; N2[NOT 2]\n  N2 --&gt; N3[NOT 3]\n  N3 --&gt;|Realimentação| N1"
+  },
+  {
+    "objectID": "contents/aula-4.html#circuitos-biestáveis",
+    "href": "contents/aula-4.html#circuitos-biestáveis",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Circuitos Biestáveis",
+    "text": "Circuitos Biestáveis\n\nDiferente do circuito astável, o biestável possui dois estados estáveis (0 e 1).\nPermanece em um estado até que um sinal externo force a transição.\nConstitui a base das células de memória digital (Latches e Flip-Flops)."
+  },
+  {
+    "objectID": "contents/aula-4.html#tempo-de-propagação-t_pd",
+    "href": "contents/aula-4.html#tempo-de-propagação-t_pd",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tempo de Propagação (\\(t_{pd}\\))",
+    "text": "Tempo de Propagação (\\(t_{pd}\\))\n\nÉ o tempo físico necessário para que uma mudança na entrada se reflita na saída da porta.\n\n\n\n\n\n\n\nflowchart LR\n  A --&gt; N\n  N --&gt; Y\n\n\n\n\n\n\n\n\nNenhuma porta lógica é instantânea.\nEm portas em série, os atrasos se acumulam somando os tempos individuais."
+  },
+  {
+    "objectID": "contents/aula-4.html#período-e-frequência-do-oscilador",
+    "href": "contents/aula-4.html#período-e-frequência-do-oscilador",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Período e Frequência do Oscilador",
+    "text": "Período e Frequência do Oscilador\n\nPara um anel com \\(n\\) portas inversoras (\\(n\\) ímpar):\n\nA transição precisa percorrer o anel duas vezes para completar um ciclo (\\(0 \\to 1\\) e \\(1 \\to 0\\)).\n\nPeríodo da onda (\\(T\\)): \\[T = 2 \\cdot n \\cdot t_{pd}\\]\nFrequência de oscilação (\\(f\\)): \\[f = \\frac{1}{T} = \\frac{1}{2 \\cdot n \\cdot t_{pd}}\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#exercício-de-temporização",
+    "href": "contents/aula-4.html#exercício-de-temporização",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Exercício de Temporização",
+    "text": "Exercício de Temporização\n\nUm oscilador em anel é formado por 5 inversores, cada um com \\(t_{pd} = 100\\text{ ps}\\).\nQual é a frequência \\(f\\) da onda gerada?\nCálculo do período: \\[T = 2 \\cdot 5 \\cdot 100\\text{ ps} = 1000\\text{ ps} = 1\\text{ ns}\\]\nFrequência: \\[f = \\frac{1}{1\\text{ ns}} = 1\\text{ GHz}\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#operador-lógico-and",
+    "href": "contents/aula-4.html#operador-lógico-and",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Operador Lógico AND",
+    "text": "Operador Lógico AND\n\nA saída é 1 se, e somente se, todas as entradas forem 1.\nRepresentada matematicamente pela multiplicação lógica: \\[Y = A \\cdot B \\quad \\text{ou} \\quad Y = AB\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#demonstração-1",
+    "href": "contents/aula-4.html#demonstração-1",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Demonstração",
+    "text": "Demonstração"
+  },
+  {
+    "objectID": "contents/aula-4.html#tabela-verdade-porta-and",
+    "href": "contents/aula-4.html#tabela-verdade-porta-and",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tabela Verdade (Porta AND)",
+    "text": "Tabela Verdade (Porta AND)\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nSaída \\(Y = A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-4.html#propriedades-da-porta-and",
+    "href": "contents/aula-4.html#propriedades-da-porta-and",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Propriedades da Porta AND",
+    "text": "Propriedades da Porta AND\n\nComutativa: \\[A \\cdot B = B \\cdot A\\]\nAssociativa: \\[(A \\cdot B) \\cdot C = A \\cdot (B \\cdot C)\\]\nPermite expandir portas AND para 3, 4 ou mais entradas associadas."
+  },
+  {
+    "objectID": "contents/aula-4.html#controle-de-sinal-na-porta-and",
+    "href": "contents/aula-4.html#controle-de-sinal-na-porta-and",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Controle de Sinal na Porta AND",
+    "text": "Controle de Sinal na Porta AND\n\nUsando a entrada \\(B\\) como controle:\n\n\n\n\n\\(B = 0\\) (Disable / Desabilitado):\n\nA saída fica fixa em 0, independente do valor de \\(A\\).\nBloqueia a passagem do sinal.\n\n\n\n\n\\(B = 1\\) (Enable / Habilitado):\n\nA saída segue fielmente a entrada: \\(Y = A \\cdot 1 = A\\).\nAtua como uma chave aberta permitindo o sinal passar (buffer)."
+  },
+  {
+    "objectID": "contents/aula-4.html#operador-lógico-or",
+    "href": "contents/aula-4.html#operador-lógico-or",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Operador Lógico OR",
+    "text": "Operador Lógico OR\n\nA saída é 1 se pelo menos uma das entradas for 1.\nRepresentada pela soma booleana: \\[Y = A + B\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#demonstração-2",
+    "href": "contents/aula-4.html#demonstração-2",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Demonstração",
+    "text": "Demonstração"
+  },
+  {
+    "objectID": "contents/aula-4.html#tabela-verdade-porta-or",
+    "href": "contents/aula-4.html#tabela-verdade-porta-or",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tabela Verdade (Porta OR)",
+    "text": "Tabela Verdade (Porta OR)\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nSaída \\(Y = A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-4.html#propriedades-da-porta-or",
+    "href": "contents/aula-4.html#propriedades-da-porta-or",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Propriedades da Porta OR",
+    "text": "Propriedades da Porta OR\n\nComutativa: \\[A + B = B + A\\]\nAssociativa: \\[(A + B) + C = A + (B + C)\\]\nPode ser expandida para múltiplos sinais somados."
+  },
+  {
+    "objectID": "contents/aula-4.html#controle-de-sinal-na-porta-or",
+    "href": "contents/aula-4.html#controle-de-sinal-na-porta-or",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Controle de Sinal na Porta OR",
+    "text": "Controle de Sinal na Porta OR\n\nUsando a entrada \\(B\\) como controle:\n\\(B = 0\\) (Enable / Habilitado):\n\nA saída segue a entrada \\(A\\): \\(Y = A + 0 = A\\).\nDeixa o sinal passar sem alteração.\n\n\\(B = 1\\) (Disable / Desabilitado):\n\nA saída fica forçada em 1: \\(Y = A + 1 = 1\\).\nO sinal de \\(A\\) é mascarado."
+  },
+  {
+    "objectID": "contents/aula-4.html#o-que-é-uma-porta-nand",
+    "href": "contents/aula-4.html#o-que-é-uma-porta-nand",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "O que é uma Porta NAND?",
+    "text": "O que é uma Porta NAND?\n\nEquivale a uma porta AND seguida de um NOT: \\[Y = \\overline{A \\cdot B}\\]\nPelo Teorema de De Morgan: \\[\\overline{A \\cdot B} = \\bar{A} + \\bar{B}\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#demonstração-3",
+    "href": "contents/aula-4.html#demonstração-3",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Demonstração",
+    "text": "Demonstração"
+  },
+  {
+    "objectID": "contents/aula-4.html#tabela-verdade-da-porta-nand",
+    "href": "contents/aula-4.html#tabela-verdade-da-porta-nand",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tabela Verdade da Porta NAND",
+    "text": "Tabela Verdade da Porta NAND\n\n\n\n\n\n\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nAND (\\(A \\cdot B\\))\nNAND (\\(Y = \\overline{A \\cdot B}\\))\n\n\n\n\n0\n0\n0\n1\n\n\n0\n1\n0\n1\n\n\n1\n0\n0\n1\n\n\n1\n1\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-4.html#controle-de-sinal-nand",
+    "href": "contents/aula-4.html#controle-de-sinal-nand",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Controle de Sinal (NAND)",
+    "text": "Controle de Sinal (NAND)\n\n\\(B = 1\\) (Enable):\n\n\\(Y = \\overline{A \\cdot 1} = \\bar{A}\\)\nComporta-se como um inversor (NOT).\n\n\\(B = 0\\) (Disable):\n\n\\(Y = \\overline{A \\cdot 0} = \\bar{0} = 1\\)\nSaída fixa em 1."
+  },
+  {
+    "objectID": "contents/aula-4.html#o-que-é-uma-porta-nor",
+    "href": "contents/aula-4.html#o-que-é-uma-porta-nor",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "O que é uma Porta NOR?",
+    "text": "O que é uma Porta NOR?\n\nEquivale a uma porta OR seguida de um NOT: \\[Y = \\overline{A + B}\\]\nPelo Teorema de De Morgan: \\[\\overline{A + B} = \\bar{A} \\cdot \\bar{B}\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#demonstração-4",
+    "href": "contents/aula-4.html#demonstração-4",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Demonstração",
+    "text": "Demonstração"
+  },
+  {
+    "objectID": "contents/aula-4.html#tabela-verdade-da-porta-nor",
+    "href": "contents/aula-4.html#tabela-verdade-da-porta-nor",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Tabela Verdade da Porta NOR",
+    "text": "Tabela Verdade da Porta NOR\n\n\n\n\n\n\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nOR (\\(A + B\\))\nNOR (\\(Y = \\overline{A + B}\\))\n\n\n\n\n0\n0\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n1\n0\n\n\n1\n1\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-4.html#controle-de-sinal-nor",
+    "href": "contents/aula-4.html#controle-de-sinal-nor",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Controle de Sinal (NOR)",
+    "text": "Controle de Sinal (NOR)\n\n\\(B = 0\\) (Enable):\n\n\\(Y = \\overline{A + 0} = \\bar{A}\\)\nComporta-se como um inversor (NOT).\n\n\\(B = 1\\) (Disable):\n\n\\(Y = \\overline{A + 1} = \\bar{1} = 0\\)\nSaída fixa em 0."
+  },
+  {
+    "objectID": "contents/aula-4.html#comutatividade-e-associatividade",
+    "href": "contents/aula-4.html#comutatividade-e-associatividade",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Comutatividade e Associatividade",
+    "text": "Comutatividade e Associatividade\n\nComutatividade (\\(\\checkmark\\)):\n\nTanto NAND quanto NOR são comutativas: \\[\\overline{A \\cdot B} = \\overline{B \\cdot A} \\quad \\text{e} \\quad \\overline{A + B} = \\overline{B + A}\\]"
+  },
+  {
+    "objectID": "contents/aula-4.html#comutatividade-e-associatividade-1",
+    "href": "contents/aula-4.html#comutatividade-e-associatividade-1",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Comutatividade e Associatividade",
+    "text": "Comutatividade e Associatividade\n\nAssociatividade (\\(\\times\\)):\n\nNAND e NOR NÃO são associativas: \\[\\overline{(A \\cdot B) \\cdot C} \\neq \\overline{A \\cdot (B \\cdot C)}\\]\nNa prática, portas NAND/NOR de 3 entradas não são cascata de portas de 2 entradas."
+  },
+  {
+    "objectID": "contents/aula-4.html#comparação-de-símbolos",
+    "href": "contents/aula-4.html#comparação-de-símbolos",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Comparação de Símbolos",
+    "text": "Comparação de Símbolos\n\n\n\n\n\n\n\n\nPorta\nSímbolo Tradicional (Militar/ANSI)\nPadrão IEEE/ANSI 91-1984\n\n\n\n\nNOT\nTriângulo com bolha na ponta\nCaixa retangular com símbolo 1\n\n\nAND\nCurva reta com arco frontal\nCaixa retangular com símbolo &\n\n\nOR\nArco curvo pontiagudo\nCaixa retangular com símbolo ≥1"
+  },
+  {
+    "objectID": "contents/aula-4.html#comparação-de-símbolos-1",
+    "href": "contents/aula-4.html#comparação-de-símbolos-1",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Comparação de Símbolos",
+    "text": "Comparação de Símbolos\n\n\n\n\n\n\n\n\nPorta\nSímbolo Tradicional (Militar/ANSI)\nPadrão IEEE/ANSI 91-1984\n\n\n\n\nNAND\nSímbolo AND com bolha de saída\nCaixa com & e indicador de negação\n\n\nNOR\nSímbolo OR com bolha de saída\nCaixa com ≥1 e indicador de negação\n\n\nXOR\nArco duplo com ponta\nCaixa retangular com símbolo =1"
+  },
+  {
+    "objectID": "contents/aula-4.html#comparação-de-símbolos-2",
+    "href": "contents/aula-4.html#comparação-de-símbolos-2",
+    "title": "Aula 4  Portas Lógicas",
+    "section": "Comparação de Símbolos",
+    "text": "Comparação de Símbolos\n\n\n\n\n\n\nNota\n\n\nO padrão IEEE 91-1984 utiliza notação funcional: & para conjunção, ≥1 para disjunção (pelo menos um) e =1 para disjunção exclusiva."
+  },
+  {
+    "objectID": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
+    "href": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "O que é um Display de 7 Segmentos?",
+    "text": "O que é um Display de 7 Segmentos?\n\nDispositivo eletrônico para exibir dígitos decimais (0-9).\nComposto por 7 LEDs individuais (segmentos a a g).\nCada segmento pode ser ligado ou desligado para formar o dígito.\n\n\n\nDisplay de 7 Segmentos"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
+    "href": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Exemplo: Representando o Dígito ‘1’",
+    "text": "Exemplo: Representando o Dígito ‘1’\n\nPara exibir o dígito ‘1’, apenas os segmentos b e c são ativados.\nA entrada binária 0001 (decimal 1) acende b e c."
+  },
+  {
+    "objectID": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
+    "href": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Decodificador BCD para 7 Segmentos",
+    "text": "Decodificador BCD para 7 Segmentos\n\nConverte uma entrada BCD (Binary-Coded Decimal) de 4 bits.\nGera as 7 saídas (a a g) para acionar os segmentos do display.\n\n\n\n\n\n\nflowchart LR\n  subgraph Entradas BCD\n    b3((b3))\n    b2((b2))\n    b1((b1))\n    b0((b0))\n  end\n\n  subgraph Decodificador 7-Seg\n    b3 --&gt; Decoder\n    b2 --&gt; Decoder\n    b1 --&gt; Decoder\n    b0 --&gt; Decoder\n  end\n\n  subgraph Saídas dos Segmentos\n    Decoder --&gt; a((a))\n    Decoder --&gt; b((b))\n    Decoder --&gt; c((c))\n    Decoder --&gt; d((d))\n    Decoder --&gt; e((e))\n    Decoder --&gt; f((f))\n    Decoder --&gt; g((g))\n  end"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
+    "href": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos",
+    "text": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos\n\nDefine quais segmentos devem acender para cada dígito decimal (0-9).\nAs entradas binárias de 10 a 15 são “Não Importa” (Don’t Care).\n\n\n\n\n\nDecimal\n\\(b_3\\)\n\\(b_2\\)\n\\(b_1\\)\n\\(b_0\\)\n\\(a\\)\n\\(b\\)\n\\(c\\)\n\\(d\\)\n\\(e\\)\n\\(f\\)\n\\(g\\)\n\n\n\n\n0\n0\n0\n0\n0\n1\n1\n1\n1\n1\n1\n0\n\n\n1\n0\n0\n0\n1\n0\n1\n1\n0\n0\n0\n0\n\n\n2\n0\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n\n\n3\n0\n0\n1\n1\n1\n1\n1\n1\n0\n0\n1\n\n\n4\n0\n1\n0\n0\n0\n1\n1\n0\n0\n1\n1\n\n\n5\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n\n\n6\n0\n1\n1\n0\n1\n0\n1\n1\n1\n1\n1\n\n\n7\n0\n1\n1\n1\n1\n1\n1\n0\n0\n0\n0\n\n\n8\n1\n0\n0\n0\n1\n1\n1\n1\n1\n1\n1\n\n\n9\n1\n0\n0\n1\n1\n1\n1\n1\n0\n1\n1\n\n\n10-15\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#representação-visual-dos-dígitos",
+    "href": "contents/aula-6-1.html#representação-visual-dos-dígitos",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Representação Visual dos Dígitos",
+    "text": "Representação Visual dos Dígitos\n\nA combinação dos segmentos a a g forma cada dígito.\n\n\n\nDígitos 0-9"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#nota-importante",
+    "href": "contents/aula-6-1.html#nota-importante",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Nota Importante",
+    "text": "Nota Importante\n\n\n\n\n\n\nNúmeros Maiores que 9\n\n\nPara representar números maiores que 9, como 10, 11, etc., precisamos de dois ou mais displays de 7 segmentos conectados a decodificadores separados."
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-a",
+    "href": "contents/aula-6-1.html#segmento-a",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘a’",
+    "text": "Segmento ‘a’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[a = b_3 + b_2 + b_1 \\cdot b_0 + b_2 \\cdot b_0\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-b",
+    "href": "contents/aula-6-1.html#segmento-b",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘b’",
+    "text": "Segmento ‘b’\n\nMintermos: \\(m(0, 1, 2, 3, 4, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[b = b_3 + b_2 + b_1 \\cdot b_0 + b_1 \\cdot \\overline{b_0} \\quad \\Rightarrow \\quad b = b_3 + b_2 + b_1\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-c",
+    "href": "contents/aula-6-1.html#segmento-c",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘c’",
+    "text": "Segmento ‘c’\n\nMintermos: \\(m(0, 1, 3, 4, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[c = b_3 + b_2 + b_1 + b_0\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-d",
+    "href": "contents/aula-6-1.html#segmento-d",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘d’",
+    "text": "Segmento ‘d’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[d = b_3 + \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0} + \\overline{b_1} \\cdot b_0\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-e",
+    "href": "contents/aula-6-1.html#segmento-e",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘e’",
+    "text": "Segmento ‘e’\n\nMintermos: \\(m(0, 2, 6, 8)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[e = \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0}\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-f",
+    "href": "contents/aula-6-1.html#segmento-f",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘f’",
+    "text": "Segmento ‘f’\n\nMintermos: \\(m(0, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[f = b_3 + b_2 \\cdot \\overline{b_1} + b_2 \\cdot \\overline{b_0}\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#segmento-g",
+    "href": "contents/aula-6-1.html#segmento-g",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Segmento ‘g’",
+    "text": "Segmento ‘g’\n\nMintermos: \\(m(2, 3, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[g = b_3 + b_1 \\cdot \\overline{b_0} + \\overline{b_2} \\cdot b_1\\]"
+  },
+  {
+    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
+    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
+    "title": "Aula 6.1  Display de 7 Segmentos",
+    "section": "Mapa de Karnaugh Interativo",
+    "text": "Mapa de Karnaugh Interativo"
   },
   {
     "objectID": "contents/aula-6.html#introdução-à-minimização",
@@ -376,565 +936,5 @@
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Exemplo 3: Teorema do Consenso (Redundância)",
     "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MATA38 - Projeto de Circuitos Lógicos",
-    "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 4 - Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\nAula 6.1 - Display de 7 Segmentos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\nSem itens correspondentes"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
-    "href": "contents/aula-6-1.html#o-que-é-um-display-de-7-segmentos",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "O que é um Display de 7 Segmentos?",
-    "text": "O que é um Display de 7 Segmentos?\n\nDispositivo eletrônico para exibir dígitos decimais (0-9).\nComposto por 7 LEDs individuais (segmentos a a g).\nCada segmento pode ser ligado ou desligado para formar o dígito.\n\n\n\nDisplay de 7 Segmentos"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
-    "href": "contents/aula-6-1.html#exemplo-representando-o-dígito-1",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Exemplo: Representando o Dígito ‘1’",
-    "text": "Exemplo: Representando o Dígito ‘1’\n\nPara exibir o dígito ‘1’, apenas os segmentos b e c são ativados.\nA entrada binária 0001 (decimal 1) acende b e c."
-  },
-  {
-    "objectID": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
-    "href": "contents/aula-6-1.html#decodificador-bcd-para-7-segmentos",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Decodificador BCD para 7 Segmentos",
-    "text": "Decodificador BCD para 7 Segmentos\n\nConverte uma entrada BCD (Binary-Coded Decimal) de 4 bits.\nGera as 7 saídas (a a g) para acionar os segmentos do display.\n\n\n\n\n\n\nflowchart LR\n  subgraph Entradas BCD\n    b3((b3))\n    b2((b2))\n    b1((b1))\n    b0((b0))\n  end\n\n  subgraph Decodificador 7-Seg\n    b3 --&gt; Decoder\n    b2 --&gt; Decoder\n    b1 --&gt; Decoder\n    b0 --&gt; Decoder\n  end\n\n  subgraph Saídas dos Segmentos\n    Decoder --&gt; a((a))\n    Decoder --&gt; b((b))\n    Decoder --&gt; c((c))\n    Decoder --&gt; d((d))\n    Decoder --&gt; e((e))\n    Decoder --&gt; f((f))\n    Decoder --&gt; g((g))\n  end"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
-    "href": "contents/aula-6-1.html#tabela-verdade-entradas-bcd-e-saídas-dos-segmentos",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos",
-    "text": "Tabela-Verdade: Entradas BCD e Saídas dos Segmentos\n\nDefine quais segmentos devem acender para cada dígito decimal (0-9).\nAs entradas binárias de 10 a 15 são “Não Importa” (Don’t Care).\n\n\n\n\n\nDecimal\n\\(b_3\\)\n\\(b_2\\)\n\\(b_1\\)\n\\(b_0\\)\n\\(a\\)\n\\(b\\)\n\\(c\\)\n\\(d\\)\n\\(e\\)\n\\(f\\)\n\\(g\\)\n\n\n\n\n0\n0\n0\n0\n0\n1\n1\n1\n1\n1\n1\n0\n\n\n1\n0\n0\n0\n1\n0\n1\n1\n0\n0\n0\n0\n\n\n2\n0\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n\n\n3\n0\n0\n1\n1\n1\n1\n1\n1\n0\n0\n1\n\n\n4\n0\n1\n0\n0\n0\n1\n1\n0\n0\n1\n1\n\n\n5\n0\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n\n\n6\n0\n1\n1\n0\n1\n0\n1\n1\n1\n1\n1\n\n\n7\n0\n1\n1\n1\n1\n1\n1\n0\n0\n0\n0\n\n\n8\n1\n0\n0\n0\n1\n1\n1\n1\n1\n1\n1\n\n\n9\n1\n0\n0\n1\n1\n1\n1\n1\n0\n1\n1\n\n\n10-15\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#representação-visual-dos-dígitos",
-    "href": "contents/aula-6-1.html#representação-visual-dos-dígitos",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Representação Visual dos Dígitos",
-    "text": "Representação Visual dos Dígitos\n\nA combinação dos segmentos a a g forma cada dígito.\n\n\n\nDígitos 0-9"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#nota-importante",
-    "href": "contents/aula-6-1.html#nota-importante",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Nota Importante",
-    "text": "Nota Importante\n\n\n\n\n\n\nNúmeros Maiores que 9\n\n\nPara representar números maiores que 9, como 10, 11, etc., precisamos de dois ou mais displays de 7 segmentos conectados a decodificadores separados."
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-a",
-    "href": "contents/aula-6-1.html#segmento-a",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘a’",
-    "text": "Segmento ‘a’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[a = b_3 + b_2 + b_1 \\cdot b_0 + b_2 \\cdot b_0\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-b",
-    "href": "contents/aula-6-1.html#segmento-b",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘b’",
-    "text": "Segmento ‘b’\n\nMintermos: \\(m(0, 1, 2, 3, 4, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[b = b_3 + b_2 + b_1 \\cdot b_0 + b_1 \\cdot \\overline{b_0} \\quad \\Rightarrow \\quad b = b_3 + b_2 + b_1\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-1",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-c",
-    "href": "contents/aula-6-1.html#segmento-c",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘c’",
-    "text": "Segmento ‘c’\n\nMintermos: \\(m(0, 1, 3, 4, 5, 6, 7, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[c = b_3 + b_2 + b_1 + b_0\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-2",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-d",
-    "href": "contents/aula-6-1.html#segmento-d",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘d’",
-    "text": "Segmento ‘d’\n\nMintermos: \\(m(0, 2, 3, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[d = b_3 + \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0} + \\overline{b_1} \\cdot b_0\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-3",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-e",
-    "href": "contents/aula-6-1.html#segmento-e",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘e’",
-    "text": "Segmento ‘e’\n\nMintermos: \\(m(0, 2, 6, 8)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[e = \\overline{b_2} \\cdot \\overline{b_0} + b_1 \\cdot \\overline{b_0}\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-4",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-f",
-    "href": "contents/aula-6-1.html#segmento-f",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘f’",
-    "text": "Segmento ‘f’\n\nMintermos: \\(m(0, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[f = b_3 + b_2 \\cdot \\overline{b_1} + b_2 \\cdot \\overline{b_0}\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-5",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#segmento-g",
-    "href": "contents/aula-6-1.html#segmento-g",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Segmento ‘g’",
-    "text": "Segmento ‘g’\n\nMintermos: \\(m(2, 3, 4, 5, 6, 8, 9)\\)\nDon’t Cares: \\(d(10, 11, 12, 13, 14, 15)\\)\nExpressão Simplificada: \\[g = b_3 + b_1 \\cdot \\overline{b_0} + \\overline{b_2} \\cdot b_1\\]"
-  },
-  {
-    "objectID": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
-    "href": "contents/aula-6-1.html#mapa-de-karnaugh-interativo-6",
-    "title": "Aula 6.1 - Display de 7 Segmentos",
-    "section": "Mapa de Karnaugh Interativo",
-    "text": "Mapa de Karnaugh Interativo"
-  },
-  {
-    "objectID": "contents/aula-4.html#o-que-é-uma-porta-lógica",
-    "href": "contents/aula-4.html#o-que-é-uma-porta-lógica",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "O que é uma Porta Lógica?",
-    "text": "O que é uma Porta Lógica?\n\nÉ um dispositivo físico (hardware eletrônico)\nQue executa uma operação lógica booleana\nOpera sobre uma ou mais entradas digitais (níveis 0 ou 1)\nProduz uma única saída lógica correspondente"
-  },
-  {
-    "objectID": "contents/aula-4.html#modelo-geral-de-uma-porta",
-    "href": "contents/aula-4.html#modelo-geral-de-uma-porta",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Modelo Geral de uma Porta",
-    "text": "Modelo Geral de uma Porta\n\n\n\n\n\n%%{init: {\n  'theme': 'base',\n  'themeVariables': {\n    'fontFamily': 'JetBrains Mono, monospace',\n    'fontSize': '15px',\n    'primaryColor': '#EDE9FE',\n    'primaryTextColor': '#3B0764',\n    'primaryBorderColor': '#7C3AED',\n    'lineColor': '#6D28D9',\n    'edgeLabelBackground': '#FAFAFA'\n  }\n}}%%\nflowchart LR\n  subgraph Entradas[\" Entradas \"]\n    A((Entrada A)):::inNode\n    B((Entrada B)):::inNode\n  end\n  subgraph Circuito[\" Processamento \"]\n    PL[\"Porta Lógica\"]:::gateNode\n  end\n  subgraph Saida[\" Saída \"]\n    Y((Saída Y)):::outNode\n  end\n\n  A --&gt; PL\n  B --&gt; PL\n  PL --&gt; Y\n\n  classDef inNode fill:#EDE9FE,stroke:#7C3AED,stroke-width:2px,color:#4C1D95,font-weight:600\n  classDef gateNode fill:#6D28D9,stroke:#4C1D95,stroke-width:2px,color:#FFFFFF,font-weight:700\n  classDef outNode fill:#D1FAE5,stroke:#059669,stroke-width:2px,color:#065F46,font-weight:600\n\n  style Entradas fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569\n  style Circuito fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569\n  style Saida fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1.5px,stroke-dasharray: 4 4,color:#475569"
-  },
-  {
-    "objectID": "contents/aula-4.html#famílias-de-portas-lógicas",
-    "href": "contents/aula-4.html#famílias-de-portas-lógicas",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Famílias de Portas Lógicas",
-    "text": "Famílias de Portas Lógicas\n\n\n\nPortas Básicas:\n\nNOT (Inversão)\nAND (Multiplicação)\nOR (Soma)\n\nPortas Universais:\n\nNAND\nNOR\n\nPortas Aritméticas:\n\nXOR\nXNOR\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nPortas universais (NAND e NOR) permitem construir qualquer outra função lógica."
-  },
-  {
-    "objectID": "contents/aula-4.html#definição-da-porta-not",
-    "href": "contents/aula-4.html#definição-da-porta-not",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Definição da Porta NOT",
-    "text": "Definição da Porta NOT\n\nTambém conhecida como inversor.\nConverte o nível lógico alto (1) em baixo (0) e vice-versa.\nExpressão booleana: \\(Y = \\bar{A}\\) ou \\(Y = A'\\)"
-  },
-  {
-    "objectID": "contents/aula-4.html#demonstração",
-    "href": "contents/aula-4.html#demonstração",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Demonstração",
-    "text": "Demonstração"
-  },
-  {
-    "objectID": "contents/aula-4.html#tabela-verdade",
-    "href": "contents/aula-4.html#tabela-verdade",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tabela Verdade",
-    "text": "Tabela Verdade\n\nDescreve a saída para cada valor de entrada possível:\n\n\n\n\n\nEntrada (\\(A\\))\nSaída (\\(Y = \\bar{A}\\))\n\n\n\n\n0\n1\n\n\n1\n0"
-  },
-  {
-    "objectID": "contents/aula-4.html#o-buffer",
-    "href": "contents/aula-4.html#o-buffer",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "O Buffer",
-    "text": "O Buffer\n\nUm buffer não inverte o nível lógico: a saída é idêntica à entrada (\\(Y = A\\)).\nUtilizado para amplificação de corrente, isolamento de circuitos e temporização.\n\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; BUF[BUFFER] --&gt; Y((Y = A))\n\n\n\n\n\n\n\n\nSímbolo idêntico ao inversor, porém sem a bolinha inversora na saída."
-  },
-  {
-    "objectID": "contents/aula-4.html#inversores-em-cascata",
-    "href": "contents/aula-4.html#inversores-em-cascata",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Inversores em Cascata",
-    "text": "Inversores em Cascata\n\nDois inversores em série anulam a inversão mútua:\n\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; NOT1[NOT] --&gt; NOT2[NOT] --&gt; Y((Y = A))\n\n\n\n\n\n\n\n\nSe \\(A = 0 \\implies \\text{NOT1} = 1 \\implies Y = 0\\)\nSe \\(A = 1 \\implies \\text{NOT1} = 0 \\implies Y = 1\\)\nO circuito atua funcionalmente como um buffer."
-  },
-  {
-    "objectID": "contents/aula-4.html#oscilador-em-anel-multivibrador-astável",
-    "href": "contents/aula-4.html#oscilador-em-anel-multivibrador-astável",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Oscilador em Anel (Multivibrador Astável)",
-    "text": "Oscilador em Anel (Multivibrador Astável)\n\n\n\nUm número ímpar de inversores conectados em ciclo fecha uma realimentação instável:\nNão possui estado estável permanente: fica alternando entre 0 e 1 continuamente.\nAtua como um gerador de clock natural (onda quadrada).\n\n\n\n\n\n\n\nflowchart LR\n  N1[NOT 1] --&gt; N2[NOT 2]\n  N2 --&gt; N3[NOT 3]\n  N3 --&gt;|Realimentação| N1"
-  },
-  {
-    "objectID": "contents/aula-4.html#circuitos-biestáveis",
-    "href": "contents/aula-4.html#circuitos-biestáveis",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Circuitos Biestáveis",
-    "text": "Circuitos Biestáveis\n\nDiferente do circuito astável, o biestável possui dois estados estáveis (0 e 1).\nPermanece em um estado até que um sinal externo force a transição.\nConstitui a base das células de memória digital (Latches e Flip-Flops)."
-  },
-  {
-    "objectID": "contents/aula-4.html#tempo-de-propagação-t_pd",
-    "href": "contents/aula-4.html#tempo-de-propagação-t_pd",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tempo de Propagação (\\(t_{pd}\\))",
-    "text": "Tempo de Propagação (\\(t_{pd}\\))\n\nÉ o tempo físico necessário para que uma mudança na entrada se reflita na saída da porta.\n\n\n\n\n\n\n\nflowchart LR\n  A --&gt; N\n  N --&gt; Y\n\n\n\n\n\n\n\n\nNenhuma porta lógica é instantânea.\nEm portas em série, os atrasos se acumulam somando os tempos individuais."
-  },
-  {
-    "objectID": "contents/aula-4.html#período-e-frequência-do-oscilador",
-    "href": "contents/aula-4.html#período-e-frequência-do-oscilador",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Período e Frequência do Oscilador",
-    "text": "Período e Frequência do Oscilador\n\nPara um anel com \\(n\\) portas inversoras (\\(n\\) ímpar):\n\nA transição precisa percorrer o anel duas vezes para completar um ciclo (\\(0 \\to 1\\) e \\(1 \\to 0\\)).\n\nPeríodo da onda (\\(T\\)): \\[T = 2 \\cdot n \\cdot t_{pd}\\]\nFrequência de oscilação (\\(f\\)): \\[f = \\frac{1}{T} = \\frac{1}{2 \\cdot n \\cdot t_{pd}}\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#exercício-de-temporização",
-    "href": "contents/aula-4.html#exercício-de-temporização",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Exercício de Temporização",
-    "text": "Exercício de Temporização\n\nUm oscilador em anel é formado por 5 inversores, cada um com \\(t_{pd} = 100\\text{ ps}\\).\nQual é a frequência \\(f\\) da onda gerada?\nCálculo do período: \\[T = 2 \\cdot 5 \\cdot 100\\text{ ps} = 1000\\text{ ps} = 1\\text{ ns}\\]\nFrequência: \\[f = \\frac{1}{1\\text{ ns}} = 1\\text{ GHz}\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#operador-lógico-and",
-    "href": "contents/aula-4.html#operador-lógico-and",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Operador Lógico AND",
-    "text": "Operador Lógico AND\n\nA saída é 1 se, e somente se, todas as entradas forem 1.\nRepresentada matematicamente pela multiplicação lógica: \\[Y = A \\cdot B \\quad \\text{ou} \\quad Y = AB\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#demonstração-1",
-    "href": "contents/aula-4.html#demonstração-1",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Demonstração",
-    "text": "Demonstração"
-  },
-  {
-    "objectID": "contents/aula-4.html#tabela-verdade-porta-and",
-    "href": "contents/aula-4.html#tabela-verdade-porta-and",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tabela Verdade (Porta AND)",
-    "text": "Tabela Verdade (Porta AND)\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nSaída \\(Y = A \\cdot B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-4.html#propriedades-da-porta-and",
-    "href": "contents/aula-4.html#propriedades-da-porta-and",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Propriedades da Porta AND",
-    "text": "Propriedades da Porta AND\n\nComutativa: \\[A \\cdot B = B \\cdot A\\]\nAssociativa: \\[(A \\cdot B) \\cdot C = A \\cdot (B \\cdot C)\\]\nPermite expandir portas AND para 3, 4 ou mais entradas associadas."
-  },
-  {
-    "objectID": "contents/aula-4.html#controle-de-sinal-na-porta-and",
-    "href": "contents/aula-4.html#controle-de-sinal-na-porta-and",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Controle de Sinal na Porta AND",
-    "text": "Controle de Sinal na Porta AND\n\nUsando a entrada \\(B\\) como controle:\n\n\n\n\n\\(B = 0\\) (Disable / Desabilitado):\n\nA saída fica fixa em 0, independente do valor de \\(A\\).\nBloqueia a passagem do sinal.\n\n\n\n\n\\(B = 1\\) (Enable / Habilitado):\n\nA saída segue fielmente a entrada: \\(Y = A \\cdot 1 = A\\).\nAtua como uma chave aberta permitindo o sinal passar (buffer)."
-  },
-  {
-    "objectID": "contents/aula-4.html#operador-lógico-or",
-    "href": "contents/aula-4.html#operador-lógico-or",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Operador Lógico OR",
-    "text": "Operador Lógico OR\n\nA saída é 1 se pelo menos uma das entradas for 1.\nRepresentada pela soma booleana: \\[Y = A + B\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#demonstração-2",
-    "href": "contents/aula-4.html#demonstração-2",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Demonstração",
-    "text": "Demonstração"
-  },
-  {
-    "objectID": "contents/aula-4.html#tabela-verdade-porta-or",
-    "href": "contents/aula-4.html#tabela-verdade-porta-or",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tabela Verdade (Porta OR)",
-    "text": "Tabela Verdade (Porta OR)\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nSaída \\(Y = A + B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-4.html#propriedades-da-porta-or",
-    "href": "contents/aula-4.html#propriedades-da-porta-or",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Propriedades da Porta OR",
-    "text": "Propriedades da Porta OR\n\nComutativa: \\[A + B = B + A\\]\nAssociativa: \\[(A + B) + C = A + (B + C)\\]\nPode ser expandida para múltiplos sinais somados."
-  },
-  {
-    "objectID": "contents/aula-4.html#controle-de-sinal-na-porta-or",
-    "href": "contents/aula-4.html#controle-de-sinal-na-porta-or",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Controle de Sinal na Porta OR",
-    "text": "Controle de Sinal na Porta OR\n\nUsando a entrada \\(B\\) como controle:\n\\(B = 0\\) (Enable / Habilitado):\n\nA saída segue a entrada \\(A\\): \\(Y = A + 0 = A\\).\nDeixa o sinal passar sem alteração.\n\n\\(B = 1\\) (Disable / Desabilitado):\n\nA saída fica forçada em 1: \\(Y = A + 1 = 1\\).\nO sinal de \\(A\\) é mascarado."
-  },
-  {
-    "objectID": "contents/aula-4.html#o-que-é-uma-porta-nand",
-    "href": "contents/aula-4.html#o-que-é-uma-porta-nand",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "O que é uma Porta NAND?",
-    "text": "O que é uma Porta NAND?\n\nEquivale a uma porta AND seguida de um NOT: \\[Y = \\overline{A \\cdot B}\\]\nPelo Teorema de De Morgan: \\[\\overline{A \\cdot B} = \\bar{A} + \\bar{B}\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#demonstração-3",
-    "href": "contents/aula-4.html#demonstração-3",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Demonstração",
-    "text": "Demonstração"
-  },
-  {
-    "objectID": "contents/aula-4.html#tabela-verdade-da-porta-nand",
-    "href": "contents/aula-4.html#tabela-verdade-da-porta-nand",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tabela Verdade da Porta NAND",
-    "text": "Tabela Verdade da Porta NAND\n\n\n\n\n\n\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nAND (\\(A \\cdot B\\))\nNAND (\\(Y = \\overline{A \\cdot B}\\))\n\n\n\n\n0\n0\n0\n1\n\n\n0\n1\n0\n1\n\n\n1\n0\n0\n1\n\n\n1\n1\n1\n0"
-  },
-  {
-    "objectID": "contents/aula-4.html#controle-de-sinal-nand",
-    "href": "contents/aula-4.html#controle-de-sinal-nand",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Controle de Sinal (NAND)",
-    "text": "Controle de Sinal (NAND)\n\n\\(B = 1\\) (Enable):\n\n\\(Y = \\overline{A \\cdot 1} = \\bar{A}\\)\nComporta-se como um inversor (NOT).\n\n\\(B = 0\\) (Disable):\n\n\\(Y = \\overline{A \\cdot 0} = \\bar{0} = 1\\)\nSaída fixa em 1."
-  },
-  {
-    "objectID": "contents/aula-4.html#o-que-é-uma-porta-nor",
-    "href": "contents/aula-4.html#o-que-é-uma-porta-nor",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "O que é uma Porta NOR?",
-    "text": "O que é uma Porta NOR?\n\nEquivale a uma porta OR seguida de um NOT: \\[Y = \\overline{A + B}\\]\nPelo Teorema de De Morgan: \\[\\overline{A + B} = \\bar{A} \\cdot \\bar{B}\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#demonstração-4",
-    "href": "contents/aula-4.html#demonstração-4",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Demonstração",
-    "text": "Demonstração"
-  },
-  {
-    "objectID": "contents/aula-4.html#tabela-verdade-da-porta-nor",
-    "href": "contents/aula-4.html#tabela-verdade-da-porta-nor",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Tabela Verdade da Porta NOR",
-    "text": "Tabela Verdade da Porta NOR\n\n\n\n\n\n\n\n\n\nEntrada \\(A\\)\nEntrada \\(B\\)\nOR (\\(A + B\\))\nNOR (\\(Y = \\overline{A + B}\\))\n\n\n\n\n0\n0\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n1\n0\n\n\n1\n1\n1\n0"
-  },
-  {
-    "objectID": "contents/aula-4.html#controle-de-sinal-nor",
-    "href": "contents/aula-4.html#controle-de-sinal-nor",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Controle de Sinal (NOR)",
-    "text": "Controle de Sinal (NOR)\n\n\\(B = 0\\) (Enable):\n\n\\(Y = \\overline{A + 0} = \\bar{A}\\)\nComporta-se como um inversor (NOT).\n\n\\(B = 1\\) (Disable):\n\n\\(Y = \\overline{A + 1} = \\bar{1} = 0\\)\nSaída fixa em 0."
-  },
-  {
-    "objectID": "contents/aula-4.html#comutatividade-e-associatividade",
-    "href": "contents/aula-4.html#comutatividade-e-associatividade",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Comutatividade e Associatividade",
-    "text": "Comutatividade e Associatividade\n\nComutatividade (\\(\\checkmark\\)):\n\nTanto NAND quanto NOR são comutativas: \\[\\overline{A \\cdot B} = \\overline{B \\cdot A} \\quad \\text{e} \\quad \\overline{A + B} = \\overline{B + A}\\]"
-  },
-  {
-    "objectID": "contents/aula-4.html#comutatividade-e-associatividade-1",
-    "href": "contents/aula-4.html#comutatividade-e-associatividade-1",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Comutatividade e Associatividade",
-    "text": "Comutatividade e Associatividade\n\nAssociatividade (\\(\\times\\)):\n\nNAND e NOR NÃO são associativas: \\[\\overline{(A \\cdot B) \\cdot C} \\neq \\overline{A \\cdot (B \\cdot C)}\\]\nNa prática, portas NAND/NOR de 3 entradas não são cascata de portas de 2 entradas."
-  },
-  {
-    "objectID": "contents/aula-4.html#comparação-de-símbolos",
-    "href": "contents/aula-4.html#comparação-de-símbolos",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Comparação de Símbolos",
-    "text": "Comparação de Símbolos\n\n\n\n\n\n\n\n\nPorta\nSímbolo Tradicional (Militar/ANSI)\nPadrão IEEE/ANSI 91-1984\n\n\n\n\nNOT\nTriângulo com bolha na ponta\nCaixa retangular com símbolo 1\n\n\nAND\nCurva reta com arco frontal\nCaixa retangular com símbolo &\n\n\nOR\nArco curvo pontiagudo\nCaixa retangular com símbolo ≥1"
-  },
-  {
-    "objectID": "contents/aula-4.html#comparação-de-símbolos-1",
-    "href": "contents/aula-4.html#comparação-de-símbolos-1",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Comparação de Símbolos",
-    "text": "Comparação de Símbolos\n\n\n\n\n\n\n\n\nPorta\nSímbolo Tradicional (Militar/ANSI)\nPadrão IEEE/ANSI 91-1984\n\n\n\n\nNAND\nSímbolo AND com bolha de saída\nCaixa com & e indicador de negação\n\n\nNOR\nSímbolo OR com bolha de saída\nCaixa com ≥1 e indicador de negação\n\n\nXOR\nArco duplo com ponta\nCaixa retangular com símbolo =1"
-  },
-  {
-    "objectID": "contents/aula-4.html#comparação-de-símbolos-2",
-    "href": "contents/aula-4.html#comparação-de-símbolos-2",
-    "title": "Aula 4 - Portas Lógicas",
-    "section": "Comparação de Símbolos",
-    "text": "Comparação de Símbolos\n\n\n\n\n\n\nNota\n\n\nO padrão IEEE 91-1984 utiliza notação funcional: & para conjunção, ≥1 para disjunção (pelo menos um) e =1 para disjunção exclusiva."
-  },
-  {
-    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "title": "Aula 1  Números Binários",
-    "section": "Vantagens dos sistemas digitais",
-    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
-  },
-  {
-    "objectID": "contents/aula-1.html#níveis-e-precisão",
-    "href": "contents/aula-1.html#níveis-e-precisão",
-    "title": "Aula 1  Números Binários",
-    "section": "Níveis e Precisão",
-    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
-  },
-  {
-    "objectID": "contents/aula-1.html#switchbits",
-    "href": "contents/aula-1.html#switchbits",
-    "title": "Aula 1  Números Binários",
-    "section": "Switch/Bits",
-    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-níveis",
-    "href": "contents/aula-1.html#bits-e-níveis",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e níveis",
-    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-níveis-1",
-    "href": "contents/aula-1.html#bits-e-níveis-1",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Níveis",
-    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-1.html#representação-dos-números",
-    "href": "contents/aula-1.html#representação-dos-números",
-    "title": "Aula 1  Números Binários",
-    "section": "Representação dos números",
-    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
-  },
-  {
-    "objectID": "contents/aula-1.html#representar-quantidades",
-    "href": "contents/aula-1.html#representar-quantidades",
-    "title": "Aula 1  Números Binários",
-    "section": "Representar quantidades",
-    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
-  },
-  {
-    "objectID": "contents/aula-1.html#bits-e-bytes",
-    "href": "contents/aula-1.html#bits-e-bytes",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Bytes",
-    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
-  },
-  {
-    "objectID": "contents/aula-3.html#função-f",
-    "href": "contents/aula-3.html#função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Função \\(F\\)",
-    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
-  },
-  {
-    "objectID": "contents/aula-3.html#representar-a-função-f",
-    "href": "contents/aula-3.html#representar-a-função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Representar a função \\(F\\)",
-    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
-  },
-  {
-    "objectID": "contents/aula-3.html#forma-sop",
-    "href": "contents/aula-3.html#forma-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma SOP",
-    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#forma-pos",
-    "href": "contents/aula-3.html#forma-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma POS",
-    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#literal",
-    "href": "contents/aula-3.html#literal",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Literal",
-    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
-  },
-  {
-    "objectID": "contents/aula-3.html#minterm-mintermo",
-    "href": "contents/aula-3.html#minterm-mintermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Minterm (Mintermo)",
-    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
-  },
-  {
-    "objectID": "contents/aula-3.html#maxterm-maxtermo",
-    "href": "contents/aula-3.html#maxterm-maxtermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Maxterm (Maxtermo)",
-    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
-  },
-  {
-    "objectID": "contents/aula-3.html#comparativo",
-    "href": "contents/aula-3.html#comparativo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Comparativo",
-    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização",
-    "href": "contents/aula-3.html#aplicando-minimização",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-1",
-    "href": "contents/aula-3.html#aplicando-minimização-1",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-2",
-    "href": "contents/aula-3.html#aplicando-minimização-2",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-3",
-    "href": "contents/aula-3.html#aplicando-minimização-3",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-4",
-    "href": "contents/aula-3.html#aplicando-minimização-4",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
-    "href": "contents/aula-3.html#conversão-pos-to-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão POS \\(\\to\\) SOP",
-    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
-    "href": "contents/aula-3.html#conversão-sop-to-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão SOP \\(\\to\\) POS",
-    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
   }
 ]
