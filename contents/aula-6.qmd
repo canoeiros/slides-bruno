@@ -272,6 +272,8 @@ Atenção à troca de posição entre a 3ª e a 4ª coluna: $11$ vem antes de $1
 - Células com **'1'**: $m_2, m_4, m_5, m_6, m_7$
 - Células com **'0'**: $m_0, m_1, m_3$
 
+::: {.fragment}
+
 <div style="display: flex; justify-content: center; margin: 1.2rem auto; max-width: 620px;">
   <table style="border-collapse: separate; border-spacing: 8px; width: 100%; font-family: 'JetBrains Mono', monospace; text-align: center; border: none; background: transparent;">
     <thead>
@@ -326,8 +328,13 @@ Atenção à troca de posição entre a 3ª e a 4ª coluna: $11$ vem antes de $1
   </table>
 </div>
 
+:::
+
+
 ## Agrupamentos com Cores Highlight {.smaller}
 - Pareamento de **maior tamanho possível** ($2^n$) com sobreposição:
+
+::: {.fragment}
 
 <div style="display: flex; justify-content: center; margin: 0.8rem auto; max-width: 640px;">
   <table style="border-collapse: separate; border-spacing: 8px; width: 100%; font-family: 'JetBrains Mono', monospace; text-align: center; border: none; background: transparent;">
@@ -391,7 +398,9 @@ Atenção à troca de posição entre a 3ª e a 4ª coluna: $11$ vem antes de $1
   </table>
 </div>
 
-::: {.columns}
+:::
+
+::: {.columns .fragment}
 ::: {.column width="50%"}
 <div style="background: rgba(16, 185, 129, 0.12); border-left: 4px solid #10B981; border-radius: 6px; padding: 8px 12px;">
 <strong style="color: #047857;">■ Grupo I (Quadra - Verde):</strong><br>
@@ -409,9 +418,11 @@ $A$ varia ($0 \to 1$) $\Rightarrow$ termo **$B\bar{C}$**.
 :::
 :::
 
+::: {.fragment}
 <div style="text-align: center; margin-top: 0.6rem; font-weight: 700; color: #0F172A;">
 Resultado Mínimo: $F = A + B\bar{C}$
 </div>
+:::
 
 ## Demonstração Interativa {.embed}
 <iframe src="../assets/global/karnaugh.html?vars=3&m=2,4,5,6,7&names=A,B,C&hide=panels" width="100%" height="80%"></iframe>

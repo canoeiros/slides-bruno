@@ -386,11 +386,11 @@ Y &= (A+B+C) \cdot (A+B+\overline{C}) \cdot (A+\overline{B}+\overline{C}) \\
 
 Y &= \overline{\bar{A}\bar{B}\bar{C}} \cdot
 \overline{\bar{A}\bar{B}C} \cdot
-\overline{\bar{A}BC} \cdot
+\overline{\bar{A}BC} \cdot \\
 
-Y &= A\bar{B}\bar{C} \cdot
-\overline{\bar{A}\bar{B}C} \cdot
-\overline{\bar{A}BC} \cdot
+Y &= (A+B+C) \cdot
+(A+B+\overline{C}) \cdot 
+(A+\overline{B}+\overline{C})
 \end{aligned}
 ```
 
