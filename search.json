@@ -333,14 +333,14 @@
     "href": "contents/aula-6.html#preenchimento-da-função-fabc",
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Preenchimento da Função: \\(F(A,B,C)\\)",
-    "text": "Preenchimento da Função: \\(F(A,B,C)\\)\n\nFunção do exemplo: \\(F(A,B,C) = \\Sigma m(2, 4, 5, 6, 7)\\)\nCélulas com ‘1’: \\(m_2, m_4, m_5, m_6, m_7\\)\nCélulas com ‘0’: \\(m_0, m_1, m_3\\)\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n0 m₀\n\n\n0 m₁\n\n\n0 m₃\n\n\n1 m₂\n\n\n\n\n1\n\n\n1 m₄\n\n\n1 m₅\n\n\n1 m₇\n\n\n1 m₆"
+    "text": "Preenchimento da Função: \\(F(A,B,C)\\)\n\nFunção do exemplo: \\(F(A,B,C) = \\Sigma m(2, 4, 5, 6, 7)\\)\nCélulas com ‘1’: \\(m_2, m_4, m_5, m_6, m_7\\)\nCélulas com ‘0’: \\(m_0, m_1, m_3\\)\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n0 m₀\n\n\n0 m₁\n\n\n0 m₃\n\n\n1 m₂\n\n\n\n\n1\n\n\n1 m₄\n\n\n1 m₅\n\n\n1 m₇\n\n\n1 m₆"
   },
   {
     "objectID": "contents/aula-6.html#agrupamentos-com-cores-highlight",
     "href": "contents/aula-6.html#agrupamentos-com-cores-highlight",
     "title": "Aula 6  Mapa de Karnaugh",
     "section": "Agrupamentos com Cores Highlight",
-    "text": "Agrupamentos com Cores Highlight\n\nPareamento de maior tamanho possível (\\(2^n\\)) com sobreposição:\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n\n0 m₀\n\n\n\n0 m₁\n\n\n\n0 m₃\n\n\n\n1 m₂\n\n\n\n\n1\n\n\n\n1 m₄\n\n\n\n1 m₅\n\n\n\n1 m₇\n\n\n\n1 m₆\n\n\n\n\n\n\n\n\n■ Grupo I (Quadra - Verde): \\(m(4,5,6,7) \\Rightarrow\\) Linha \\(A=1\\) inteira. Elimina \\(B\\) e \\(C\\) \\(\\Rightarrow\\) termo \\(A\\).\n\n\n\n■ Grupo II (Par - Rosa): \\(m(2,6) \\Rightarrow\\) Coluna \\(BC=10\\). \\(A\\) varia (\\(0 \\to 1\\)) \\(\\Rightarrow\\) termo \\(B\\bar{C}\\).\n\n\n\nResultado Mínimo: \\(F = A + B\\bar{C}\\)"
+    "text": "Agrupamentos com Cores Highlight\n\nPareamento de maior tamanho possível (\\(2^n\\)) com sobreposição:\n\n\n\n\n\n\n\nA  BC\n\n\n00\n\n\n01\n\n\n11\n\n\n10\n\n\n\n\n\n\n0\n\n\n\n0 m₀\n\n\n\n0 m₁\n\n\n\n0 m₃\n\n\n\n1 m₂\n\n\n\n\n1\n\n\n\n1 m₄\n\n\n\n1 m₅\n\n\n\n1 m₇\n\n\n\n1 m₆\n\n\n\n\n\n\n\n\n\n■ Grupo I (Quadra - Verde): \\(m(4,5,6,7) \\Rightarrow\\) Linha \\(A=1\\) inteira. Elimina \\(B\\) e \\(C\\) \\(\\Rightarrow\\) termo \\(A\\).\n\n\n\n■ Grupo II (Par - Rosa): \\(m(2,6) \\Rightarrow\\) Coluna \\(BC=10\\). \\(A\\) varia (\\(0 \\to 1\\)) \\(\\Rightarrow\\) termo \\(B\\bar{C}\\).\n\n\n\n\nResultado Mínimo: \\(F = A + B\\bar{C}\\)"
   },
   {
     "objectID": "contents/aula-6.html#demonstração-interativa",
@@ -802,6 +802,6 @@
     "href": "contents/aula-3.html#conversão-sop-to-pos",
     "title": "Aula 3  Formas SOP e POS",
     "section": "Conversão SOP \\(\\to\\) POS",
-    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\nY &= A\\bar{B}\\bar{C} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot\n\\end{aligned}\\]"
+    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot \\\\\n\nY &= (A+B+C) \\cdot\n(A+B+\\overline{C}) \\cdot\n(A+\\overline{B}+\\overline{C})\n\\end{aligned}\\]"
   }
 ]
