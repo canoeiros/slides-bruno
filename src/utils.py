@@ -85,8 +85,21 @@ def check_quarto():
         print("      - Ou no Linux: baixe o .tar.gz das releases do GitHub e extraia para ~/.local/bin\n")
         sys.exit(1)
 
-def load_api_key() -> str:
-    """Carrega a chave de API do Gemini a partir do arquivo .env."""
+def ensure_quarto_env() -> dict[str, str]:
+    """Garante que todas as variáveis definidas em .env.example existam no ambiente com valor não vazio para o Quarto CLI."""
+    env = os.environ.copy()
+    example_path = config.ROOT_DIR / ".env.example"
+    if example_path.exists():
+        for line in example_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key = line.split("=", 1)[0].strip()
+                if key and not env.get(key):
+                    env[key] = "not-set"
+    return env
+
+def load_env():
+    """Carrega as variáveis de ambiente a partir do arquivo .env."""
     try:
         from dotenv import load_dotenv
     except ImportError:
@@ -97,11 +110,15 @@ def load_api_key() -> str:
     env_path = config.ROOT_DIR / ".env"
     if not env_path.exists():
         print("❌ Erro: Arquivo .env não encontrado na raiz do projeto.")
-        print("   Crie o arquivo .env com a variável GEMINI_API_KEY:")
-        print("   echo 'GEMINI_API_KEY=sua-chave-aqui' > .env")
+        print("   Crie o arquivo .env com base no .env.example:")
+        print("   cp .env.example .env")
         sys.exit(1)
 
     load_dotenv(env_path)
+
+def load_api_key() -> str:
+    """Carrega a chave de API do Gemini a partir do arquivo .env."""
+    load_env()
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
     if not api_key:
         print("❌ Erro: GEMINI_API_KEY não definida ou vazia no arquivo .env")
@@ -109,6 +126,14 @@ def load_api_key() -> str:
         sys.exit(1)
 
     return api_key
+
+def load_model(model: str | None = None) -> str:
+    """Retorna o modelo informado ou carrega GEMINI_MODEL do .env (fallback para DEFAULT_MODEL)."""
+    if model:
+        return model
+    load_env()
+    env_model = os.getenv("GEMINI_MODEL", "").strip()
+    return env_model if env_model else config.DEFAULT_MODEL
 
 def clean_model_output(text: str) -> str:
     """Remove possíveis wrappers de código que o modelo pode adicionar."""

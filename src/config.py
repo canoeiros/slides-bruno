@@ -1,14 +1,24 @@
+import os
 from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+except (ImportError, OSError):
+    pass
 
 # ==============================================================================
 # CONFIGURAÇÕES E DIRETÓRIOS
 # ==============================================================================
 ROOT_DIR = Path(__file__).resolve().parent.parent
+
 CONTENTS_DIR = ROOT_DIR / "contents"
 ASSETS_DIR = ROOT_DIR / "assets"
 OUTPUT_DIR = ROOT_DIR / "output"
 ORIGINAIS_DIR = ROOT_DIR / "originais"
 PROMPTS_DIR = ROOT_DIR / "prompts"
+
+DEFAULT_MODEL = os.getenv("GEMINI_MODEL") or "gemini-2.5-flash"
 
 DEFAULT_AUTHOR = ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
 DEFAULT_SUBTITLE = "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"

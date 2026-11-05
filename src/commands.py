@@ -10,9 +10,10 @@ from src import pdf_converter
 def cmd_preview(target: str = None):
     """Inicia o Quarto preview com live-reload."""
     utils.check_quarto()
+    quarto_env = utils.ensure_quarto_env()
     if not target:
         print("🚀 Iniciando Quarto Preview do conteúdo em contents/...")
-        subprocess.run(["quarto", "preview", str(config.CONTENTS_DIR)], cwd=config.ROOT_DIR)
+        subprocess.run(["quarto", "preview", str(config.CONTENTS_DIR)], cwd=config.ROOT_DIR, env=quarto_env)
         return
 
     slug = utils.normalize_lesson_slug(target)
@@ -30,7 +31,7 @@ def cmd_preview(target: str = None):
 
     print(f"🚀 Iniciando Quarto Preview para: {qmd_file.name}")
     print(f"   Alterações em {qmd_file.name} ou assets/ atualizarão automaticamente no navegador.\n")
-    subprocess.run(["quarto", "preview", str(qmd_file)], cwd=config.ROOT_DIR)
+    subprocess.run(["quarto", "preview", str(qmd_file)], cwd=config.ROOT_DIR, env=quarto_env)
 
 def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = None):
     """Cria uma nova aula e sua respectiva pasta de assets a partir do template."""
@@ -72,7 +73,7 @@ def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = No
 def cmd_convert(
     pdf_path: str,
     force: bool = False,
-    model: str = "gemini-2.5-flash",
+    model: str | None = None,
     title: str = None,
     prompt_file: str = "convert.txt",
 ):
@@ -125,9 +126,10 @@ def cmd_convert(
             print("   Operação cancelada.")
             return
 
-    # 1. Carregar API key
+    # 1. Carregar API key e modelo do .env
     api_key = utils.load_api_key()
-    print("   🔑 API Key carregada com sucesso")
+    model = utils.load_model(model)
+    print(f"   🔑 API Key carregada com sucesso (Modelo: {model})")
 
     # 2. Renderizar páginas do PDF como imagens PNG
     sources_dir = aula_assets / "sources"
@@ -177,7 +179,7 @@ def cmd_convert(
 
 def cmd_convert_all(
     force: bool = False,
-    model: str = "gemini-2.5-flash",
+    model: str | None = None,
     prompt_file: str = "convert.txt",
 ):
     """Converte todos os PDFs em originais/ que ainda não possuem .qmd correspondente."""
@@ -219,8 +221,9 @@ def cmd_convert_all(
 def cmd_build():
     """Compila o projeto completo para output/."""
     utils.check_quarto()
+    quarto_env = utils.ensure_quarto_env()
     print("🔨 Compilando o projeto completo com Quarto...")
-    res = subprocess.run(["quarto", "render"], cwd=config.ROOT_DIR)
+    res = subprocess.run(["quarto", "render"], cwd=config.ROOT_DIR, env=quarto_env)
     if res.returncode == 0:
         print(f"\n✨ Build finalizado com sucesso em: {config.OUTPUT_DIR.relative_to(config.ROOT_DIR)}/")
     else:

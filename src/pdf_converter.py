@@ -48,8 +48,9 @@ def render_pdf_pages(pdf_path: Path, output_dir: Path, scale: float = 2.0) -> li
     doc.close()
     return image_paths
 
-def call_gemini_multimodal(api_key: str, prompt: str, image_paths: list[Path], model: str = "gemini-2.5-flash") -> str:
+def call_gemini_multimodal(api_key: str, prompt: str, image_paths: list[Path], model: str | None = None) -> str:
     """Envia as imagens e o prompt para o Gemini e retorna o texto gerado."""
+    model = model or config.DEFAULT_MODEL
     try:
         from google import genai
         from google.genai import types

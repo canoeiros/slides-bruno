@@ -13,7 +13,7 @@ Uso:
 """
 
 import argparse
-from src import commands
+from src import commands, config
 
 def main():
     parser = argparse.ArgumentParser(
@@ -50,14 +50,14 @@ Exemplos:
     p_convert.add_argument("pdf", help="Caminho do PDF (ex: Aula-3.pdf, originais/Aula-3.pdf)")
     p_convert.add_argument("prompt_file", nargs="?", default="convert.txt", help="Arquivo de prompt a usar (default: convert.txt)")
     p_convert.add_argument("--force", "-f", action="store_true", help="Sobrescrever .qmd existente sem perguntar")
-    p_convert.add_argument("--model", "-m", default="gemini-2.5-flash", help="Modelo Gemini a usar (default: gemini-2.5-flash)")
+    p_convert.add_argument("--model", "-m", default=config.DEFAULT_MODEL, help=f"Modelo Gemini a usar (default do .env: {config.DEFAULT_MODEL})")
     p_convert.add_argument("--title", "-t", default=None, help="Título personalizado da aula")
     p_convert.add_argument("--prompt", "-p", default=None, help="Arquivo de prompt alternativo")
 
     # convert-all
     p_convert_all = subparsers.add_parser("convert-all", help="Converte todos os PDFs em originais/")
     p_convert_all.add_argument("--force", "-f", action="store_true", help="Reconverter mesmo se .qmd já existir")
-    p_convert_all.add_argument("--model", "-m", default="gemini-2.5-flash", help="Modelo Gemini a usar (default: gemini-2.5-flash)")
+    p_convert_all.add_argument("--model", "-m", default=config.DEFAULT_MODEL, help=f"Modelo Gemini a usar (default do .env: {config.DEFAULT_MODEL})")
     p_convert_all.add_argument("--prompt", "-p", default="convert.txt", help="Arquivo de prompt a usar (default: convert.txt)")
 
     # build
