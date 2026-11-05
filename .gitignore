@@ -28,6 +28,7 @@ __pycache__/
 
 # Variáveis de ambiente (chaves de API)
 .env
+.env.*
 
 # Sistema operacional / IDE
 .DS_Store

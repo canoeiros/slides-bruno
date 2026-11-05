@@ -10,10 +10,9 @@ from src import pdf_converter
 def cmd_preview(target: str = None):
     """Inicia o Quarto preview com live-reload."""
     utils.check_quarto()
-    quarto_env = utils.ensure_quarto_env()
     if not target:
         print("🚀 Iniciando Quarto Preview do conteúdo em contents/...")
-        subprocess.run(["quarto", "preview", str(config.CONTENTS_DIR)], cwd=config.ROOT_DIR, env=quarto_env)
+        subprocess.run(["quarto", "preview", str(config.CONTENTS_DIR)], cwd=config.ROOT_DIR)
         return
 
     slug = utils.normalize_lesson_slug(target)
@@ -31,7 +30,7 @@ def cmd_preview(target: str = None):
 
     print(f"🚀 Iniciando Quarto Preview para: {qmd_file.name}")
     print(f"   Alterações em {qmd_file.name} ou assets/ atualizarão automaticamente no navegador.\n")
-    subprocess.run(["quarto", "preview", str(qmd_file)], cwd=config.ROOT_DIR, env=quarto_env)
+    subprocess.run(["quarto", "preview", str(qmd_file)], cwd=config.ROOT_DIR)
 
 def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = None):
     """Cria uma nova aula e sua respectiva pasta de assets a partir do template."""
@@ -53,12 +52,16 @@ def cmd_new(name: str, title: str = None, subtitle: str = None, author: str = No
     final_title = utils.format_lesson_title(slug, title=title)
     final_subtitle = subtitle if subtitle else config.DEFAULT_SUBTITLE
     final_author = author if author else config.DEFAULT_AUTHOR
+    order_val, unidade = utils.get_lesson_order_and_unit(slug)
 
     # Renderiza o template do slide
     content = config.SLIDE_TEMPLATE.format(
         title=final_title,
         subtitle=final_subtitle,
         author=final_author,
+        order=order_val,
+        index=order_val,
+        categories=f'["{unidade}"]',
         slug=slug,
     )
 
@@ -156,10 +159,14 @@ def cmd_convert(
             final_title = utils.format_lesson_title(slug, title=extracted)
 
     # 6. Montar o arquivo .qmd com cabeçalho YAML
+    order_val, unidade = utils.get_lesson_order_and_unit(slug)
     full_content = config.SLIDE_TEMPLATE.format(
         title=final_title,
         subtitle=config.DEFAULT_SUBTITLE,
         author=config.DEFAULT_AUTHOR,
+        order=order_val,
+        index=order_val,
+        categories=f'["{unidade}"]',
         slug=slug,
     )
     full_content += slide_content + "\n"
@@ -221,9 +228,8 @@ def cmd_convert_all(
 def cmd_build():
     """Compila o projeto completo para output/."""
     utils.check_quarto()
-    quarto_env = utils.ensure_quarto_env()
     print("🔨 Compilando o projeto completo com Quarto...")
-    res = subprocess.run(["quarto", "render"], cwd=config.ROOT_DIR, env=quarto_env)
+    res = subprocess.run(["quarto", "render"], cwd=config.ROOT_DIR)
     if res.returncode == 0:
         print(f"\n✨ Build finalizado com sucesso em: {config.OUTPUT_DIR.relative_to(config.ROOT_DIR)}/")
     else:

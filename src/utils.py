@@ -85,50 +85,52 @@ def check_quarto():
         print("      - Ou no Linux: baixe o .tar.gz das releases do GitHub e extraia para ~/.local/bin\n")
         sys.exit(1)
 
-def ensure_quarto_env() -> dict[str, str]:
-    """Garante que todas as variáveis definidas em .env.example existam no ambiente com valor não vazio para o Quarto CLI."""
-    env = os.environ.copy()
-    example_path = config.ROOT_DIR / ".env.example"
-    if example_path.exists():
-        for line in example_path.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                key = line.split("=", 1)[0].strip()
-                if key and not env.get(key):
-                    env[key] = "not-set"
-    return env
+def get_lesson_order_and_unit(slug: str) -> tuple[int | float, str]:
+    """Determina o índice numérico de ordenação e a unidade correspondente da aula."""
+    clean_num = slug.lower().replace("aula-", "").replace("aula_", "")
+    try:
+        if "-" in clean_num:
+            val: int | float = float(clean_num.replace("-", "."))
+        elif "." in clean_num:
+            val = float(clean_num)
+        else:
+            val = int(clean_num)
+    except ValueError:
+        val = 999
+
+    if val <= 6:
+        unidade = "Unidade 1"
+    elif val <= 12:
+        unidade = "Unidade 2"
+    else:
+        unidade = "Unidade 3"
+    return val, unidade
 
 def load_env():
-    """Carrega as variáveis de ambiente a partir do arquivo .env."""
+    """Carrega variáveis de ambiente do arquivo .env se ele existir (opcional)."""
     try:
         from dotenv import load_dotenv
-    except ImportError:
-        print("❌ Erro: python-dotenv não está instalado.")
-        print("   Instale com: pip install python-dotenv")
-        sys.exit(1)
-
-    env_path = config.ROOT_DIR / ".env"
-    if not env_path.exists():
-        print("❌ Erro: Arquivo .env não encontrado na raiz do projeto.")
-        print("   Crie o arquivo .env com base no .env.example:")
-        print("   cp .env.example .env")
-        sys.exit(1)
-
-    load_dotenv(env_path)
+        env_path = config.ROOT_DIR / ".env"
+        if env_path.exists():
+            load_dotenv(env_path)
+    except (ImportError, OSError):
+        pass
 
 def load_api_key() -> str:
-    """Carrega a chave de API do Gemini a partir do arquivo .env."""
+    """Carrega a chave de API do Gemini a partir do ambiente ou do arquivo .env."""
     load_env()
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
     if not api_key:
-        print("❌ Erro: GEMINI_API_KEY não definida ou vazia no arquivo .env")
+        print("❌ Erro: GEMINI_API_KEY não definida no ambiente ou no arquivo .env")
+        print("   Defina a variável de ambiente ou adicione ao arquivo .env:")
+        print("   export GEMINI_API_KEY='sua-chave-aqui'")
         print("   Obtenha sua chave em: https://aistudio.google.com/apikey")
         sys.exit(1)
 
     return api_key
 
 def load_model(model: str | None = None) -> str:
-    """Retorna o modelo informado ou carrega GEMINI_MODEL do .env (fallback para DEFAULT_MODEL)."""
+    """Retorna o modelo informado ou carrega GEMINI_MODEL do ambiente/.env (fallback para DEFAULT_MODEL)."""
     if model:
         return model
     load_env()
