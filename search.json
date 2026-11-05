@@ -1,59 +1,633 @@
 [
   {
-    "objectID": "contents/aula-5.html#porta-xor-definição-e-expressão",
-    "href": "contents/aula-5.html#porta-xor-definição-e-expressão",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Definição e Expressão",
-    "text": "Porta XOR: Definição e Expressão\n\nA Porta OU Exclusivo (XOR) é também conhecida como EX-OR.\nSua saída é alta (1) apenas se o número de entradas altas for ímpar.\nExpressão Booleana: \\(Y = A \\oplus B = A\\bar{B} + \\bar{A}B\\)"
+    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
+    "title": "Aula 1  Números Binários",
+    "section": "Vantagens dos sistemas digitais",
+    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-símbolos-lógicos",
-    "href": "contents/aula-5.html#porta-xor-símbolos-lógicos",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Símbolos Lógicos",
-    "text": "Porta XOR: Símbolos Lógicos\n\n\nSímbolo Tradicional\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; XOR[XOR]\n  B((B)) --&gt; XOR\n  XOR --&gt; Y((Y = A ⊕ B))\n\n\n\n\n\n\n\nSímbolo IEEE\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; IEEE[\"= 1\"]\n  B((B)) --&gt; IEEE\n  IEEE --&gt; Y((Y))"
+    "objectID": "contents/aula-1.html#níveis-e-precisão",
+    "href": "contents/aula-1.html#níveis-e-precisão",
+    "title": "Aula 1  Números Binários",
+    "section": "Níveis e Precisão",
+    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-tabela-verdade",
-    "href": "contents/aula-5.html#porta-xor-tabela-verdade",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Tabela-Verdade",
-    "text": "Porta XOR: Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Y = A \\oplus B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n0"
+    "objectID": "contents/aula-1.html#switchbits",
+    "href": "contents/aula-1.html#switchbits",
+    "title": "Aula 1  Números Binários",
+    "section": "Switch/Bits",
+    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
   },
   {
-    "objectID": "contents/aula-5.html#demonstração-interativa-porta-xor",
-    "href": "contents/aula-5.html#demonstração-interativa-porta-xor",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Demonstração Interativa: Porta XOR",
-    "text": "Demonstração Interativa: Porta XOR"
+    "objectID": "contents/aula-1.html#bits-e-níveis",
+    "href": "contents/aula-1.html#bits-e-níveis",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e níveis",
+    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-circuito-interno",
-    "href": "contents/aula-5.html#porta-xor-circuito-interno",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Circuito Interno",
-    "text": "Porta XOR: Circuito Interno\n\\[Y = A \\oplus B = A\\bar{B} + \\bar{A}B\\]"
+    "objectID": "contents/aula-1.html#bits-e-níveis-1",
+    "href": "contents/aula-1.html#bits-e-níveis-1",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Níveis",
+    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-propriedade-chave",
-    "href": "contents/aula-5.html#porta-xor-propriedade-chave",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Propriedade Chave",
-    "text": "Porta XOR: Propriedade Chave\n\nA porta XOR é um detector de “1” ímpar.\nSua saída é alta (1) se houver um número ímpar de entradas em nível lógico alto."
+    "objectID": "contents/aula-1.html#representação-dos-números",
+    "href": "contents/aula-1.html#representação-dos-números",
+    "title": "Aula 1  Números Binários",
+    "section": "Representação dos números",
+    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-propriedades-parte-1",
-    "href": "contents/aula-5.html#porta-xor-propriedades-parte-1",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Propriedades (Parte 1)",
-    "text": "Porta XOR: Propriedades (Parte 1)\n\nIdentidades com 0, 1, A, \\(\\bar{A}\\):\n\n\\(A \\oplus A = 0\\)\n\\(A \\oplus \\bar{A} = 1\\)\n\\(A \\oplus 0 = A\\)\n\\(A \\oplus 1 = \\bar{A}\\)"
+    "objectID": "contents/aula-1.html#representar-quantidades",
+    "href": "contents/aula-1.html#representar-quantidades",
+    "title": "Aula 1  Números Binários",
+    "section": "Representar quantidades",
+    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
   },
   {
-    "objectID": "contents/aula-5.html#porta-xor-propriedades-parte-2",
-    "href": "contents/aula-5.html#porta-xor-propriedades-parte-2",
-    "title": "Aula 5  Portas Lógicas II",
-    "section": "Porta XOR: Propriedades (Parte 2)",
-    "text": "Porta XOR: Propriedades (Parte 2)\n\nAssociatividade e Comutatividade:\n\nA operação XOR é comutativa: \\(A \\oplus B = B \\oplus A\\)\nA operação XOR é associativa: \\((A \\oplus B) \\oplus C = A \\oplus (B \\oplus C)\\)"
+    "objectID": "contents/aula-1.html#bits-e-bytes",
+    "href": "contents/aula-1.html#bits-e-bytes",
+    "title": "Aula 1  Números Binários",
+    "section": "Bits e Bytes",
+    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+  },
+  {
+    "objectID": "contents/aula-10.html#introdução-aos-complementos",
+    "href": "contents/aula-10.html#introdução-aos-complementos",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Introdução aos Complementos",
+    "text": "Introdução aos Complementos\n\nUsados em sistemas digitais para simplificar operações lógicas e aritméticas.\nPermitem transformar operações de subtração em adição.\nSimplificam o projeto de hardware para representação de números positivos e negativos."
+  },
+  {
+    "objectID": "contents/aula-10.html#tipos-de-complementos",
+    "href": "contents/aula-10.html#tipos-de-complementos",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Tipos de Complementos",
+    "text": "Tipos de Complementos\nPara qualquer sistema de numeração de base \\(r\\):\n\n\nComplemento de \\(r\\)\n\nRadix Complement\nRepresentado por \\(r\\)’s complement\nEx.: Complemento de 10, Complemento de 2\n\n\nComplemento de \\(r-1\\)\n\nDiminished Radix Complement\nRepresentado por \\((r-1)\\)’s complement\nEx.: Complemento de 9, Complemento de 1"
+  },
+  {
+    "objectID": "contents/aula-10.html#complemento-de-radix-rs-complement",
+    "href": "contents/aula-10.html#complemento-de-radix-rs-complement",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Complemento de Radix (\\(r\\)’s Complement)",
+    "text": "Complemento de Radix (\\(r\\)’s Complement)\n\nPara um número \\(N\\) de \\(n\\) dígitos na base \\(r\\):\n\n\\[r\\text{'s comp} = r^n - N\\]\n\nOnde:\n\n\\(N\\): número original dado\n\\(n\\): número total de dígitos de \\(N\\)\n\\(r\\): base do sistema numérico"
+  },
+  {
+    "objectID": "contents/aula-10.html#exemplo-base-decimal-r-10",
+    "href": "contents/aula-10.html#exemplo-base-decimal-r-10",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Exemplo: Base Decimal (\\(r = 10\\))",
+    "text": "Exemplo: Base Decimal (\\(r = 10\\))\n\nDeterminar o complemento de \\(10\\) de \\(N = 5690\\):\n\n\\(n = 4\\) dígitos, \\(r = 10\\)\n\n\n\\[\n\\begin{aligned}\n\\text{Comp.} &= 10^4 - 5690 \\\\\n             &= 10000 - 5690 \\\\\n             &= 4310\n\\end{aligned}\n\\]\n\nExemplo com 1 dígito (\\(N = 7\\)): \\[10^1 - 7 = 3\\]"
+  },
+  {
+    "objectID": "contents/aula-10.html#exemplo-base-binária-r-2",
+    "href": "contents/aula-10.html#exemplo-base-binária-r-2",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Exemplo: Base Binária (\\(r = 2\\))",
+    "text": "Exemplo: Base Binária (\\(r = 2\\))\n\nDeterminar o complemento de \\(2\\) de \\(N = (1101)_2\\):\n\n\\(n = 4\\) bits, \\(r = 2\\)\n\n\n\\[\n\\begin{aligned}\n\\text{Comp.} &= (2^4)_{10} - (1101)_2 \\\\\n             &= (16)_{10} - (1101)_2 \\\\\n             &= (10000)_2 - (1101)_2 \\\\\n             &= (00011)_2 = (11)_2\n\\end{aligned}\n\\]\n\n\n\n\n\n\nVerificação em Decimal\n\n\n\\(16 - 13 = 3 = (11)_2\\)"
+  },
+  {
+    "objectID": "contents/aula-10.html#relação-entre-complementos",
+    "href": "contents/aula-10.html#relação-entre-complementos",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Relação entre Complementos",
+    "text": "Relação entre Complementos\n\n\n\nBase (\\(r\\))\n\\(r\\)’s Complement\n\\((r-1)\\)’s Complement\n\n\n\n\n\\(r = 10\\)\n10’s comp\n9’s comp\n\n\n\\(r = 2\\)\n2’s comp\n1’s comp\n\n\n\\(r = 8\\)\n8’s comp\n7’s comp\n\n\n\\(r = 16\\)\n16’s comp\nF’s comp"
+  },
+  {
+    "objectID": "contents/aula-10.html#fórmula-do-complemento-r-1",
+    "href": "contents/aula-10.html#fórmula-do-complemento-r-1",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Fórmula do Complemento \\((r-1)\\)",
+    "text": "Fórmula do Complemento \\((r-1)\\)\n\nPela definição:\n\n\\[(r-1)\\text{'s comp} = r^n - N - 1 = (r^n - 1) - N\\]\n\nRelação fundamental:\n\n\\[(r-1)\\text{'s comp} + 1 = r\\text{'s comp}\\]\n\n\n\n\n\n\nVantagem Computacional\n\n\nO cálculo do complemento \\((r-1)\\) não precisa de “empresta 1” (borrow) na subtração dígito a dígito!"
+  },
+  {
+    "objectID": "contents/aula-10.html#cálculo-prático-do-complemento-r-1",
+    "href": "contents/aula-10.html#cálculo-prático-do-complemento-r-1",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Cálculo Prático do Complemento \\((r-1)\\)",
+    "text": "Cálculo Prático do Complemento \\((r-1)\\)\nPara obter o complemento de \\((r-1)\\), subtrai-se cada dígito do número \\(N\\) do maior dígito da base (\\(r-1\\)):\n\nBase 10: Subtrai cada dígito de \\(9\\)\nBase 8: Subtrai cada dígito de \\(7\\)\nBase 16: Subtrai cada dígito de \\(F_{16} (15_{10})\\)\nBase 2: Inverte cada bit (\\(0 \\rightarrow 1\\) e \\(1 \\rightarrow 0\\))"
+  },
+  {
+    "objectID": "contents/aula-10.html#exemplo-em-octal-r-8",
+    "href": "contents/aula-10.html#exemplo-em-octal-r-8",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Exemplo em Octal (\\(r = 8\\))",
+    "text": "Exemplo em Octal (\\(r = 8\\))\n\n1) Encontrar o 7’s comp de \\(N = 5674_8\\):\n\nSubtrai cada dígito de \\(7\\):\n\n\n\\[\n\\begin{aligned}\n  7777_8 \\\\\n- 5674_8 \\\\\n\\hline\n  2103_8\n\\end{aligned}\n\\]\n\n2) Encontrar o 8’s comp de \\(N = 5674_8\\):\n\nAdiciona \\(1\\) ao complemento de 7:\n\n\n\\[2103_8 + 1 = 2104_8\\]"
+  },
+  {
+    "objectID": "contents/aula-10.html#complemento-de-1-1s-complement",
+    "href": "contents/aula-10.html#complemento-de-1-1s-complement",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Complemento de 1 (1’s Complement)",
+    "text": "Complemento de 1 (1’s Complement)\n\nPara obter o 1’s complemento de um número binário, inverte-se todos os bits:\n\n\\[1 \\rightarrow 0 \\quad \\text{e} \\quad 0 \\rightarrow 1\\]\n\nExemplo: Obtenha o 1’s comp de \\((1010)_2\\)\n\n\n\nVia Subtração: \\[\n\\begin{aligned}\n  1111_2 \\\\\n- 1010_2 \\\\\n\\hline\n  0101_2\n\\end{aligned}\n\\]\n\nVia Inversão Direta: \\[\n\\begin{aligned}\n1 \\ 0 \\ 1 \\ 0 \\\\\n\\downarrow \\ \\downarrow \\ \\downarrow \\ \\downarrow \\\\\n0 \\ 1 \\ 0 \\ 1\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-10.html#complemento-de-2-2s-complement",
+    "href": "contents/aula-10.html#complemento-de-2-2s-complement",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Complemento de 2 (2’s Complement)",
+    "text": "Complemento de 2 (2’s Complement)\n\nCalculado somando \\(1\\) ao 1’s complemento:\n\n\\[2\\text{'s comp} = 1\\text{'s comp} + 1\\]\n\nExemplo: Obtenha o 2’s comp de \\((1011010)_2\\)\n\n\\[\n\\begin{aligned}\n1\\text{'s comp} &= 0100101_2 \\\\\n& \\quad + \\qquad \\quad 1_2 \\\\\n\\hline\n2\\text{'s comp} &= 0100110_2\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-10.html#algoritmo-rápido-para-2s-complement",
+    "href": "contents/aula-10.html#algoritmo-rápido-para-2s-complement",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Algoritmo Rápido para 2’s Complement",
+    "text": "Algoritmo Rápido para 2’s Complement\nPermite obter o complemento de 2 diretamente sem inverter todos os bits primeiro:\n\nEscreva o número binário.\nInicie pelo LSB (bit menos significativo), copiado todos os 0s até o primeiro 1.\nCopie o primeiro 1.\nComplemente (inverte) todos os bits restantes à esquerda."
+  },
+  {
+    "objectID": "contents/aula-10.html#aplicação-do-algoritmo-rápido",
+    "href": "contents/aula-10.html#aplicação-do-algoritmo-rápido",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Aplicação do Algoritmo Rápido",
+    "text": "Aplicação do Algoritmo Rápido\n\nExemplo 1: \\(N = (10111000)_2\\)\n\nNúmero Original:  1 0 1 1 1 0 0 0\n                  | | | | | \\___/\n                  | | | | |   |---&gt; Copia zeros e 1º um: 1000\n                  \\_______/\n                      |------------&gt; Inverte restantes:  0100\nResultado:        0 0 1 0 0 1 0 0 0  =&gt;  (01001000)₂\n\nExemplo 2: \\(N = (101100)_2\\)\n\nCopia 100, inverte 101 \\(\\rightarrow\\) Resp: \\((010100)_2\\)"
+  },
+  {
+    "objectID": "contents/aula-10.html#exercícios-propostos",
+    "href": "contents/aula-10.html#exercícios-propostos",
+    "title": "Aula 10Conceito de Complemento",
+    "section": "Exercícios Propostos",
+    "text": "Exercícios Propostos\n\n\n\n\n\n\nExercícios de Fixação\n\n\nDetermine os complementos solicitados:\n\nComplemento de 10 de \\(N = 76895\\)\nComplemento de 2 de \\(N = (11011)_2\\)\nComplemento de 1 de \\(N = (100111)_2\\)\nComplemento de 2 de \\(N = (1100111)_2\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#o-que-é-um-código",
+    "href": "contents/aula-13.html#o-que-é-um-código",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "O que é um Código?",
+    "text": "O que é um Código?\n\nRepresentação: Forma de codificar números, letras ou símbolos usando um grupo específico de símbolos (bits).\nPalavra de Código (Codeword): A sequência binária resultante da codificação.\nObjetivo: Facilitar o processamento, transmissão e armazenamento de dados em sistemas digitais.\n\n\n\n\n\n\n\nCodificação vs Decodificação\n\n\n\nTransmissão (Tx): Dado Original \\(\\rightarrow\\) Codificador \\(\\rightarrow\\) Código\nRecepção (Rx): Código \\(\\rightarrow\\) Decodificador \\(\\rightarrow\\) Dado Original"
+  },
+  {
+    "objectID": "contents/aula-13.html#categorias-principais-de-códigos",
+    "href": "contents/aula-13.html#categorias-principais-de-códigos",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Categorias Principais de Códigos",
+    "text": "Categorias Principais de Códigos\n\nPonderados (Weighted): Cada posição possui um peso numérico (ex.: 8421, 2421).\nNão Ponderados (Non-Weighted): As posições não têm pesos fixos (ex.: Excess-3, Gray).\nReflexivos (Self-Complementing): O complemento de 9 do número decimal equivale ao complemento de 1 do código (ex.: 2421, XS-3).\nSequenciais: Cada código difere do anterior por um valor constante (ex.: 8421, XS-3).\nAlfanuméricos: Representam números, letras e símbolos (ex.: ASCII, UTF-8).\nDetecção/Correção de Erros: Incluem bits extras para identificar e corrigir falhas (ex.: Paridade, Hamming)."
+  },
+  {
+    "objectID": "contents/aula-13.html#códigos-reflexivos-self-complementing",
+    "href": "contents/aula-13.html#códigos-reflexivos-self-complementing",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Códigos Reflexivos (Self-Complementing)",
+    "text": "Códigos Reflexivos (Self-Complementing)\n\nPropriedade: O complemento de 1 da representação binária de um dígito \\(N\\) resulta no código do dígito \\((9 - N)\\).\nPares de Complemento:\n\n\\(0 \\leftrightarrow 9\\)\n\\(1 \\leftrightarrow 8\\)\n\\(2 \\leftrightarrow 7\\)\n\\(3 \\leftrightarrow 6\\)\n\\(4 \\leftrightarrow 5\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#definição-do-código-bcd",
+    "href": "contents/aula-13.html#definição-do-código-bcd",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Definição do Código BCD",
+    "text": "Definição do Código BCD\n\nBinary Coded Decimal: Representa cada dígito decimal (\\(0\\) a \\(9\\)) por um grupo fixo de 4 bits.\nBase Decimal (\\(r = 10\\)):\n\nDígitos válidos: de \\(0\\) até \\((r - 1) = 9\\).\n\nPesos dos Bits: \\(8 - 4 - 2 - 1\\).\n\n\n\n\n\n\n\nLembrete\n\n\nNo BCD, codificamos dígito por dígito decimal individualmente, diferente da conversão binária pura de um número completo."
+  },
+  {
+    "objectID": "contents/aula-13.html#tabela-do-código-bcd-8421",
+    "href": "contents/aula-13.html#tabela-do-código-bcd-8421",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Tabela do Código BCD (8421)",
+    "text": "Tabela do Código BCD (8421)\n\n\n\nDígito Decimal\nPesos (8 4 2 1)\n\n\n\n\n0\n0 0 0 0\n\n\n1\n0 0 0 1\n\n\n2\n0 0 1 0\n\n\n3\n0 0 1 1\n\n\n4\n0 1 0 0\n\n\n5\n0 1 0 1\n\n\n6\n0 1 1 0\n\n\n7\n0 1 1 1\n\n\n8\n1 0 0 0\n\n\n9\n1 0 0 1"
+  },
+  {
+    "objectID": "contents/aula-13.html#estados-inválidos-em-bcd",
+    "href": "contents/aula-13.html#estados-inválidos-em-bcd",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Estados Inválidos em BCD",
+    "text": "Estados Inválidos em BCD\n\nCom 4 bits é possível representar \\(2^4 = 16\\) combinações (\\(0\\) a \\(15\\)).\nComo o BCD utiliza apenas os dígitos de \\(0\\) a \\(9\\), existem 6 combinações inválidas:\n\n\n\n\nValor Decimal\nCódigo Binário de 4 bits\nStatus\n\n\n\n\n10\n1 0 1 0\nInválido / Don’t Care\n\n\n11\n1 0 1 1\nInválido / Don’t Care\n\n\n12\n1 1 0 0\nInválido / Don’t Care\n\n\n13\n1 1 0 1\nInválido / Don’t Care\n\n\n14\n1 1 1 0\nInválido / Don’t Care\n\n\n15\n1 1 1 1\nInválido / Don’t Care"
+  },
+  {
+    "objectID": "contents/aula-13.html#conversão-decimal-rightarrow-bcd",
+    "href": "contents/aula-13.html#conversão-decimal-rightarrow-bcd",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conversão: Decimal \\(\\rightarrow\\) BCD",
+    "text": "Conversão: Decimal \\(\\rightarrow\\) BCD\nPara converter de Decimal para BCD, substitua cada dígito decimal pelo seu grupo correspondente de 4 bits.\n\nExemplo 1: \\[(17)_{10} \\rightarrow \\underbrace{0001}_{1} \\ \\underbrace{0111}_{7} = (0001 \\ 0111)_{\\text{BCD}}\\]\nExemplo 2: \\[(156)_{10} \\rightarrow \\underbrace{0001}_{1} \\ \\underbrace{0101}_{5} \\ \\underbrace{0110}_{6} = (0001 \\ 0101 \\ 0110)_{\\text{BCD}}\\]"
+  },
+  {
+    "objectID": "contents/aula-13.html#conversão-bcd-rightarrow-decimal",
+    "href": "contents/aula-13.html#conversão-bcd-rightarrow-decimal",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conversão: BCD \\(\\rightarrow\\) Decimal",
+    "text": "Conversão: BCD \\(\\rightarrow\\) Decimal\nSepare o número em grupos de 4 bits a partir da direita (LSB) e converta cada grupo para seu dígito decimal correspondente.\n\nExemplo 1: \\[(0001 \\ 0100)_{\\text{BCD}} \\rightarrow \\underbrace{0001}_{1} \\ \\underbrace{0100}_{4} = (14)_{10}\\]\nExemplo 2: \\[(0100 \\ 1001)_{\\text{BCD}} \\rightarrow \\underbrace{0100}_{4} \\ \\underbrace{1001}_{9} = (49)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-13.html#comparação-binário-puro-vs-bcd",
+    "href": "contents/aula-13.html#comparação-binário-puro-vs-bcd",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Comparação: Binário Puro vs BCD",
+    "text": "Comparação: Binário Puro vs BCD\n\n\nExemplo 1: \\((10)_{10}\\) - Binário Puro: \\(1010_2\\) (4 bits) - BCD: \\(0001 \\ 0000_{\\text{BCD}}\\) (8 bits)\nExemplo 2: \\((12)_{10}\\) - Binário Puro: \\(1100_2\\) (4 bits) - BCD: \\(0001 \\ 0010_{\\text{BCD}}\\) (8 bits)\n\n\n\n\n\n\n\nAnálise\n\n\n\nEficiência: O BCD é menos eficiente em quantidade de bits que o binário puro.\nHardware/Displays: Facilita a interface direta com displays de 7 segmentos."
+  },
+  {
+    "objectID": "contents/aula-13.html#exercícios-propostos-bcd",
+    "href": "contents/aula-13.html#exercícios-propostos-bcd",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exercícios Propostos: BCD",
+    "text": "Exercícios Propostos: BCD\nConverta os seguintes valores:\n\n\\((37)_{10} \\rightarrow (\\quad)_{\\text{BCD}}\\)\n\\((186)_{10} \\rightarrow (\\quad)_{\\text{BCD}}\\)\n\\((3489)_{10} \\rightarrow (\\quad)_{\\text{BCD}}\\)\n\\((0001 \\ 0110)_{\\text{BCD}} \\rightarrow (\\quad)_{10}\\)\n\\((0011 \\ 0011 \\ 0000)_{\\text{BCD}} \\rightarrow (\\quad)_{10}\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#características-do-código-2-4-2-1",
+    "href": "contents/aula-13.html#características-do-código-2-4-2-1",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Características do Código 2-4-2-1",
+    "text": "Características do Código 2-4-2-1\n\nÉ um código do tipo BCD ponderado (\\(2 - 4 - 2 - 1\\)).\nPossui a propriedade de auto-complemento (Self-Complementing).\nUtilizado para simplificar operações de subtração em circuitos lógicos.\n\n\n\n\n\n\n\nConfiguração Padrão\n\n\nPara manter a propriedade de auto-complemento, os dígitos de \\(5\\) a \\(9\\) usam o bit mais significativo (\\(2^*\\)) igual a \\(1\\)."
+  },
+  {
+    "objectID": "contents/aula-13.html#tabela-do-código-2-4-2-1",
+    "href": "contents/aula-13.html#tabela-do-código-2-4-2-1",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Tabela do Código 2-4-2-1",
+    "text": "Tabela do Código 2-4-2-1\n\n\n\nDígito Decimal\nCódigo 2-4-2-1 (Auto-Complementar)\n\n\n\n\n0\n0 0 0 0\n\n\n1\n0 0 0 1\n\n\n2\n0 0 1 0\n\n\n3\n0 0 1 1\n\n\n4\n0 1 0 0\n\n\n5\n1 0 1 1\n\n\n6\n1 1 0 0\n\n\n7\n1 1 0 1\n\n\n8\n1 1 1 0\n\n\n9\n1 1 1 1"
+  },
+  {
+    "objectID": "contents/aula-13.html#exercícios-código-2-4-2-1",
+    "href": "contents/aula-13.html#exercícios-código-2-4-2-1",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exercícios: Código 2-4-2-1",
+    "text": "Exercícios: Código 2-4-2-1\n\nConverta \\((37)_{10}\\) para o código \\(2-4-2-1\\).\nConverta \\((0100 \\ 1100 \\ 1110)_{2421}\\) para a base decimal."
+  },
+  {
+    "objectID": "contents/aula-13.html#conceito-do-código-excess-3",
+    "href": "contents/aula-13.html#conceito-do-código-excess-3",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conceito do Código Excess-3",
+    "text": "Conceito do Código Excess-3\n\nCódigo não ponderado de 4 bits.\nDerivado do BCD somando \\(3_{10}\\) (\\(0011_2\\)) a cada dígito BCD.\nFórmula: \\[\\text{XS-3} = \\text{BCD (8421)} + 0011_2\\]\nExemplo: Dígito \\(5_{10}\\) em BCD é \\(0101_2\\): \\[0101_2 + 0011_2 = 1000_{\\text{XS-3}}\\]"
+  },
+  {
+    "objectID": "contents/aula-13.html#tabela-comparativa-bcd-vs-excess-3",
+    "href": "contents/aula-13.html#tabela-comparativa-bcd-vs-excess-3",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Tabela Comparativa: BCD vs Excess-3",
+    "text": "Tabela Comparativa: BCD vs Excess-3\n\n\n\nDecimal\nBCD (8421)\nXS-3 (BCD + 3)\n\n\n\n\n0\n0 0 0 0\n0 0 1 1\n\n\n1\n0 0 0 1\n0 1 0 0\n\n\n2\n0 0 1 0\n0 1 0 1\n\n\n3\n0 0 1 1\n0 1 1 0\n\n\n4\n0 1 0 0\n0 1 1 1\n\n\n5\n0 1 0 1\n1 0 0 0\n\n\n6\n0 1 1 0\n1 0 0 1\n\n\n7\n0 1 1 1\n1 0 1 0\n\n\n8\n1 0 0 0\n1 0 1 1\n\n\n9\n1 0 0 1\n1 1 0 0"
+  },
+  {
+    "objectID": "contents/aula-13.html#conversão-com-código-excess-3",
+    "href": "contents/aula-13.html#conversão-com-código-excess-3",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conversão com Código Excess-3",
+    "text": "Conversão com Código Excess-3\nDecimal \\(\\rightarrow\\) XS-3: 1. Some 3 a cada dígito decimal. 2. Converta o resultado de cada dígito para binário de 4 bits.\n\nExemplo: \\((24)_{10}\\)\n\nDígito 2: \\(2 + 3 = 5 \\rightarrow 0101_2\\)\nDígito 4: \\(4 + 3 = 7 \\rightarrow 0111_2\\)\nResultado: \\((0101 \\ 0111)_{\\text{XS-3}}\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#propriedade-self-complementing-no-xs-3",
+    "href": "contents/aula-13.html#propriedade-self-complementing-no-xs-3",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Propriedade Self-Complementing no XS-3",
+    "text": "Propriedade Self-Complementing no XS-3\n\n\n\n\n\n\nImportante\n\n\nO Excess-3 é o único código não ponderado usual que possui a propriedade de auto-complemento.\n\n\n\n\nInverter todos os bits da representação do \\(0\\) (\\(0011\\)) resulta na representação do \\(9\\) (\\(1100\\)).\nInverter todos os bits da representação do \\(1\\) (\\(0100\\)) resulta na representação do \\(8\\) (\\(1011\\))."
+  },
+  {
+    "objectID": "contents/aula-13.html#regra-de-auto-complemento-para-códigos-ponderados",
+    "href": "contents/aula-13.html#regra-de-auto-complemento-para-códigos-ponderados",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Regra de Auto-Complemento para Códigos Ponderados",
+    "text": "Regra de Auto-Complemento para Códigos Ponderados\nPara verificar se um código ponderado com pesos \\(w_3, w_2, w_1, w_0\\) pode ser auto-complementar:\n\nCondição: \\[w_3 + w_2 + w_1 + w_0 = 9\\]\nExemplo 1: Código 2-4-2-1 \\[2 + 4 + 2 + 1 = 9 \\quad (\\checkmark \\ \\text{Pode ser Auto-Complementar})\\]\nExemplo 2: Código 8-4-2-1 (BCD) \\[8 + 4 + 2 + 1 = 15 \\neq 9 \\quad (\\mathbf{X} \\ \\text{Não é Auto-Complementar})\\]"
+  },
+  {
+    "objectID": "contents/aula-13.html#exercícios-código-excess-3",
+    "href": "contents/aula-13.html#exercícios-código-excess-3",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exercícios: Código Excess-3",
+    "text": "Exercícios: Código Excess-3\n\nConverta \\((16)_{10}\\) para \\(\\text{XS-3}\\).\nConverta \\((39)_{10}\\) para \\(\\text{XS-3}\\).\nConverta \\((1208)_{10}\\) para \\(\\text{XS-3}\\).\nO código ponderado \\(5-2-1-1\\) é auto-complementar? Justifique com a soma dos pesos."
+  },
+  {
+    "objectID": "contents/aula-13.html#definição-e-propriedades",
+    "href": "contents/aula-13.html#definição-e-propriedades",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Definição e Propriedades",
+    "text": "Definição e Propriedades\n\nTambém conhecido como Código Binário Refletido (RBC) ou Código Cíclico.\nDesenvolvido por Frank Gray (Bell Labs).\nCódigo Não Ponderado.\nCódigo de Distância Unitária: Apenas 1 bit muda entre dois valores numéricos sucessivos.\n\n\n\n\n\n\n\nAplicação Prática\n\n\nReduz erros digitais em encoders rotativos e minimiza transições de comutação (switching) em sistemas de alta velocidade."
+  },
+  {
+    "objectID": "contents/aula-13.html#tabela-do-código-gray-4-bits",
+    "href": "contents/aula-13.html#tabela-do-código-gray-4-bits",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Tabela do Código Gray (4 Bits)",
+    "text": "Tabela do Código Gray (4 Bits)\n\n\n\nDecimal\nBinário Puro\nCódigo Gray\n\n\n\n\n0\n0 0 0 0\n0 0 0 0\n\n\n1\n0 0 0 1\n0 0 0 1\n\n\n2\n0 0 1 0\n0 0 1 1\n\n\n3\n0 0 1 1\n0 0 1 0\n\n\n4\n0 1 0 0\n0 1 1 0\n\n\n5\n0 1 0 1\n0 1 1 1\n\n\n6\n0 1 1 0\n0 1 0 1\n\n\n7\n0 1 1 1\n0 1 0 0\n\n\n8\n1 0 0 0\n1 1 0 0"
+  },
+  {
+    "objectID": "contents/aula-13.html#conversão-binário-rightarrow-gray",
+    "href": "contents/aula-13.html#conversão-binário-rightarrow-gray",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conversão: Binário \\(\\rightarrow\\) Gray",
+    "text": "Conversão: Binário \\(\\rightarrow\\) Gray\nAlgoritmo\n\nMSB: O bit mais significativo do código Gray é igual ao MSB do binário (\\(g_3 = b_3\\)).\nPróximos Bits: Realize a operação XOR (\\(\\oplus\\)) entre o bit binário atual e o bit binário à sua esquerda: \\[g_i = b_{i+1} \\oplus b_i\\]\n\n   b3    b2    b1    b0   (Binário)\n   |  \\⊕ /  \\⊕ /  \\⊕ /\n   v    v     v     v\n   g3   g2    g1    g0   (Gray)"
+  },
+  {
+    "objectID": "contents/aula-13.html#exemplo-binário-rightarrow-gray",
+    "href": "contents/aula-13.html#exemplo-binário-rightarrow-gray",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exemplo: Binário \\(\\rightarrow\\) Gray",
+    "text": "Exemplo: Binário \\(\\rightarrow\\) Gray\nConverter \\((1010)_2\\) para o código Gray:\n\\[\n\\begin{aligned}\ng_3 &= b_3 = \\mathbf{1} \\\\\ng_2 &= b_3 \\oplus b_2 = 1 \\oplus 0 = \\mathbf{1} \\\\\ng_1 &= b_2 \\oplus b_1 = 0 \\oplus 1 = \\mathbf{1} \\\\\ng_0 &= b_1 \\oplus b_0 = 1 \\oplus 0 = \\mathbf{0}\n\\end{aligned}\n\\]\nResultado: \\((1010)_2 \\rightarrow (\\mathbf{1110})_{\\text{GRAY}}\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#conversão-gray-rightarrow-binário",
+    "href": "contents/aula-13.html#conversão-gray-rightarrow-binário",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Conversão: Gray \\(\\rightarrow\\) Binário",
+    "text": "Conversão: Gray \\(\\rightarrow\\) Binário\nAlgoritmo\n\nMSB: O MSB binário é igual ao MSB Gray (\\(b_3 = g_3\\)).\nPróximos Bits: Faça a operação XOR (\\(\\oplus\\)) entre o bit binário recém-calculado e o próximo bit Gray à direita: \\[b_i = b_{i+1} \\oplus g_i\\]\n\n   g3    g2    g1    g0   (Gray)\n   |   ↗ ⊕   ↗ ⊕   ↗ ⊕\n   v  /  v  /  v  /  v\n   b3    b2    b1    b0   (Binário)"
+  },
+  {
+    "objectID": "contents/aula-13.html#exemplo-gray-rightarrow-binário",
+    "href": "contents/aula-13.html#exemplo-gray-rightarrow-binário",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exemplo: Gray \\(\\rightarrow\\) Binário",
+    "text": "Exemplo: Gray \\(\\rightarrow\\) Binário\nConverter \\((1110)_{\\text{GRAY}}\\) para Binário:\n\\[\n\\begin{aligned}\nb_3 &= g_3 = \\mathbf{1} \\\\\nb_2 &= b_3 \\oplus g_2 = 1 \\oplus 1 = \\mathbf{0} \\\\\nb_1 &= b_2 \\oplus g_1 = 0 \\oplus 1 = \\mathbf{1} \\\\\nb_0 &= b_1 \\oplus g_0 = 1 \\oplus 0 = \\mathbf{1}\n\\end{aligned}\n\\]\nResultado: \\((1110)_{\\text{GRAY}} \\rightarrow (\\mathbf{1011})_2\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#exercícios-código-gray",
+    "href": "contents/aula-13.html#exercícios-código-gray",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exercícios: Código Gray",
+    "text": "Exercícios: Código Gray\n\nConverta para Código Gray:\n\n\n\\(1001_2\\)\n\n\n\\(1010_2\\)\n\n\n\\(1111_2\\)\n\n\nConverta para Binário Puro:\n\n\n\\(1100_{\\text{GRAY}}\\)\n\n\n\\(1011_{\\text{GRAY}}\\)\n\n\n\\(1000_{\\text{GRAY}}\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#o-que-é-paridade",
+    "href": "contents/aula-13.html#o-que-é-paridade",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "O que é Paridade?",
+    "text": "O que é Paridade?\n\nTécnica para detectar erros de um único bit em transmissões digitais.\nConsiste em adicionar um bit extra (bit de paridade) à palavra de dados.\n\n       Tx (Transmissor)                  Rx (Receptor)\n    [ Dados (4 bits) + Paridade ]  ---&gt;  [ Verificação ]"
+  },
+  {
+    "objectID": "contents/aula-13.html#tipos-de-paridade",
+    "href": "contents/aula-13.html#tipos-de-paridade",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Tipos de Paridade",
+    "text": "Tipos de Paridade\n\nParidade Par (Even Parity):\n\nO bit de paridade é ajustado para tornar o número total de 1s PAR.\n\nParidade Ímpar (Odd Parity):\n\nO bit de paridade é ajustado para tornar o número total de 1s ÍMPAR.\n\n\n\n\n\nDado Original\nBit de Paridade Par\nDado Transmitido (Par)\nBit de Paridade Ímpar\n\n\n\n\n0 1 0 0\n1\n0 1 0 0 1\n0\n\n\n1 1 0 0\n0\n1 1 0 0 0\n1"
+  },
+  {
+    "objectID": "contents/aula-13.html#limitação-da-paridade-simples",
+    "href": "contents/aula-13.html#limitação-da-paridade-simples",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Limitação da Paridade Simples",
+    "text": "Limitação da Paridade Simples\n\n\n\n\n\n\nAtenção\n\n\n\nA paridade simples detecta apenas quantidade ímpar de erros em bits (ex.: erro em 1 bit).\nSe o ruído alterar 2 bits simultaneamente, a paridade não detectará o erro."
+  },
+  {
+    "objectID": "contents/aula-13.html#código-de-hamming",
+    "href": "contents/aula-13.html#código-de-hamming",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Código de Hamming",
+    "text": "Código de Hamming\n\nCriado por Richard Hamming.\nPermite detectar e corrigir erros de 1 bit automaticamente.\nUtiliza múltiplos bits redundantes (bits de paridade) posicionados em locais estratégicos.\n\n\n\n\n\n\n\nEquação do Número de Bits Redundantes\n\n\n\\[2^p \\ge n + p + 1\\] Onde: - \\(n\\): quantidade de bits de dados - \\(p\\): quantidade de bits de paridade"
+  },
+  {
+    "objectID": "contents/aula-13.html#cálculo-dos-bits-de-paridade-hamming-74",
+    "href": "contents/aula-13.html#cálculo-dos-bits-de-paridade-hamming-74",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Cálculo dos Bits de Paridade (Hamming 7,4)",
+    "text": "Cálculo dos Bits de Paridade (Hamming 7,4)\nPara \\(n = 4\\) bits de dados:\n\nTestando \\(p = 2\\): \\(2^2 = 4 \\ge 4 + 2 + 1 = 7\\) (\\(\\mathbf{FALSO}\\))\nTestando \\(p = 3\\): \\(2^3 = 8 \\ge 4 + 3 + 1 = 8\\) (\\(\\mathbf{VERDADEIRO}\\))\n\nPortanto, precisamos de 3 bits de paridade para proteger 4 bits de dados (código de 7 bits no total)."
+  },
+  {
+    "objectID": "contents/aula-13.html#posição-dos-bits-de-paridade",
+    "href": "contents/aula-13.html#posição-dos-bits-de-paridade",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Posição dos Bits de Paridade",
+    "text": "Posição dos Bits de Paridade\nOs bits de paridade são colocados nas posições que correspondem às potências de 2 (\\(1, 2, 4, 8, \\dots\\)):\n\n\n\nPosição do Bit\n7\n6\n5\n4\n3\n2\n1\n\n\n\n\nDesignação\n\\(D_4\\)\n\\(D_3\\)\n\\(D_2\\)\n\\(P_3\\)\n\\(D_1\\)\n\\(P_2\\)\n\\(P_1\\)\n\n\nRepresentação Binária\n111\n110\n101\n100\n011\n010\n001"
+  },
+  {
+    "objectID": "contents/aula-13.html#regra-de-cobertura-dos-bits-de-paridade",
+    "href": "contents/aula-13.html#regra-de-cobertura-dos-bits-de-paridade",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Regra de Cobertura dos Bits de Paridade",
+    "text": "Regra de Cobertura dos Bits de Paridade\nCada bit de paridade cobre as posições que possuem bit \\(1\\) em seu respectivo peso binário:\n\n\\(P_1\\) (cobre posições com \\(1^{\\circ}\\) LSB = 1):\n\nPosições: \\(1, 3, 5, 7\\) (\\(P_1, D_1, D_2, D_4\\))\n\n\\(P_2\\) (cobre posições com \\(2^{\\circ}\\) LSB = 1):\n\nPosições: \\(2, 3, 6, 7\\) (\\(P_2, D_1, D_3, D_4\\))\n\n\\(P_4\\) (cobre posições com \\(3^{\\circ}\\) LSB = 1):\n\nPosições: \\(4, 5, 6, 7\\) (\\(P_4, D_2, D_3, D_4\\))"
+  },
+  {
+    "objectID": "contents/aula-13.html#exemplo-de-transmissão-hamming-74",
+    "href": "contents/aula-13.html#exemplo-de-transmissão-hamming-74",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Exemplo de Transmissão: Hamming (7,4)",
+    "text": "Exemplo de Transmissão: Hamming (7,4)\nDeseja-se transmitir os dados \\(1011\\) (\\(D_4=1, D_3=0, D_2=1, D_1=1\\)) usando Paridade Par:\n\nCálculo de \\(P_1\\) (\\(P_1, D_1, D_2, D_4 \\rightarrow P_1, 1, 1, 1\\)):\n\nPara paridade par \\(\\rightarrow \\mathbf{P_1 = 1}\\)\n\nCálculo de \\(P_2\\) (\\(P_2, D_1, D_3, D_4 \\rightarrow P_2, 1, 0, 1\\)):\n\nPara paridade par \\(\\rightarrow \\mathbf{P_2 = 0}\\)\n\nCálculo de \\(P_4\\) (\\(P_4, D_2, D_3, D_4 \\rightarrow P_4, 1, 0, 1\\)):\n\nPara paridade par \\(\\rightarrow \\mathbf{P_4 = 0}\\)\n\n\nPalavra Transmitida: 1 0 1 0 1 0 1 (\\(D_4 D_3 D_2 P_4 D_1 P_2 P_1\\))"
+  },
+  {
+    "objectID": "contents/aula-13.html#detecção-e-correção-de-erro-no-receptor",
+    "href": "contents/aula-13.html#detecção-e-correção-de-erro-no-receptor",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Detecção e Correção de Erro no Receptor",
+    "text": "Detecção e Correção de Erro no Receptor\nSuponha que a palavra recebida foi 1 0 1 1 0 1 1:\n\nVerificação de \\(P_4\\) (\\(P_4, D_2, D_3, D_4 = 1, 1, 0, 1\\)):\n\nQuantidade de 1s = 3 (Ímpar \\(\\rightarrow\\) Erro) \\(\\implies \\mathbf{C_4 = 1}\\)\n\nVerificação de \\(P_2\\) (\\(P_2, D_1, D_3, D_4 = 1, 0, 0, 1\\)):\n\nQuantidade de 1s = 2 (Par \\(\\rightarrow\\) OK) \\(\\implies \\mathbf{C_2 = 0}\\)\n\nVerificação de \\(P_1\\) (\\(P_1, D_1, D_2, D_4 = 1, 0, 1, 1\\)):\n\nQuantidade de 1s = 3 (Ímpar \\(\\rightarrow\\) Erro) \\(\\implies \\mathbf{C_1 = 1}\\)"
+  },
+  {
+    "objectID": "contents/aula-13.html#localização-e-correção-do-erro",
+    "href": "contents/aula-13.html#localização-e-correção-do-erro",
+    "title": "Aula 13Classificação dos Códigos",
+    "section": "Localização e Correção do Erro",
+    "text": "Localização e Correção do Erro\nForma-se a palavra de síndrome \\(C_4 C_2 C_1\\):\n\\[C_4 C_2 C_1 = (101)_2 = (5)_{10}\\]\n\n\n\n\n\n\nConclusão\n\n\nO erro ocorreu exatamente na Posição 5 (\\(D_2\\)).\n\n\n\n\nPalavra Recebida com Erro: 1 0 [1] 1 0 1 1\nInvertendo o bit 5: 1 0 [0] 1 0 1 1\nCódigo Corrigido: 1 0 0 1 0 1 1"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-adição-posicional",
+    "href": "contents/aula-9.html#conceito-adição-posicional",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Adição Posicional",
+    "text": "Conceito: Adição Posicional\n\nEm qualquer base numéricas \\(r\\), a adição ocorre coluna por coluna (do menos para o mais significativo).\nQuando a soma dos dígitos de uma coluna excede o dígito máximo \\((r-1)\\), ocorre o Carry (“vai um”).\nBase 10: Dígitos \\(0 \\dots 9\\). Soma \\(\\ge 10 \\implies\\) subtrói \\(10\\) e gera carry \\(1\\).\nBase 2: Dígitos \\(0, 1\\). Soma \\(\\ge 2 \\implies\\) subtrói \\(2\\) e gera carry \\(1\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#regras-da-adição-binária",
+    "href": "contents/aula-9.html#regras-da-adição-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Regras da Adição Binária",
+    "text": "Regras da Adição Binária\n\nTabela fundamental das somas elementares na base 2:\n\n\n\n\n\nEntrada A\nEntrada B\nSoma\nCarry (Vai Um)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n1\n1\n0\n\n\n1\n0\n1\n0\n\n\n1\n1\n0\n1"
+  },
+  {
+    "objectID": "contents/aula-9.html#exemplo-adição-binária",
+    "href": "contents/aula-9.html#exemplo-adição-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exemplo: Adição Binária",
+    "text": "Exemplo: Adição Binária\n\nSomar os números binários \\(110_2\\) (\\(6_{10}\\)) e \\(101_2\\) (\\(5_{10}\\)):\n\n\\[\n\\begin{array}{r@{\\quad}l}\n  \\text{Carry:} & \\small{1\\,0\\,0} \\\\\n  & 110_2 \\quad (6_{10}) \\\\\n+ & 101_2 \\quad (5_{10}) \\\\\n\\hline\n  & \\mathbf{1011_2} \\quad (11_{10})\n\\end{array}\n\\]\n\nAnálise posicional: \\(1 \\times 2^3 + 0 \\times 2^2 + 1 \\times 2^1 + 1 \\times 2^0 = 11_{10}\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#exercício-adição-binária",
+    "href": "contents/aula-9.html#exercício-adição-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercício: Adição Binária",
+    "text": "Exercício: Adição Binária\n\nCalcule a seguinte soma em binário:\n\n\\[11011_2 + 1111_2\\]\n\n\n\n\n\n\n\nResolução\n\n\n\\[\n\\begin{array}{r@{\\quad}l}\n  \\text{Carry:} & \\small{1\\,1\\,1\\,1\\,1} \\\\\n  & 11011_2 \\quad (27_{10}) \\\\\n+ & 01111_2 \\quad (15_{10}) \\\\\n\\hline\n  & \\mathbf{101010_2} \\quad (42_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-subtração-binária-empréstimo",
+    "href": "contents/aula-9.html#conceito-subtração-binária-empréstimo",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Subtração Binária (Empréstimo)",
+    "text": "Conceito: Subtração Binária (Empréstimo)\n\nOperações diretas sem empréstimo:\n\n\\(1 - 0 = 1\\)\n\\(1 - 1 = 0\\)\n\\(0 - 0 = 0\\)\n\nEmpréstimo (Borrow):\n\nAo calcular \\(0 - 1\\), é necessário pedir 1 emprestado da coluna imediatamente superior.\nUm empréstimo na base 2 adiciona o valor \\(2_{10}\\) à coluna atual: \\((2 + 0) - 1 = 1\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#exemplo-subtração-binária",
+    "href": "contents/aula-9.html#exemplo-subtração-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exemplo: Subtração Binária",
+    "text": "Exemplo: Subtração Binária\n\nSubtrair \\(111_2\\) (\\(7_{10}\\)) de \\(1110_2\\) (\\(14_{10}\\)):\n\n\\[\n\\begin{array}{r@{\\quad}l}\n  & 1110_2 \\quad (14_{10}) \\\\\n- & 0111_2 \\quad (7_{10}) \\\\\n\\hline\n  & \\mathbf{0111_2} \\quad (7_{10})\n\\end{array}\n\\]\n\nColuna \\(2^0\\): \\(0 - 1 \\implies\\) pede emprestado de \\(2^1\\), tornando-se \\((2 + 0) - 1 = 1\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#exercício-subtração-binária",
+    "href": "contents/aula-9.html#exercício-subtração-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercício: Subtração Binária",
+    "text": "Exercício: Subtração Binária\n\nCalcule a seguinte subtração em binário:\n\n\\[10101_2 - 1111_2\\]\n\n\n\n\n\n\n\nResolução\n\n\n\\[\n\\begin{array}{r@{\\quad}l}\n  & 10101_2 \\quad (21_{10}) \\\\\n- & 01111_2 \\quad (15_{10}) \\\\\n\\hline\n  & \\mathbf{00110_2} \\quad (6_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#regras-da-multiplicação-binária",
+    "href": "contents/aula-9.html#regras-da-multiplicação-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Regras da Multiplicação Binária",
+    "text": "Regras da Multiplicação Binária\n\nRegras fundamentais do produto bit a bit:\n\n\\(0 \\times 0 = 0\\)\n\\(0 \\times 1 = 0\\)\n\\(1 \\times 0 = 0\\)\n\\(1 \\times 1 = 1\\)\n\nO algoritmo é análogo ao decimal: multiplicação por cada bit, deslocamento à esquerda e soma final."
+  },
+  {
+    "objectID": "contents/aula-9.html#multiplicação-binária-exemplo-1",
+    "href": "contents/aula-9.html#multiplicação-binária-exemplo-1",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Multiplicação Binária: Exemplo 1",
+    "text": "Multiplicação Binária: Exemplo 1\n\nCalcular \\(1010_2 \\times 101_2\\) (\\(10_{10} \\times 5_{10} = 50_{10}\\)):\n\n\\[\n\\begin{array}{r}\n  1010_2 \\\\\n\\times \\quad 101_2 \\\\\n\\hline\n  1010 \\\\\n  0000\\phantom{0} \\\\\n+ 1010\\phantom{00} \\\\\n\\hline\n  \\mathbf{110010_2} \\quad (50_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#multiplicação-binária-exemplo-2",
+    "href": "contents/aula-9.html#multiplicação-binária-exemplo-2",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Multiplicação Binária: Exemplo 2",
+    "text": "Multiplicação Binária: Exemplo 2\n\nCalcular \\(1010_2 \\times 11_2\\) (\\(10_{10} \\times 3_{10} = 30_{10}\\)):\n\n\\[\n\\begin{array}{r}\n  1010_2 \\\\\n\\times \\quad 11_2 \\\\\n\\hline\n  1010 \\\\\n+ 1010\\phantom{0} \\\\\n\\hline\n  \\mathbf{11110_2} \\quad (30_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercício-multiplicação-binária",
+    "href": "contents/aula-9.html#exercício-multiplicação-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercício: Multiplicação Binária",
+    "text": "Exercício: Multiplicação Binária\n\nCalcule o produto binário:\n\n\\[1101_2 \\times 11_2\\]\n\n\n\n\n\n\n\nResolução\n\n\n\\[\n\\begin{array}{r@{\\quad}l}\n  & 1101_2 \\quad (13_{10}) \\\\\n\\times & 11_2 \\quad (3_{10}) \\\\\n\\hline\n  & 1101 \\\\\n+ & 1101\\phantom{0} \\\\\n\\hline\n  & \\mathbf{100111_2} \\quad (39_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#divisão-binária",
+    "href": "contents/aula-9.html#divisão-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Divisão Binária",
+    "text": "Divisão Binária\n\nRelação fundamental da divisão: \\[D = d \\times q + R\\]\n\n\\(D\\): Dividendo | \\(d\\): Divisor | \\(q\\): Quociente | \\(R\\): Resto\n\nO processo utiliza a divisão longa: comparações sucessivas entre bits do dividendo e o divisor."
+  },
+  {
+    "objectID": "contents/aula-9.html#divisão-binária-exemplo",
+    "href": "contents/aula-9.html#divisão-binária-exemplo",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Divisão Binária: Exemplo",
+    "text": "Divisão Binária: Exemplo\n\nCalcular \\(101010_2 \\div 110_2\\) (\\(42_{10} \\div 6_{10}\\)):\n\n\\[\n\\begin{array}{l}\n101010_2 \\;\\vert\\; 110_2 \\\\\n\\hline\n\\text{Quociente: } \\mathbf{000111_2} \\quad (7_{10}) \\\\\n\\text{Resto: } \\mathbf{0_2}\n\\end{array}\n\\]\n\n\\(101_2 &lt; 110_2 \\implies 0\\) no quociente.\n\\(1010_2 \\ge 110_2 \\implies 1\\) no quociente, resta \\(100_2\\).\nBaixa \\(1 \\implies 1001_2 \\ge 110_2 \\implies 1\\), resta \\(011_2\\).\nBaixa \\(0 \\implies 0110_2 = 110_2 \\implies 1\\), resta \\(0\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-divisão-binária",
+    "href": "contents/aula-9.html#exercícios-divisão-binária",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Divisão Binária",
+    "text": "Exercícios: Divisão Binária\n\nRealize as divisões binárias indicadas:\n\n\\(1001_2 \\div 11_2\\)\n\\(111000_2 \\div 111_2\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(1001_2 \\;(9_{10}) \\div 11_2 \\;(3_{10}) = \\mathbf{11_2} \\;(3_{10})\\), Resto: \\(0\\)\n\\(111000_2 \\;(56_{10}) \\div 111_2 \\;(7_{10}) = \\mathbf{1000_2} \\;(8_{10})\\), Resto: \\(0\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-adição-octal-base-8",
+    "href": "contents/aula-9.html#conceito-adição-octal-base-8",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Adição Octal (Base 8)",
+    "text": "Conceito: Adição Octal (Base 8)\n\nBase \\(r = 8\\): utilizar apenas os dígitos de \\(0\\) a \\(7\\).\nRegra de estouro de coluna (quando \\(\\text{Soma} &gt; 7\\)): \\[\\text{Soma Decimal} = 1 \\times 8 + \\text{Dígito Octal}\\]\nCarry: Adiciona \\(1\\) na coluna à esquerda.\nExemplo: \\(5 + 4 = 9_{10} \\implies 9 = 1 \\times 8 + 1 \\implies \\text{Resultado } 1, \\text{vai } 1\\)."
+  },
+  {
+    "objectID": "contents/aula-9.html#adição-octal-exemplos",
+    "href": "contents/aula-9.html#adição-octal-exemplos",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Adição Octal: Exemplos",
+    "text": "Adição Octal: Exemplos\n\n\nExemplo 1: \\(243_8 + 212_8\\)\n\\[\n\\begin{array}{r}\n  243_8 \\\\\n+ 212_8 \\\\\n\\hline\n  \\mathbf{455_8}\n\\end{array}\n\\]\n(Nenhuma coluna excedeu 7)\n\nExemplo 2: \\(567_8 + 243_8\\)\n\\[\n\\begin{array}{r}\n  \\small{1\\,1\\,1\\phantom{0}} \\\\\n  567_8 \\\\\n+ 243_8 \\\\\n\\hline\n  \\mathbf{1032_8}\n\\end{array}\n\\]\n\n\\(7+3=10 = 1\\times 8 + \\mathbf{2}\\) (vai 1)\n\\(1+6+4=11 = 1\\times 8 + \\mathbf{3}\\) (vai 1)\n\\(1+5+2=8 = 1\\times 8 + \\mathbf{0}\\) (vai 1)"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercício-adição-octal",
+    "href": "contents/aula-9.html#exercício-adição-octal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercício: Adição Octal",
+    "text": "Exercício: Adição Octal\n\nCalcule a soma em base 8:\n\n\\[1776_8 + 345_8\\]\n\n\n\n\n\n\n\nResolução\n\n\n\\[\n\\begin{array}{r}\n  \\small{1\\,1\\,1\\phantom{0}} \\\\\n  1776_8 \\\\\n+ \\phantom{0}345_8 \\\\\n\\hline\n  \\mathbf{2343_8}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-subtração-octal",
+    "href": "contents/aula-9.html#conceito-subtração-octal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Subtração Octal",
+    "text": "Conceito: Subtração Octal\n\nRegra do Empréstimo (Borrow):\n\nQuando o dígito superior for menor que o inferior, pede-se \\(1\\) emprestado da posição à esquerda.\nNa base 8, pedir \\(1\\) emprestado equivale a adicionar \\(8\\) ao dígito atual."
+  },
+  {
+    "objectID": "contents/aula-9.html#subtração-octal-exemplos",
+    "href": "contents/aula-9.html#subtração-octal-exemplos",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Subtração Octal: Exemplos",
+    "text": "Subtração Octal: Exemplos\n\n\nExemplo 1: \\(743_8 - 564_8\\)\n\nColuna 0: \\(3 &lt; 4 \\implies (8+3) - 4 = \\mathbf{7}\\)\nColuna 1: \\(3 &lt; 6 \\implies (8+3) - 6 = \\mathbf{5}\\)\nColuna 2: \\(6 - 5 = \\mathbf{1}\\)\n\n\\[\\text{Resultado: } \\mathbf{157_8}\\]\n\nExemplo 2: \\(624_8 - 265_8\\)\n\nColuna 0: \\(4 &lt; 5 \\implies (8+4) - 5 = \\mathbf{7}\\)\nColuna 1: \\(1 &lt; 6 \\implies (8+1) - 6 = \\mathbf{3}\\)\nColuna 2: \\(5 - 2 = \\mathbf{3}\\)\n\n\\[\\text{Resultado: } \\mathbf{337_8}\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-subtração-octal",
+    "href": "contents/aula-9.html#exercícios-subtração-octal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Subtração Octal",
+    "text": "Exercícios: Subtração Octal\n\nCalcule as subtracções na base octal:\n\n\\(511_8 - 33_8\\)\n\\(6000_8 - 777_8\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(511_8 - 33_8 = \\mathbf{456_8}\\)\n\\(6000_8 - 777_8 = \\mathbf{5001_8}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-multiplicação-octal",
+    "href": "contents/aula-9.html#conceito-multiplicação-octal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Multiplicação Octal",
+    "text": "Conceito: Multiplicação Octal\n\nMultiplicam-se os dígitos em decimal.\nO produto decimal resultante é convertido para a base 8: \\[\\text{Produto Decimal} = \\text{Carry} \\times 8 + \\text{Dígito Octal}\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#multiplicação-octal-exemplos",
+    "href": "contents/aula-9.html#multiplicação-octal-exemplos",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Multiplicação Octal: Exemplos",
+    "text": "Multiplicação Octal: Exemplos\n\n\nExemplo 1: \\(72_8 \\times 12_8\\)\n\\[\n\\begin{array}{r}\n  72_8 \\\\\n\\times \\quad 12_8 \\\\\n\\hline\n  164_8 \\\\\n+ 72\\phantom{0}_8 \\\\\n\\hline\n  \\mathbf{1104_8}\n\\end{array}\n\\]\n\nExemplo 2: \\(357_8 \\times 23_8\\)\n\\[\n\\begin{array}{r}\n  357_8 \\\\\n\\times \\quad 23_8 \\\\\n\\hline\n  1315_8 \\\\\n+ 736\\phantom{0}_8 \\\\\n\\hline\n  \\mathbf{10675_8}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-multiplicação-octal",
+    "href": "contents/aula-9.html#exercícios-multiplicação-octal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Multiplicação Octal",
+    "text": "Exercícios: Multiplicação Octal\n\nRealize as multiplicações em base octal:\n\n\\(63_8 \\times 24_8\\)\n\\(635_8 \\times 55_8\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(63_8 \\times 24_8 = \\mathbf{1774_8}\\)\n\\(635_8 \\times 55_8 = \\mathbf{44411_8}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-base-hexadecimal-base-16",
+    "href": "contents/aula-9.html#conceito-base-hexadecimal-base-16",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Base Hexadecimal (Base 16)",
+    "text": "Conceito: Base Hexadecimal (Base 16)\n\nBase \\(r = 16\\): Utiliza os dígitos de \\(0\\) a \\(9\\) e as letras \\(\\text{A}\\) a \\(\\text{F}\\).\nConversão rápida de valores:\n\n\\(\\text{A} = 10, \\quad \\text{B} = 11, \\quad \\text{C} = 12\\)\n\\(\\text{D} = 13, \\quad \\text{E} = 14, \\quad \\text{F} = 15\\)\n\nRegra do Carry: Se a soma \\(\\ge 16\\), subtrai-se \\(16\\) e passa-se \\(1\\) para a coluna seguinte."
+  },
+  {
+    "objectID": "contents/aula-9.html#adição-hexadecimal-exemplos",
+    "href": "contents/aula-9.html#adição-hexadecimal-exemplos",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Adição Hexadecimal: Exemplos",
+    "text": "Adição Hexadecimal: Exemplos\n\n\nExemplo 1:\n\\[\n\\begin{array}{r}\n  5689_{16} \\\\\n+ 4574_{16} \\\\\n\\hline\n  \\mathbf{9BFD_{16}}\n\\end{array}\n\\]\n\n\\(8+7=15 \\implies \\text{F}\\)\n\\(6+5=11 \\implies \\text{B}\\)\n\n\nExemplo 2:\n\\[\n\\begin{array}{r}\n  \\small{1\\,1\\,1\\phantom{0}} \\\\\n  \\text{ADD}_{16} \\\\\n+ \\text{DAD}_{16} \\\\\n\\hline\n  \\mathbf{188A_{16}}\n\\end{array}\n\\]\n\n\\(\\text{D}+\\text{D} = 26 = 1\\times 16 + \\mathbf{10(\\text{A})}\\)\n\\(1+\\text{D}+\\text{A} = 24 = 1\\times 16 + \\mathbf{8}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-adição-hexadecimal",
+    "href": "contents/aula-9.html#exercícios-adição-hexadecimal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Adição Hexadecimal",
+    "text": "Exercícios: Adição Hexadecimal\n\nEfetue as somas hexadecimais:\n\n\\(899_{16} + 189_{16}\\)\n\\(\\text{DAF}_{16} + \\text{BAF}_{16}\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(899_{16} + 189_{16} = \\mathbf{A22_{16}}\\)\n\\(\\text{DAF}_{16} + \\text{BAF}_{16} = \\mathbf{195E_{16}}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#conceito-subtração-hexadecimal",
+    "href": "contents/aula-9.html#conceito-subtração-hexadecimal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Conceito: Subtração Hexadecimal",
+    "text": "Conceito: Subtração Hexadecimal\n\nRegra do Empréstimo (Borrow):\n\nQuando o minuendo for menor que o subtraendo, pede-se \\(1\\) emprestado da posição à esquerda.\nNa base 16, cada empréstimo adiciona \\(16\\) ao dígito atual."
+  },
+  {
+    "objectID": "contents/aula-9.html#subtração-hexadecimal-exemplos",
+    "href": "contents/aula-9.html#subtração-hexadecimal-exemplos",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Subtração Hexadecimal: Exemplos",
+    "text": "Subtração Hexadecimal: Exemplos\n\n\nExemplo 1:\n\\[\n\\begin{array}{r}\n  9654_{16} \\\\\n- 5321_{16} \\\\\n\\hline\n  \\mathbf{4333_{16}}\n\\end{array}\n\\]\n\nExemplo 2:\n\\[\n\\begin{array}{r}\n  974\\text{B}_{16} \\\\\n- 587\\text{C}_{16} \\\\\n\\hline\n  \\mathbf{3ECF_{16}}\n\\end{array}\n\\]\n\n\\(\\text{B} &lt; \\text{C} \\implies (16+11) - 12 = \\mathbf{15(\\text{F})}\\)\n\\(3 &lt; 7 \\implies (16+3) - 7 = \\mathbf{12(\\text{C})}\\)\n\\(6 &lt; 8 \\implies (16+6) - 8 = \\mathbf{14(\\text{E})}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-subtração-hexadecimal",
+    "href": "contents/aula-9.html#exercícios-subtração-hexadecimal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Subtração Hexadecimal",
+    "text": "Exercícios: Subtração Hexadecimal\n\nRealize as subtracções na base hexadecimal:\n\n\\(\\text{FAB}_{16} - \\text{AEF}_{16}\\)\n\\(7788_{16} - \\text{DEF}_{16}\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(\\text{FAB}_{16} - \\text{AEF}_{16} = \\mathbf{4BC_{16}}\\)\n\\(7788_{16} - \\text{DEF}_{16} = \\mathbf{6999_{16}}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#multiplicação-hexadecimal-exemplo-1",
+    "href": "contents/aula-9.html#multiplicação-hexadecimal-exemplo-1",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Multiplicação Hexadecimal: Exemplo 1",
+    "text": "Multiplicação Hexadecimal: Exemplo 1\n\nCalcular \\(94_{16} \\times 12_{16}\\):\n\n\\[\n\\begin{array}{r}\n  94_{16} \\\\\n\\times \\quad 12_{16} \\\\\n\\hline\n  128_{16} \\\\\n+ 94\\phantom{0}_{16} \\\\\n\\hline\n  \\mathbf{A68_{16}}\n\\end{array}\n\\]\n\n\\(2 \\times 4 = 8\\)\n\\(2 \\times 9 = 18_{10} = 1 \\times 16 + 2 \\implies 128_{16}\\)"
+  },
+  {
+    "objectID": "contents/aula-9.html#multiplicação-hexadecimal-exemplo-2",
+    "href": "contents/aula-9.html#multiplicação-hexadecimal-exemplo-2",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Multiplicação Hexadecimal: Exemplo 2",
+    "text": "Multiplicação Hexadecimal: Exemplo 2\n\nCalcular \\(\\text{ABC}_{16} \\times 23_{16}\\):\n\n\\[\n\\begin{array}{r}\n  \\text{ABC}_{16} \\\\\n\\times \\quad 23_{16} \\\\\n\\hline\n  2034_{16} \\\\\n+ 1578\\phantom{0}_{16} \\\\\n\\hline\n  \\mathbf{177B4_{16}}\n\\end{array}\n\\]\n\n\\(3 \\times \\text{C} = 36_{10} = 2 \\times 16 + \\mathbf{4}\\) (vai 2)\n\\(3 \\times \\text{B} + 2 = 35_{10} = 2 \\times 16 + \\mathbf{3}\\) (vai 2)"
+  },
+  {
+    "objectID": "contents/aula-9.html#exercícios-multiplicação-hexadecimal",
+    "href": "contents/aula-9.html#exercícios-multiplicação-hexadecimal",
+    "title": "Aula 9Aritmética Binária",
+    "section": "Exercícios: Multiplicação Hexadecimal",
+    "text": "Exercícios: Multiplicação Hexadecimal\n\nCalcule os produtos hexadecimais:\n\n\\(818_{16} \\times 21_{16}\\)\n\\(\\text{DAF}_{16} \\times 54_{16}\\)\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\(818_{16} \\times 21_{16} = \\mathbf{10B18_{16}}\\)\n\\(\\text{DAF}_{16} \\times 54_{16} = \\mathbf{4807C_{16}}\\)"
   },
   {
     "objectID": "contents/aula-0.html#essa-disciplina-tem-muitos-nomes-mas-tratamos-do-mesmo-conteúdo",
@@ -147,6 +721,685 @@
     "text": "Pergunta:\n\nO que acontece quando um sinal analógico é convertido para digital e depois reconvertido para analógico?\n\n\n\n\n\n\n\ngraph LR\nEntrada --&gt; ADC\nADC --&gt; DAC\nDAC --&gt; Saída"
   },
   {
+    "objectID": "contents/aula-11.html#categorias-de-representação",
+    "href": "contents/aula-11.html#categorias-de-representação",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Categorias de Representação",
+    "text": "Categorias de Representação\nflowchart TD\n    RD[Representação de Dados] --&gt; MAG[Magnitude]\n    RD --&gt; COMP[Complemento]\n    \n    MAG --&gt; SS[Sem Sinal / Unsigned]\n    MAG --&gt; CS[Com Sinal / Signed]\n    \n    COMP --&gt; C1[Complemento de 1]\n    COMP --&gt; C2[Complemento de 2]\n\nSem Sinal: Apenas números positivos (\\(\\ge 0\\)).\nCom Sinal / Complementos: Permitem números positivos e negativos."
+  },
+  {
+    "objectID": "contents/aula-11.html#representação-dos-números-positivos",
+    "href": "contents/aula-11.html#representação-dos-números-positivos",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Representação dos Números Positivos",
+    "text": "Representação dos Números Positivos\n\n\n\n\n\n\nRegra Fundamental\n\n\nEm todas as 4 categorias, os números positivos são representados exatamente da mesma forma.\n\n\n\n\nApenas a representação dos números negativos varia entre os métodos."
+  },
+  {
+    "objectID": "contents/aula-11.html#conceito-e-bit-de-sinal",
+    "href": "contents/aula-11.html#conceito-e-bit-de-sinal",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Conceito e Bit de Sinal",
+    "text": "Conceito e Bit de Sinal\n\nAdiciona um bit extra (MSB) à esquerda para indicar o sinal.\nBit de Sinal (\\(MSB\\)):\n\n0 \\(\\rightarrow\\) Número Positivo (\\(+\\))\n1 \\(\\rightarrow\\) Número Negativo (\\(-\\))\n\nOs bits restantes representam a magnitude (valor absoluto)."
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplo-sinal-e-magnitude",
+    "href": "contents/aula-11.html#exemplo-sinal-e-magnitude",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplo: Sinal e Magnitude",
+    "text": "Exemplo: Sinal e Magnitude\n\nSem Sinal (Unsigned):\n\n\\(+6 = 110_2\\)\n\\(-6 \\rightarrow\\) Não pode ser representado.\n\nCom Sinal (Signed Magnitude):\n\n\\(+6 = \\mathbf{0}\\,110_2\\)\n\\(-6 = \\mathbf{1}\\,110_2\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#alcance-range-signed-magnitude",
+    "href": "contents/aula-11.html#alcance-range-signed-magnitude",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Alcance (Range) — Signed Magnitude",
+    "text": "Alcance (Range) — Signed Magnitude\n\nFórmula para \\(n\\) bits: \\[-\\left(2^{n-1} - 1\\right) \\le X \\le +\\left(2^{n-1} - 1\\right)\\]\nExemplo para \\(n = 4\\) bits: \\[-\\left(2^{4-1} - 1\\right) \\text{ até } +\\left(2^{4-1} - 1\\right) \\implies -7 \\text{ até } +7\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#exercício-1-signed-magnitude",
+    "href": "contents/aula-11.html#exercício-1-signed-magnitude",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exercício 1: Signed Magnitude",
+    "text": "Exercício 1: Signed Magnitude\n\n\n\n\n\n\nPara Praticar (H.W.)\n\n\nRepresente os seguintes pares de números usando Signed Magnitude:\n\n\\(+5\\) e \\(-5\\)\n\\(+9\\) e \\(-9\\)\n\\(+16\\) e \\(-16\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#regra-de-formação",
+    "href": "contents/aula-11.html#regra-de-formação",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Regra de Formação",
+    "text": "Regra de Formação\n\nPara obter o número negativo:\n\nEscreva o número em sua forma positiva (com bit de sinal 0).\nInverta todos os bits (troque 0 por 1 e 1 por 0)."
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplos-em-complemento-de-1",
+    "href": "contents/aula-11.html#exemplos-em-complemento-de-1",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplos em Complemento de 1",
+    "text": "Exemplos em Complemento de 1\n\n\nExemplo 1 (\\(n=4\\) bits): - \\(+6 = \\mathbf{0}110_2\\) - \\(-6 = \\mathbf{1}001_2\\)\n\nExemplo 2 (\\(n=5\\) bits): - \\(+9 = \\mathbf{0}1001_2\\) - \\(-9 = \\mathbf{1}0110_2\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#o-problema-do-zero-em-complemento-de-1",
+    "href": "contents/aula-11.html#o-problema-do-zero-em-complemento-de-1",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "O Problema do Zero em Complemento de 1",
+    "text": "O Problema do Zero em Complemento de 1"
+  },
+  {
+    "objectID": "contents/aula-11.html#ambiguidade-do-zero",
+    "href": "contents/aula-11.html#ambiguidade-do-zero",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Ambiguidade do Zero",
+    "text": "Ambiguidade do Zero\nExiste dupla representação para o número zero:"
+  },
+  {
+    "objectID": "contents/aula-11.html#alcance-range-complemento-de-1",
+    "href": "contents/aula-11.html#alcance-range-complemento-de-1",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Alcance (Range) — Complemento de 1",
+    "text": "Alcance (Range) — Complemento de 1\n\nFórmula para \\(n\\) bits: \\[-\\left(2^{n-1} - 1\\right) \\le X \\le +\\left(2^{n-1} - 1\\right)\\]\nExemplo para \\(n = 4\\) bits: \\[-7 \\text{ até } +7\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#exercício-2-complemento-de-1",
+    "href": "contents/aula-11.html#exercício-2-complemento-de-1",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exercício 2: Complemento de 1",
+    "text": "Exercício 2: Complemento de 1\n\n\n\n\n\n\nPara Praticar (H.W.)\n\n\nRepresente os seguintes valores utilizando Complemento de 1:\n\n\\(+10\\) e \\(-10\\)\n\\(+4\\) e \\(-4\\)\n\\(+23\\) e \\(-23\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#regra-de-formação-1",
+    "href": "contents/aula-11.html#regra-de-formação-1",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Regra de Formação",
+    "text": "Regra de Formação\n\nPara obter o número negativo:\n\nEscreva o número positivo.\nAplique o Complemento de 1 (inverta todos os bits).\nSomar 1 ao resultado.\n\n\n\\[\\text{2's Comp} = \\text{1's Comp} + 1\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplos-em-complemento-de-2",
+    "href": "contents/aula-11.html#exemplos-em-complemento-de-2",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplos em Complemento de 2",
+    "text": "Exemplos em Complemento de 2\n\n\nRepresentar \\(-6\\) (\\(n=4\\) bits): - \\(+6 = 0110_2\\) - 1’s Comp: \\(1001_2\\) - Somar \\(1\\): \\(+ 1\\) - \\(-6 = \\mathbf{1010_2}\\)\n\nRepresentar \\(-4\\) (\\(n=4\\) bits): - \\(+4 = 0100_2\\) - 1’s Comp: \\(1011_2\\) - Somar \\(1\\): \\(+ 1\\) - \\(-4 = \\mathbf{1100_2}\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#unicidade-do-zero-em-complemento-de-2",
+    "href": "contents/aula-11.html#unicidade-do-zero-em-complemento-de-2",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Unicidade do Zero em Complemento de 2",
+    "text": "Unicidade do Zero em Complemento de 2\n\nZero Positivo: \\(+0 = 0000_2\\)\nInvertendo: \\(1111_2\\)\nSomando 1: \\(1111_2 + 1 = 10000_2 \\implies 0000_2\\) (descartando o carry)"
+  },
+  {
+    "objectID": "contents/aula-11.html#sem-ambiguidade",
+    "href": "contents/aula-11.html#sem-ambiguidade",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Sem Ambiguidade",
+    "text": "Sem Ambiguidade\nExiste apenas uma representação para o zero (\\(0000_2\\))."
+  },
+  {
+    "objectID": "contents/aula-11.html#alcance-range-complemento-de-2",
+    "href": "contents/aula-11.html#alcance-range-complemento-de-2",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Alcance (Range) — Complemento de 2",
+    "text": "Alcance (Range) — Complemento de 2\n\nFórmula para \\(n\\) bits: \\[-2^{n-1} \\le X \\le +\\left(2^{n-1} - 1\\right)\\]\nExemplo para \\(n = 4\\) bits: \\[-2^{3} \\text{ até } +(2^{3} - 1) \\implies \\mathbf{-8 \\text{ até } +7}\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#distribuição-dos-valores-n4-bits",
+    "href": "contents/aula-11.html#distribuição-dos-valores-n4-bits",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Distribuição dos Valores (\\(n=4\\) bits)",
+    "text": "Distribuição dos Valores (\\(n=4\\) bits)\n\n\n\nCategoria\nQuantidade\nIntervalo\n\n\n\n\nInteiros Negativos\n8\n\\(-8 \\text{ a } -1\\)\n\n\nZero\n1\n\\(0\\)\n\n\nInteiros Positivos\n7\n\\(+1 \\text{ a } +7\\)\n\n\nTotal\n16\n\\(2^4\\) combinações"
+  },
+  {
+    "objectID": "contents/aula-11.html#conversão-de-negativo-para-positivo",
+    "href": "contents/aula-11.html#conversão-de-negativo-para-positivo",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Conversão de Negativo para Positivo",
+    "text": "Conversão de Negativo para Positivo\n\nO processo de Complemento de 2 é reversível:\n\nPara encontrar o valor absoluto de \\(1011_2\\) (que é negativo pois MSB = 1):\n\n\n\\[\n\\begin{aligned}\n\\text{Número Original (-5)}: & \\quad 1011_2 \\\\\n\\text{1's Comp}: & \\quad 0100_2 \\\\\n\\text{Somar 1}: & \\quad + 1 \\\\\n\\text{Resultado (+5)}: & \\quad \\mathbf{0101_2}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#exercício-3-complemento-de-2",
+    "href": "contents/aula-11.html#exercício-3-complemento-de-2",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exercício 3: Complemento de 2",
+    "text": "Exercício 3: Complemento de 2\n\n\n\n\n\n\nPara Praticar (H.W.)\n\n\n\nRepresente \\(+5\\) e \\(-5\\) em Complemento de 2.\nRepresente \\(-8\\) em 4 bits.\nRepresente \\(+8\\) e \\(-9\\) em:\n\n4 bits (se possível)\n5 bits"
+  },
+  {
+    "objectID": "contents/aula-11.html#algoritmo-de-subtração",
+    "href": "contents/aula-11.html#algoritmo-de-subtração",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Algoritmo de Subtração",
+    "text": "Algoritmo de Subtração\n\nA subtração \\(A - B\\) é convertida em uma adição: \\[A - B = A + (-B)\\] onde \\(-B\\) é representado em Complemento de 2."
+  },
+  {
+    "objectID": "contents/aula-11.html#regras-do-carry-na-subtração",
+    "href": "contents/aula-11.html#regras-do-carry-na-subtração",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Regras do Carry na Subtração",
+    "text": "Regras do Carry na Subtração\n\n\nSe gerar “Vai Um” (Carry Out = 1):\n\nO resultado é positivo.\nO resultado já está na forma direta (True Form).\nDesconsiderar o bit de carry final.\n\n\n\n\n\nSe NÃO gerar “Vai Um” (Carry Out = 0):\n\nO resultado é negativo.\nO resultado está em Complemento de 2."
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplo-1-de-subtração",
+    "href": "contents/aula-11.html#exemplo-1-de-subtração",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplo 1 de Subtração",
+    "text": "Exemplo 1 de Subtração\nOperação em 4 bits: \\((0001)_2 - (1111)_2\\) [em decimal: \\(1 - (-1)\\)]\n\n\\(A = 0001_2\\)\n\\(B = 1111_2 \\implies -B = 0001_2\\) (Complemento de 2 de \\(1111_2\\))\n\n\\[\n\\begin{array}{r@{\\quad}l}\n0001_2 & (A) \\\\\n+ \\; 0001_2 & (-B) \\\\\n\\hline\n\\mathbf{0010_2} & (+2_{10})\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplo-2-subtração-e-análise",
+    "href": "contents/aula-11.html#exemplo-2-subtração-e-análise",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplo 2: Subtração e Análise",
+    "text": "Exemplo 2: Subtração e Análise\nOperação em 4 bits: \\((1001)_2 - (0100)_2\\)\n\n\\(A = 1001_2 = -7_{10}\\)\n\\(B = 0100_2 = +4_{10} \\implies -B = 1100_2\\)\n\n\\[\n\\begin{array}{r@{\\quad}l}\n& 1001_2 \\\\\n+ & 1100_2 \\\\\n\\hline\n\\mathbf{1} & \\mathbf{0101_2} \\quad (\\text{Carry Out} = 1)\n\\end{array}\n\\]\n\nO resultado mantendo 4 bits seria \\(0101_2 = +5_{10}\\).\nPorém: \\(-7 - 4 = -11_{10}\\), que está fora do alcance de 4 bits (\\(-8 \\text{ a } +7\\))."
+  },
+  {
+    "objectID": "contents/aula-11.html#o-que-é-overflow",
+    "href": "contents/aula-11.html#o-que-é-overflow",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "O que é Overflow?",
+    "text": "O que é Overflow?\n\nOcorre quando o resultado de uma operação aritmética excede a capacidade de representação de bits disponível.\nExemplo: Adicionar dois números de 4 bits gerando um resultado que requer 5 bits válidos."
+  },
+  {
+    "objectID": "contents/aula-11.html#condição-lógica-para-overflow",
+    "href": "contents/aula-11.html#condição-lógica-para-overflow",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Condição Lógica para Overflow",
+    "text": "Condição Lógica para Overflow\nSejam: - \\(X\\): bit de sinal do primeiro operando (\\(A\\)) - \\(Y\\): bit de sinal do segundo operando (\\(B\\)) - \\(Z\\): bit de sinal do resultado\n\\[V = \\bar{X}\\bar{Y}Z + XY\\bar{Z}\\]\n\n\\(V = 1 \\implies\\) Ocorreu Overflow\n\\(V = 0 \\implies\\) Sem Overflow"
+  },
+  {
+    "objectID": "contents/aula-11.html#análise-do-exemplo-anterior",
+    "href": "contents/aula-11.html#análise-do-exemplo-anterior",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Análise do Exemplo Anterior",
+    "text": "Análise do Exemplo Anterior\nPara a soma de \\(1001_2\\) (\\(-7\\)) e \\(1100_2\\) (\\(-4\\)): - \\(X = 1\\), \\(Y = 1\\), \\(Z = 0\\)\n\\[\n\\begin{aligned}\nV &= \\bar{1} \\cdot \\bar{1} \\cdot 0 + 1 \\cdot 1 \\cdot \\bar{0} \\\\\nV &= 0 \\cdot 0 \\cdot 0 + 1 \\cdot 1 \\cdot 1 \\\\\nV &= \\mathbf{1} \\quad \\text{(OVERFLOW!)}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#regra-prática-de-overflow",
+    "href": "contents/aula-11.html#regra-prática-de-overflow",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Regra Prática de Overflow",
+    "text": "Regra Prática de Overflow\n\n\n\n\n\n\nRegras de Sinal\n\n\n\nSoma de dois positivos resultando em negativo \\(\\implies\\) Overflow.\nSoma de dois negativos resultando em positivo \\(\\implies\\) Overflow.\nOperandos com sinais opostos \\(\\implies\\) NUNCA ocorre Overflow."
+  },
+  {
+    "objectID": "contents/aula-11.html#círculo-numérico-4-bits",
+    "href": "contents/aula-11.html#círculo-numérico-4-bits",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Círculo Numérico (4 Bits)",
+    "text": "Círculo Numérico (4 Bits)\n              0000 (0)\n        1111 (-1)   0001 (+1)\n    1110 (-2)           0010 (+2)\n  1101 (-3)               0011 (+3)\n  1100 (-4)               0100 (+4)\n    1011 (-5)           0101 (+5)\n        1010 (-6)   0110 (+6)\n              1001 (-7)\n              1000 (-8)\n\nTransição no sentido horário ultrapassando \\(+7 \\rightarrow -8\\): Overflow por Adição.\nTransição no sentido anti-horário ultrapassando \\(-8 \\rightarrow +7\\): Overflow por Subtração."
+  },
+  {
+    "objectID": "contents/aula-11.html#exercício-4-subtração",
+    "href": "contents/aula-11.html#exercício-4-subtração",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exercício 4: Subtração",
+    "text": "Exercício 4: Subtração\n\n\n\n\n\n\nPara Praticar (H.W.)\n\n\nCalcule as operações em Complemento de 2 (4 bits) e indique se ocorre overflow:\n\n\\((0110)_2 - (0100)_2\\)\n\\((0111)_2 - (1110)_2\\)"
+  },
+  {
+    "objectID": "contents/aula-11.html#operações-sem-sinal-unsigned",
+    "href": "contents/aula-11.html#operações-sem-sinal-unsigned",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Operações Sem Sinal (Unsigned)",
+    "text": "Operações Sem Sinal (Unsigned)\n\nSeguem as mesmas técnicas da base decimal.\nMultiplicação: Soma de produtos parciais deslocados.\nDivisão: Subtrações sucessivas deslocadas."
+  },
+  {
+    "objectID": "contents/aula-11.html#exemplo-multiplicação-sem-sinal",
+    "href": "contents/aula-11.html#exemplo-multiplicação-sem-sinal",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Exemplo: Multiplicação Sem Sinal",
+    "text": "Exemplo: Multiplicação Sem Sinal\n\\[1100101_2 \\times 111101_2 \\quad (101_{10} \\times 61_{10})\\]\n\\[\n\\begin{array}{r@{\\quad}l}\n& 1100101 \\\\\n\\times & 111101 \\\\\n\\hline\n& 1100101 \\\\\n+ & 110010100 \\\\\n+ & \\dots \\\\\n\\hline\n= & \\mathbf{1100000010001_2} = 6161_{10}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-11.html#desafio-em-complemento-de-2",
+    "href": "contents/aula-11.html#desafio-em-complemento-de-2",
+    "title": "Aula 11Representação de Dados Inteiros",
+    "section": "Desafio em Complemento de 2",
+    "text": "Desafio em Complemento de 2\n\nNão é possível aplicar diretamente a técnica padrão para operandos negativos sem ajustes.\nEstratégia Simplificada:\n\nConverter os operandos para seus valores absolutos.\nRealizar a multiplicação ou divisão sem sinal.\nNegar o resultado se os sinais originais forem diferentes."
+  },
+  {
+    "objectID": "contents/aula-3.html#função-f",
+    "href": "contents/aula-3.html#função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Função \\(F\\)",
+    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-3.html#representar-a-função-f",
+    "href": "contents/aula-3.html#representar-a-função-f",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Representar a função \\(F\\)",
+    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-sop",
+    "href": "contents/aula-3.html#forma-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma SOP",
+    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#forma-pos",
+    "href": "contents/aula-3.html#forma-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Forma POS",
+    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#literal",
+    "href": "contents/aula-3.html#literal",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Literal",
+    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
+  },
+  {
+    "objectID": "contents/aula-3.html#minterm-mintermo",
+    "href": "contents/aula-3.html#minterm-mintermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Minterm (Mintermo)",
+    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
+  },
+  {
+    "objectID": "contents/aula-3.html#maxterm-maxtermo",
+    "href": "contents/aula-3.html#maxterm-maxtermo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Maxterm (Maxtermo)",
+    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
+  },
+  {
+    "objectID": "contents/aula-3.html#comparativo",
+    "href": "contents/aula-3.html#comparativo",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Comparativo",
+    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização",
+    "href": "contents/aula-3.html#aplicando-minimização",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-1",
+    "href": "contents/aula-3.html#aplicando-minimização-1",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-2",
+    "href": "contents/aula-3.html#aplicando-minimização-2",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-3",
+    "href": "contents/aula-3.html#aplicando-minimização-3",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#aplicando-minimização-4",
+    "href": "contents/aula-3.html#aplicando-minimização-4",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Aplicando Minimização",
+    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
+    "href": "contents/aula-3.html#conversão-pos-to-sop",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão POS \\(\\to\\) SOP",
+    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
+    "href": "contents/aula-3.html#conversão-sop-to-pos",
+    "title": "Aula 3  Formas SOP e POS",
+    "section": "Conversão SOP \\(\\to\\) POS",
+    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot \\\\\n\nY &= (A+B+C) \\cdot\n(A+B+\\overline{C}) \\cdot\n(A+\\overline{B}+\\overline{C})\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#definição-e-conceitos",
+    "href": "contents/aula-7.html#definição-e-conceitos",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Definição e Conceitos",
+    "text": "Definição e Conceitos\n\nSistema de Numeração: Define um conjunto de valores usados para representar uma quantidade.\nRadix / Base (\\(r\\)): Indica a quantidade de dígitos disponíveis no sistema.\nDígitos Válidos: Variam de \\(0\\) até \\((r-1)\\).\n\n\n\n\n\n\n\nPrincípio Fundamental\n\n\nO valor numérico é determinado pelos dígitos e pelas suas posições (sistema posicional ponderado)."
+  },
+  {
+    "objectID": "contents/aula-7.html#principais-bases-numéricas",
+    "href": "contents/aula-7.html#principais-bases-numéricas",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Principais Bases Numéricas",
+    "text": "Principais Bases Numéricas\n\n\n\nSistema\nBase (\\(r\\))\nDígitos Válidos (\\(0\\) até \\(r-1\\))\n\n\n\n\nBinário\n2\n0, 1\n\n\nOctal\n8\n0, 1, 2, 3, 4, 5, 6, 7\n\n\nDecimal\n10\n0, 1, 2, 3, 4, 5, 6, 7, 8, 9\n\n\nDuodecimal\n12\n0..9, A (10), B (11)\n\n\nHexadecimal\n16\n0..9, A (10), B (11), C (12), D (13), E (14), F (15)"
+  },
+  {
+    "objectID": "contents/aula-7.html#representação-posicional",
+    "href": "contents/aula-7.html#representação-posicional",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Representação Posicional",
+    "text": "Representação Posicional\n\nCada posição possui um peso associado a uma potência da base:\n\n\\[\n(7392)_{10} = 7 \\times 10^3 + 3 \\times 10^2 + 9 \\times 10^1 + 2 \\times 10^0\n\\]\n\nCoeficientes: \\(7, 3, 9, 2\\)\nBase (\\(r\\)): \\(10\\)\nPotência: Determina a posição do dígito."
+  },
+  {
+    "objectID": "contents/aula-7.html#classificação-dos-códigos-numéricos",
+    "href": "contents/aula-7.html#classificação-dos-códigos-numéricos",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Classificação dos Códigos Numéricos",
+    "text": "Classificação dos Códigos Numéricos\n\n\nCódigos Ponderados\n\nCada posição possui um peso definido.\nExemplos:\n\nDecimal\nBinário\nOctal\nHexadecimal\nBCD\n\n\n\nCódigos Não Ponderados\n\nAs posições não possuem pesos fixos.\nExemplos:\n\nCódigo Gray\nExcess-3"
+  },
+  {
+    "objectID": "contents/aula-7.html#relação-entre-base-e-tamanho-da-representação",
+    "href": "contents/aula-7.html#relação-entre-base-e-tamanho-da-representação",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Relação entre Base e Tamanho da Representação",
+    "text": "Relação entre Base e Tamanho da Representação\n\nPara uma mesma quantidade:\n\nSe a base é menor (\\(r_1 &lt; r_2\\)), o número de dígitos necessários é maior (\\(N_1 \\ge N_2\\)).\n\n\n\n\n\n\n\n\nExemplo Prático da Mesma Quantidade em Diferentes Bases\n\n\n\\[\n\\begin{aligned}\n(7392)_{10} &= (1110011100000)_2 \\\\\n&= (16340)_8 \\\\\n&= (1CED)_{16}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#características-do-sistema-binário",
+    "href": "contents/aula-7.html#características-do-sistema-binário",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Características do Sistema Binário",
+    "text": "Características do Sistema Binário\n\nBase (\\(r\\)): \\(2\\)\nDígitos válidos: \\(0\\) e \\(1\\)\nBit: Denominação para Binary Digit (menor unidade de informação).\n\n\n\n\n\n\n\nRepresentação Posicional Binária\n\n\nCada posição \\(i\\) da direita para a esquerda tem peso igual a \\(2^i\\)."
+  },
+  {
+    "objectID": "contents/aula-7.html#conversão-binário-para-decimal",
+    "href": "contents/aula-7.html#conversão-binário-para-decimal",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Conversão Binário para Decimal",
+    "text": "Conversão Binário para Decimal\n\nExpande-se o número binário no somatório de suas potências de \\(2\\):\n\n\\[\n\\begin{aligned}\n(10101)_2 &= 1 \\times 2^4 + 0 \\times 2^3 + 1 \\times 2^2 + 0 \\times 2^1 + 1 \\times 2^0 \\\\\n&= 16 + 0 + 4 + 0 + 1 \\\\\n&= (21)_{10}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#parte-fracionária-em-binário",
+    "href": "contents/aula-7.html#parte-fracionária-em-binário",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Parte Fracionária em Binário",
+    "text": "Parte Fracionária em Binário\n\nAs posições à direita da vírgula possuem expoentes negativos (\\(2^{-1}, 2^{-2}, \\dots\\)):\n\n\\[\n\\begin{aligned}\n(10101.11)_2 &= 21 + 1 \\times 2^{-1} + 1 \\times 2^{-2} \\\\\n&= 21 + 0{,}5 + 0{,}25 \\\\\n&= (21{,}75)_{10}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#conceito-de-msb-e-lsb",
+    "href": "contents/aula-7.html#conceito-de-msb-e-lsb",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Conceito de MSB e LSB",
+    "text": "Conceito de MSB e LSB\n\nMSB (Most Significant Bit): Bit mais significativo (maior peso).\nLSB (Least Significant Bit): Bit menos significativo (menor peso).\n\n\nSensibilidade à Alteração de Bits (\\(10101_2 = 21_{10}\\))\n\nAlterando o LSB para 0: \\(10100_2 = 20_{10}\\) (\\(\\Delta = 1\\))\nAlterando o MSB para 0: \\(00101_2 = 5_{10}\\) (\\(\\Delta = 16\\))"
+  },
+  {
+    "objectID": "contents/aula-7.html#unidades-de-medida-lógica",
+    "href": "contents/aula-7.html#unidades-de-medida-lógica",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Unidades de Medida Lógica",
+    "text": "Unidades de Medida Lógica\n\nBit: \\(1\\) dígito binário (\\(0\\) ou \\(1\\))\nNibble: \\(4\\) bits (usado em BCD e Hexadecimal)\nByte: \\(8\\) bits\nWord: \\(16\\) bits (\\(2\\) Bytes)\nDouble Word: \\(32\\) bits (\\(4\\) Bytes)"
+  },
+  {
+    "objectID": "contents/aula-7.html#método-geral-de-conversão",
+    "href": "contents/aula-7.html#método-geral-de-conversão",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Método Geral de Conversão",
+    "text": "Método Geral de Conversão\n\nParte Inteira: Divisões sucessivas pela base (\\(r = 2\\)).\n\nOs restos formam o número binário do LSB para o MSB.\n\nParte Fracionária: Multiplicações sucessivas pela base (\\(r = 2\\)).\n\nAs partes inteiras formam os dígitos da fração."
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-1-conversão-da-parte-inteira-13_10-rightarrow-quad_2",
+    "href": "contents/aula-7.html#exemplo-1-conversão-da-parte-inteira-13_10-rightarrow-quad_2",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 1: Conversão da Parte Inteira \\((13)_{10} \\rightarrow (\\quad)_2\\)",
+    "text": "Exemplo 1: Conversão da Parte Inteira \\((13)_{10} \\rightarrow (\\quad)_2\\)\n\n\nMétodo das Divisões Sucessivas\n\n\\(13 \\div 2 = 6\\), resto 1 (LSB)\n\\(6 \\div 2 = 3\\), resto 0\n\\(3 \\div 2 = 1\\), resto 1\n\\(1 \\div 2 = 0\\), resto 1 (MSB)\n\nResultado: \\((13)_{10} = (1101)_2\\)\n\nMétodo da Soma de Potências\n\\[\n\\begin{aligned}\n13 &= 8 + 4 + 1 \\\\\n&= 2^3 + 2^2 + 2^0 \\\\\n&= (1101)_2\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-2-parte-inteira-e-fracionária-25625_10-rightarrow-quad_2",
+    "href": "contents/aula-7.html#exemplo-2-parte-inteira-e-fracionária-25625_10-rightarrow-quad_2",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 2: Parte Inteira e Fracionária \\((25{,}625)_{10} \\rightarrow (\\quad)_2\\)",
+    "text": "Exemplo 2: Parte Inteira e Fracionária \\((25{,}625)_{10} \\rightarrow (\\quad)_2\\)\n\n\nParte Inteira (\\(25\\))\n\n\\(25 \\div 2 = 12\\), resto 1 (LSB)\n\\(12 \\div 2 = 6\\), resto 0\n\\(6 \\div 2 = 3\\), resto 0\n\\(3 \\div 2 = 1\\), resto 1\n\\(1 \\div 2 = 0\\), resto 1 (MSB)\n\n\\(\\rightarrow (25)_{10} = (11001)_2\\)\n\nParte Fracionária (\\(0{,}625\\))\n\n\\(0{,}625 \\times 2 = \\mathbf{1}{,}25 \\rightarrow \\text{pega } 1\\)\n\\(0{,}25 \\times 2 = \\mathbf{0}{,}50 \\rightarrow \\text{pega } 0\\)\n\\(0{,}50 \\times 2 = \\mathbf{1}{,}00 \\rightarrow \\text{pega } 1\\)\n\\(0{,}00 \\times 2 = 0{,}00 \\rightarrow \\text{Pare!}\\)\n\n\\(\\rightarrow (0{,}625)_{10} = (0{,}101)_2\\)\n\n\n\n\n\n\n\nResultado Final\n\n\n\\[(25{,}625)_{10} = (11001{,}101)_2\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exercícios-propostos-binário",
+    "href": "contents/aula-7.html#exercícios-propostos-binário",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exercícios Propostos: Binário",
+    "text": "Exercícios Propostos: Binário\n\n\n\n\n\n\nTPC / Homework\n\n\n\n\\((67)_{10} \\rightarrow (\\quad)_2\\)\n\\((129{,}75)_{10} \\rightarrow (\\quad)_2\\)\n\n\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\((67)_{10} = (1000011)_2\\)\n\\((129{,}75)_{10} = (10000001{,}11)_2\\)"
+  },
+  {
+    "objectID": "contents/aula-7.html#método-de-conversão-r-8",
+    "href": "contents/aula-7.html#método-de-conversão-r-8",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Método de Conversão (\\(r = 8\\))",
+    "text": "Método de Conversão (\\(r = 8\\))\n\nDivisões sucessivas da parte inteira por 8.\nMultiplicações sucessivas da parte fracionária por 8."
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-1-112_10-rightarrow-quad_8",
+    "href": "contents/aula-7.html#exemplo-1-112_10-rightarrow-quad_8",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 1: \\((112)_{10} \\rightarrow (\\quad)_8\\)",
+    "text": "Exemplo 1: \\((112)_{10} \\rightarrow (\\quad)_8\\)\n\n\\(112 \\div 8 = 14\\), resto 0 (LSB)\n\\(14 \\div 8 = 1\\), resto 6\n\\(1 \\div 8 = 0\\), resto 1 (MSB)\n\n\\[\n(112)_{10} = (160)_8\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-2-25625_10-rightarrow-quad_8",
+    "href": "contents/aula-7.html#exemplo-2-25625_10-rightarrow-quad_8",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 2: \\((25{,}625)_{10} \\rightarrow (\\quad)_8\\)",
+    "text": "Exemplo 2: \\((25{,}625)_{10} \\rightarrow (\\quad)_8\\)\n\nParte Inteira (\\(25\\)):\n\n\\(25 \\div 8 = 3\\), resto 1\n\\(3 \\div 8 = 0\\), resto 3 \\(\\rightarrow (31)_8\\)\n\nParte Fracionária (\\(0{,}625\\)):\n\n\\(0{,}625 \\times 8 = \\mathbf{5}{,}00 \\rightarrow (0{,}5)_8\\)\n\n\n\\[\n(25{,}625)_{10} = (31{,}5)_8\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exercícios-propostos-octal",
+    "href": "contents/aula-7.html#exercícios-propostos-octal",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exercícios Propostos: Octal",
+    "text": "Exercícios Propostos: Octal\n\n\n\n\n\n\nTPC / Homework\n\n\n\n\\((2048)_{10} \\rightarrow (\\quad)_8\\)\n\\((82{,}250)_{10} \\rightarrow (\\quad)_8\\)\n\n\n\n\n\n\n\n\n\n\n\nRespostas\n\n\n\n\\((2048)_{10} = (4000)_8\\)\n\\((82{,}250)_{10} = (122{,}2)_8\\)"
+  },
+  {
+    "objectID": "contents/aula-7.html#conversão-para-hexadecimal-r-16",
+    "href": "contents/aula-7.html#conversão-para-hexadecimal-r-16",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Conversão para Hexadecimal (\\(r = 16\\))",
+    "text": "Conversão para Hexadecimal (\\(r = 16\\))\n\nDivisões e multiplicações sucessivas por 16.\nSubstituir restos de 10 a 15 pelas letras A a F."
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-1-254_10-rightarrow-quad_16",
+    "href": "contents/aula-7.html#exemplo-1-254_10-rightarrow-quad_16",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 1: \\((254)_{10} \\rightarrow (\\quad)_{16}\\)",
+    "text": "Exemplo 1: \\((254)_{10} \\rightarrow (\\quad)_{16}\\)\n\n\\(254 \\div 16 = 15\\), resto 14 (\\(E\\)) (LSB)\n\\(15 \\div 16 = 0\\), resto 15 (\\(F\\)) (MSB)\n\n\\[\n(254)_{10} = (FE)_{16}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exemplo-2-25625_10-rightarrow-quad_16",
+    "href": "contents/aula-7.html#exemplo-2-25625_10-rightarrow-quad_16",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exemplo 2: \\((25{,}625)_{10} \\rightarrow (\\quad)_{16}\\)",
+    "text": "Exemplo 2: \\((25{,}625)_{10} \\rightarrow (\\quad)_{16}\\)\n\nParte Inteira (\\(25\\)):\n\n\\(25 \\div 16 = 1\\), resto 9\n\\(1 \\div 16 = 0\\), resto 1 \\(\\rightarrow (19)_{16}\\)\n\nParte Fracionária (\\(0{,}625\\)):\n\n\\(0{,}625 \\times 16 = \\mathbf{10}{,}00 \\rightarrow \\mathbf{A} \\rightarrow (0{,}A)_{16}\\)\n\n\n\\[\n(25{,}625)_{10} = (19{,}A)_{16}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#conversão-para-qualquer-base-r-4",
+    "href": "contents/aula-7.html#conversão-para-qualquer-base-r-4",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Conversão para Qualquer Base (\\(r = 4\\))",
+    "text": "Conversão para Qualquer Base (\\(r = 4\\))\nConvertendo \\((27{,}4)_{10} \\rightarrow (\\quad)_4\\):\n\nParte Inteira (\\(27\\)):\n\n\\(27 \\div 4 = 6\\), resto 3\n\\(6 \\div 4 = 1\\), resto 2\n\\(1 \\div 4 = 0\\), resto 1 \\(\\rightarrow (123)_4\\)\n\nParte Fracionária (\\(0{,}4\\)):\n\n\\(0{,}4 \\times 4 = \\mathbf{1}{,}6\\)\n\\(0{,}6 \\times 4 = \\mathbf{2}{,}4\\) (Dízima periódica!)\n\\(0{,}4 \\times 4 = \\mathbf{1}{,}6 \\dots\\)\n\n\n\\[\n(27{,}4)_{10} = (123{,}1212\\dots)_4\n\\]"
+  },
+  {
+    "objectID": "contents/aula-7.html#exercício-proposto-base-4",
+    "href": "contents/aula-7.html#exercício-proposto-base-4",
+    "title": "Aula 7Sistemas de Numeração",
+    "section": "Exercício Proposto: Base 4",
+    "text": "Exercício Proposto: Base 4\n\n\n\n\n\n\nTPC / Homework\n\n\n\\[\n(25{,}625)_{10} \\rightarrow (\\quad)_4\n\\]\n\n\n\n\n\n\n\n\n\n\nResposta\n\n\n\n\\(25_{10} = 121_4\\)\n\\(0{,}625_{10} = 0{,}22_4\\)\nResultado: \\((25{,}625)_{10} = (121{,}22)_4\\)"
+  },
+  {
+    "objectID": "contents/aula-8.html#generalização-base-r-rightarrow-decimal",
+    "href": "contents/aula-8.html#generalização-base-r-rightarrow-decimal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Generalização: Base \\(r \\rightarrow\\) Decimal",
+    "text": "Generalização: Base \\(r \\rightarrow\\) Decimal\n\nPara converter um número em qualquer base \\(r\\) para a base Decimal (\\(r=10\\)), expande-se a soma ponderada das suas potências de \\(r\\).\n\n\\[\n(\\dots a_3 a_2 a_1 a_0 \\cdot a_{-1} a_{-2} \\dots)_r = (\\dots)_{10}\n\\]\n\n\n\n\n\n\nFórmula da Expansão Posicional\n\n\n\\[\n\\dots + a_3 \\cdot r^3 + a_2 \\cdot r^2 + a_1 \\cdot r^1 + a_0 \\cdot r^0 + a_{-1} \\cdot r^{-1} + a_{-2} \\cdot r^{-2} + \\dots\n\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#binário-rightarrow-decimal-exemplo",
+    "href": "contents/aula-8.html#binário-rightarrow-decimal-exemplo",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Binário \\(\\rightarrow\\) Decimal: Exemplo",
+    "text": "Binário \\(\\rightarrow\\) Decimal: Exemplo\nExemplo: Converter \\((10101,11)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\nPosições dos dígitos:\n\n\\[\n\\begin{array}{rcccccc}\n\\text{Dígito:} & 1 & 0 & 1 & 0 & 1 \\ \\cdot\\ 1 & 1 \\\\\n\\text{Posição ($i$):} & 4 & 3 & 2 & 1 & 0 \\ \\ \\ \\ -1 & -2\n\\end{array}\n\\]\n\nExpansão:\n\n\\[\n1 \\cdot 2^4 + 0 \\cdot 2^3 + 1 \\cdot 2^2 + 0 \\cdot 2^1 + 1 \\cdot 2^0 + 1 \\cdot 2^{-1} + 1 \\cdot 2^{-2}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#binário-rightarrow-decimal-resolução",
+    "href": "contents/aula-8.html#binário-rightarrow-decimal-resolução",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Binário \\(\\rightarrow\\) Decimal: Resolução",
+    "text": "Binário \\(\\rightarrow\\) Decimal: Resolução\n\nParte Inteira: \\[16 + 0 + 4 + 0 + 1 = 21\\]\nParte Fracionária: \\[\\frac{1}{2^1} + \\frac{1}{2^2} = \\frac{1}{2} + \\frac{1}{4} = \\frac{2 + 1}{4} = 0,75\\]\n\n\n\n\n\n\n\nResultado Final\n\n\n\\[21 + 0,75 = (21,75)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercício-proposto-binário-rightarrow-decimal",
+    "href": "contents/aula-8.html#exercício-proposto-binário-rightarrow-decimal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercício Proposto (Binário \\(\\rightarrow\\) Decimal)",
+    "text": "Exercício Proposto (Binário \\(\\rightarrow\\) Decimal)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\nConverta o número binário com parte fracionária para a base decimal:\n\\[\n(1101100,101)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#octal-rightarrow-decimal-conceito",
+    "href": "contents/aula-8.html#octal-rightarrow-decimal-conceito",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Octal \\(\\rightarrow\\) Decimal: Conceito",
+    "text": "Octal \\(\\rightarrow\\) Decimal: Conceito\n\nBase \\(r = 8\\) (dígitos de 0 a 7).\nA parte inteira é multiplicada por potências de \\(8^i\\) (\\(i \\ge 0\\)).\nA parte fracionária é multiplicada por potências de \\(8^{-i}\\) (\\(i \\ge 1\\)).\n\n\\[\n\\underbrace{O_3 O_2 O_1 O_0}_{\\text{Parte Inteira}} \\cdot \\underbrace{O_{-1} O_{-2}}_{\\text{Parte Fracionária}}\n\\]\n\\[\nO_3 \\cdot 8^3 + O_2 \\cdot 8^2 + O_1 \\cdot 8^1 + O_0 \\cdot 8^0 + O_{-1} \\cdot 8^{-1} + O_{-2} \\cdot 8^{-2}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#octal-rightarrow-decimal-exemplo-1",
+    "href": "contents/aula-8.html#octal-rightarrow-decimal-exemplo-1",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Octal \\(\\rightarrow\\) Decimal: Exemplo 1",
+    "text": "Octal \\(\\rightarrow\\) Decimal: Exemplo 1\nExemplo 1: Converter \\((57,4)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\nExpansão: \\[5 \\cdot 8^1 + 7 \\cdot 8^0 + 4 \\cdot 8^{-1}\\]\nCálculo: \\[40 + 7 + \\frac{4}{8} = 47 + 0,5\\]\n\n\n\n\n\n\n\nResultado\n\n\n\\[(57,4)_8 = (47,5)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#octal-rightarrow-decimal-exemplo-2",
+    "href": "contents/aula-8.html#octal-rightarrow-decimal-exemplo-2",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Octal \\(\\rightarrow\\) Decimal: Exemplo 2",
+    "text": "Octal \\(\\rightarrow\\) Decimal: Exemplo 2\nExemplo 2: Converter \\((4507,44)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\\[\n4 \\cdot 8^3 + 5 \\cdot 8^2 + 0 \\cdot 8^1 + 7 \\cdot 8^0 + 4 \\cdot 8^{-1} + 4 \\cdot 8^{-2}\n\\]\n\nValores das potências: \\[4 \\cdot 512 + 5 \\cdot 64 + 0 \\cdot 8 + 7 \\cdot 1 + \\frac{4}{8} + \\frac{4}{64}\\] \\[2048 + 320 + 0 + 7 + \\frac{8 + 1}{16}\\]\n\n\n\n\n\n\n\nResultado\n\n\n\\[2375 + 0,5625 = (2375,5625)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercícios-propostos-octal-rightarrow-decimal",
+    "href": "contents/aula-8.html#exercícios-propostos-octal-rightarrow-decimal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercícios Propostos (Octal \\(\\rightarrow\\) Decimal)",
+    "text": "Exercícios Propostos (Octal \\(\\rightarrow\\) Decimal)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\n\n\\((601)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\\((1070,02)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)"
+  },
+  {
+    "objectID": "contents/aula-8.html#hexadecimal-rightarrow-decimal-conceito",
+    "href": "contents/aula-8.html#hexadecimal-rightarrow-decimal-conceito",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Hexadecimal \\(\\rightarrow\\) Decimal: Conceito",
+    "text": "Hexadecimal \\(\\rightarrow\\) Decimal: Conceito\n\nBase \\(r = 16\\) (dígitos de 0 a 9 e letras de A a F).\nA expansão utiliza potências da base 16.\n\n\n\n\\[\n\\begin{aligned}\n&h_3 h_2 h_1 h_0 \\cdot h_{-1} h_{-2} \\\\\n=\\ &h_3 \\cdot 16^3 + h_2 \\cdot 16^2 + h_1 \\cdot 16^1 + h_0 \\cdot 16^0 \\\\\n&+\\ h_{-1} \\cdot 16^{-1} + h_{-2} \\cdot 16^{-2}\n\\end{aligned}\n\\]\n\nMapeamento Hexadecimal: - \\(A \\rightarrow 10\\) - \\(B \\rightarrow 11\\) - \\(C \\rightarrow 12\\) - \\(D \\rightarrow 13\\) - \\(E \\rightarrow 14\\) - \\(F \\rightarrow 15\\)"
+  },
+  {
+    "objectID": "contents/aula-8.html#hexadecimal-rightarrow-decimal-exemplo-1",
+    "href": "contents/aula-8.html#hexadecimal-rightarrow-decimal-exemplo-1",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Hexadecimal \\(\\rightarrow\\) Decimal: Exemplo 1",
+    "text": "Hexadecimal \\(\\rightarrow\\) Decimal: Exemplo 1\nExemplo 1: Converter \\((\\text{BAD})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\nSubstituição dos símbolos: \\(B=11\\), \\(A=10\\), \\(D=13\\)\nExpansão: \\[11 \\cdot 16^2 + 10 \\cdot 16^1 + 13 \\cdot 16^0\\] \\[11 \\cdot 256 + 10 \\cdot 16 + 13 \\cdot 1\\] \\[2816 + 160 + 13\\]\n\n\n\n\n\n\n\nResultado\n\n\n\\[(\\text{BAD})_{16} = (2989)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#hexadecimal-rightarrow-decimal-exemplo-2",
+    "href": "contents/aula-8.html#hexadecimal-rightarrow-decimal-exemplo-2",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Hexadecimal \\(\\rightarrow\\) Decimal: Exemplo 2",
+    "text": "Hexadecimal \\(\\rightarrow\\) Decimal: Exemplo 2\nExemplo 2: Converter \\((57,4)_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\\)\n\nExpansão: \\[5 \\cdot 16^1 + 7 \\cdot 16^0 + 4 \\cdot 16^{-1}\\] \\[80 + 7 + \\frac{4}{16}\\] \\[80 + 7 + 0,25\\]\n\n\n\n\n\n\n\nResultado\n\n\n\\[(57,4)_{16} = (87,25)_{10}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercício-proposto-hexadecimal-rightarrow-decimal",
+    "href": "contents/aula-8.html#exercício-proposto-hexadecimal-rightarrow-decimal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercício Proposto (Hexadecimal \\(\\rightarrow\\) Decimal)",
+    "text": "Exercício Proposto (Hexadecimal \\(\\rightarrow\\) Decimal)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\nConverta o número hexadecimal fracionário para a base decimal:\n\\[\n(\\text{BFF,C})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_{10}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#relação-binário-e-octal",
+    "href": "contents/aula-8.html#relação-binário-e-octal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Relação Binário e Octal",
+    "text": "Relação Binário e Octal\n\nExistem 8 dígitos no sistema octal (\\(0\\) a \\(7\\)).\nComo \\(2^3 = 8\\), cada dígito octal equivale a um grupo de 3 bits em binário.\n\n\n\n\n\n\nOctal\nBinário\n\n\n\n\n0\n000\n\n\n1\n001\n\n\n2\n010\n\n\n3\n011\n\n\n\n\n\n\n\nOctal\nBinário\n\n\n\n\n4\n100\n\n\n5\n101\n\n\n6\n110\n\n\n7\n111"
+  },
+  {
+    "objectID": "contents/aula-8.html#octal-rightarrow-binário-exemplos",
+    "href": "contents/aula-8.html#octal-rightarrow-binário-exemplos",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Octal \\(\\rightarrow\\) Binário: Exemplos",
+    "text": "Octal \\(\\rightarrow\\) Binário: Exemplos\nSubstitua cada dígito octal por seu equivalente em 3 bits:\n\nExemplo 1: \\((37,45)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_2\\) \\[3 \\rightarrow 011 \\quad|\\quad 7 \\rightarrow 111 \\quad\\cdot\\quad 4 \\rightarrow 100 \\quad|\\quad 5 \\rightarrow 101\\] \\[(37,45)_8 = (011111,100101)_2\\]\nExemplo 2: \\((22,07)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_2\\) \\[2 \\rightarrow 010 \\quad|\\quad 2 \\rightarrow 010 \\quad\\cdot\\quad 0 \\rightarrow 000 \\quad|\\quad 7 \\rightarrow 111\\] \\[(22,07)_8 = (010010,000111)_2\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#binário-rightarrow-octal-regra-prática",
+    "href": "contents/aula-8.html#binário-rightarrow-octal-regra-prática",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Binário \\(\\rightarrow\\) Octal: Regra Prática",
+    "text": "Binário \\(\\rightarrow\\) Octal: Regra Prática\n\nLocalize o ponto fracionário.\nForme grupos de 3 bits:\n\nParte inteira: agrupe da direita para a esquerda (\\(\\leftarrow\\)).\nParte fracionária: agrupe da esquerda para a direita (\\(\\rightarrow\\)).\n\nComplete com zeros à esquerda/direita se necessário (não altera o valor).\nSubstitua cada grupo de 3 bits pelo dígito octal correspondente."
+  },
+  {
+    "objectID": "contents/aula-8.html#binário-rightarrow-octal-exemplos",
+    "href": "contents/aula-8.html#binário-rightarrow-octal-exemplos",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Binário \\(\\rightarrow\\) Octal: Exemplos",
+    "text": "Binário \\(\\rightarrow\\) Octal: Exemplos\n\nExemplo 1: \\((010110,110)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_8\\) \\[\\underbrace{010}_{2} \\ \\underbrace{110}_{6} \\ \\cdot \\ \\underbrace{110}_{6} \\implies (26,6)_8\\]\nExemplo 2: \\((1001,1)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_8\\)\n\nAdicionando zeros de preenchimento: \\[\\underbrace{001}_{1} \\ \\underbrace{001}_{1} \\ \\cdot \\ \\underbrace{100}_{4} \\implies (11,4)_8\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercícios-propostos-binário-longleftrightarrow-octal",
+    "href": "contents/aula-8.html#exercícios-propostos-binário-longleftrightarrow-octal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercícios Propostos (Binário \\(\\Longleftrightarrow\\) Octal)",
+    "text": "Exercícios Propostos (Binário \\(\\Longleftrightarrow\\) Octal)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\n\nOctal para Binário: \\[(672,13)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_2\\]\nBinário para Octal: \\[(10111011,1001)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_8\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#relação-hexadecimal-e-binário",
+    "href": "contents/aula-8.html#relação-hexadecimal-e-binário",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Relação Hexadecimal e Binário",
+    "text": "Relação Hexadecimal e Binário\n\nExistem 16 dígitos no sistema hexadecimal (\\(r=16\\)).\nComo \\(2^4 = 16\\), cada dígito hexadecimal equivale a 4 bits em binário.\n\n\n\n\n\n\nHex\nBinário\n\n\n\n\n0\n0000\n\n\n1\n0001\n\n\n2\n0010\n\n\n3\n0011\n\n\n4\n0100\n\n\n5\n0101\n\n\n6\n0110\n\n\n7\n0111\n\n\n\n\n\n\n\nHex\nBinário\n\n\n\n\n8\n1000\n\n\n9\n1001\n\n\nA (10)\n1010\n\n\nB (11)\n1011\n\n\nC (12)\n1100\n\n\nD (13)\n1101\n\n\nE (14)\n1110\n\n\nF (15)\n1111"
+  },
+  {
+    "objectID": "contents/aula-8.html#hexadecimal-rightarrow-binário-exemplos",
+    "href": "contents/aula-8.html#hexadecimal-rightarrow-binário-exemplos",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Hexadecimal \\(\\rightarrow\\) Binário: Exemplos",
+    "text": "Hexadecimal \\(\\rightarrow\\) Binário: Exemplos\nSubstitua cada dígito hexadecimal por seu grupo de 4 bits:\n\nExemplo 1: \\((259\\text{A})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_2\\) \\[2 \\rightarrow 0010 \\quad|\\quad 5 \\rightarrow 0101 \\quad|\\quad 9 \\rightarrow 1001 \\quad|\\quad \\text{A} \\rightarrow 1010\\] \\[(259\\text{A})_{16} = (0010010110011010)_2\\]\nExemplo 2: \\((\\text{CAFE},3\\text{D})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_2\\) \\[\\text{C} \\rightarrow 1100 \\quad|\\quad \\text{A} \\rightarrow 1010 \\quad|\\quad \\text{F} \\rightarrow 1111 \\quad|\\quad \\text{E} \\rightarrow 1110\\] \\[\\cdot \\quad 3 \\rightarrow 0011 \\quad|\\quad \\text{D} \\rightarrow 1101\\] \\[(\\text{CAFE},3\\text{D})_{16} = (1100101011111110,00111101)_2\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#binário-rightarrow-hexadecimal-exemplo",
+    "href": "contents/aula-8.html#binário-rightarrow-hexadecimal-exemplo",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Binário \\(\\rightarrow\\) Hexadecimal: Exemplo",
+    "text": "Binário \\(\\rightarrow\\) Hexadecimal: Exemplo\n\nAgrupe de 4 em 4 bits a partir do ponto fracionário.\nComplete com zeros quando necessário.\n\nExemplo: \\((10001001,11)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_{16}\\)\n\nAgrupamento: \\[\\underbrace{1000}_{8} \\ \\underbrace{1001}_{9} \\ \\cdot \\ \\underbrace{1100}_{\\text{C}}\\]\n\n\n\n\n\n\n\nResultado\n\n\n\\[(10001001,11)_2 = (89,\\text{C})_{16}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercícios-propostos-hexadecimal-longleftrightarrow-binário",
+    "href": "contents/aula-8.html#exercícios-propostos-hexadecimal-longleftrightarrow-binário",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercícios Propostos (Hexadecimal \\(\\Longleftrightarrow\\) Binário)",
+    "text": "Exercícios Propostos (Hexadecimal \\(\\Longleftrightarrow\\) Binário)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\n\nHexadecimal para Binário: \\[(\\text{FACE})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_2\\]\nBinário para Hexadecimal: \\[(1101111010101111)_2 \\rightarrow (\\ \\ \\dots\\ \\ )_{16}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#a-ponte-pelo-sistema-binário",
+    "href": "contents/aula-8.html#a-ponte-pelo-sistema-binário",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "A Ponte pelo Sistema Binário",
+    "text": "A Ponte pelo Sistema Binário\n\nNÃO existe uma conversão direta e simples entre a base Hexadecimal e a base Octal.\nA conversão deve obrigatoriamente usar o Binário como intermediário!\n\n\n\n\n\n\nflowchart LR\n    HEX[Hexadecimal] &lt;--&gt;|Grupos de 4 bits| BIN[Binário]\n    BIN &lt;--&gt;|Grupos de 3 bits| OCT[Octal]\n    HEX -.-x|Não direta!| OCT"
+  },
+  {
+    "objectID": "contents/aula-8.html#hexadecimal-rightarrow-octal-exemplo",
+    "href": "contents/aula-8.html#hexadecimal-rightarrow-octal-exemplo",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Hexadecimal \\(\\rightarrow\\) Octal: Exemplo",
+    "text": "Hexadecimal \\(\\rightarrow\\) Octal: Exemplo\nExemplo: Converter \\((\\text{CAD})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_8\\)\n\nPasso 1: Hexadecimal \\(\\rightarrow\\) Binário (4 bits cada) \\[\\text{C} \\rightarrow 1100 \\quad|\\quad \\text{A} \\rightarrow 1010 \\quad|\\quad \\text{D} \\rightarrow 1101\\] \\[(\\text{CAD})_{16} = (110010101101)_2\\]\nPasso 2: Binário \\(\\rightarrow\\) Octal (Reagrupar em 3 bits) \\[\\underbrace{110}_{6} \\ \\ \\underbrace{010}_{2} \\ \\ \\underbrace{101}_{5} \\ \\ \\underbrace{101}_{5}\\]\n\n\n\n\n\n\n\nResultado Final\n\n\n\\[(\\text{CAD})_{16} = (6255)_8\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#octal-rightarrow-hexadecimal-exemplo",
+    "href": "contents/aula-8.html#octal-rightarrow-hexadecimal-exemplo",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Octal \\(\\rightarrow\\) Hexadecimal: Exemplo",
+    "text": "Octal \\(\\rightarrow\\) Hexadecimal: Exemplo\nExemplo: Converter \\((652)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{16}\\)\n\nPasso 1: Octal \\(\\rightarrow\\) Binário (3 bits cada) \\[6 \\rightarrow 110 \\quad|\\quad 5 \\rightarrow 101 \\quad|\\quad 2 \\rightarrow 010\\] \\[(652)_8 = (110101010)_2\\]\nPasso 2: Binário \\(\\rightarrow\\) Hexadecimal (Reagrupar em 4 bits) \\[\\underbrace{0001}_{1} \\ \\ \\underbrace{1010}_{\\text{A}} \\ \\ \\underbrace{1010}_{\\text{A}}\\]\n\n\n\n\n\n\n\nResultado Final\n\n\n\\[(652)_8 = (1\\text{AA})_{16}\\]"
+  },
+  {
+    "objectID": "contents/aula-8.html#exercícios-propostos-hexadecimal-longleftrightarrow-octal",
+    "href": "contents/aula-8.html#exercícios-propostos-hexadecimal-longleftrightarrow-octal",
+    "title": "Aula 8Conversão: Base Qualquer Decimal",
+    "section": "Exercícios Propostos (Hexadecimal \\(\\Longleftrightarrow\\) Octal)",
+    "text": "Exercícios Propostos (Hexadecimal \\(\\Longleftrightarrow\\) Octal)\n\n\n\n\n\n\nPara Praticar em Casa (H.W.)\n\n\n\nHexadecimal para Octal: \\[(\\text{CAFE})_{16} \\rightarrow (\\ \\ \\dots\\ \\ )_8\\]\nOctal para Hexadecimal: \\[(707)_8 \\rightarrow (\\ \\ \\dots\\ \\ )_{16}\\]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATA38 - Projeto de Circuitos Lógicos",
+    "section": "",
+    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 7Sistemas de Numeração\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 8Conversão: Base Qualquer Decimal\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 9Aritmética Binária\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 10Conceito de Complemento\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 11Representação de Dados Inteiros\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 12Representação de Números: Ponto Fixo e Ponto Flutuante\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 13Classificação dos Códigos\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 14Código de Hamming\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 15Carry Look Ahead Adder (CLA)\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 16Circuitos Combinacionais vs. Sequenciais\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
     "objectID": "contents/aula-2.html#informações-gerais",
     "href": "contents/aula-2.html#informações-gerais",
     "title": "Aula 2  Álgebra Booleana",
@@ -236,6 +1489,251 @@
     "title": "Aula 2  Álgebra Booleana",
     "section": "Regras",
     "text": "Regras\n\nOR:\n\n\\(A + A = A\\)\n\\(A + 0 = A\\)\n\\(A + 1 = 1\\)\n\\(A + \\bar{A} = 1\\)"
+  },
+  {
+    "objectID": "contents/aula-15.html#conceito-e-objetivo",
+    "href": "contents/aula-15.html#conceito-e-objetivo",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Conceito e Objetivo",
+    "text": "Conceito e Objetivo\n\nProblema: Em somadores em cadeia (Ripple Carry), as portas lógicas levam um tempo \\(T_{pd}\\) para propagar o carry estágio por estágio.\nObjetivo: Predizer o carry antecipadamente para otimizar a velocidade da soma.\nSolução: Calcular todos os bits de vai-um simultaneamente em paralelo."
+  },
+  {
+    "objectID": "contents/aula-15.html#gerador-e-propagador-de-carry",
+    "href": "contents/aula-15.html#gerador-e-propagador-de-carry",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Gerador e Propagador de Carry",
+    "text": "Gerador e Propagador de Carry\n\nCarry Generator (\\(G_i\\)): O vai-um é gerado diretamente no estágio \\(i\\), sem dependência de \\(C_{in}\\). \\[G_i = A_i \\cdot B_i\\]\nCarry Propagator (\\(P_i\\)): O vai-um depende da propagação do carry de entrada \\(C_{in}\\). \\[P_i = A_i \\oplus B_i\\]\nEquação Geral do Carry: \\[C_i = G_i + P_i \\cdot C_{i-1}\\]"
+  },
+  {
+    "objectID": "contents/aula-15.html#tabela-verdade-da-função-carry",
+    "href": "contents/aula-15.html#tabela-verdade-da-função-carry",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Tabela-Verdade da Função Carry",
+    "text": "Tabela-Verdade da Função Carry\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C_{in}\\)\n\\(C_o\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n0\n\n\n0\n1\n1\n1\n\n\n1\n0\n0\n0\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-15.html#análise-gerador-vs.-propagador",
+    "href": "contents/aula-15.html#análise-gerador-vs.-propagador",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Análise: Gerador vs. Propagador",
+    "text": "Análise: Gerador vs. Propagador\n\n\n\n\n\n\n\n\nCarry Generator (\\(G\\))\n\n\n\nOcorre quando \\(A \\cdot B = 1\\).\nNão há dependência de \\(C_{in}\\).\n\\[G = A \\cdot B\\]\n\n\n\n\n\n\n\n\n\n\n\nCarry Propagator (\\(P\\))\n\n\n\nOcorre quando \\((A \\oplus B) = 1\\) e \\(C_{in} = 1\\).\nHá dependência de \\(C_{in}\\).\n\\[P = A \\oplus B\\]\n\n\n\n\n\n\nEquação de saída generalizada: \\[C_i = G_i + P_i C_{i-1}\\]"
+  },
+  {
+    "objectID": "contents/aula-15.html#expansão-iterativa-i-0-e-i-1",
+    "href": "contents/aula-15.html#expansão-iterativa-i-0-e-i-1",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Expansão Iterativa: \\(i = 0\\) e \\(i = 1\\)",
+    "text": "Expansão Iterativa: \\(i = 0\\) e \\(i = 1\\)\nPara cada estágio de um somador completo (Full Adder):\n\nEstágio \\(i = 0\\): \\[C_0 = G_0 + P_0 C_{-1}\\]\nEstágio \\(i = 1\\): \\[\n\\begin{aligned}\nC_1 &= G_1 + P_1 C_0 \\\\\n    &= G_1 + P_1 (G_0 + P_0 C_{-1}) \\\\\n    &= G_1 + P_1 G_0 + P_1 P_0 C_{-1}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-15.html#expansão-iterativa-i-2",
+    "href": "contents/aula-15.html#expansão-iterativa-i-2",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Expansão Iterativa: \\(i = 2\\)",
+    "text": "Expansão Iterativa: \\(i = 2\\)\n\nSubstituindo a expressão de \\(C_1\\) em \\(C_2\\):\n\n\\[\n\\begin{aligned}\nC_2 &= G_2 + P_2 C_1 \\\\\n    &= G_2 + P_2 (G_1 + P_1 G_0 + P_1 P_0 C_{-1}) \\\\\n    &= G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_{-1}\n\\end{aligned}\n\\]\n\n\n\n\n\n\nPropriedade Fundamental\n\n\n\\(C_2\\) depende apenas das entradas primárias (\\(A_i, B_i\\)) e de \\(C_{-1}\\), sem esperar o cálculo de \\(C_1\\) ou \\(C_0\\)!"
+  },
+  {
+    "objectID": "contents/aula-15.html#expansão-iterativa-i-3",
+    "href": "contents/aula-15.html#expansão-iterativa-i-3",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Expansão Iterativa: \\(i = 3\\)",
+    "text": "Expansão Iterativa: \\(i = 3\\)\n\nSubstituindo a expressão de \\(C_2\\) em \\(C_3\\):\n\n\\[\n\\begin{aligned}\nC_3 &= G_3 + P_3 C_2 \\\\\n    &= G_3 + P_3 (G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_{-1}) \\\\\n    &= G_3 + P_3 G_2 + P_3 P_2 G_1 + P_3 P_2 P_1 G_0 + P_3 P_2 P_1 P_0 C_{-1}\n\\end{aligned}\n\\]\n\nTodos os carries são gerados em tempo constante!"
+  },
+  {
+    "objectID": "contents/aula-15.html#equações-do-somador-de-4-bits",
+    "href": "contents/aula-15.html#equações-do-somador-de-4-bits",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Equações do Somador de 4 Bits",
+    "text": "Equações do Somador de 4 Bits\n\nGeradores de Carry: \\[G_i = A_i \\cdot B_i\\]\nPropagadores de Carry: \\[P_i = A_i \\oplus B_i\\]\nBits de Soma (\\(S_i\\)): \\[S_i = A_i \\oplus B_i \\oplus C_{i-1} = P_i \\oplus C_{i-1}\\]\n\nExemplo para o bit 3: \\(S_3 = A_3 \\oplus B_3 \\oplus C_2 = P_3 \\oplus C_2\\)"
+  },
+  {
+    "objectID": "contents/aula-15.html#bloco-lógico-do-somador-cla",
+    "href": "contents/aula-15.html#bloco-lógico-do-somador-cla",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Bloco Lógico do Somador CLA",
+    "text": "Bloco Lógico do Somador CLA"
+  },
+  {
+    "objectID": "contents/aula-15.html#resumo-dos-benefícios",
+    "href": "contents/aula-15.html#resumo-dos-benefícios",
+    "title": "Aula 15Carry Look Ahead Adder (CLA)",
+    "section": "Resumo dos Benefícios",
+    "text": "Resumo dos Benefícios\n\nDesempenho: Reduz o atraso total de soma de \\(O(N)\\) para \\(O(1)\\) níveis de portas de carry.\nParalelismo: Todos os sinais de carry (\\(C_0, C_1, C_2, C_3\\)) são produzidos simultaneamente.\nCompromisso: Aumento no número de portas e no consumo de área conforme o número de bits cresce."
+  },
+  {
+    "objectID": "contents/aula-16.html#circuitos-combinacionais",
+    "href": "contents/aula-16.html#circuitos-combinacionais",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Circuitos Combinacionais",
+    "text": "Circuitos Combinacionais\n\nA saída depende somente das entradas atuais.\nNão possui memória nem dependência de estados ou saídas anteriores.\nExemplo: Somadores (Adders), Subtratores, Multiplexadores.\n\n\n\n\n\n\n\nCaracterística Principal\n\n\n\\[Y = f(X_{\\text{atual}})\\]"
+  },
+  {
+    "objectID": "contents/aula-16.html#circuitos-sequenciais",
+    "href": "contents/aula-16.html#circuitos-sequenciais",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Circuitos Sequenciais",
+    "text": "Circuitos Sequenciais\n\nA saída depende das entradas atuais e das saídas anteriores.\nPossui elementos de memória para armazenar o estado anterior.\nImplementação: Feita utilizando circuitos sequenciais chamados Flip-Flops.\nExemplo: Contadores (Counters), Registradores."
+  },
+  {
+    "objectID": "contents/aula-16.html#diagramas-de-blocos",
+    "href": "contents/aula-16.html#diagramas-de-blocos",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Diagramas de Blocos",
+    "text": "Diagramas de Blocos\n\n\nCircuito Combinacional\n\n\n\n\n\nflowchart LR\n  In[Entradas] --&gt; CC[Circuito Combinacional]\n  CC --&gt; Out[Saídas]\n\n\n\n\n\n\n\nCircuito Sequencial\n\n\n\n\n\nflowchart LR\n  In[Entradas] --&gt; SC[Circuito Combinacional]\n  SC --&gt; Out[Saídas]\n  SC --&gt; Mem[Memória / Flip-Flops]\n  Mem --&gt; |Feedback Positivo| SC"
+  },
+  {
+    "objectID": "contents/aula-16.html#conceito-operação",
+    "href": "contents/aula-16.html#conceito-operação",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Conceito & Operação",
+    "text": "Conceito & Operação\n\nCircuito combinacional usado para somar 1 bit (\\(A\\) e \\(B\\)).\nNão possui entrada de carry (\\(C_{in}\\)) da soma anterior.\nSaídas:\n\n\\(S\\): Soma (Sum)\n\\(C_o\\): Vai-um (Carry Out)"
+  },
+  {
+    "objectID": "contents/aula-16.html#tabela-verdade",
+    "href": "contents/aula-16.html#tabela-verdade",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Tabela-Verdade",
+    "text": "Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(S\\) (Soma)\n\\(C_o\\) (Carry)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n1\n1\n0\n\n\n1\n0\n1\n0\n\n\n1\n1\n0\n1"
+  },
+  {
+    "objectID": "contents/aula-16.html#equações-lógicas",
+    "href": "contents/aula-16.html#equações-lógicas",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Equações Lógicas",
+    "text": "Equações Lógicas\n\nSoma (\\(S\\)): Vale 1 quando as entradas são diferentes (OU Exclusivo). \\[S = A \\oplus B\\]\nCarry (\\(C_o\\)): Vale 1 apenas quando ambas entradas são 1 (E lógico). \\[C_o = A \\cdot B\\]"
+  },
+  {
+    "objectID": "contents/aula-16.html#esquemático-do-circuito",
+    "href": "contents/aula-16.html#esquemático-do-circuito",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Esquemático do Circuito",
+    "text": "Esquemático do Circuito\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; XOR[XOR]\n  B((B)) --&gt; XOR\n  A --&gt; AND[AND]\n  B --&gt; AND\n  XOR --&gt; S((S))\n  AND --&gt; Co((Co))"
+  },
+  {
+    "objectID": "contents/aula-16.html#conceito-blocos",
+    "href": "contents/aula-16.html#conceito-blocos",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Conceito & Blocos",
+    "text": "Conceito & Blocos\n\nSoma 3 bits: duas entradas de dados (\\(A, B\\)) e o carry da etapa anterior (\\(C_i\\)).\nPermite encadear múltiplos somadores para operar com palavras de múltiplos bits.\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; FA[Full Adder]\n  B((B)) --&gt; FA\n  Ci((Ci)) --&gt; FA\n  FA --&gt; S((S))\n  FA --&gt; Co((Co))"
+  },
+  {
+    "objectID": "contents/aula-16.html#tabela-verdade-1",
+    "href": "contents/aula-16.html#tabela-verdade-1",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Tabela-Verdade",
+    "text": "Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C_i\\)\n\\(S\\)\n\\(C_o\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n0\n0\n1\n1\n0\n\n\n0\n1\n0\n1\n0\n\n\n0\n1\n1\n0\n1\n\n\n1\n0\n0\n1\n0\n\n\n1\n0\n1\n0\n1\n\n\n1\n1\n0\n0\n1\n\n\n1\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-16.html#simplificação-da-saída-s",
+    "href": "contents/aula-16.html#simplificação-da-saída-s",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Simplificação da Saída \\(S\\)",
+    "text": "Simplificação da Saída \\(S\\)\n\nExpressão em Soma de Produtos (Mintermos): \\[S = A\\bar{B}\\bar{C_i} + \\bar{A}\\bar{B}C_i + ABC_i + \\bar{A}B\\bar{C_i}\\]\nSimplificação por XOR encadeado: \\[S = A \\oplus B \\oplus C_i\\]"
+  },
+  {
+    "objectID": "contents/aula-16.html#mapa-de-karnaugh-interativo-para-c_o",
+    "href": "contents/aula-16.html#mapa-de-karnaugh-interativo-para-c_o",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Mapa de Karnaugh Interativo para \\(C_o\\)",
+    "text": "Mapa de Karnaugh Interativo para \\(C_o\\)"
+  },
+  {
+    "objectID": "contents/aula-16.html#simplificação-da-saída-c_o",
+    "href": "contents/aula-16.html#simplificação-da-saída-c_o",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Simplificação da Saída \\(C_o\\)",
+    "text": "Simplificação da Saída \\(C_o\\)\n\nExpressão simplificada via Mapa de Karnaugh: \\[C_o = AB + BC_i + AC_i\\]\nForma fatorada (ideal para reutilizar a porta XOR do Half-Adder): \\[C_o = AB + C_i(A \\oplus B)\\]"
+  },
+  {
+    "objectID": "contents/aula-16.html#estrutura-modular",
+    "href": "contents/aula-16.html#estrutura-modular",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Estrutura Modular",
+    "text": "Estrutura Modular\n\nÉ possível construir um Full Adder combinando 2 Half Adders e 1 porta OR.\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; HA1[Half Adder 1]\n  B((B)) --&gt; HA1\n  HA1 -- S1 = A⊕B --&gt; HA2[Half Adder 2]\n  Ci((Cin)) --&gt; HA2\n  HA2 --&gt; S((S = A⊕B⊕Cin))\n  \n  HA1 -- C1 = AB --&gt; OR[OR]\n  HA2 -- C2 = Cin(A⊕B) --&gt; OR\n  OR --&gt; Co((Co))"
+  },
+  {
+    "objectID": "contents/aula-16.html#demonstração-algébrica-do-carry",
+    "href": "contents/aula-16.html#demonstração-algébrica-do-carry",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Demonstração Algébrica do Carry",
+    "text": "Demonstração Algébrica do Carry\n\\[\n\\begin{aligned}\nC_o &= AB + C_{in}(A \\oplus B) \\\\\n    &= AB + C_{in}(\\bar{A}B + A\\bar{B}) \\\\\n    &= AB + \\bar{A}BC_{in} + A\\bar{B}C_{in} \\\\\n    &= A(B + \\bar{B}C_{in}) + \\bar{A}BC_{in} \\\\\n    &= A(B + C_{in}) + \\bar{A}BC_{in} \\\\\n    &= AB + AC_{in} + \\bar{A}BC_{in} \\\\\n    &= AB + C_{in}(A + \\bar{A}B) \\\\\n    &= AB + AC_{in} + BC_{in}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "contents/aula-16.html#princípio-do-cascateamento",
+    "href": "contents/aula-16.html#princípio-do-cascateamento",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Princípio do Cascateamento",
+    "text": "Princípio do Cascateamento\n\nPara somar números de 4 bits (\\(A_3A_2A_1A_0 + B_3B_2B_1B_0\\)), encadeamos 4 Full Adders.\nO bit menos significativo (\\(A_0, B_0\\)) utiliza \\(C_{in} = 0\\).\nO carry propagado passa para o próximo bit (\\(C_0 \\to C_1 \\to C_2 \\to C_3\\))."
+  },
+  {
+    "objectID": "contents/aula-16.html#expansão-de-bits-na-soma",
+    "href": "contents/aula-16.html#expansão-de-bits-na-soma",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Expansão de Bits na Soma",
+    "text": "Expansão de Bits na Soma\n\n\n\n\n\n\nTamanho da Saída\n\n\nA soma de dois números de \\(N\\) bits pode resultar em um número de \\(N+1\\) bits. - Entrada: \\(A\\) (4 bits), \\(B\\) (4 bits) - Saída: \\(S\\) (4 bits) + Carry final \\(C_3\\) (1 bit) = 5 bits no total.\n\n\n\n\nExemplo Decimal: \\(5 + 5 = 10\\) (1 dígito a mais no resultado)."
+  },
+  {
+    "objectID": "contents/aula-16.html#esquemático-do-somador-ripple-carry",
+    "href": "contents/aula-16.html#esquemático-do-somador-ripple-carry",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Esquemático do Somador Ripple-Carry",
+    "text": "Esquemático do Somador Ripple-Carry\n\n\n\n\n\nflowchart RL\n  subgraph BIT3 [Bit 3]\n    FA3[F.A.]\n  end\n  subgraph BIT2 [Bit 2]\n    FA2[F.A.]\n  end\n  subgraph BIT1 [Bit 1]\n    FA1[F.A.]\n  end\n  subgraph BIT0 [Bit 0]\n    FA0[F.A.]\n  end\n\n  Cin0((Cin=0)) --&gt; FA0\n  FA0 -- C0 --&gt; FA1\n  FA1 -- C1 --&gt; FA2\n  FA2 -- C2 --&gt; FA3\n  FA3 --&gt; C3((C3))\n\n  FA0 --&gt; S0((S0))\n  FA1 --&gt; S1((S1))\n  FA2 --&gt; S2((S2))\n  FA3 --&gt; S3((S3))"
+  },
+  {
+    "objectID": "contents/aula-16.html#circuito-integrado-74hc283",
+    "href": "contents/aula-16.html#circuito-integrado-74hc283",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Circuito Integrado 74HC283",
+    "text": "Circuito Integrado 74HC283\n\nCI clássico comercial contendo um somador completo de 4 bits."
+  },
+  {
+    "objectID": "contents/aula-16.html#somador-de-8-bits-cascateamento",
+    "href": "contents/aula-16.html#somador-de-8-bits-cascateamento",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Somador de 8 Bits (Cascateamento)",
+    "text": "Somador de 8 Bits (Cascateamento)\n\nDois CIs de 4 bits podem ser cascateados interligando a saída \\(C_{out}\\) do primeiro com a entrada \\(C_{in}\\) do segundo.\n\n\n\n\n\n\nflowchart RL\n  Cin0((Cin=0)) --&gt; FA4_0[Somador 4-Bit LSB]\n  FA4_0 -- C3 --&gt; FA4_1[Somador 4-Bit MSB]\n  FA4_1 --&gt; C7((C7))\n\n  FA4_0 --&gt; S0_3[S0..S3]\n  FA4_1 --&gt; S4_7[S4..S7]\n]"
+  },
+  {
+    "objectID": "contents/aula-16.html#half-subtractor-meio-subtrator",
+    "href": "contents/aula-16.html#half-subtractor-meio-subtrator",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Half Subtractor (Meio Subtrator)",
+    "text": "Half Subtractor (Meio Subtrator)\n\nRealiza a subtração entre 2 bits: \\(A - B\\).\nSaídas:\n\n\\(D\\): Diferença (Difference)\n\\(B_o\\): Empréstimo de saída (Borrow Out)"
+  },
+  {
+    "objectID": "contents/aula-16.html#half-subtractor-tabela-verdade",
+    "href": "contents/aula-16.html#half-subtractor-tabela-verdade",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Half Subtractor: Tabela-Verdade",
+    "text": "Half Subtractor: Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(D\\) (Diferença)\n\\(B_o\\) (Borrow)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n1\n1\n1\n\n\n1\n0\n1\n0\n\n\n1\n1\n0\n0\n\n\n\n\n\n\n\n\n\n\nOperação \\(0 - 1\\)\n\n\nQuando \\(A=0\\) e \\(B=1\\), é necessário “pedir emprestado” (\\(B_o=1\\)), resultando em \\((2)_2 - 1 = 1\\) (\\(D=1\\))."
+  },
+  {
+    "objectID": "contents/aula-16.html#half-subtractor-equações-e-circuito",
+    "href": "contents/aula-16.html#half-subtractor-equações-e-circuito",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Half Subtractor: Equações e Circuito",
+    "text": "Half Subtractor: Equações e Circuito\n\nDiferença: \\(D = A \\oplus B\\)\nBorrow Out: \\(B_o = \\bar{A} \\cdot B\\)\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; XOR[XOR]\n  B((B)) --&gt; XOR\n  A --&gt; NOT[NOT]\n  NOT --&gt; AND[AND]\n  B --&gt; AND\n  XOR --&gt; D((D))\n  AND --&gt; Bo((Bo))"
+  },
+  {
+    "objectID": "contents/aula-16.html#full-subtractor-subtrator-completo",
+    "href": "contents/aula-16.html#full-subtractor-subtrator-completo",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Full Subtractor (Subtrator Completo)",
+    "text": "Full Subtractor (Subtrator Completo)\n\nSubtrai 3 bits: \\(A - B - C_{in}\\) (onde \\(C_{in}\\) é o empréstimo do bit anterior).\n\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; FS[Full Subtractor]\n  B((B)) --&gt; FS\n  Cin((Cin)) --&gt; FS\n  FS --&gt; D((D))\n  FS --&gt; Bo((Bo))"
+  },
+  {
+    "objectID": "contents/aula-16.html#full-subtractor-tabela-verdade",
+    "href": "contents/aula-16.html#full-subtractor-tabela-verdade",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Full Subtractor: Tabela-Verdade",
+    "text": "Full Subtractor: Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(C_{in}\\)\n\\(D\\)\n\\(B_o\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n0\n0\n1\n1\n1\n\n\n0\n1\n0\n1\n1\n\n\n0\n1\n1\n0\n1\n\n\n1\n0\n0\n1\n0\n\n\n1\n0\n1\n0\n0\n\n\n1\n1\n0\n0\n0\n\n\n1\n1\n1\n1\n1"
+  },
+  {
+    "objectID": "contents/aula-16.html#full-subtractor-equações-simplificadas",
+    "href": "contents/aula-16.html#full-subtractor-equações-simplificadas",
+    "title": "Aula 16Circuitos Combinacionais vs. Sequenciais",
+    "section": "Full Subtractor: Equações Simplificadas",
+    "text": "Full Subtractor: Equações Simplificadas\n\nDiferença (\\(D\\)): \\[D = A \\oplus B \\oplus C_{in}\\]\nBorrow Out (\\(B_o\\)): \\[B_o = B C_{in} + \\bar{A} C_{in} + \\bar{A} B\\]"
   },
   {
     "objectID": "contents/aula-6.html#introdução-à-minimização",
@@ -385,11 +1883,228 @@
     "text": "Exemplo 3: Teorema do Consenso (Redundância)\n\n\n\nFunção: \\(f(A,B,C) = \\Sigma m(1, 3, 6, 7)\\)\nPossíveis agrupamentos:\n\nGrupo I: \\(m(6, 7) \\Rightarrow AB\\)\nGrupo II: \\(m(1, 3) \\Rightarrow \\bar{A}C\\)\nGrupo III: \\(m(3, 7) \\Rightarrow BC\\) (Redundante!)\n\n\n\n\n\n\n\n\n\nTermo Redundante\n\n\nO grupo \\(m(3, 7)\\) não é necessário porque \\(m_1\\) e \\(m_3\\) já estão cobertos pelo Grupo II e \\(m_7\\) está coberto pelo Grupo I. Logo, a expressão mínima é: \\[F = AB + \\bar{A}C\\]"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MATA38 - Projeto de Circuitos Lógicos",
-    "section": "",
-    "text": "Bem-vindo ao portal de apresentações interativas da disciplina MATA38 - Projeto de Circuitos Lógicos.\nSelecione uma aula abaixo para abrir os slides:\n\n\n\n\n\n\n\n\n\n\n\nAula 0  Introdução\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 1  Números Binários\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 2  Álgebra Booleana\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 3  Formas SOP e POS\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 4  Portas Lógicas\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 5  Portas Lógicas II\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\n\n\n\nAula 6  Mapa de Karnaugh\n\n\n\nDr. Bruno Pereira Santos, Caio Sereno Santos Rebouças\n\n\n\n\n\n\n\n\nSem itens correspondentes"
+    "objectID": "contents/aula-12.html#contexto-inteiros-em-binário",
+    "href": "contents/aula-12.html#contexto-inteiros-em-binário",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Contexto: Inteiros em Binário",
+    "text": "Contexto: Inteiros em Binário\n\nSistemas digitais representam inteiros por pesos direcionados em potências de 2.\nExemplo de conversão de Binário para Decimal:\n\nBinário: 00110110\nPotências ativas: \\(2^5 + 2^4 + 2^2 + 2^1\\)\nCálculo: \\(32 + 16 + 4 + 2 = \\mathbf{54_{10}}\\)"
+  },
+  {
+    "objectID": "contents/aula-12.html#representação-em-ponto-fixo",
+    "href": "contents/aula-12.html#representação-em-ponto-fixo",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Representação em Ponto Fixo",
+    "text": "Representação em Ponto Fixo\n\nDivide a palavra binária em duas partes fixas: porção inteira e porção decimal.\nO ponto fracionário (radix) fica em uma posição pré-determinada.\nEstrutura (8 bits - 4 inteiros / 4 fracionários):\n\n Inteira   Decimal\n[ 0 0 1 1 . 0 1 1 0 ]"
+  },
+  {
+    "objectID": "contents/aula-12.html#pesos-em-ponto-fixo",
+    "href": "contents/aula-12.html#pesos-em-ponto-fixo",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Pesos em Ponto Fixo",
+    "text": "Pesos em Ponto Fixo\n\nPorção Inteira: \\(2^3, 2^2, 2^1, 2^0\\) (Valores: \\(8, 4, 2, 1\\))\nPorção Decimal: \\(2^{-1}, 2^{-2}, 2^{-3}, 2^{-4}\\) (Valores: \\(\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}\\))\n\n\n\n\n\n\n\n\nExemplo de Cálculo\n\n\n\\[\\text{Binário: } 0011.0110_2 = (2 + 1) + (0.25 + 0.125) = \\mathbf{3.375_{10}}\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#faixa-de-valores-range-em-8-bits",
+    "href": "contents/aula-12.html#faixa-de-valores-range-em-8-bits",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Faixa de Valores (Range) em 8 Bits",
+    "text": "Faixa de Valores (Range) em 8 Bits\n\nInteiro sem sinal (8 bits):\n\nFaixa: \\(0\\) até \\(255\\) (00000000 a 11111111)\n\nPonto Fixo (4 bits inteiros / 4 bits fracionários):\n\nMínimo: 0000.0000 \\(= \\mathbf{0}\\)\nMáximo: 1111.1111 \\(= 15 + 0.9375 = \\mathbf{15.9375}\\)\n\nConclusão: Reduz-se o alcance para obter resolução fracionária."
+  },
+  {
+    "objectID": "contents/aula-12.html#limitações-da-representação-em-ponto-fixo",
+    "href": "contents/aula-12.html#limitações-da-representação-em-ponto-fixo",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Limitações da Representação em Ponto Fixo",
+    "text": "Limitações da Representação em Ponto Fixo\n\nOverflow Inteiro: Não representa valores \\(\\ge 16\\) no formato 4.4.\nUnderflow Fracionário: Menor valor maior que zero é \\(2^{-4} = 0.0625\\).\nInexatidão Fracionária:\n\n\\(0.2_{10} = \\frac{1}{5}\\) gera uma dízima binária.\nNão pode ser obtido por combinações exatas de potências de 2."
+  },
+  {
+    "objectID": "contents/aula-12.html#motivação-e-histórico",
+    "href": "contents/aula-12.html#motivação-e-histórico",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Motivação e Histórico",
+    "text": "Motivação e Histórico\n\nO ponto fixo é engessado para amplitudes muito grandes ou muito pequenas.\nPadrão IEEE 754 (1985):\n\nProposto por William Kahan (Intel 8087).\nPadrão universal para ponto flutuante em hardware.\nBaseado na notação científica binária:\n\n\n\\[\\pm 1.m_1 m_2 \\dots \\times 2^E\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#notação-científica-binária",
+    "href": "contents/aula-12.html#notação-científica-binária",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Notação Científica Binária",
+    "text": "Notação Científica Binária\n\nEm decimal: \\(5.625_{10} = 0.5625 \\times 10^1\\)\nEm binário: \\((5.625)_{10} = (101.101)_2 = 0.101101_2 \\times 2^3\\)\nPermite representar números imensos ou minúsculos deslocando a vírgula."
+  },
+  {
+    "objectID": "contents/aula-12.html#a-necessidade-de-normalização",
+    "href": "contents/aula-12.html#a-necessidade-de-normalização",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "A Necessidade de Normalização",
+    "text": "A Necessidade de Normalização\n\nUm mesmo número binário pode ter múltiplas formas:\n\n\\((101.101)_2 = 0.101101 \\times 2^3\\)\n\\((101.101)_2 = 1.01101 \\times 2^2\\)\n\\((101.101)_2 = 0.0101101 \\times 2^4\\)\n\nSolução: Definir uma forma única padrão (Normalização)."
+  },
+  {
+    "objectID": "contents/aula-12.html#tipos-de-normalização",
+    "href": "contents/aula-12.html#tipos-de-normalização",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Tipos de Normalização",
+    "text": "Tipos de Normalização\n\nNormalização Explícita:\n\nPonto posicionado à esquerda do bit 1 mais significativo.\nExemplo: \\((101.101)_2 \\rightarrow \\mathbf{0.101101 \\times 2^3}\\)\n\nNormalização Implícita (Adotada no IEEE 754):\n\nPonto posicionado à direita do bit 1 mais significativo.\nExemplo: \\((101.101)_2 \\rightarrow \\mathbf{1.01101 \\times 2^2}\\)"
+  },
+  {
+    "objectID": "contents/aula-12.html#o-problema-do-sinal-no-expoente",
+    "href": "contents/aula-12.html#o-problema-do-sinal-no-expoente",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "O Problema do Sinal no Expoente",
+    "text": "O Problema do Sinal no Expoente\n\nO expoente de um ponto flutuante precisa ter sinal:\n\nExpoentes positivos: números grandes.\nExpoentes negativos: números fracionários pequenos.\n\nUsar Complemento de 2 dificulta comparações rápidas por hardware."
+  },
+  {
+    "objectID": "contents/aula-12.html#conceito-de-biasing-excesso-n",
+    "href": "contents/aula-12.html#conceito-de-biasing-excesso-n",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Conceito de Biasing (Excesso N)",
+    "text": "Conceito de Biasing (Excesso N)\n\nEm vez de complemento de 2, adiciona-se uma constante (Bias) ao expoente real.\nO expoente armazenado fica sempre positivo.\n\n\n\n\n\n\n\n\nExemplo (Viés Excesso 8)\n\n\nPara expoentes reais no intervalo \\([-8, 7]\\), soma-se \\(+8\\): \\[\\text{Expoente Real } (-1) + 8 = \\mathbf{7 \\text{ (Armazenado como inteiro sem sinal)}}\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#cálculo-do-viés-bias",
+    "href": "contents/aula-12.html#cálculo-do-viés-bias",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Cálculo do Viés (Bias)",
+    "text": "Cálculo do Viés (Bias)\n\nPara um expoente codificado em \\(k\\) bits:\n\n\\[\\text{Bias} = 2^{k-1} - 1\\]\n\nPrecisão Simples (\\(k = 8\\) bits): \\(\\text{Bias} = 2^7 - 1 = \\mathbf{127}\\)\nPrecisão Dupla (\\(k = 11\\) bits): \\(\\text{Bias} = 2^{10} - 1 = \\mathbf{1023}\\)"
+  },
+  {
+    "objectID": "contents/aula-12.html#vantagem-da-representação-com-viés",
+    "href": "contents/aula-12.html#vantagem-da-representação-com-viés",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Vantagem da Representação com Viés",
+    "text": "Vantagem da Representação com Viés\n\nMantém os expoentes em ordem sequencial crescente.\nPermite usar comparadores de inteiros sem sinal em hardware.\nAcelera operações de comparação e ordenação de números reais."
+  },
+  {
+    "objectID": "contents/aula-12.html#layout-da-precisão-simples",
+    "href": "contents/aula-12.html#layout-da-precisão-simples",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Layout da Precisão Simples",
+    "text": "Layout da Precisão Simples\n\nFormato de 32 bits no IEEE 754:\n\nSinal (S): 1 bit (bit 31)\nExpoente (E): 8 bits (bits 30 a 23)\nMantissa (M): 23 bits (bits 22 a 0)\n\n\n [ S ] [  EXPOENTE (8 bits)  ] [      MANTISSA (23 bits)      ]\n 1 bit       Com Viés (+127)               Fracionária"
+  },
+  {
+    "objectID": "contents/aula-12.html#equação-geral-precisão-simples",
+    "href": "contents/aula-12.html#equação-geral-precisão-simples",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Equação Geral (Precisão Simples)",
+    "text": "Equação Geral (Precisão Simples)\n\nPara números normalizados:\n\n\\[(-1)^S \\times (1 + M) \\times 2^{(E - 127)}\\]\n\n\\(S\\): Bit de sinal (\\(0 \\rightarrow +\\), \\(1 \\rightarrow -\\)).\n\\(1 + M\\): Mantissa com o bit \\(1\\) implícito à esquerda do ponto.\n\\(E - 127\\): Expoente real restaurado após subtrair o viés."
+  },
+  {
+    "objectID": "contents/aula-12.html#decodificando-ieee-754-bits-rightarrow-decimal",
+    "href": "contents/aula-12.html#decodificando-ieee-754-bits-rightarrow-decimal",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Decodificando IEEE 754 (Bits \\(\\rightarrow\\) Decimal)",
+    "text": "Decodificando IEEE 754 (Bits \\(\\rightarrow\\) Decimal)\n\nConsidere a palavra de 32 bits: 0 10000011 00010010000000000000000\nSinal (\\(S\\)): \\(0 \\rightarrow \\mathbf{\\text{Positivo (+)}}\\)\nExpoente Armazenado (\\(E\\)):\n\n\\((10000011)_2 = 128 + 2 + 1 = \\mathbf{131}\\)\n\nExpoente Real:\n\n\\(E - 127 = 131 - 127 = \\mathbf{4}\\)"
+  },
+  {
+    "objectID": "contents/aula-12.html#decodificando-mantissa-e-magnitude",
+    "href": "contents/aula-12.html#decodificando-mantissa-e-magnitude",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Decodificando Mantissa e Magnitude",
+    "text": "Decodificando Mantissa e Magnitude\n\nMantissa (\\(M\\)): 0001001000...\n\nPosicionamento: \\(2^{-4} = \\frac{1}{16}\\), \\(2^{-7} = \\frac{1}{128}\\)\n\nMagnitude \\((1 + M)\\):\n\n\\[1 + \\frac{1}{16} + \\frac{1}{128} = 1 + \\frac{9}{128} = \\mathbf{\\frac{137}{128}}\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#decodificando-valor-final",
+    "href": "contents/aula-12.html#decodificando-valor-final",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Decodificando: Valor Final",
+    "text": "Decodificando: Valor Final\n\nAplicando na fórmula geral:\n\n\\[\\text{Valor} = +1 \\times \\frac{137}{128} \\times 2^4\\]\n\\[\\text{Valor} = \\frac{137}{128} \\times 16 = \\frac{2192}{128} = \\mathbf{17.125_{10}}\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#codificando-decimal-rightarrow-ieee-754",
+    "href": "contents/aula-12.html#codificando-decimal-rightarrow-ieee-754",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Codificando (Decimal \\(\\rightarrow\\) IEEE 754)",
+    "text": "Codificando (Decimal \\(\\rightarrow\\) IEEE 754)\n\nConverter \\(17.125_{10}\\) para a representação de 32 bits:\nPasso 1: Parte Inteira\n\n\\(17_{10} = \\mathbf{10001_2}\\)\n\nPasso 2: Parte Fracionária\n\n\\(0.125 \\times 2 = 0.25 \\rightarrow 0\\)\n\\(0.25 \\times 2 = 0.5 \\rightarrow 0\\)\n\\(0.5 \\times 2 = 1.0 \\rightarrow 1\\)\n\\(0.125_{10} = \\mathbf{0.001_2}\\)"
+  },
+  {
+    "objectID": "contents/aula-12.html#codificando-normalização-e-campos",
+    "href": "contents/aula-12.html#codificando-normalização-e-campos",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Codificando: Normalização e Campos",
+    "text": "Codificando: Normalização e Campos\n\nForma Binária Não Normalizada: \\(10001.001_2\\)\nNormalização Implícita: \\[10001.001_2 = \\mathbf{1.0001001_2 \\times 2^4}\\]\nCampos:\n\nSinal: \\(S = 0\\) (Positivo)\nExpoente: \\(4 + 127 = 131 = \\mathbf{10000011_2}\\)\nMantissa: 00010010000000000000000 (23 bits)"
+  },
+  {
+    "objectID": "contents/aula-12.html#precisão-dupla-64-bits",
+    "href": "contents/aula-12.html#precisão-dupla-64-bits",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Precisão Dupla (64 Bits)",
+    "text": "Precisão Dupla (64 Bits)\n\nProporciona maior alcance dinâmico e precisão:\n\nSinal (S): 1 bit\nExpoente (E): 11 bits (\\(\\text{Bias} = \\mathbf{1023}\\))\nMantissa (M): 52 bits\n\n\n\\[\\text{Valor} = (-1)^S \\times (1 + M) \\times 2^{(E - 1023)}\\]"
+  },
+  {
+    "objectID": "contents/aula-12.html#formatos-padronizados-ieee-754",
+    "href": "contents/aula-12.html#formatos-padronizados-ieee-754",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Formatos Padronizados IEEE 754",
+    "text": "Formatos Padronizados IEEE 754\n\n\n\nNome Padrão\nNome Comum\nBits Exp.\nBias\nBits Mantissa\n\n\n\n\nbinary16\nHalf Precision\n5\n15\n10\n\n\nbinary32\nSingle Precision\n8\n127\n23\n\n\nbinary64\nDouble Precision\n11\n1023\n52\n\n\nbinary128\nQuadruple Precision\n15\n16383\n112"
+  },
+  {
+    "objectID": "contents/aula-12.html#representações-especiais",
+    "href": "contents/aula-12.html#representações-especiais",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Representações Especiais",
+    "text": "Representações Especiais\n\nDeterminadas combinações de \\(E\\) e \\(M\\) são reservadas para exceções:\n\nZero (\\(\\pm 0\\)): \\(E = 0\\) e \\(M = 0\\).\nInfinito (\\(\\pm \\infty\\)): \\(E = E_{\\text{máx}}\\) e \\(M = 0\\).\nNaN (Not a Number): \\(E = E_{\\text{máx}}\\) e \\(M \\neq 0\\) (ex: \\(\\sqrt{-1}\\), \\(0/0\\)).\nDesnormalizados: \\(E = 0\\) e \\(M \\neq 0\\) (números extremamente pequenos)."
+  },
+  {
+    "objectID": "contents/aula-12.html#tabela-de-casos-especiais-precisão-simples---32-bits",
+    "href": "contents/aula-12.html#tabela-de-casos-especiais-precisão-simples---32-bits",
+    "title": "Aula 12Representação de Números: Ponto Fixo e Ponto Flutuante",
+    "section": "Tabela de Casos Especiais (Precisão Simples - 32 Bits)",
+    "text": "Tabela de Casos Especiais (Precisão Simples - 32 Bits)\n\n\n\nExpoente (\\(E\\))\nMantissa (\\(M\\))\nSignificado / Valor\n\n\n\n\n\\(E = 0\\)\n\\(M = 0\\)\nZero (\\(\\pm 0\\))\n\n\n\\(E = 0\\)\n\\(M \\neq 0\\)\nForma Fracionária / Desnormalizada\n\n\n\\(1 \\le E \\le 254\\)\nQualquer \\(M\\)\nNúmero Normalizado Implícito\n\n\n\\(E = 255\\)\n\\(M = 0\\)\nInfinito (\\(\\pm \\infty\\))\n\n\n\\(E = 255\\)\n\\(M \\neq 0\\)\nNaN (Not a Number)"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-definição-e-expressão",
+    "href": "contents/aula-5.html#porta-xor-definição-e-expressão",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Definição e Expressão",
+    "text": "Porta XOR: Definição e Expressão\n\nA Porta OU Exclusivo (XOR) é também conhecida como EX-OR.\nSua saída é alta (1) apenas se o número de entradas altas for ímpar.\nExpressão Booleana: \\(Y = A \\oplus B = A\\bar{B} + \\bar{A}B\\)"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-símbolos-lógicos",
+    "href": "contents/aula-5.html#porta-xor-símbolos-lógicos",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Símbolos Lógicos",
+    "text": "Porta XOR: Símbolos Lógicos\n\n\nSímbolo Tradicional\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; XOR[XOR]\n  B((B)) --&gt; XOR\n  XOR --&gt; Y((Y = A ⊕ B))\n\n\n\n\n\n\n\nSímbolo IEEE\n\n\n\n\n\nflowchart LR\n  A((A)) --&gt; IEEE[\"= 1\"]\n  B((B)) --&gt; IEEE\n  IEEE --&gt; Y((Y))"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-tabela-verdade",
+    "href": "contents/aula-5.html#porta-xor-tabela-verdade",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Tabela-Verdade",
+    "text": "Porta XOR: Tabela-Verdade\n\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Y = A \\oplus B\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n0"
+  },
+  {
+    "objectID": "contents/aula-5.html#demonstração-interativa-porta-xor",
+    "href": "contents/aula-5.html#demonstração-interativa-porta-xor",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Demonstração Interativa: Porta XOR",
+    "text": "Demonstração Interativa: Porta XOR"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-circuito-interno",
+    "href": "contents/aula-5.html#porta-xor-circuito-interno",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Circuito Interno",
+    "text": "Porta XOR: Circuito Interno\n\\[Y = A \\oplus B = A\\bar{B} + \\bar{A}B\\]"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-propriedade-chave",
+    "href": "contents/aula-5.html#porta-xor-propriedade-chave",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Propriedade Chave",
+    "text": "Porta XOR: Propriedade Chave\n\nA porta XOR é um detector de “1” ímpar.\nSua saída é alta (1) se houver um número ímpar de entradas em nível lógico alto."
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-propriedades-parte-1",
+    "href": "contents/aula-5.html#porta-xor-propriedades-parte-1",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Propriedades (Parte 1)",
+    "text": "Porta XOR: Propriedades (Parte 1)\n\nIdentidades com 0, 1, A, \\(\\bar{A}\\):\n\n\\(A \\oplus A = 0\\)\n\\(A \\oplus \\bar{A} = 1\\)\n\\(A \\oplus 0 = A\\)\n\\(A \\oplus 1 = \\bar{A}\\)"
+  },
+  {
+    "objectID": "contents/aula-5.html#porta-xor-propriedades-parte-2",
+    "href": "contents/aula-5.html#porta-xor-propriedades-parte-2",
+    "title": "Aula 5  Portas Lógicas II",
+    "section": "Porta XOR: Propriedades (Parte 2)",
+    "text": "Porta XOR: Propriedades (Parte 2)\n\nAssociatividade e Comutatividade:\n\nA operação XOR é comutativa: \\(A \\oplus B = B \\oplus A\\)\nA operação XOR é associativa: \\((A \\oplus B) \\oplus C = A \\oplus (B \\oplus C)\\)"
   },
   {
     "objectID": "contents/aula-4.html#o-que-é-uma-porta-lógica",
@@ -644,164 +2359,94 @@
     "text": "Comparação de Símbolos\n\n\n\n\n\n\nNota\n\n\nO padrão IEEE 91-1984 utiliza notação funcional: & para conjunção, ≥1 para disjunção (pelo menos um) e =1 para disjunção exclusiva."
   },
   {
-    "objectID": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "href": "contents/aula-1.html#vantagens-dos-sistemas-digitais",
-    "title": "Aula 1  Números Binários",
-    "section": "Vantagens dos sistemas digitais",
-    "text": "Vantagens dos sistemas digitais\n\nRedução de Ruido\nUso de menos banda\nCriptografia\nEficiência para transmissões de longa distância"
+    "objectID": "contents/aula-14.html#conceito-fundamental",
+    "href": "contents/aula-14.html#conceito-fundamental",
+    "title": "Aula 14Código de Hamming",
+    "section": "Conceito Fundamental",
+    "text": "Conceito Fundamental\n\nObjetivo: Técnica de detecção e correção de erros em transmissões digitais.\nPrincípio: “Enviamos dados + redundância”.\nAdiciona bits de paridade aos bits de dados originais."
   },
   {
-    "objectID": "contents/aula-1.html#níveis-e-precisão",
-    "href": "contents/aula-1.html#níveis-e-precisão",
-    "title": "Aula 1  Números Binários",
-    "section": "Níveis e Precisão",
-    "text": "Níveis e Precisão\n\nQuanto mais precisão de medida, mais níveis são necessários"
+    "objectID": "contents/aula-14.html#estrutura-do-código-hamming-74",
+    "href": "contents/aula-14.html#estrutura-do-código-hamming-74",
+    "title": "Aula 14Código de Hamming",
+    "section": "Estrutura do Código Hamming \\((7,4)\\)",
+    "text": "Estrutura do Código Hamming \\((7,4)\\)\n\nBits de Dados (\\(D\\)): 4 bits (\\(D_3, D_2, D_1, D_0\\))\nBits de Paridade (\\(P\\)): 3 bits (\\(P_2, P_1, P_0\\))\nVetor Transmitido: \\([D_3, D_2, D_1, D_0, P_2, P_1, P_0]\\)\nExemplo de Entrada: Dados \\(= 1011_2\\)"
   },
   {
-    "objectID": "contents/aula-1.html#switchbits",
-    "href": "contents/aula-1.html#switchbits",
-    "title": "Aula 1  Números Binários",
-    "section": "Switch/Bits",
-    "text": "Switch/Bits\n\nPodemos representar um bit com um switch\nCircuito Aberto = \\(0\\)\nCircuito Fechado = \\(1\\)"
+    "objectID": "contents/aula-14.html#equações-dos-bits-de-paridade",
+    "href": "contents/aula-14.html#equações-dos-bits-de-paridade",
+    "title": "Aula 14Código de Hamming",
+    "section": "Equações dos Bits de Paridade",
+    "text": "Equações dos Bits de Paridade\n\nCada bit de paridade cobre um grupo específico de bits de dados:\n\n\\[P_0 = D_0 \\oplus D_1 \\oplus D_3\\]\n\\[P_1 = D_1 \\oplus D_2 \\oplus D_3\\]\n\\[P_2 = D_0 \\oplus D_2 \\oplus D_3\\]\n\n\n\n\n\n\nObservação\n\n\nNote que o bit \\(D_1\\) faz parte de \\(P_0\\) e \\(P_1\\), mas não de \\(P_2\\)."
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-níveis",
-    "href": "contents/aula-1.html#bits-e-níveis",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e níveis",
-    "text": "Bits e níveis\n\nQuanto mais bits, mais níveis podem ser representados\nRepresentação com 2 switches:\n\n\n\n\n\n\\(SW_{1}\\)\n\\(SW_{2}\\)\n\n\n\n\nOFF\nOFF\n\n\nOFF\nON\n\n\nON\nOFF\n\n\nON\nON"
+    "objectID": "contents/aula-14.html#exemplo-gerando-bits-de-paridade",
+    "href": "contents/aula-14.html#exemplo-gerando-bits-de-paridade",
+    "title": "Aula 14Código de Hamming",
+    "section": "Exemplo: Gerando Bits de Paridade",
+    "text": "Exemplo: Gerando Bits de Paridade\n\nPara o dado \\(D_3 D_2 D_1 D_0 = 1011\\):\n\n\\[\n\\begin{aligned}\nP_0 &= 1 \\oplus 1 \\oplus 1 = 1 \\\\\nP_1 &= 1 \\oplus 0 \\oplus 1 = 0 \\\\\nP_2 &= 1 \\oplus 0 \\oplus 1 = 0\n\\end{aligned}\n\\]\n\nVetor Gerado: \\([1 0 1 1 \\mid 0 0 1]\\)"
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-níveis-1",
-    "href": "contents/aula-1.html#bits-e-níveis-1",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Níveis",
-    "text": "Bits e Níveis\n\nGeneralizando: \\(n = 2^{m}\\)\n\n\\(n :=\\) # de nívies\n\\(m :=\\) # de switches\n\n\n\n\n\n\n\n\n\nExemplo\n\n\n\\[\nm = 3 \\to n = 2^{3} = 8 \\text{ níveis}\n\\]"
+    "objectID": "contents/aula-14.html#análise-de-alteração-em-bit-de-dado",
+    "href": "contents/aula-14.html#análise-de-alteração-em-bit-de-dado",
+    "title": "Aula 14Código de Hamming",
+    "section": "Análise de Alteração em Bit de Dado",
+    "text": "Análise de Alteração em Bit de Dado\n\nSe o bit \\(D_1\\) for alterado de \\(1 \\to 0\\) durante a transmissão:\n\n\\[\n\\begin{aligned}\nP_0 &= 1 \\oplus 0 \\oplus 1 = 0 \\quad (\\text{alterou!}) \\\\\nP_1 &= 0 \\oplus 0 \\oplus 1 = 1 \\quad (\\text{alterou!}) \\\\\nP_2 &= 1 \\oplus 0 \\oplus 1 = 0 \\quad (\\text{inalterado})\n\\end{aligned}\n\\]\n\nDiagnóstico: Como \\(P_0\\) e \\(P_1\\) mudaram, o erro está na intersecção \\(D_1\\)."
   },
   {
-    "objectID": "contents/aula-1.html#representação-dos-números",
-    "href": "contents/aula-1.html#representação-dos-números",
-    "title": "Aula 1  Números Binários",
-    "section": "Representação dos números",
-    "text": "Representação dos números\n\nJá conhecemos o sistema decimal:\n\n\\((327)_{10} = 3 \\cdot 10^{2} + 2 \\cdot 10^{1} + 7 \\cdot 10^{0}\\)\n\nNo sistema binário:\n\nUm dígito é chamado de bit\n\n\\((234)_{10} \\text{ tem 3 dígitos}\\)\n\n\\((101)_{2} \\text{ tem 3 bits}\\)"
+    "objectID": "contents/aula-14.html#mapeamento-por-diagrama-de-venn",
+    "href": "contents/aula-14.html#mapeamento-por-diagrama-de-venn",
+    "title": "Aula 14Código de Hamming",
+    "section": "Mapeamento por Diagrama de Venn",
+    "text": "Mapeamento por Diagrama de Venn"
   },
   {
-    "objectID": "contents/aula-1.html#representar-quantidades",
-    "href": "contents/aula-1.html#representar-quantidades",
-    "title": "Aula 1  Números Binários",
-    "section": "Representar quantidades",
-    "text": "Representar quantidades\n\nUm número de 2 bits tem 4 possiveis representações:\n\n\\(\\uparrow \\text{SW} = \\uparrow \\text{ bits} = \\uparrow \\text{ mais precisão}\\)\nLogo é possível representar 4 valores diferentes com a representação"
+    "objectID": "contents/aula-14.html#caso-1-correção-de-erro-em-bit-de-dado",
+    "href": "contents/aula-14.html#caso-1-correção-de-erro-em-bit-de-dado",
+    "title": "Aula 14Código de Hamming",
+    "section": "Caso 1: Correção de Erro em Bit de Dado",
+    "text": "Caso 1: Correção de Erro em Bit de Dado\n\nSintoma: As paridades \\(P_0\\) e \\(P_1\\) falham (X), mas \\(P_2\\) passa (\\(\\checkmark\\)).\nLocalização: A intersecção exclusiva entre \\(P_0\\) e \\(P_1\\) aponta para o bit \\(D_1\\).\nAção: Inverter o bit \\(D_1\\) de \\(0 \\to 1\\) para recuperar o dado original."
   },
   {
-    "objectID": "contents/aula-1.html#bits-e-bytes",
-    "href": "contents/aula-1.html#bits-e-bytes",
-    "title": "Aula 1  Números Binários",
-    "section": "Bits e Bytes",
-    "text": "Bits e Bytes\n\nUm conjunto de \\(8\\) bits \\((b)\\) forma um byte \\((B)\\) \\[\n\\begin{aligned}\n8 \\text{ bits} = 1 \\text{ byte} \\\\\n\\end{aligned}\n\\]\nÉ possível adicionar sufixos para a representação"
+    "objectID": "contents/aula-14.html#caso-2-erro-no-próprio-bit-de-paridade",
+    "href": "contents/aula-14.html#caso-2-erro-no-próprio-bit-de-paridade",
+    "title": "Aula 14Código de Hamming",
+    "section": "Caso 2: Erro no Próprio Bit de Paridade",
+    "text": "Caso 2: Erro no Próprio Bit de Paridade\n\nSintoma: Apenas \\(P_0\\) falha (X); \\(P_1\\) e \\(P_2\\) passam (\\(\\checkmark\\)).\nNenhuma região de dados é compartilhada apenas por \\(P_0\\) de forma inconsistente.\nConclusão: O erro ocorreu no próprio bit de paridade \\(P_0\\) (dados permanecem íntegros)."
   },
   {
-    "objectID": "contents/aula-3.html#função-f",
-    "href": "contents/aula-3.html#função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Função \\(F\\)",
-    "text": "Função \\(F\\)\n\n\n\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n\n\n0\n0\n1\n0\n\n\n0\n1\n0\n1\n\n\n0\n1\n1\n0\n\n\n1\n0\n0\n1\n\n\n1\n0\n1\n1\n\n\n1\n1\n0\n1\n\n\n1\n1\n1\n1"
+    "objectID": "contents/aula-14.html#caso-3-limitação-com-erro-duplo",
+    "href": "contents/aula-14.html#caso-3-limitação-com-erro-duplo",
+    "title": "Aula 14Código de Hamming",
+    "section": "Caso 3: Limitação com Erro Duplo",
+    "text": "Caso 3: Limitação com Erro Duplo\n\nO código \\((7,4)\\) tradicional assume apenas 1 erro.\nCom 2 erros simultâneos:\n\nA lógica aponta para um bit incorreto.\nO sistema tenta corrigir o bit errado, persistindo com a corrupção."
   },
   {
-    "objectID": "contents/aula-3.html#representar-a-função-f",
-    "href": "contents/aula-3.html#representar-a-função-f",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Representar a função \\(F\\)",
-    "text": "Representar a função \\(F\\)\n\nForma SOP (Sum of Products)\nForma POS (Product of Sums)"
+    "objectID": "contents/aula-14.html#ilustração-dos-casos-de-correção",
+    "href": "contents/aula-14.html#ilustração-dos-casos-de-correção",
+    "title": "Aula 14Código de Hamming",
+    "section": "Ilustração dos Casos de Correção",
+    "text": "Ilustração dos Casos de Correção"
   },
   {
-    "objectID": "contents/aula-3.html#forma-sop",
-    "href": "contents/aula-3.html#forma-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma SOP",
-    "text": "Forma SOP\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em alto\n\nAlto no ID 2, 4 - 7\n\nForma padrão canônica \\[\n\\begin{aligned}\nF = \\overbrace{\\bar{A}B\\bar{C}}^{\\text{and}} \\overbrace{+}^{\\text{or}} A\\bar{B}\\bar{C} + \\\\\nA\\bar{B}C + AB\\bar{C} + ABC\n\\end{aligned}\n\\]"
+    "objectID": "contents/aula-14.html#paridade-global-p_g",
+    "href": "contents/aula-14.html#paridade-global-p_g",
+    "title": "Aula 14Código de Hamming",
+    "section": "Paridade Global (\\(P_G\\))",
+    "text": "Paridade Global (\\(P_G\\))\n\nAdiciona um 8º bit ao vetor: o bit de paridade global (\\(P_G\\)).\nEstrutura: \\([D_3, D_2, D_1, D_0 \\mid P_2, P_1, P_0 \\mid P_G]\\)\nPermite a capacidade SEC-DED:\n\nSEC: Single Error Correction (Correção de Erro Único)\nDED: Double Error Detection (Detecção de Erro Duplo)"
   },
   {
-    "objectID": "contents/aula-3.html#forma-pos",
-    "href": "contents/aula-3.html#forma-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Forma POS",
-    "text": "Forma POS\n\n\n\n\n\nID\nA\nB\nC\n\\(F\\)\n\n\n\n\n0\n0\n0\n0\n0\n\n\n1\n0\n0\n1\n0\n\n\n2\n0\n1\n0\n1\n\n\n3\n0\n1\n1\n0\n\n\n4\n1\n0\n0\n1\n\n\n5\n1\n0\n1\n1\n\n\n6\n1\n1\n0\n1\n\n\n7\n1\n1\n1\n1\n\n\n\n\n\nEscrito quando a função está em baixo\n\nBaixo no ID 0 - 1, 3 \\[\n\\begin{aligned}\nF = (A+B+C) \\cdot (A+B+\\bar{C}) \\cdot (A+\\bar{B}+\\bar{C})\n\\end{aligned}\n\\]"
+    "objectID": "contents/aula-14.html#algoritmo-de-verificação-sec-ded",
+    "href": "contents/aula-14.html#algoritmo-de-verificação-sec-ded",
+    "title": "Aula 14Código de Hamming",
+    "section": "Algoritmo de Verificação SEC-DED",
+    "text": "Algoritmo de Verificação SEC-DED\n\nPasso 1: Calcula as paridades locais (\\(P_0, P_1, P_2\\)) para localizar um possível erro.\nPasso 2: Avalia o bit de paridade global \\(P_G\\):\n\nParidades locais indicam erro E \\(P_G\\) falha \\(\\rightarrow\\) 1 erro (corrigível).\nParidades locais indicam erro E \\(P_G\\) passa \\(\\rightarrow\\) 2 erros (detectados, não corrigíveis)."
   },
   {
-    "objectID": "contents/aula-3.html#literal",
-    "href": "contents/aula-3.html#literal",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Literal",
-    "text": "Literal\n\nVariável booleana (inclui também o seu complemento)\n\n\\(B \\text{ e } \\bar{B}\\) são literais"
-  },
-  {
-    "objectID": "contents/aula-3.html#minterm-mintermo",
-    "href": "contents/aula-3.html#minterm-mintermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Minterm (Mintermo)",
-    "text": "Minterm (Mintermo)\n\nProduto de literais\nCada variável aparece \\(1x\\) na forma V ou F, mas não em ambas\nCada termo individual de uma função na forma SOP é chamado de minterm\n\n\\(AB, A\\bar{B}, \\bar{A}B\\) são mintermos"
-  },
-  {
-    "objectID": "contents/aula-3.html#maxterm-maxtermo",
-    "href": "contents/aula-3.html#maxterm-maxtermo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Maxterm (Maxtermo)",
-    "text": "Maxterm (Maxtermo)\n\nSoma de literais distintos com/sem complementos\nCada termo individual de uma função na forma POS é chamado de maxterm\n\n\\((A+B), (A+\\bar{B}), (\\bar{A}+B)\\) são mintermos\n\nOposto do mintermo"
-  },
-  {
-    "objectID": "contents/aula-3.html#comparativo",
-    "href": "contents/aula-3.html#comparativo",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Comparativo",
-    "text": "Comparativo\n\n\n\nA\nB\nSOP minterm\nPOS maxterm\n\n\n\n\n0\n0\n\\(\\bar{A}\\bar{B}\\)\n\\(A+B\\)\n\n\n0\n1\n\\(\\bar{A}B\\)\n\\(A+\\bar{B}\\)\n\n\n1\n0\n\\(A\\bar{B}\\)\n\\(\\bar{A}+B\\)\n\n\n1\n1\n\\(AB\\)\n\\(\\bar{A}+\\bar{B}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização",
-    "href": "contents/aula-3.html#aplicando-minimização",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A\\bar{B}}\\bar{C}+\n\\underline{A\\bar{B}}C+\n\\underline{AB}\\bar{C}+\n\\underline{AB}C \\\\\n\nF &= \\bar{A}B\\bar{C}+\nA\\bar{B} \\cdot [C + \\bar{C}]+\nAB \\cdot [C + \\bar{C}] \\\\\n\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-1",
-    "href": "contents/aula-3.html#aplicando-minimização-1",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+\n\\underline{A}\\bar{B}+\n\\underline{A}B \\\\\nF &= \\bar{A}B\\bar{C}+A \\cdot [B+\\bar{B}]\\\\\nF &= \\bar{A}B\\bar{C}+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-2",
-    "href": "contents/aula-3.html#aplicando-minimização-2",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}B\\bar{C}+A \\\\\n(x &= B\\bar{C})\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-3",
-    "href": "contents/aula-3.html#aplicando-minimização-3",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\[\\begin{aligned}\nF &= \\bar{A}x+A\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#aplicando-minimização-4",
-    "href": "contents/aula-3.html#aplicando-minimização-4",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Aplicando Minimização",
-    "text": "Aplicando Minimização\n\n\\(F=A+x\\)  \\(F=A+B\\bar{C}\\)"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-pos-to-sop",
-    "href": "contents/aula-3.html#conversão-pos-to-sop",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão POS \\(\\to\\) SOP",
-    "text": "Conversão POS \\(\\to\\) SOP\n\n\\[\\begin{aligned}\nY &= (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C}) \\\\\n\\overline{Y} &= \\overline{\n  (A+B+C) \\cdot (A+B+\\overline{C}) \\cdot (A+\\overline{B}+\\overline{C})\n} \\\\\n\n\\overline{Y} &= \\overline{(A+B+C)} +\n\\overline{(A+B+\\overline{C})} +\n\\overline{(A+\\overline{B}+\\overline{C})} \\\\\n\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "contents/aula-3.html#conversão-sop-to-pos",
-    "href": "contents/aula-3.html#conversão-sop-to-pos",
-    "title": "Aula 3  Formas SOP e POS",
-    "section": "Conversão SOP \\(\\to\\) POS",
-    "text": "Conversão SOP \\(\\to\\) POS\n\n\\[\\begin{aligned}\n\\overline{Y} &= \\bar{A}\\bar{B}\\bar{C} +\n\\bar{A}\\bar{B}C +\n\\bar{A}BC \\\\\n\n\\overline{\\overline{Y}} &= \\overline{\n  \\bar{A}\\bar{B}\\bar{C} +\n  \\bar{A}\\bar{B}C +\n  \\bar{A}BC\n} \\\\\n\nY &= \\overline{\\bar{A}\\bar{B}\\bar{C}} \\cdot\n\\overline{\\bar{A}\\bar{B}C} \\cdot\n\\overline{\\bar{A}BC} \\cdot \\\\\n\nY &= (A+B+C) \\cdot\n(A+B+\\overline{C}) \\cdot\n(A+\\overline{B}+\\overline{C})\n\\end{aligned}\\]"
+    "objectID": "contents/aula-14.html#análise-visual-do-sec-ded",
+    "href": "contents/aula-14.html#análise-visual-do-sec-ded",
+    "title": "Aula 14Código de Hamming",
+    "section": "Análise Visual do SEC-DED",
+    "text": "Análise Visual do SEC-DED"
   }
 ]
