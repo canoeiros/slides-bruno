@@ -1,5 +1,8 @@
 ---
 title: "Aula 5 <br> Portas Lógicas II"
+order: 5
+index: 5
+categories: ["Unidade 1"]
 subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
 author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
 lang: "pt-BR"

@@ -1,5 +1,8 @@
 ---
 title: "Aula 1 <br> Números Binários"
+order: 1
+index: 1
+categories: ["Unidade 1"]
 author: ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
 subtitle: "MATA38 - Projeto de Circuitos Lógicos <br> <a href='../'>Página Inicial</a>"
 lang: "pt-BR"

@@ -1,0 +1,482 @@
+---
+title: "Aula 8<br>Conversão: Base Qualquer Decimal"
+order: 8
+index: 8
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Conversão: Base Qualquer $\rightarrow$ Decimal
+
+## Generalização: Base $r \rightarrow$ Decimal
+- Para converter um número em qualquer base $r$ para a base **Decimal** ($r=10$), expande-se a **soma ponderada** das suas potências de $r$.
+
+$$
+(\dots a_3 a_2 a_1 a_0 \cdot a_{-1} a_{-2} \dots)_r = (\dots)_{10}
+$$
+
+::: {.callout-note}
+## Fórmula da Expansão Posicional
+$$
+\dots + a_3 \cdot r^3 + a_2 \cdot r^2 + a_1 \cdot r^1 + a_0 \cdot r^0 + a_{-1} \cdot r^{-1} + a_{-2} \cdot r^{-2} + \dots
+$$
+:::
+
+---
+
+## Binário $\rightarrow$ Decimal: Exemplo
+
+**Exemplo:** Converter $(10101,11)_2 \rightarrow (\ \ \dots\ \ )_{10}$
+
+- **Posições dos dígitos:**
+
+$$
+\begin{array}{rcccccc}
+\text{Dígito:} & 1 & 0 & 1 & 0 & 1 \ \cdot\ 1 & 1 \\
+\text{Posição ($i$):} & 4 & 3 & 2 & 1 & 0 \ \ \ \ -1 & -2
+\end{array}
+$$
+
+- **Expansão:**
+
+$$
+1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 + 1 \cdot 2^{-1} + 1 \cdot 2^{-2}
+$$
+
+---
+
+## Binário $\rightarrow$ Decimal: Resolução
+
+- **Parte Inteira:**
+  $$16 + 0 + 4 + 0 + 1 = 21$$
+
+- **Parte Fracionária:**
+  $$\frac{1}{2^1} + \frac{1}{2^2} = \frac{1}{2} + \frac{1}{4} = \frac{2 + 1}{4} = 0,75$$
+
+::: {.callout-tip}
+## Resultado Final
+$$21 + 0,75 = (21,75)_{10}$$
+:::
+
+---
+
+## Exercício Proposto (Binário $\rightarrow$ Decimal)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+Converta o número binário com parte fracionária para a base decimal:
+
+$$
+(1101100,101)_2 \rightarrow (\ \ \dots\ \ )_{10}
+$$
+:::
+
+---
+
+## Octal $\rightarrow$ Decimal: Conceito
+- Base $r = 8$ (dígitos de 0 a 7).
+- A parte inteira é multiplicada por potências de **$8^i$** ($i \ge 0$).
+- A parte fracionária é multiplicada por potências de **$8^{-i}$** ($i \ge 1$).
+
+$$
+\underbrace{O_3 O_2 O_1 O_0}_{\text{Parte Inteira}} \cdot \underbrace{O_{-1} O_{-2}}_{\text{Parte Fracionária}}
+$$
+
+$$
+O_3 \cdot 8^3 + O_2 \cdot 8^2 + O_1 \cdot 8^1 + O_0 \cdot 8^0 + O_{-1} \cdot 8^{-1} + O_{-2} \cdot 8^{-2}
+$$
+
+---
+
+## Octal $\rightarrow$ Decimal: Exemplo 1
+
+**Exemplo 1:** Converter $(57,4)_8 \rightarrow (\ \ \dots\ \ )_{10}$
+
+- **Expansão:**
+  $$5 \cdot 8^1 + 7 \cdot 8^0 + 4 \cdot 8^{-1}$$
+
+- **Cálculo:**
+  $$40 + 7 + \frac{4}{8} = 47 + 0,5$$
+
+::: {.callout-tip}
+## Resultado
+$$(57,4)_8 = (47,5)_{10}$$
+:::
+
+---
+
+## Octal $\rightarrow$ Decimal: Exemplo 2
+
+**Exemplo 2:** Converter $(4507,44)_8 \rightarrow (\ \ \dots\ \ )_{10}$
+
+$$
+4 \cdot 8^3 + 5 \cdot 8^2 + 0 \cdot 8^1 + 7 \cdot 8^0 + 4 \cdot 8^{-1} + 4 \cdot 8^{-2}
+$$
+
+- **Valores das potências:**
+  $$4 \cdot 512 + 5 \cdot 64 + 0 \cdot 8 + 7 \cdot 1 + \frac{4}{8} + \frac{4}{64}$$
+  $$2048 + 320 + 0 + 7 + \frac{8 + 1}{16}$$
+
+::: {.callout-tip}
+## Resultado
+$$2375 + 0,5625 = (2375,5625)_{10}$$
+:::
+
+---
+
+## Exercícios Propostos (Octal $\rightarrow$ Decimal)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+1. $(601)_8 \rightarrow (\ \ \dots\ \ )_{10}$
+2. $(1070,02)_8 \rightarrow (\ \ \dots\ \ )_{10}$
+:::
+
+---
+
+## Hexadecimal $\rightarrow$ Decimal: Conceito
+- Base $r = 16$ (dígitos de 0 a 9 e letras de A a F).
+- A expansão utiliza potências da base **16**.
+
+::: {.columns}
+::: {.column}
+$$
+\begin{aligned}
+&h_3 h_2 h_1 h_0 \cdot h_{-1} h_{-2} \\
+=\ &h_3 \cdot 16^3 + h_2 \cdot 16^2 + h_1 \cdot 16^1 + h_0 \cdot 16^0 \\
+&+\ h_{-1} \cdot 16^{-1} + h_{-2} \cdot 16^{-2}
+\end{aligned}
+$$
+:::
+
+::: {.column}
+**Mapeamento Hexadecimal:**
+- $A \rightarrow 10$
+- $B \rightarrow 11$
+- $C \rightarrow 12$
+- $D \rightarrow 13$
+- $E \rightarrow 14$
+- $F \rightarrow 15$
+:::
+:::
+
+---
+
+## Hexadecimal $\rightarrow$ Decimal: Exemplo 1
+
+**Exemplo 1:** Converter $(\text{BAD})_{16} \rightarrow (\ \ \dots\ \ )_{10}$
+
+- **Substituição dos símbolos:** $B=11$, $A=10$, $D=13$
+- **Expansão:**
+  $$11 \cdot 16^2 + 10 \cdot 16^1 + 13 \cdot 16^0$$
+  $$11 \cdot 256 + 10 \cdot 16 + 13 \cdot 1$$
+  $$2816 + 160 + 13$$
+
+::: {.callout-tip}
+## Resultado
+$$(\text{BAD})_{16} = (2989)_{10}$$
+:::
+
+---
+
+## Hexadecimal $\rightarrow$ Decimal: Exemplo 2
+
+**Exemplo 2:** Converter $(57,4)_{16} \rightarrow (\ \ \dots\ \ )_{10}$
+
+- **Expansão:**
+  $$5 \cdot 16^1 + 7 \cdot 16^0 + 4 \cdot 16^{-1}$$
+  $$80 + 7 + \frac{4}{16}$$
+  $$80 + 7 + 0,25$$
+
+::: {.callout-tip}
+## Resultado
+$$(57,4)_{16} = (87,25)_{10}$$
+:::
+
+---
+
+## Exercício Proposto (Hexadecimal $\rightarrow$ Decimal)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+Converta o número hexadecimal fracionário para a base decimal:
+
+$$
+(\text{BFF,C})_{16} \rightarrow (\ \ \dots\ \ )_{10}
+$$
+:::
+
+---
+
+# Conversão: Binário $\Longleftrightarrow$ Octal
+
+## Relação Binário e Octal
+- Existem **8 dígitos** no sistema octal ($0$ a $7$).
+- Como $2^3 = 8$, **cada dígito octal** equivale a um grupo de **3 bits** em binário.
+
+::: {.columns}
+::: {.column}
+::: {.list-table}
+
+- - Octal
+  - Binário
+- - 0
+  - 000
+- - 1
+  - 001
+- - 2
+  - 010
+- - 3
+  - 011
+
+:::
+:::
+
+::: {.column}
+::: {.list-table}
+
+- - Octal
+  - Binário
+- - 4
+  - 100
+- - 5
+  - 101
+- - 6
+  - 110
+- - 7
+  - 111
+
+:::
+:::
+:::
+
+---
+
+## Octal $\rightarrow$ Binário: Exemplos
+
+Substitua **cada dígito octal** por seu equivalente em **3 bits**:
+
+- **Exemplo 1:** $(37,45)_8 \rightarrow (\ \ \dots\ \ )_2$
+  $$3 \rightarrow 011 \quad|\quad 7 \rightarrow 111 \quad\cdot\quad 4 \rightarrow 100 \quad|\quad 5 \rightarrow 101$$
+  $$(37,45)_8 = (011111,100101)_2$$
+
+- **Exemplo 2:** $(22,07)_8 \rightarrow (\ \ \dots\ \ )_2$
+  $$2 \rightarrow 010 \quad|\quad 2 \rightarrow 010 \quad\cdot\quad 0 \rightarrow 000 \quad|\quad 7 \rightarrow 111$$
+  $$(22,07)_8 = (010010,000111)_2$$
+
+---
+
+## Binário $\rightarrow$ Octal: Regra Prática
+
+1. **Localize o ponto** fracionário.
+2. **Forme grupos de 3 bits**:
+   - Parte **inteira**: agrupe da **direita para a esquerda** ($\leftarrow$).
+   - Parte **fracionária**: agrupe da **esquerda para a direita** ($\rightarrow$).
+3. Complete com **zeros à esquerda/direita** se necessário (não altera o valor).
+4. Substitua cada grupo de 3 bits pelo dígito **octal correspondente**.
+
+---
+
+## Binário $\rightarrow$ Octal: Exemplos
+
+- **Exemplo 1:** $(010110,110)_2 \rightarrow (\ \ \dots\ \ )_8$
+  $$\underbrace{010}_{2} \ \underbrace{110}_{6} \ \cdot \ \underbrace{110}_{6} \implies (26,6)_8$$
+
+- **Exemplo 2:** $(1001,1)_2 \rightarrow (\ \ \dots\ \ )_8$
+  - Adicionando zeros de preenchimento:
+  $$\underbrace{001}_{1} \ \underbrace{001}_{1} \ \cdot \ \underbrace{100}_{4} \implies (11,4)_8$$
+
+---
+
+## Exercícios Propostos (Binário $\Longleftrightarrow$ Octal)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+1. **Octal para Binário:**
+   $$(672,13)_8 \rightarrow (\ \ \dots\ \ )_2$$
+
+2. **Binário para Octal:**
+   $$(10111011,1001)_2 \rightarrow (\ \ \dots\ \ )_8$$
+:::
+
+---
+
+# Conversão: Hexadecimal $\Longleftrightarrow$ Binário
+
+## Relação Hexadecimal e Binário
+- Existem **16 dígitos** no sistema hexadecimal ($r=16$).
+- Como $2^4 = 16$, **cada dígito hexadecimal** equivale a **4 bits** em binário.
+
+::: {.columns}
+::: {.column}
+::: {.list-table}
+
+- - Hex
+  - Binário
+- - 0
+  - 0000
+- - 1
+  - 0001
+- - 2
+  - 0010
+- - 3
+  - 0011
+- - 4
+  - 0100
+- - 5
+  - 0101
+- - 6
+  - 0110
+- - 7
+  - 0111
+
+:::
+:::
+
+::: {.column}
+::: {.list-table}
+
+- - Hex
+  - Binário
+- - 8
+  - 1000
+- - 9
+  - 1001
+- - A (10)
+  - 1010
+- - B (11)
+  - 1011
+- - C (12)
+  - 1100
+- - D (13)
+  - 1101
+- - E (14)
+  - 1110
+- - F (15)
+  - 1111
+
+:::
+:::
+:::
+
+---
+
+## Hexadecimal $\rightarrow$ Binário: Exemplos
+
+Substitua **cada dígito hexadecimal** por seu grupo de **4 bits**:
+
+- **Exemplo 1:** $(259\text{A})_{16} \rightarrow (\ \ \dots\ \ )_2$
+  $$2 \rightarrow 0010 \quad|\quad 5 \rightarrow 0101 \quad|\quad 9 \rightarrow 1001 \quad|\quad \text{A} \rightarrow 1010$$
+  $$(259\text{A})_{16} = (0010010110011010)_2$$
+
+- **Exemplo 2:** $(\text{CAFE},3\text{D})_{16} \rightarrow (\ \ \dots\ \ )_2$
+  $$\text{C} \rightarrow 1100 \quad|\quad \text{A} \rightarrow 1010 \quad|\quad \text{F} \rightarrow 1111 \quad|\quad \text{E} \rightarrow 1110$$
+  $$\cdot \quad 3 \rightarrow 0011 \quad|\quad \text{D} \rightarrow 1101$$
+  $$(\text{CAFE},3\text{D})_{16} = (1100101011111110,00111101)_2$$
+
+---
+
+## Binário $\rightarrow$ Hexadecimal: Exemplo
+
+- Agrupe de **4 em 4 bits** a partir do ponto fracionário.
+- Complete com zeros quando necessário.
+
+**Exemplo:** $(10001001,11)_2 \rightarrow (\ \ \dots\ \ )_{16}$
+
+- **Agrupamento:**
+  $$\underbrace{1000}_{8} \ \underbrace{1001}_{9} \ \cdot \ \underbrace{1100}_{\text{C}}$$
+
+::: {.callout-tip}
+## Resultado
+$$(10001001,11)_2 = (89,\text{C})_{16}$$
+:::
+
+---
+
+## Exercícios Propostos (Hexadecimal $\Longleftrightarrow$ Binário)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+1. **Hexadecimal para Binário:**
+   $$(\text{FACE})_{16} \rightarrow (\ \ \dots\ \ )_2$$
+
+2. **Binário para Hexadecimal:**
+   $$(1101111010101111)_2 \rightarrow (\ \ \dots\ \ )_{16}$$
+:::
+
+---
+
+# Conversão: Hexadecimal $\Longleftrightarrow$ Octal
+
+## A Ponte pelo Sistema Binário
+- **NÃO** existe uma conversão direta e simples entre a base **Hexadecimal** e a base **Octal**.
+- A conversão deve obrigatoriamente usar o **Binário** como intermediário!
+
+```{mermaid}
+flowchart LR
+    HEX[Hexadecimal] <-->|Grupos de 4 bits| BIN[Binário]
+    BIN <-->|Grupos de 3 bits| OCT[Octal]
+    HEX -.-x|Não direta!| OCT
+```
+
+---
+
+## Hexadecimal $\rightarrow$ Octal: Exemplo
+
+**Exemplo:** Converter $(\text{CAD})_{16} \rightarrow (\ \ \dots\ \ )_8$
+
+1. **Passo 1: Hexadecimal $\rightarrow$ Binário (4 bits cada)**
+   $$\text{C} \rightarrow 1100 \quad|\quad \text{A} \rightarrow 1010 \quad|\quad \text{D} \rightarrow 1101$$
+   $$(\text{CAD})_{16} = (110010101101)_2$$
+
+2. **Passo 2: Binário $\rightarrow$ Octal (Reagrupar em 3 bits)**
+   $$\underbrace{110}_{6} \ \ \underbrace{010}_{2} \ \ \underbrace{101}_{5} \ \ \underbrace{101}_{5}$$
+
+::: {.callout-tip}
+## Resultado Final
+$$(\text{CAD})_{16} = (6255)_8$$
+:::
+
+---
+
+## Octal $\rightarrow$ Hexadecimal: Exemplo
+
+**Exemplo:** Converter $(652)_8 \rightarrow (\ \ \dots\ \ )_{16}$
+
+1. **Passo 1: Octal $\rightarrow$ Binário (3 bits cada)**
+   $$6 \rightarrow 110 \quad|\quad 5 \rightarrow 101 \quad|\quad 2 \rightarrow 010$$
+   $$(652)_8 = (110101010)_2$$
+
+2. **Passo 2: Binário $\rightarrow$ Hexadecimal (Reagrupar em 4 bits)**
+   $$\underbrace{0001}_{1} \ \ \underbrace{1010}_{\text{A}} \ \ \underbrace{1010}_{\text{A}}$$
+
+::: {.callout-tip}
+## Resultado Final
+$$(652)_8 = (1\text{AA})_{16}$$
+:::
+
+---
+
+## Exercícios Propostos (Hexadecimal $\Longleftrightarrow$ Octal)
+
+::: {.callout-warning}
+## Para Praticar em Casa (H.W.)
+1. **Hexadecimal para Octal:**
+   $$(\text{CAFE})_{16} \rightarrow (\ \ \dots\ \ )_8$$
+
+2. **Octal para Hexadecimal:**
+   $$(707)_8 \rightarrow (\ \ \dots\ \ )_{16}$$
+:::

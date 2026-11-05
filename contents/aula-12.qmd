@@ -1,0 +1,338 @@
+---
+title: "Aula 12<br>Representação de Números: Ponto Fixo e Ponto Flutuante"
+order: 12
+index: 12
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Representação de Números: Ponto Fixo e Ponto Flutuante
+
+## Contexto: Inteiros em Binário
+
+- Sistemas digitais representam inteiros por **pesos direcionados** em potências de 2.
+- Exemplo de conversão de **Binário para Decimal**:
+  - Binário: `00110110`
+  - Potências ativas: $2^5 + 2^4 + 2^2 + 2^1$
+  - Cálculo: $32 + 16 + 4 + 2 = \mathbf{54_{10}}$
+
+---
+
+## Representação em Ponto Fixo
+
+- Divide a palavra binária em **duas partes fixas**: porção inteira e porção decimal.
+- O ponto fracionário (**radix**) fica em uma posição pré-determinada.
+- **Estrutura (8 bits - 4 inteiros / 4 fracionários)**:
+
+```
+ Inteira   Decimal
+[ 0 0 1 1 . 0 1 1 0 ]
+```
+
+---
+
+## Pesos em Ponto Fixo
+
+- **Porção Inteira**: $2^3, 2^2, 2^1, 2^0$ (Valores: $8, 4, 2, 1$)
+- **Porção Decimal**: $2^{-1}, 2^{-2}, 2^{-3}, 2^{-4}$ (Valores: $\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}$)
+
+::: {.fragment}
+::: {.callout-tip}
+## Exemplo de Cálculo
+$$\text{Binário: } 0011.0110_2 = (2 + 1) + (0.25 + 0.125) = \mathbf{3.375_{10}}$$
+:::
+:::
+
+---
+
+## Faixa de Valores (Range) em 8 Bits
+
+- **Inteiro sem sinal (8 bits)**:
+  - Faixa: $0$ até $255$ (`00000000` a `11111111`)
+- **Ponto Fixo (4 bits inteiros / 4 bits fracionários)**:
+  - Mínimo: `0000.0000` $= \mathbf{0}$
+  - Máximo: `1111.1111` $= 15 + 0.9375 = \mathbf{15.9375}$
+- **Conclusão**: Reduz-se o alcance para obter resolução fracionária.
+
+---
+
+## Limitações da Representação em Ponto Fixo
+
+- **Overflow Inteiro**: Não representa valores $\ge 16$ no formato 4.4.
+- **Underflow Fracionário**: Menor valor maior que zero é $2^{-4} = 0.0625$.
+- **Inexatidão Fracionária**: 
+  - $0.2_{10} = \frac{1}{5}$ gera uma **dízima binária**.
+  - Não pode ser obtido por combinações exatas de potências de 2.
+
+---
+
+# O Padrão IEEE 754
+
+## Motivação e Histórico
+
+- O ponto fixo é engessado para amplitudes muito grandes ou muito pequenas.
+- **Padrão IEEE 754 (1985)**:
+  - Proposto por **William Kahan** (Intel 8087).
+  - Padrão universal para **ponto flutuante** em hardware.
+  - Baseado na **notação científica binária**:
+
+$$\pm 1.m_1 m_2 \dots \times 2^E$$
+
+---
+
+## Notação Científica Binária
+
+- Em decimal: $5.625_{10} = 0.5625 \times 10^1$
+- Em binário: $(5.625)_{10} = (101.101)_2 = 0.101101_2 \times 2^3$
+- Permite representar números imensos ou minúsculos deslocando a vírgula.
+
+---
+
+## A Necessidade de Normalização
+
+- Um mesmo número binário pode ter **múltiplas formas**:
+  - $(101.101)_2 = 0.101101 \times 2^3$
+  - $(101.101)_2 = 1.01101 \times 2^2$
+  - $(101.101)_2 = 0.0101101 \times 2^4$
+- **Solução**: Definir uma forma única padrão (Normalização).
+
+---
+
+## Tipos de Normalização
+
+- **Normalização Explícita**:
+  - Ponto posicionado à **esquerda** do bit 1 mais significativo.
+  - Exemplo: $(101.101)_2 \rightarrow \mathbf{0.101101 \times 2^3}$
+- **Normalização Implícita (Adotada no IEEE 754)**:
+  - Ponto posicionado à **direita** do bit 1 mais significativo.
+  - Exemplo: $(101.101)_2 \rightarrow \mathbf{1.01101 \times 2^2}$
+
+---
+
+# Viés do Expoente (Biasing)
+
+## O Problema do Sinal no Expoente
+
+- O expoente de um ponto flutuante precisa ter **sinal**:
+  - Expoentes positivos: números grandes.
+  - Expoentes negativos: números fracionários pequenos.
+- Usar **Complemento de 2** dificulta comparações rápidas por hardware.
+
+---
+
+## Conceito de Biasing (Excesso N)
+
+- Em vez de complemento de 2, adiciona-se uma constante (**Bias**) ao expoente real.
+- O expoente armazenado fica **sempre positivo**.
+
+::: {.fragment}
+::: {.callout-note}
+## Exemplo (Viés Excesso 8)
+Para expoentes reais no intervalo $[-8, 7]$, soma-se $+8$:
+$$\text{Expoente Real } (-1) + 8 = \mathbf{7 \text{ (Armazenado como inteiro sem sinal)}}$$
+:::
+:::
+
+---
+
+## Cálculo do Viés (Bias)
+
+- Para um expoente codificado em **$k$ bits**:
+
+$$\text{Bias} = 2^{k-1} - 1$$
+
+- **Precisão Simples ($k = 8$ bits)**: $\text{Bias} = 2^7 - 1 = \mathbf{127}$
+- **Precisão Dupla ($k = 11$ bits)**: $\text{Bias} = 2^{10} - 1 = \mathbf{1023}$
+
+---
+
+## Vantagem da Representação com Viés
+
+- Mantém os expoentes em **ordem sequencial crescente**.
+- Permite usar **comparadores de inteiros sem sinal** em hardware.
+- Acelera operações de comparação e ordenação de números reais.
+
+---
+
+# Precisão Simples (32 Bits)
+
+## Layout da Precisão Simples
+
+- Formato de 32 bits no IEEE 754:
+  - **Sinal (S)**: 1 bit (bit 31)
+  - **Expoente (E)**: 8 bits (bits 30 a 23)
+  - **Mantissa (M)**: 23 bits (bits 22 a 0)
+
+```
+ [ S ] [  EXPOENTE (8 bits)  ] [      MANTISSA (23 bits)      ]
+ 1 bit       Com Viés (+127)               Fracionária
+```
+
+---
+
+## Equação Geral (Precisão Simples)
+
+- Para números normalizados:
+
+$$(-1)^S \times (1 + M) \times 2^{(E - 127)}$$
+
+- **$S$**: Bit de sinal ($0 \rightarrow +$, $1 \rightarrow -$).
+- **$1 + M$**: Mantissa com o bit $1$ implícito à esquerda do ponto.
+- **$E - 127$**: Expoente real restaurado após subtrair o viés.
+
+---
+
+## Decodificando IEEE 754 (Bits $\rightarrow$ Decimal)
+
+- Considere a palavra de 32 bits:
+  `0 10000011 00010010000000000000000`
+
+- **Sinal ($S$)**: $0 \rightarrow \mathbf{\text{Positivo (+)}}$
+- **Expoente Armazenado ($E$)**:
+  - $(10000011)_2 = 128 + 2 + 1 = \mathbf{131}$
+- **Expoente Real**:
+  - $E - 127 = 131 - 127 = \mathbf{4}$
+
+---
+
+## Decodificando Mantissa e Magnitude
+
+- **Mantissa ($M$)**: `0001001000...`
+  - Posicionamento: $2^{-4} = \frac{1}{16}$, $2^{-7} = \frac{1}{128}$
+- **Magnitude $(1 + M)$**:
+
+$$1 + \frac{1}{16} + \frac{1}{128} = 1 + \frac{9}{128} = \mathbf{\frac{137}{128}}$$
+
+---
+
+## Decodificando: Valor Final
+
+- Aplicando na fórmula geral:
+
+$$\text{Valor} = +1 \times \frac{137}{128} \times 2^4$$
+
+$$\text{Valor} = \frac{137}{128} \times 16 = \frac{2192}{128} = \mathbf{17.125_{10}}$$
+
+---
+
+## Codificando (Decimal $\rightarrow$ IEEE 754)
+
+- Converter $17.125_{10}$ para a representação de 32 bits:
+- **Passo 1: Parte Inteira**
+  - $17_{10} = \mathbf{10001_2}$
+- **Passo 2: Parte Fracionária**
+  - $0.125 \times 2 = 0.25 \rightarrow 0$
+  - $0.25 \times 2 = 0.5 \rightarrow 0$
+  - $0.5 \times 2 = 1.0 \rightarrow 1$
+  - $0.125_{10} = \mathbf{0.001_2}$
+
+---
+
+## Codificando: Normalização e Campos
+
+- **Forma Binária Não Normalizada**: $10001.001_2$
+- **Normalização Implícita**:
+  $$10001.001_2 = \mathbf{1.0001001_2 \times 2^4}$$
+- **Campos**:
+  - **Sinal**: $S = 0$ (Positivo)
+  - **Expoente**: $4 + 127 = 131 = \mathbf{10000011_2}$
+  - **Mantissa**: `00010010000000000000000` (23 bits)
+
+---
+
+# Precisão Dupla e Outros Formatos
+
+## Precisão Dupla (64 Bits)
+
+- Proporciona maior alcance dinâmico e precisão:
+  - **Sinal (S)**: 1 bit
+  - **Expoente (E)**: 11 bits ($\text{Bias} = \mathbf{1023}$)
+  - **Mantissa (M)**: 52 bits
+
+$$\text{Valor} = (-1)^S \times (1 + M) \times 2^{(E - 1023)}$$
+
+---
+
+## Formatos Padronizados IEEE 754
+
+::: {.list-table}
+
+- - Nome Padrão
+  - Nome Comum
+  - Bits Exp.
+  - Bias
+  - Bits Mantissa
+- - binary16
+  - Half Precision
+  - 5
+  - 15
+  - 10
+- - binary32
+  - Single Precision
+  - 8
+  - 127
+  - 23
+- - binary64
+  - Double Precision
+  - 11
+  - 1023
+  - 52
+- - binary128
+  - Quadruple Precision
+  - 15
+  - 16383
+  - 112
+
+:::
+
+---
+
+# Casos Especiais do IEEE 754
+
+## Representações Especiais
+
+- Determinadas combinações de $E$ e $M$ são reservadas para exceções:
+  - **Zero ($\pm 0$)**: $E = 0$ e $M = 0$.
+  - **Infinito ($\pm \infty$)**: $E = E_{\text{máx}}$ e $M = 0$.
+  - **NaN (Not a Number)**: $E = E_{\text{máx}}$ e $M \neq 0$ (ex: $\sqrt{-1}$, $0/0$).
+  - **Desnormalizados**: $E = 0$ e $M \neq 0$ (números extremamente pequenos).
+
+---
+
+## Tabela de Casos Especiais (Precisão Simples - 32 Bits)
+
+::: {.list-table}
+
+- - Expoente ($E$)
+  - Mantissa ($M$)
+  - Significado / Valor
+- - $E = 0$
+  - $M = 0$
+  - Zero ($\pm 0$)
+- - $E = 0$
+  - $M \neq 0$
+  - Forma Fracionária / Desnormalizada
+- - $1 \le E \le 254$
+  - Qualquer $M$
+  - Número Normalizado Implícito
+- - $E = 255$
+  - $M = 0$
+  - Infinito ($\pm \infty$)
+- - $E = 255$
+  - $M \neq 0$
+  - NaN (Not a Number)
+
+:::

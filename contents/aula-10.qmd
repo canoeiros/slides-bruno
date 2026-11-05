@@ -1,0 +1,261 @@
+---
+title: "Aula 10<br>Conceito de Complemento"
+order: 10
+index: 10
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Conceito de Complemento
+
+## Introdução aos Complementos
+
+- Usados em **sistemas digitais** para simplificar operações lógicas e aritméticas.
+- Permitem transformar operações de **subtração em adição**.
+- Simplificam o projeto de hardware para representação de números **positivos e negativos**.
+
+---
+
+## Tipos de Complementos
+
+Para qualquer sistema de numeração de base $r$:
+
+::: {.columns}
+::: {.column}
+### Complemento de $r$
+- **Radix Complement**
+- Representado por $r$'s complement
+- Ex.: Complemento de 10, Complemento de 2
+:::
+
+::: {.column}
+### Complemento de $r-1$
+- **Diminished Radix Complement**
+- Representado por $(r-1)$'s complement
+- Ex.: Complemento de 9, Complemento de 1
+:::
+:::
+
+---
+
+## Complemento de Radix ($r$'s Complement)
+
+- Para um número $N$ de $n$ dígitos na base $r$:
+
+$$r\text{'s comp} = r^n - N$$
+
+- Onde:
+  - **$N$**: número original dado
+  - **$n$**: número total de dígitos de $N$
+  - **$r$**: base do sistema numérico
+
+---
+
+## Exemplo: Base Decimal ($r = 10$)
+
+- **Determinar o complemento de $10$ de $N = 5690$**:
+  - $n = 4$ dígitos, $r = 10$
+  
+$$
+\begin{aligned}
+\text{Comp.} &= 10^4 - 5690 \\
+             &= 10000 - 5690 \\
+             &= 4310
+\end{aligned}
+$$
+
+- **Exemplo com 1 dígito ($N = 7$)**:
+  $$10^1 - 7 = 3$$
+
+---
+
+## Exemplo: Base Binária ($r = 2$)
+
+- **Determinar o complemento de $2$ de $N = (1101)_2$**:
+  - $n = 4$ bits, $r = 2$
+
+$$
+\begin{aligned}
+\text{Comp.} &= (2^4)_{10} - (1101)_2 \\
+             &= (16)_{10} - (1101)_2 \\
+             &= (10000)_2 - (1101)_2 \\
+             &= (00011)_2 = (11)_2
+\end{aligned}
+$$
+
+::: {.callout-note}
+## Verificação em Decimal
+$16 - 13 = 3 = (11)_2$
+:::
+
+
+# Complemento $(r-1)$
+
+## Relação entre Complementos
+
+| Base ($r$) | $r$'s Complement | $(r-1)$'s Complement |
+| :---: | :---: | :---: |
+| $r = 10$ | 10's comp | 9's comp |
+| $r = 2$ | 2's comp | 1's comp |
+| $r = 8$ | 8's comp | 7's comp |
+| $r = 16$ | 16's comp | F's comp |
+
+---
+
+## Fórmula do Complemento $(r-1)$
+
+- Pela definição:
+
+$$(r-1)\text{'s comp} = r^n - N - 1 = (r^n - 1) - N$$
+
+- **Relação fundamental**:
+
+$$(r-1)\text{'s comp} + 1 = r\text{'s comp}$$
+
+::: {.callout-tip}
+## Vantagem Computacional
+O cálculo do complemento $(r-1)$ **não precisa de "empresta 1"** (borrow) na subtração dígito a dígito!
+:::
+
+---
+
+## Cálculo Prático do Complemento $(r-1)$
+
+Para obter o complemento de $(r-1)$, subtrai-se cada dígito do número $N$ do maior dígito da base ($r-1$):
+
+- **Base 10**: Subtrai cada dígito de $9$
+- **Base 8**: Subtrai cada dígito de $7$
+- **Base 16**: Subtrai cada dígito de $F_{16} (15_{10})$
+- **Base 2**: Inverte cada bit ($0 \rightarrow 1$ e $1 \rightarrow 0$)
+
+---
+
+## Exemplo em Octal ($r = 8$)
+
+- **1) Encontrar o 7's comp de $N = 5674_8$**:
+  - Subtrai cada dígito de $7$:
+
+$$
+\begin{aligned}
+  7777_8 \\
+- 5674_8 \\
+\hline
+  2103_8
+\end{aligned}
+$$
+
+- **2) Encontrar o 8's comp de $N = 5674_8$**:
+  - Adiciona $1$ ao complemento de 7:
+
+$$2103_8 + 1 = 2104_8$$
+
+
+# Complementos em Binário
+
+## Complemento de 1 (1's Complement)
+
+- Para obter o 1's complemento de um número binário, **inverte-se todos os bits**:
+
+$$1 \rightarrow 0 \quad \text{e} \quad 0 \rightarrow 1$$
+
+- **Exemplo**: Obtenha o 1's comp de $(1010)_2$
+
+::: {.columns}
+::: {.column}
+**Via Subtração**:
+$$
+\begin{aligned}
+  1111_2 \\
+- 1010_2 \\
+\hline
+  0101_2
+\end{aligned}
+$$
+:::
+
+::: {.column}
+**Via Inversão Direta**:
+$$
+\begin{aligned}
+1 \ 0 \ 1 \ 0 \\
+\downarrow \ \downarrow \ \downarrow \ \downarrow \\
+0 \ 1 \ 0 \ 1
+\end{aligned}
+$$
+:::
+:::
+
+---
+
+## Complemento de 2 (2's Complement)
+
+- Calculado somando $1$ ao 1's complemento:
+
+$$2\text{'s comp} = 1\text{'s comp} + 1$$
+
+- **Exemplo**: Obtenha o 2's comp de $(1011010)_2$
+
+$$
+\begin{aligned}
+1\text{'s comp} &= 0100101_2 \\
+& \quad + \qquad \quad 1_2 \\
+\hline
+2\text{'s comp} &= 0100110_2
+\end{aligned}
+$$
+
+---
+
+## Algoritmo Rápido para 2's Complement
+
+Permite obter o complemento de 2 diretamente sem inverter todos os bits primeiro:
+
+1. **Escreva o número** binário.
+2. **Inicie pelo LSB** (bit menos significativo), copiado todos os `0`s até o primeiro `1`.
+3. **Copie o primeiro `1`**.
+4. **Complemente (inverte) todos os bits restantes** à esquerda.
+
+---
+
+## Aplicação do Algoritmo Rápido
+
+- **Exemplo 1**: $N = (10111000)_2$
+
+```
+Número Original:  1 0 1 1 1 0 0 0
+                  | | | | | \___/
+                  | | | | |   |---> Copia zeros e 1º um: 1000
+                  \_______/
+                      |------------> Inverte restantes:  0100
+Resultado:        0 0 1 0 0 1 0 0 0  =>  (01001000)₂
+```
+
+- **Exemplo 2**: $N = (101100)_2$
+  - Copia `100`, inverte `101` $\rightarrow$ **Resp**: $(010100)_2$
+
+---
+
+## Exercícios Propostos
+
+::: {.callout-note}
+## Exercícios de Fixação
+Determine os complementos solicitados:
+
+1. Complemento de **10** de $N = 76895$
+2. Complemento de **2** de $N = (11011)_2$
+3. Complemento de **1** de $N = (100111)_2$
+4. Complemento de **2** de $N = (1100111)_2$
+:::

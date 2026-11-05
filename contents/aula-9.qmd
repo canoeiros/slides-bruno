@@ -1,0 +1,643 @@
+---
+title: "Aula 9<br>Aritmética Binária"
+order: 9
+index: 9
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Aritmética Binária
+
+## Conceito: Adição Posicional
+
+- Em qualquer **base numéricas $r$**, a adição ocorre coluna por coluna (do menos para o mais significativo).
+- Quando a soma dos dígitos de uma coluna excede o dígito máximo $(r-1)$, ocorre o **Carry** ("vai um").
+- **Base 10**: Dígitos $0 \dots 9$. Soma $\ge 10 \implies$ subtrói $10$ e gera *carry* $1$.
+- **Base 2**: Dígitos $0, 1$. Soma $\ge 2 \implies$ subtrói $2$ e gera *carry* $1$.
+
+---
+
+## Regras da Adição Binária
+
+- Tabela fundamental das somas elementares na base 2:
+
+::: {.fragment}
+::: {.list-table}
+
+- - Entrada A
+  - Entrada B
+  - Soma
+  - Carry (Vai Um)
+- - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+  - 0
+- - 1
+  - 0
+  - 1
+  - 0
+- - 1
+  - 1
+  - 0
+  - 1
+
+:::
+:::
+
+---
+
+## Exemplo: Adição Binária
+
+- Somar os números binários $110_2$ ($6_{10}$) e $101_2$ ($5_{10}$):
+
+$$
+\begin{array}{r@{\quad}l}
+  \text{Carry:} & \small{1\,0\,0} \\
+  & 110_2 \quad (6_{10}) \\
++ & 101_2 \quad (5_{10}) \\
+\hline
+  & \mathbf{1011_2} \quad (11_{10})
+\end{array}
+$$
+
+- Análise posicional: $1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 11_{10}$.
+
+---
+
+## Exercício: Adição Binária
+
+- Calcule a seguinte soma em binário:
+
+$$11011_2 + 1111_2$$
+
+::: {.fragment}
+::: {.callout-tip}
+## Resolução
+$$
+\begin{array}{r@{\quad}l}
+  \text{Carry:} & \small{1\,1\,1\,1\,1} \\
+  & 11011_2 \quad (27_{10}) \\
++ & 01111_2 \quad (15_{10}) \\
+\hline
+  & \mathbf{101010_2} \quad (42_{10})
+\end{array}
+$$
+:::
+:::
+
+---
+
+## Conceito: Subtração Binária (Empréstimo)
+
+- Operações diretas sem empréstimo:
+  - $1 - 0 = 1$
+  - $1 - 1 = 0$
+  - $0 - 0 = 0$
+- **Empréstimo (Borrow)**:
+  - Ao calcular $0 - 1$, é necessário pedir **1 emprestado** da coluna imediatamente superior.
+  - Um empréstimo na **base 2** adiciona o valor $2_{10}$ à coluna atual: $(2 + 0) - 1 = 1$.
+
+---
+
+## Exemplo: Subtração Binária
+
+- Subtrair $111_2$ ($7_{10}$) de $1110_2$ ($14_{10}$):
+
+$$
+\begin{array}{r@{\quad}l}
+  & 1110_2 \quad (14_{10}) \\
+- & 0111_2 \quad (7_{10}) \\
+\hline
+  & \mathbf{0111_2} \quad (7_{10})
+\end{array}
+$$
+
+- Coluna $2^0$: $0 - 1 \implies$ pede emprestado de $2^1$, tornando-se $(2 + 0) - 1 = 1$.
+
+---
+
+## Exercício: Subtração Binária
+
+- Calcule a seguinte subtração em binário:
+
+$$10101_2 - 1111_2$$
+
+::: {.fragment}
+::: {.callout-tip}
+## Resolução
+$$
+\begin{array}{r@{\quad}l}
+  & 10101_2 \quad (21_{10}) \\
+- & 01111_2 \quad (15_{10}) \\
+\hline
+  & \mathbf{00110_2} \quad (6_{10})
+\end{array}
+$$
+:::
+:::
+
+---
+
+## Regras da Multiplicação Binária
+
+- Regras fundamentais do produto bit a bit:
+  - $0 \times 0 = 0$
+  - $0 \times 1 = 0$
+  - $1 \times 0 = 0$
+  - $1 \times 1 = 1$
+- O algoritmo é análogo ao decimal: multiplicação por cada bit, deslocamento à esquerda e soma final.
+
+---
+
+## Multiplicação Binária: Exemplo 1
+
+- Calcular $1010_2 \times 101_2$ ($10_{10} \times 5_{10} = 50_{10}$):
+
+$$
+\begin{array}{r}
+  1010_2 \\
+\times \quad 101_2 \\
+\hline
+  1010 \\
+  0000\phantom{0} \\
++ 1010\phantom{00} \\
+\hline
+  \mathbf{110010_2} \quad (50_{10})
+\end{array}
+$$
+
+---
+
+## Multiplicação Binária: Exemplo 2
+
+- Calcular $1010_2 \times 11_2$ ($10_{10} \times 3_{10} = 30_{10}$):
+
+$$
+\begin{array}{r}
+  1010_2 \\
+\times \quad 11_2 \\
+\hline
+  1010 \\
++ 1010\phantom{0} \\
+\hline
+  \mathbf{11110_2} \quad (30_{10})
+\end{array}
+$$
+
+---
+
+## Exercício: Multiplicação Binária
+
+- Calcule o produto binário:
+
+$$1101_2 \times 11_2$$
+
+::: {.fragment}
+::: {.callout-tip}
+## Resolução
+$$
+\begin{array}{r@{\quad}l}
+  & 1101_2 \quad (13_{10}) \\
+\times & 11_2 \quad (3_{10}) \\
+\hline
+  & 1101 \\
++ & 1101\phantom{0} \\
+\hline
+  & \mathbf{100111_2} \quad (39_{10})
+\end{array}
+$$
+:::
+:::
+
+---
+
+## Divisão Binária
+
+- Relação fundamental da divisão:
+  $$D = d \times q + R$$
+  - $D$: Dividendo | $d$: Divisor | $q$: Quociente | $R$: Resto
+- O processo utiliza a **divisão longa**: comparações sucessivas entre bits do dividendo e o divisor.
+
+---
+
+## Divisão Binária: Exemplo
+
+- Calcular $101010_2 \div 110_2$ ($42_{10} \div 6_{10}$):
+
+$$
+\begin{array}{l}
+101010_2 \;\vert\; 110_2 \\
+\hline
+\text{Quociente: } \mathbf{000111_2} \quad (7_{10}) \\
+\text{Resto: } \mathbf{0_2}
+\end{array}
+$$
+
+1. $101_2 < 110_2 \implies 0$ no quociente.
+2. $1010_2 \ge 110_2 \implies 1$ no quociente, resta $100_2$.
+3. Baixa $1 \implies 1001_2 \ge 110_2 \implies 1$, resta $011_2$.
+4. Baixa $0 \implies 0110_2 = 110_2 \implies 1$, resta $0$.
+
+---
+
+## Exercícios: Divisão Binária
+
+- Realize as divisões binárias indicadas:
+  1. $1001_2 \div 11_2$
+  2. $111000_2 \div 111_2$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $1001_2 \;(9_{10}) \div 11_2 \;(3_{10}) = \mathbf{11_2} \;(3_{10})$, Resto: $0$
+2. $111000_2 \;(56_{10}) \div 111_2 \;(7_{10}) = \mathbf{1000_2} \;(8_{10})$, Resto: $0$
+:::
+:::
+
+---
+
+# Aritmética Octal
+
+## Conceito: Adição Octal (Base 8)
+
+- Base $r = 8$: utilizar apenas os dígitos de **$0$ a $7$**.
+- Regra de estouro de coluna (quando $\text{Soma} > 7$):
+  $$\text{Soma Decimal} = 1 \times 8 + \text{Dígito Octal}$$
+- **Carry**: Adiciona $1$ na coluna à esquerda.
+- **Exemplo**: $5 + 4 = 9_{10} \implies 9 = 1 \times 8 + 1 \implies \text{Resultado } 1, \text{vai } 1$.
+
+---
+
+## Adição Octal: Exemplos
+
+::: {.columns}
+::: {.column}
+**Exemplo 1:** $243_8 + 212_8$
+
+$$
+\begin{array}{r}
+  243_8 \\
++ 212_8 \\
+\hline
+  \mathbf{455_8}
+\end{array}
+$$
+
+*(Nenhuma coluna excedeu 7)*
+:::
+
+::: {.column}
+**Exemplo 2:** $567_8 + 243_8$
+
+$$
+\begin{array}{r}
+  \small{1\,1\,1\phantom{0}} \\
+  567_8 \\
++ 243_8 \\
+\hline
+  \mathbf{1032_8}
+\end{array}
+$$
+
+- $7+3=10 = 1\times 8 + \mathbf{2}$ (vai 1)
+- $1+6+4=11 = 1\times 8 + \mathbf{3}$ (vai 1)
+- $1+5+2=8 = 1\times 8 + \mathbf{0}$ (vai 1)
+:::
+:::
+
+---
+
+## Exercício: Adição Octal
+
+- Calcule a soma em base 8:
+
+$$1776_8 + 345_8$$
+
+::: {.fragment}
+::: {.callout-tip}
+## Resolução
+$$
+\begin{array}{r}
+  \small{1\,1\,1\phantom{0}} \\
+  1776_8 \\
++ \phantom{0}345_8 \\
+\hline
+  \mathbf{2343_8}
+\end{array}
+$$
+:::
+:::
+
+---
+
+## Conceito: Subtração Octal
+
+- Regra do **Empréstimo (Borrow)**:
+  - Quando o dígito superior for menor que o inferior, pede-se $1$ emprestado da posição à esquerda.
+  - Na **base 8**, pedir $1$ emprestado equivale a adicionar **$8$** ao dígito atual.
+
+---
+
+## Subtração Octal: Exemplos
+
+::: {.columns}
+::: {.column}
+**Exemplo 1:** $743_8 - 564_8$
+
+- Coluna 0: $3 < 4 \implies (8+3) - 4 = \mathbf{7}$
+- Coluna 1: $3 < 6 \implies (8+3) - 6 = \mathbf{5}$
+- Coluna 2: $6 - 5 = \mathbf{1}$
+
+$$\text{Resultado: } \mathbf{157_8}$$
+:::
+
+::: {.column}
+**Exemplo 2:** $624_8 - 265_8$
+
+- Coluna 0: $4 < 5 \implies (8+4) - 5 = \mathbf{7}$
+- Coluna 1: $1 < 6 \implies (8+1) - 6 = \mathbf{3}$
+- Coluna 2: $5 - 2 = \mathbf{3}$
+
+$$\text{Resultado: } \mathbf{337_8}$$
+:::
+:::
+
+---
+
+## Exercícios: Subtração Octal
+
+- Calcule as subtracções na base octal:
+  1. $511_8 - 33_8$
+  2. $6000_8 - 777_8$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $511_8 - 33_8 = \mathbf{456_8}$
+2. $6000_8 - 777_8 = \mathbf{5001_8}$
+:::
+:::
+
+---
+
+## Conceito: Multiplicação Octal
+
+- Multiplicam-se os dígitos em decimal.
+- O produto decimal resultante é convertido para a base 8:
+  $$\text{Produto Decimal} = \text{Carry} \times 8 + \text{Dígito Octal}$$
+
+---
+
+## Multiplicação Octal: Exemplos
+
+::: {.columns}
+::: {.column}
+**Exemplo 1:** $72_8 \times 12_8$
+
+$$
+\begin{array}{r}
+  72_8 \\
+\times \quad 12_8 \\
+\hline
+  164_8 \\
++ 72\phantom{0}_8 \\
+\hline
+  \mathbf{1104_8}
+\end{array}
+$$
+:::
+
+::: {.column}
+**Exemplo 2:** $357_8 \times 23_8$
+
+$$
+\begin{array}{r}
+  357_8 \\
+\times \quad 23_8 \\
+\hline
+  1315_8 \\
++ 736\phantom{0}_8 \\
+\hline
+  \mathbf{10675_8}
+\end{array}
+$$
+:::
+:::
+
+---
+
+## Exercícios: Multiplicação Octal
+
+- Realize as multiplicações em base octal:
+  1. $63_8 \times 24_8$
+  2. $635_8 \times 55_8$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $63_8 \times 24_8 = \mathbf{1774_8}$
+2. $635_8 \times 55_8 = \mathbf{44411_8}$
+:::
+:::
+
+---
+
+# Aritmética Hexadecimal
+
+## Conceito: Base Hexadecimal (Base 16)
+
+- Base $r = 16$: Utiliza os dígitos de **$0$ a $9$** e as letras **$\text{A}$ a $\text{F}$**.
+- Conversão rápida de valores:
+  - $\text{A} = 10, \quad \text{B} = 11, \quad \text{C} = 12$
+  - $\text{D} = 13, \quad \text{E} = 14, \quad \text{F} = 15$
+- **Regra do Carry**: Se a soma $\ge 16$, subtrai-se $16$ e passa-se $1$ para a coluna seguinte.
+
+---
+
+## Adição Hexadecimal: Exemplos
+
+::: {.columns}
+::: {.column}
+**Exemplo 1:**
+
+$$
+\begin{array}{r}
+  5689_{16} \\
++ 4574_{16} \\
+\hline
+  \mathbf{9BFD_{16}}
+\end{array}
+$$
+
+- $8+7=15 \implies \text{F}$
+- $6+5=11 \implies \text{B}$
+:::
+
+::: {.column}
+**Exemplo 2:**
+
+$$
+\begin{array}{r}
+  \small{1\,1\,1\phantom{0}} \\
+  \text{ADD}_{16} \\
++ \text{DAD}_{16} \\
+\hline
+  \mathbf{188A_{16}}
+\end{array}
+$$
+
+- $\text{D}+\text{D} = 26 = 1\times 16 + \mathbf{10(\text{A})}$
+- $1+\text{D}+\text{A} = 24 = 1\times 16 + \mathbf{8}$
+:::
+:::
+
+---
+
+## Exercícios: Adição Hexadecimal
+
+- Efetue as somas hexadecimais:
+  1. $899_{16} + 189_{16}$
+  2. $\text{DAF}_{16} + \text{BAF}_{16}$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $899_{16} + 189_{16} = \mathbf{A22_{16}}$
+2. $\text{DAF}_{16} + \text{BAF}_{16} = \mathbf{195E_{16}}$
+:::
+:::
+
+---
+
+## Conceito: Subtração Hexadecimal
+
+- Regra do **Empréstimo (Borrow)**:
+  - Quando o minuendo for menor que o subtraendo, pede-se $1$ emprestado da posição à esquerda.
+  - Na **base 16**, cada empréstimo adiciona **$16$** ao dígito atual.
+
+---
+
+## Subtração Hexadecimal: Exemplos
+
+::: {.columns}
+::: {.column}
+**Exemplo 1:**
+
+$$
+\begin{array}{r}
+  9654_{16} \\
+- 5321_{16} \\
+\hline
+  \mathbf{4333_{16}}
+\end{array}
+$$
+:::
+
+::: {.column}
+**Exemplo 2:**
+
+$$
+\begin{array}{r}
+  974\text{B}_{16} \\
+- 587\text{C}_{16} \\
+\hline
+  \mathbf{3ECF_{16}}
+\end{array}
+$$
+
+- $\text{B} < \text{C} \implies (16+11) - 12 = \mathbf{15(\text{F})}$
+- $3 < 7 \implies (16+3) - 7 = \mathbf{12(\text{C})}$
+- $6 < 8 \implies (16+6) - 8 = \mathbf{14(\text{E})}$
+:::
+:::
+
+---
+
+## Exercícios: Subtração Hexadecimal
+
+- Realize as subtracções na base hexadecimal:
+  1. $\text{FAB}_{16} - \text{AEF}_{16}$
+  2. $7788_{16} - \text{DEF}_{16}$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $\text{FAB}_{16} - \text{AEF}_{16} = \mathbf{4BC_{16}}$
+2. $7788_{16} - \text{DEF}_{16} = \mathbf{6999_{16}}$
+:::
+:::
+
+---
+
+## Multiplicação Hexadecimal: Exemplo 1
+
+- Calcular $94_{16} \times 12_{16}$:
+
+$$
+\begin{array}{r}
+  94_{16} \\
+\times \quad 12_{16} \\
+\hline
+  128_{16} \\
++ 94\phantom{0}_{16} \\
+\hline
+  \mathbf{A68_{16}}
+\end{array}
+$$
+
+- $2 \times 4 = 8$
+- $2 \times 9 = 18_{10} = 1 \times 16 + 2 \implies 128_{16}$
+
+---
+
+## Multiplicação Hexadecimal: Exemplo 2
+
+- Calcular $\text{ABC}_{16} \times 23_{16}$:
+
+$$
+\begin{array}{r}
+  \text{ABC}_{16} \\
+\times \quad 23_{16} \\
+\hline
+  2034_{16} \\
++ 1578\phantom{0}_{16} \\
+\hline
+  \mathbf{177B4_{16}}
+\end{array}
+$$
+
+- $3 \times \text{C} = 36_{10} = 2 \times 16 + \mathbf{4}$ (vai 2)
+- $3 \times \text{B} + 2 = 35_{10} = 2 \times 16 + \mathbf{3}$ (vai 2)
+
+---
+
+## Exercícios: Multiplicação Hexadecimal
+
+- Calcule os produtos hexadecimais:
+  1. $818_{16} \times 21_{16}$
+  2. $\text{DAF}_{16} \times 54_{16}$
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $818_{16} \times 21_{16} = \mathbf{10B18_{16}}$
+2. $\text{DAF}_{16} \times 54_{16} = \mathbf{4807C_{16}}$
+:::
+:::

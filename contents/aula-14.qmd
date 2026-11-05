@@ -1,0 +1,137 @@
+---
+title: "Aula 14<br>Código de Hamming"
+order: 14
+index: 14
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Código de Hamming
+
+## Conceito Fundamental
+- **Objetivo**: Técnica de **detecção e correção de erros** em transmissões digitais.
+- **Princípio**: "Enviamos dados + redundância".
+- Adiciona **bits de paridade** aos bits de dados originais.
+
+---
+
+## Estrutura do Código Hamming $(7,4)$
+- **Bits de Dados ($D$)**: 4 bits ($D_3, D_2, D_1, D_0$)
+- **Bits de Paridade ($P$)**: 3 bits ($P_2, P_1, P_0$)
+- **Vetor Transmitido**: $[D_3, D_2, D_1, D_0, P_2, P_1, P_0]$
+- **Exemplo de Entrada**: Dados $= 1011_2$
+
+---
+
+## Equações dos Bits de Paridade
+- Cada bit de paridade cobre um grupo específico de bits de dados:
+
+$$P_0 = D_0 \oplus D_1 \oplus D_3$$
+
+$$P_1 = D_1 \oplus D_2 \oplus D_3$$
+
+$$P_2 = D_0 \oplus D_2 \oplus D_3$$
+
+::: {.callout-note}
+## Observação
+Note que o bit $D_1$ faz parte de $P_0$ e $P_1$, mas **não** de $P_2$.
+:::
+
+---
+
+## Exemplo: Gerando Bits de Paridade
+- Para o dado $D_3 D_2 D_1 D_0 = 1011$:
+
+$$
+\begin{aligned}
+P_0 &= 1 \oplus 1 \oplus 1 = 1 \\
+P_1 &= 1 \oplus 0 \oplus 1 = 0 \\
+P_2 &= 1 \oplus 0 \oplus 1 = 0
+\end{aligned}
+$$
+
+- **Vetor Gerado**: $[1 0 1 1 \mid 0 0 1]$
+
+---
+
+## Análise de Alteração em Bit de Dado
+- Se o bit $D_1$ for alterado de $1 \to 0$ durante a transmissão:
+
+$$
+\begin{aligned}
+P_0 &= 1 \oplus 0 \oplus 1 = 0 \quad (\text{alterou!}) \\
+P_1 &= 0 \oplus 0 \oplus 1 = 1 \quad (\text{alterou!}) \\
+P_2 &= 1 \oplus 0 \oplus 1 = 0 \quad (\text{inalterado})
+\end{aligned}
+$$
+
+- **Diagnóstico**: Como $P_0$ e $P_1$ mudaram, o erro está na **intersecção** $D_1$.
+
+---
+
+## Mapeamento por Diagrama de Venn
+<!-- FIGURE: page-1 - Mapeamento das paridades e dados no diagrama de Venn -->
+
+
+# Detecção e Correção de Erros
+
+## Caso 1: Correção de Erro em Bit de Dado
+- **Sintoma**: As paridades $P_0$ e $P_1$ falham (X), mas $P_2$ passa ($\checkmark$).
+- **Localização**: A intersecção exclusiva entre $P_0$ e $P_1$ aponta para o bit **$D_1$**.
+- **Ação**: Inverter o bit $D_1$ de $0 \to 1$ para recuperar o dado original.
+
+---
+
+## Caso 2: Erro no Próprio Bit de Paridade
+- **Sintoma**: Apenas $P_0$ falha (X); $P_1$ e $P_2$ passam ($\checkmark$).
+- Nenhuma região de dados é compartilhada apenas por $P_0$ de forma inconsistente.
+- **Conclusão**: O erro ocorreu no próprio **bit de paridade $P_0$** (dados permanecem íntegros).
+
+---
+
+## Caso 3: Limitação com Erro Duplo
+- O código $(7,4)$ tradicional assume **apenas 1 erro**.
+- **Com 2 erros simultâneos**:
+  - A lógica aponta para um bit incorreto.
+  - O sistema tenta corrigir o bit errado, **persistindo com a corrupção**.
+
+---
+
+## Ilustração dos Casos de Correção
+<!-- FIGURE: page-2 - Análise visual de 1 erro, erro em bit de paridade e falha com 2 erros -->
+
+
+# Extensão SEC-DED
+
+## Paridade Global ($P_G$)
+- Adiciona um 8º bit ao vetor: o **bit de paridade global** ($P_G$).
+- Estrutura: $[D_3, D_2, D_1, D_0 \mid P_2, P_1, P_0 \mid P_G]$
+- Permite a capacidade **SEC-DED**:
+  - **SEC**: *Single Error Correction* (Correção de Erro Único)
+  - **DED**: *Double Error Detection* (Detecção de Erro Duplo)
+
+---
+
+## Algoritmo de Verificação SEC-DED
+1. **Passo 1**: Calcula as paridades locais ($P_0, P_1, P_2$) para localizar um possível erro.
+2. **Passo 2**: Avalia o bit de paridade global $P_G$:
+   - Paridades locais indicam erro **E** $P_G$ falha $\rightarrow$ **1 erro** (corrigível).
+   - Paridades locais indicam erro **E** $P_G$ passa $\rightarrow$ **2 erros** (detectados, não corrigíveis).
+
+---
+
+## Análise Visual do SEC-DED
+<!-- FIGURE: page-3 - Código Hamming estendido com bit de paridade global SEC-DED -->

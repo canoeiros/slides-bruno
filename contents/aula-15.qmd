@@ -1,0 +1,188 @@
+---
+title: "Aula 15<br>Carry Look Ahead Adder (CLA)"
+order: 15
+index: 15
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Carry Look Ahead Adder (CLA)
+
+## Conceito e Objetivo
+- **Problema**: Em somadores em cadeia (*Ripple Carry*), as portas lógicas levam um tempo $T_{pd}$ para propagar o carry estágio por estágio.
+- **Objetivo**: **Predizer o carry** antecipadamente para otimizar a velocidade da soma.
+- **Solução**: Calcular todos os bits de vai-um simultaneamente em paralelo.
+
+---
+
+## Gerador e Propagador de Carry
+
+- **Carry Generator ($G_i$)**: O vai-um é gerado diretamente no estágio $i$, **sem dependência** de $C_{in}$.
+  $$G_i = A_i \cdot B_i$$
+- **Carry Propagator ($P_i$)**: O vai-um depende da propagação do carry de entrada $C_{in}$.
+  $$P_i = A_i \oplus B_i$$
+- **Equação Geral do Carry**:
+  $$C_i = G_i + P_i \cdot C_{i-1}$$
+
+---
+
+## Tabela-Verdade da Função Carry
+
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $C_{in}$
+  - $C_o$
+- - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 1
+  - 0
+- - 0
+  - 1
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+  - 1
+- - 1
+  - 0
+  - 0
+  - 0
+- - 1
+  - 0
+  - 1
+  - 1
+- - 1
+  - 1
+  - 0
+  - 1
+- - 1
+  - 1
+  - 1
+  - 1
+
+:::
+
+---
+
+## Análise: Gerador vs. Propagador
+
+::: {.columns}
+
+::: {.column .callout-note}
+## Carry Generator ($G$)
+- Ocorre quando $A \cdot B = 1$.
+- **Não há dependência** de $C_{in}$.
+- $$G = A \cdot B$$
+:::
+
+::: {.column .callout-warning}
+## Carry Propagator ($P$)
+- Ocorre quando $(A \oplus B) = 1$ e $C_{in} = 1$.
+- **Há dependência** de $C_{in}$.
+- $$P = A \oplus B$$
+:::
+
+:::
+
+- Equação de saída generalizada:
+  $$C_i = G_i + P_i C_{i-1}$$
+
+
+# Expansão das Equações de Carry
+
+## Expansão Iterativa: $i = 0$ e $i = 1$
+
+Para cada estágio de um somador completo (*Full Adder*):
+
+- **Estágio $i = 0$**:
+  $$C_0 = G_0 + P_0 C_{-1}$$
+
+- **Estágio $i = 1$**:
+  $$
+  \begin{aligned}
+  C_1 &= G_1 + P_1 C_0 \\
+      &= G_1 + P_1 (G_0 + P_0 C_{-1}) \\
+      &= G_1 + P_1 G_0 + P_1 P_0 C_{-1}
+  \end{aligned}
+  $$
+
+---
+
+## Expansão Iterativa: $i = 2$
+
+- Substituindo a expressão de $C_1$ em $C_2$:
+
+$$
+\begin{aligned}
+C_2 &= G_2 + P_2 C_1 \\
+    &= G_2 + P_2 (G_1 + P_1 G_0 + P_1 P_0 C_{-1}) \\
+    &= G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_{-1}
+\end{aligned}
+$$
+
+::: {.callout-tip}
+## Propriedade Fundamental
+$C_2$ depende apenas das entradas primárias ($A_i, B_i$) e de $C_{-1}$, sem esperar o cálculo de $C_1$ ou $C_0$!
+:::
+
+---
+
+## Expansão Iterativa: $i = 3$
+
+- Substituindo a expressão de $C_2$ em $C_3$:
+
+$$
+\begin{aligned}
+C_3 &= G_3 + P_3 C_2 \\
+    &= G_3 + P_3 (G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_{-1}) \\
+    &= G_3 + P_3 G_2 + P_3 P_2 G_1 + P_3 P_2 P_1 G_0 + P_3 P_2 P_1 P_0 C_{-1}
+\end{aligned}
+$$
+
+- Todos os *carries* são gerados em tempo constante!
+
+
+# Estrutura do Circuito CLA
+
+## Equações do Somador de 4 Bits
+
+- **Geradores de Carry**:
+  $$G_i = A_i \cdot B_i$$
+- **Propagadores de Carry**:
+  $$P_i = A_i \oplus B_i$$
+- **Bits de Soma ($S_i$)**:
+  $$S_i = A_i \oplus B_i \oplus C_{i-1} = P_i \oplus C_{i-1}$$
+  - Exemplo para o bit 3: $S_3 = A_3 \oplus B_3 \oplus C_2 = P_3 \oplus C_2$
+
+---
+
+## Bloco Lógico do Somador CLA
+
+<!-- FIGURE: page-3 - Esquema de ligações do bloco CLA com saídas de soma e carry -->
+
+---
+
+## Resumo dos Benefícios
+- **Desempenho**: Reduz o atraso total de soma de $O(N)$ para $O(1)$ níveis de portas de carry.
+- **Paralelismo**: Todos os sinais de carry ($C_0, C_1, C_2, C_3$) são produzidos simultaneamente.
+- **Compromisso**: Aumento no número de portas e no consumo de área conforme o número de bits cresce.

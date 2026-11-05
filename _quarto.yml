@@ -11,7 +11,5 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Início"
-
 filters:
   - filters/list-table.lua

@@ -4,13 +4,14 @@ subtitle: "Slides interativos das aulas"
 author: ["Dr. Bruno Pereira Santos", "Caio Sereno Santos Rebouças"]
 lang: "pt-BR"
 listing:
-  contents: 
+  contents:
     - "contents/*.qmd"
   type: grid
-  sort: "title"
+  sort: "index asc"
   fields: [title, author]
-  grid-columns: 2
+  grid-columns: 3
   image-height: "140px"
+  categories: true
 ---
 
 Bem-vindo ao portal de apresentações interativas da disciplina **MATA38 - Projeto de Circuitos Lógicos**.

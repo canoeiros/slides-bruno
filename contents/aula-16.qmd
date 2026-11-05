@@ -1,0 +1,486 @@
+---
+title: "Aula 16<br>Circuitos Combinacionais vs. Sequenciais"
+order: 16
+index: 16
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Circuitos Combinacionais vs. Sequenciais
+
+## Circuitos Combinacionais
+- A saída depende **somente das entradas atuais**.
+- **Não possui memória** nem dependência de estados ou saídas anteriores.
+- **Exemplo**: Somadores (Adders), Subtratores, Multiplexadores.
+
+::: {.callout-note}
+## Característica Principal
+$$Y = f(X_{\text{atual}})$$
+:::
+
+---
+
+## Circuitos Sequenciais
+- A saída depende das **entradas atuais** e das **saídas anteriores**.
+- **Possui elementos de memória** para armazenar o estado anterior.
+- **Implementação**: Feita utilizando circuitos sequenciais chamados **Flip-Flops**.
+- **Exemplo**: Contadores (Counters), Registradores.
+
+---
+
+## Diagramas de Blocos
+
+::: {.columns}
+::: {.column}
+**Circuito Combinacional**
+```{mermaid}
+flowchart LR
+  In[Entradas] --> CC[Circuito Combinacional]
+  CC --> Out[Saídas]
+```
+:::
+
+::: {.column}
+**Circuito Sequencial**
+```{mermaid}
+flowchart LR
+  In[Entradas] --> SC[Circuito Combinacional]
+  SC --> Out[Saídas]
+  SC --> Mem[Memória / Flip-Flops]
+  Mem --> |Feedback Positivo| SC
+```
+:::
+:::
+
+---
+
+# Half-Adder (Meio Somador)
+
+## Conceito & Operação
+- Circuito combinacional usado para somar **1 bit** ($A$ e $B$).
+- **Não possui entrada de carry** ($C_{in}$) da soma anterior.
+- **Saídas**:
+  - $S$: Soma (Sum)
+  - $C_o$: Vai-um (Carry Out)
+
+---
+
+## Tabela-Verdade
+
+::: {.fragment}
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $S$ (Soma)
+  - $C_o$ (Carry)
+- - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+  - 0
+- - 1
+  - 0
+  - 1
+  - 0
+- - 1
+  - 1
+  - 0
+  - 1
+
+:::
+:::
+
+---
+
+## Equações Lógicas
+- **Soma ($S$)**: Vale 1 quando as entradas são diferentes (OU Exclusivo).
+  $$S = A \oplus B$$
+
+- **Carry ($C_o$)**: Vale 1 apenas quando ambas entradas são 1 (E lógico).
+  $$C_o = A \cdot B$$
+
+---
+
+## Esquemático do Circuito
+
+```{mermaid}
+flowchart LR
+  A((A)) --> XOR[XOR]
+  B((B)) --> XOR
+  A --> AND[AND]
+  B --> AND
+  XOR --> S((S))
+  AND --> Co((Co))
+```
+
+---
+
+# Full Adder (Somador Completo)
+
+## Conceito & Blocos
+- Soma **3 bits**: duas entradas de dados ($A, B$) e o carry da etapa anterior ($C_i$).
+- Permite encadear múltiplos somadores para operar com palavras de múltiplos bits.
+
+```{mermaid}
+flowchart LR
+  A((A)) --> FA[Full Adder]
+  B((B)) --> FA
+  Ci((Ci)) --> FA
+  FA --> S((S))
+  FA --> Co((Co))
+```
+
+---
+
+## Tabela-Verdade
+
+::: {.fragment}
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $C_i$
+  - $S$
+  - $C_o$
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 1
+  - 1
+  - 0
+- - 0
+  - 1
+  - 0
+  - 1
+  - 0
+- - 0
+  - 1
+  - 1
+  - 0
+  - 1
+- - 1
+  - 0
+  - 0
+  - 1
+  - 0
+- - 1
+  - 0
+  - 1
+  - 0
+  - 1
+- - 1
+  - 1
+  - 0
+  - 0
+  - 1
+- - 1
+  - 1
+  - 1
+  - 1
+  - 1
+
+:::
+:::
+
+---
+
+## Simplificação da Saída $S$
+
+- Expressão em Soma de Produtos (Mintermos):
+  $$S = A\bar{B}\bar{C_i} + \bar{A}\bar{B}C_i + ABC_i + \bar{A}B\bar{C_i}$$
+
+- Simplificação por XOR encadeado:
+  $$S = A \oplus B \oplus C_i$$
+
+---
+
+## Mapa de Karnaugh Interativo para $C_o$ {data-fullscreen="true"}
+<iframe src="../assets/global/karnaugh.html?vars=3&m=3,5,6,7&names=A,B,Ci&hide=panels"></iframe>
+
+---
+
+## Simplificação da Saída $C_o$
+
+- Expressão simplificada via Mapa de Karnaugh:
+  $$C_o = AB + BC_i + AC_i$$
+
+- Forma fatorada (ideal para reutilizar a porta XOR do Half-Adder):
+  $$C_o = AB + C_i(A \oplus B)$$
+
+---
+
+# Full Adder com Half Adders
+
+## Estrutura Modular
+- É possível construir um **Full Adder** combinando **2 Half Adders** e **1 porta OR**.
+
+```{mermaid}
+flowchart LR
+  A((A)) --> HA1[Half Adder 1]
+  B((B)) --> HA1
+  HA1 -- S1 = A⊕B --> HA2[Half Adder 2]
+  Ci((Cin)) --> HA2
+  HA2 --> S((S = A⊕B⊕Cin))
+  
+  HA1 -- C1 = AB --> OR[OR]
+  HA2 -- C2 = Cin(A⊕B) --> OR
+  OR --> Co((Co))
+```
+
+---
+
+## Demonstração Algébrica do Carry
+
+$$
+\begin{aligned}
+C_o &= AB + C_{in}(A \oplus B) \\
+    &= AB + C_{in}(\bar{A}B + A\bar{B}) \\
+    &= AB + \bar{A}BC_{in} + A\bar{B}C_{in} \\
+    &= A(B + \bar{B}C_{in}) + \bar{A}BC_{in} \\
+    &= A(B + C_{in}) + \bar{A}BC_{in} \\
+    &= AB + AC_{in} + \bar{A}BC_{in} \\
+    &= AB + C_{in}(A + \bar{A}B) \\
+    &= AB + AC_{in} + BC_{in}
+\end{aligned}
+$$
+
+---
+
+# Somador de 4 Bits
+
+## Princípio do Cascateamento
+- Para somar números de 4 bits ($A_3A_2A_1A_0 + B_3B_2B_1B_0$), encadeamos **4 Full Adders**.
+- O bit menos significativo ($A_0, B_0$) utiliza $C_{in} = 0$.
+- O carry propagado passa para o próximo bit ($C_0 \to C_1 \to C_2 \to C_3$).
+
+---
+
+## Expansão de Bits na Soma
+
+::: {.callout-important}
+## Tamanho da Saída
+A soma de dois números de $N$ bits pode resultar em um número de **$N+1$ bits**.
+- Entrada: $A$ (4 bits), $B$ (4 bits)
+- Saída: $S$ (4 bits) + Carry final $C_3$ (1 bit) = **5 bits no total**.
+:::
+
+- **Exemplo Decimal**: $5 + 5 = 10$ (1 dígito a mais no resultado).
+
+---
+
+## Esquemático do Somador Ripple-Carry
+
+```{mermaid}
+flowchart RL
+  subgraph BIT3 [Bit 3]
+    FA3[F.A.]
+  end
+  subgraph BIT2 [Bit 2]
+    FA2[F.A.]
+  end
+  subgraph BIT1 [Bit 1]
+    FA1[F.A.]
+  end
+  subgraph BIT0 [Bit 0]
+    FA0[F.A.]
+  end
+
+  Cin0((Cin=0)) --> FA0
+  FA0 -- C0 --> FA1
+  FA1 -- C1 --> FA2
+  FA2 -- C2 --> FA3
+  FA3 --> C3((C3))
+
+  FA0 --> S0((S0))
+  FA1 --> S1((S1))
+  FA2 --> S2((S2))
+  FA3 --> S3((S3))
+```
+
+---
+
+## Circuito Integrado 74HC283
+- CI clássico comercial contendo um **somador completo de 4 bits**.
+
+<!-- FIGURE: page-105 - CI 74HC283 4-Bit Full Adder -->
+
+---
+
+## Somador de 8 Bits (Cascateamento)
+- Dois CIs de 4 bits podem ser cascateados interligando a saída $C_{out}$ do primeiro com a entrada $C_{in}$ do segundo.
+
+```{mermaid}
+flowchart RL
+  Cin0((Cin=0)) --> FA4_0[Somador 4-Bit LSB]
+  FA4_0 -- C3 --> FA4_1[Somador 4-Bit MSB]
+  FA4_1 --> C7((C7))
+
+  FA4_0 --> S0_3[S0..S3]
+  FA4_1 --> S4_7[S4..S7]
+]
+```
+
+---
+
+# Subtratores Lógicos
+
+## Half Subtractor (Meio Subtrator)
+- Realiza a subtração entre **2 bits**: $A - B$.
+- **Saídas**:
+  - $D$: Diferença (Difference)
+  - $B_o$: Empréstimo de saída (Borrow Out)
+
+---
+
+## Half Subtractor: Tabela-Verdade
+
+::: {.fragment}
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $D$ (Diferença)
+  - $B_o$ (Borrow)
+- - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+  - 1
+- - 1
+  - 0
+  - 1
+  - 0
+- - 1
+  - 1
+  - 0
+  - 0
+
+:::
+:::
+
+::: {.callout-note}
+## Operação $0 - 1$
+Quando $A=0$ e $B=1$, é necessário "pedir emprestado" ($B_o=1$), resultando em $(2)_2 - 1 = 1$ ($D=1$).
+:::
+
+---
+
+## Half Subtractor: Equações e Circuito
+
+- **Diferença**: $D = A \oplus B$
+- **Borrow Out**: $B_o = \bar{A} \cdot B$
+
+```{mermaid}
+flowchart LR
+  A((A)) --> XOR[XOR]
+  B((B)) --> XOR
+  A --> NOT[NOT]
+  NOT --> AND[AND]
+  B --> AND
+  XOR --> D((D))
+  AND --> Bo((Bo))
+```
+
+---
+
+## Full Subtractor (Subtrator Completo)
+- Subtrai 3 bits: $A - B - C_{in}$ (onde $C_{in}$ é o empréstimo do bit anterior).
+
+```{mermaid}
+flowchart LR
+  A((A)) --> FS[Full Subtractor]
+  B((B)) --> FS
+  Cin((Cin)) --> FS
+  FS --> D((D))
+  FS --> Bo((Bo))
+```
+
+---
+
+## Full Subtractor: Tabela-Verdade
+
+::: {.fragment}
+::: {.list-table}
+
+- - $A$
+  - $B$
+  - $C_{in}$
+  - $D$
+  - $B_o$
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 1
+  - 1
+  - 1
+- - 0
+  - 1
+  - 0
+  - 1
+  - 1
+- - 0
+  - 1
+  - 1
+  - 0
+  - 1
+- - 1
+  - 0
+  - 0
+  - 1
+  - 0
+- - 1
+  - 0
+  - 1
+  - 0
+  - 0
+- - 1
+  - 1
+  - 0
+  - 0
+  - 0
+- - 1
+  - 1
+  - 1
+  - 1
+  - 1
+
+:::
+:::
+
+---
+
+## Full Subtractor: Equações Simplificadas
+
+- **Diferença ($D$)**:
+  $$D = A \oplus B \oplus C_{in}$$
+
+- **Borrow Out ($B_o$)**:
+  $$B_o = B C_{in} + \bar{A} C_{in} + \bar{A} B$$

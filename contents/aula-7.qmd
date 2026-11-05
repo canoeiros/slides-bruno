@@ -1,0 +1,402 @@
+---
+title: "Aula 7<br>Sistemas de Numeração"
+order: 7
+index: 7
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Sistemas de Numeração
+
+## Definição e Conceitos
+
+- **Sistema de Numeração**: Define um conjunto de valores usados para representar uma **quantidade**.
+- **Radix / Base ($r$)**: Indica a quantidade de dígitos disponíveis no sistema.
+- **Dígitos Válidos**: Variam de **$0$ até $(r-1)$**.
+
+::: {.callout-note}
+## Princípio Fundamental
+O valor numérico é determinado pelos **dígitos** e pelas suas **posições** (sistema posicional ponderado).
+:::
+
+---
+
+## Principais Bases Numéricas
+
+::: {.list-table}
+
+- - Sistema
+  - Base ($r$)
+  - Dígitos Válidos ($0$ até $r-1$)
+- - **Binário**
+  - 2
+  - 0, 1
+- - **Octal**
+  - 8
+  - 0, 1, 2, 3, 4, 5, 6, 7
+- - **Decimal**
+  - 10
+  - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+- - **Duodecimal**
+  - 12
+  - 0..9, A (10), B (11)
+- - **Hexadecimal**
+  - 16
+  - 0..9, A (10), B (11), C (12), D (13), E (14), F (15)
+
+:::
+
+---
+
+## Representação Posicional
+
+- Cada posição possui um **peso** associado a uma **potência da base**:
+
+$$
+(7392)_{10} = 7 \times 10^3 + 3 \times 10^2 + 9 \times 10^1 + 2 \times 10^0
+$$
+
+- **Coeficientes**: $7, 3, 9, 2$
+- **Base ($r$)**: $10$
+- **Potência**: Determina a **posição** do dígito.
+
+---
+
+## Classificação dos Códigos Numéricos
+
+::: {.columns}
+
+::: {.column}
+### Códigos Ponderados
+- Cada posição possui um **peso definido**.
+- **Exemplos**:
+  - Decimal
+  - Binário
+  - Octal
+  - Hexadecimal
+  - BCD
+:::
+
+::: {.column}
+### Códigos Não Ponderados
+- As posições **não possuem pesos** fixos.
+- **Exemplos**:
+  - Código Gray
+  - Excess-3
+:::
+
+:::
+
+---
+
+## Relação entre Base e Tamanho da Representação
+
+- Para uma mesma **quantidade**:
+  - Se a base é menor ($r_1 < r_2$), o número de dígitos necessários é maior ($N_1 \ge N_2$).
+
+::: {.callout-tip}
+## Exemplo Prático da Mesma Quantidade em Diferentes Bases
+$$
+\begin{aligned}
+(7392)_{10} &= (1110011100000)_2 \\
+&= (16340)_8 \\
+&= (1CED)_{16}
+\end{aligned}
+$$
+:::
+
+
+# Sistema de Numeração Binário
+
+## Características do Sistema Binário
+
+- **Base ($r$)**: $2$
+- **Dígitos válidos**: $0$ e $1$
+- **Bit**: Denominação para *Binary Digit* (menor unidade de informação).
+
+::: {.callout-note}
+## Representação Posicional Binária
+Cada posição $i$ da direita para a esquerda tem peso igual a $2^i$.
+:::
+
+---
+
+## Conversão Binário para Decimal
+
+- Expande-se o número binário no somatório de suas potências de $2$:
+
+$$
+\begin{aligned}
+(10101)_2 &= 1 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 \\
+&= 16 + 0 + 4 + 0 + 1 \\
+&= (21)_{10}
+\end{aligned}
+$$
+
+---
+
+## Parte Fracionária em Binário
+
+- As posições à direita da vírgula possuem expoentes negativos ($2^{-1}, 2^{-2}, \dots$):
+
+$$
+\begin{aligned}
+(10101.11)_2 &= 21 + 1 \times 2^{-1} + 1 \times 2^{-2} \\
+&= 21 + 0{,}5 + 0{,}25 \\
+&= (21{,}75)_{10}
+\end{aligned}
+$$
+
+---
+
+## Conceito de MSB e LSB
+
+- **MSB** (*Most Significant Bit*): Bit mais significativo (maior peso).
+- **LSB** (*Least Significant Bit*): Bit menos significativo (menor peso).
+
+::: {.fragment}
+### Sensibilidade à Alteração de Bits ($10101_2 = 21_{10}$)
+- Alterando o **LSB** para 0: $10100_2 = 20_{10}$ ($\Delta = 1$)
+- Alterando o **MSB** para 0: $00101_2 = 5_{10}$ ($\Delta = 16$)
+:::
+
+---
+
+## Unidades de Medida Lógica
+
+- **Bit**: $1$ dígito binário ($0$ ou $1$)
+- **Nibble**: $4$ bits (usado em BCD e Hexadecimal)
+- **Byte**: $8$ bits
+- **Word**: $16$ bits ($2$ Bytes)
+- **Double Word**: $32$ bits ($4$ Bytes)
+
+
+# Conversão Decimal $\rightarrow$ Binário
+
+## Método Geral de Conversão
+
+- **Parte Inteira**: Divisões sucessivas pela base ($r = 2$).
+  - Os **restos** formam o número binário do **LSB para o MSB**.
+- **Parte Fracionária**: Multiplicações sucessivas pela base ($r = 2$).
+  - As **partes inteiras** formam os dígitos da fração.
+
+---
+
+## Exemplo 1: Conversão da Parte Inteira $(13)_{10} \rightarrow (\quad)_2$
+
+::: {.columns}
+
+::: {.column}
+### Método das Divisões Sucessivas
+- $13 \div 2 = 6$, resto **1** (LSB)
+- $6 \div 2 = 3$, resto **0**
+- $3 \div 2 = 1$, resto **1**
+- $1 \div 2 = 0$, resto **1** (MSB)
+
+**Resultado**: $(13)_{10} = (1101)_2$
+:::
+
+::: {.column}
+### Método da Soma de Potências
+$$
+\begin{aligned}
+13 &= 8 + 4 + 1 \\
+&= 2^3 + 2^2 + 2^0 \\
+&= (1101)_2
+\end{aligned}
+$$
+:::
+
+:::
+
+---
+
+## Exemplo 2: Parte Inteira e Fracionária $(25{,}625)_{10} \rightarrow (\quad)_2$
+
+::: {.columns}
+
+::: {.column}
+### Parte Inteira ($25$)
+- $25 \div 2 = 12$, resto **1** (LSB)
+- $12 \div 2 = 6$, resto **0**
+- $6 \div 2 = 3$, resto **0**
+- $3 \div 2 = 1$, resto **1**
+- $1 \div 2 = 0$, resto **1** (MSB)
+
+$\rightarrow (25)_{10} = (11001)_2$
+:::
+
+::: {.column}
+### Parte Fracionária ($0{,}625$)
+- $0{,}625 \times 2 = \mathbf{1}{,}25 \rightarrow \text{pega } 1$
+- $0{,}25 \times 2 = \mathbf{0}{,}50 \rightarrow \text{pega } 0$
+- $0{,}50 \times 2 = \mathbf{1}{,}00 \rightarrow \text{pega } 1$
+- $0{,}00 \times 2 = 0{,}00 \rightarrow \text{Pare!}$
+
+$\rightarrow (0{,}625)_{10} = (0{,}101)_2$
+:::
+
+:::
+
+::: {.callout-tip}
+## Resultado Final
+$$(25{,}625)_{10} = (11001{,}101)_2$$
+:::
+
+---
+
+## Exercícios Propostos: Binário
+
+::: {.callout-note}
+## TPC / Homework
+1. $(67)_{10} \rightarrow (\quad)_2$
+2. $(129{,}75)_{10} \rightarrow (\quad)_2$
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $(67)_{10} = (1000011)_2$
+2. $(129{,}75)_{10} = (10000001{,}11)_2$
+:::
+:::
+
+
+# Conversão Decimal $\rightarrow$ Octal
+
+## Método de Conversão ($r = 8$)
+
+- Divisões sucessivas da parte inteira por **8**.
+- Multiplicações sucessivas da parte fracionária por **8**.
+
+---
+
+## Exemplo 1: $(112)_{10} \rightarrow (\quad)_8$
+
+- $112 \div 8 = 14$, resto **0** (LSB)
+- $14 \div 8 = 1$, resto **6**
+- $1 \div 8 = 0$, resto **1** (MSB)
+
+$$
+(112)_{10} = (160)_8
+$$
+
+---
+
+## Exemplo 2: $(25{,}625)_{10} \rightarrow (\quad)_8$
+
+- **Parte Inteira ($25$)**:
+  - $25 \div 8 = 3$, resto **1**
+  - $3 \div 8 = 0$, resto **3** $\rightarrow (31)_8$
+
+- **Parte Fracionária ($0{,}625$)**:
+  - $0{,}625 \times 8 = \mathbf{5}{,}00 \rightarrow (0{,}5)_8$
+
+$$
+(25{,}625)_{10} = (31{,}5)_8
+$$
+
+---
+
+## Exercícios Propostos: Octal
+
+::: {.callout-note}
+## TPC / Homework
+1. $(2048)_{10} \rightarrow (\quad)_8$
+2. $(82{,}250)_{10} \rightarrow (\quad)_8$
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Respostas
+1. $(2048)_{10} = (4000)_8$
+2. $(82{,}250)_{10} = (122{,}2)_8$
+:::
+:::
+
+
+# Conversão Decimal $\rightarrow$ Hexadecimal e Outras Bases
+
+## Conversão para Hexadecimal ($r = 16$)
+
+- Divisões e multiplicações sucessivas por **16**.
+- Substituir restos de 10 a 15 pelas letras **A a F**.
+
+---
+
+## Exemplo 1: $(254)_{10} \rightarrow (\quad)_{16}$
+
+- $254 \div 16 = 15$, resto **14 ($E$)** (LSB)
+- $15 \div 16 = 0$, resto **15 ($F$)** (MSB)
+
+$$
+(254)_{10} = (FE)_{16}
+$$
+
+---
+
+## Exemplo 2: $(25{,}625)_{10} \rightarrow (\quad)_{16}$
+
+- **Parte Inteira ($25$)**:
+  - $25 \div 16 = 1$, resto **9**
+  - $1 \div 16 = 0$, resto **1** $\rightarrow (19)_{16}$
+
+- **Parte Fracionária ($0{,}625$)**:
+  - $0{,}625 \times 16 = \mathbf{10}{,}00 \rightarrow \mathbf{A} \rightarrow (0{,}A)_{16}$
+
+$$
+(25{,}625)_{10} = (19{,}A)_{16}
+$$
+
+---
+
+## Conversão para Qualquer Base ($r = 4$)
+
+Convertendo $(27{,}4)_{10} \rightarrow (\quad)_4$:
+
+- **Parte Inteira ($27$)**:
+  - $27 \div 4 = 6$, resto **3**
+  - $6 \div 4 = 1$, resto **2**
+  - $1 \div 4 = 0$, resto **1** $\rightarrow (123)_4$
+
+- **Parte Fracionária ($0{,}4$)**:
+  - $0{,}4 \times 4 = \mathbf{1}{,}6$
+  - $0{,}6 \times 4 = \mathbf{2}{,}4$ (Dízima periódica!)
+  - $0{,}4 \times 4 = \mathbf{1}{,}6 \dots$
+
+$$
+(27{,}4)_{10} = (123{,}1212\dots)_4
+$$
+
+---
+
+## Exercício Proposto: Base 4
+
+::: {.callout-note}
+## TPC / Homework
+$$
+(25{,}625)_{10} \rightarrow (\quad)_4
+$$
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Resposta
+- $25_{10} = 121_4$
+- $0{,}625_{10} = 0{,}22_4$
+- **Resultado**: $(25{,}625)_{10} = (121{,}22)_4$
+:::
+:::

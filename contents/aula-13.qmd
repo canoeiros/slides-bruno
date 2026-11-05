@@ -1,0 +1,660 @@
+---
+title: "Aula 13<br>Classificação dos Códigos"
+order: 13
+index: 13
+categories: ["Unidade 2"]
+subtitle: "MATA38 - Projeto de Circuitos Lógicos<br><a href='../'>Página Inicial</a>"
+author: ['Dr. Bruno Pereira Santos', 'Caio Sereno Santos Rebouças']
+lang: "pt-BR"
+format: 
+  revealjs:
+    transition: fade
+    slide-number: true
+    incremental: true
+    theme: [default, ../assets/global/theme.scss]
+    navigation-mode: linear
+    controls-layout: bottom-right
+    include-after-body: ../assets/global/breadcrumb.html
+    footer: "MATA38 - Projeto de Circuitos Lógicos"
+    revealjs-plugins:
+      - fullscreen
+---
+# Classificação dos Códigos
+
+## O que é um Código?
+
+- **Representação**: Forma de codificar números, letras ou símbolos usando um grupo específico de símbolos (**bits**).
+- **Palavra de Código (Codeword)**: A sequência binária resultante da codificação.
+- **Objetivo**: Facilitar o processamento, transmissão e armazenamento de dados em sistemas digitais.
+
+::: {.callout-note}
+## Codificação vs Decodificação
+- **Transmissão (Tx)**: Dado Original $\rightarrow$ **Codificador** $\rightarrow$ Código
+- **Recepção (Rx)**: Código $\rightarrow$ **Decodificador** $\rightarrow$ Dado Original
+:::
+
+---
+
+## Categorias Principais de Códigos
+
+- **Ponderados (Weighted)**: Cada posição possui um peso numérico (ex.: **8421**, **2421**).
+- **Não Ponderados (Non-Weighted)**: As posições não têm pesos fixos (ex.: **Excess-3**, **Gray**).
+- **Reflexivos (Self-Complementing)**: O complemento de 9 do número decimal equivale ao complemento de 1 do código (ex.: **2421**, **XS-3**).
+- **Sequenciais**: Cada código difere do anterior por um valor constante (ex.: **8421**, **XS-3**).
+- **Alfanuméricos**: Representam números, letras e símbolos (ex.: **ASCII**, **UTF-8**).
+- **Detecção/Correção de Erros**: Incluem bits extras para identificar e corrigir falhas (ex.: **Paridade**, **Hamming**).
+
+---
+
+## Códigos Reflexivos (Self-Complementing)
+
+- **Propriedade**: O complemento de 1 da representação binária de um dígito $N$ resulta no código do dígito $(9 - N)$.
+- **Pares de Complemento**:
+  - $0 \leftrightarrow 9$
+  - $1 \leftrightarrow 8$
+  - $2 \leftrightarrow 7$
+  - $3 \leftrightarrow 6$
+  - $4 \leftrightarrow 5$
+
+---
+
+# Código BCD (8421)
+
+## Definição do Código BCD
+
+- **Binary Coded Decimal**: Representa cada dígito decimal ($0$ a $9$) por um grupo fixo de **4 bits**.
+- **Base Decimal ($r = 10$)**:
+  - Dígitos válidos: de $0$ até $(r - 1) = 9$.
+- **Pesos dos Bits**: $8 - 4 - 2 - 1$.
+
+::: {.callout-tip}
+## Lembrete
+No BCD, codificamos **dígito por dígito decimal** individualmente, diferente da conversão binária pura de um número completo.
+:::
+
+---
+
+## Tabela do Código BCD (8421)
+
+::: {.list-table}
+
+- - Dígito Decimal
+  - Pesos (8 4 2 1)
+- - 0
+  - 0 0 0 0
+- - 1
+  - 0 0 0 1
+- - 2
+  - 0 0 1 0
+- - 3
+  - 0 0 1 1
+- - 4
+  - 0 1 0 0
+- - 5
+  - 0 1 0 1
+- - 6
+  - 0 1 1 0
+- - 7
+  - 0 1 1 1
+- - 8
+  - 1 0 0 0
+- - 9
+  - 1 0 0 1
+
+:::
+
+---
+
+## Estados Inválidos em BCD
+
+- Com 4 bits é possível representar $2^4 = 16$ combinações ($0$ a $15$).
+- Como o BCD utiliza apenas os dígitos de $0$ a $9$, existem **6 combinações inválidas**:
+
+::: {.list-table}
+
+- - Valor Decimal
+  - Código Binário de 4 bits
+  - Status
+- - 10
+  - 1 0 1 0
+  - Inválido / Don't Care
+- - 11
+  - 1 0 1 1
+  - Inválido / Don't Care
+- - 12
+  - 1 1 0 0
+  - Inválido / Don't Care
+- - 13
+  - 1 1 0 1
+  - Inválido / Don't Care
+- - 14
+  - 1 1 1 0
+  - Inválido / Don't Care
+- - 15
+  - 1 1 1 1
+  - Inválido / Don't Care
+
+:::
+
+---
+
+## Conversão: Decimal $\rightarrow$ BCD
+
+Para converter de Decimal para BCD, substitua **cada dígito decimal** pelo seu grupo correspondente de 4 bits.
+
+- **Exemplo 1**:
+  $$(17)_{10} \rightarrow \underbrace{0001}_{1} \ \underbrace{0111}_{7} = (0001 \ 0111)_{\text{BCD}}$$
+
+- **Exemplo 2**:
+  $$(156)_{10} \rightarrow \underbrace{0001}_{1} \ \underbrace{0101}_{5} \ \underbrace{0110}_{6} = (0001 \ 0101 \ 0110)_{\text{BCD}}$$
+
+---
+
+## Conversão: BCD $\rightarrow$ Decimal
+
+Separe o número em **grupos de 4 bits** a partir da direita (LSB) e converta cada grupo para seu dígito decimal correspondente.
+
+- **Exemplo 1**:
+  $$(0001 \ 0100)_{\text{BCD}} \rightarrow \underbrace{0001}_{1} \ \underbrace{0100}_{4} = (14)_{10}$$
+
+- **Exemplo 2**:
+  $$(0100 \ 1001)_{\text{BCD}} \rightarrow \underbrace{0100}_{4} \ \underbrace{1001}_{9} = (49)_{10}$$
+
+---
+
+## Comparação: Binário Puro vs BCD
+
+::: {.columns}
+::: {.column}
+**Exemplo 1: $(10)_{10}$**
+- **Binário Puro**: $1010_2$ (4 bits)
+- **BCD**: $0001 \ 0000_{\text{BCD}}$ (8 bits)
+
+**Exemplo 2: $(12)_{10}$**
+- **Binário Puro**: $1100_2$ (4 bits)
+- **BCD**: $0001 \ 0010_{\text{BCD}}$ (8 bits)
+:::
+
+::: {.column}
+::: {.callout-note}
+## Análise
+- **Eficiência**: O BCD é **menos eficiente** em quantidade de bits que o binário puro.
+- **Hardware/Displays**: Facilita a interface direta com **displays de 7 segmentos**.
+:::
+:::
+:::
+
+---
+
+## Exercícios Propostos: BCD
+
+Converta os seguintes valores:
+
+1. $(37)_{10} \rightarrow (\quad)_{\text{BCD}}$
+2. $(186)_{10} \rightarrow (\quad)_{\text{BCD}}$
+3. $(3489)_{10} \rightarrow (\quad)_{\text{BCD}}$
+4. $(0001 \ 0110)_{\text{BCD}} \rightarrow (\quad)_{10}$
+5. $(0011 \ 0011 \ 0000)_{\text{BCD}} \rightarrow (\quad)_{10}$
+
+---
+
+# Código 2-4-2-1
+
+## Características do Código 2-4-2-1
+
+- É um código do tipo **BCD ponderado** ($2 - 4 - 2 - 1$).
+- Possui a propriedade de **auto-complemento** (Self-Complementing).
+- Utilizado para simplificar operações de subtração em circuitos lógicos.
+
+::: {.callout-warning}
+## Configuração Padrão
+Para manter a propriedade de auto-complemento, os dígitos de $5$ a $9$ usam o bit mais significativo ($2^*$) igual a $1$.
+:::
+
+---
+
+## Tabela do Código 2-4-2-1
+
+::: {.list-table}
+
+- - Dígito Decimal
+  - Código 2-4-2-1 (Auto-Complementar)
+- - 0
+  - 0 0 0 0
+- - 1
+  - 0 0 0 1
+- - 2
+  - 0 0 1 0
+- - 3
+  - 0 0 1 1
+- - 4
+  - 0 1 0 0
+- - 5
+  - 1 0 1 1
+- - 6
+  - 1 1 0 0
+- - 7
+  - 1 1 0 1
+- - 8
+  - 1 1 1 0
+- - 9
+  - 1 1 1 1
+
+:::
+
+---
+
+## Exercícios: Código 2-4-2-1
+
+1. Converta $(37)_{10}$ para o código $2-4-2-1$.
+2. Converta $(0100 \ 1100 \ 1110)_{2421}$ para a base decimal.
+
+---
+
+# Código Excess-3 (XS-3)
+
+## Conceito do Código Excess-3
+
+- Código **não ponderado** de 4 bits.
+- Derivado do BCD somando $3_{10}$ ($0011_2$) a cada dígito BCD.
+- **Fórmula**:
+  $$\text{XS-3} = \text{BCD (8421)} + 0011_2$$
+
+- **Exemplo**: Dígito $5_{10}$ em BCD é $0101_2$:
+  $$0101_2 + 0011_2 = 1000_{\text{XS-3}}$$
+
+---
+
+## Tabela Comparativa: BCD vs Excess-3
+
+::: {.list-table}
+
+- - Decimal
+  - BCD (8421)
+  - XS-3 (BCD + 3)
+- - 0
+  - 0 0 0 0
+  - 0 0 1 1
+- - 1
+  - 0 0 0 1
+  - 0 1 0 0
+- - 2
+  - 0 0 1 0
+  - 0 1 0 1
+- - 3
+  - 0 0 1 1
+  - 0 1 1 0
+- - 4
+  - 0 1 0 0
+  - 0 1 1 1
+- - 5
+  - 0 1 0 1
+  - 1 0 0 0
+- - 6
+  - 0 1 1 0
+  - 1 0 0 1
+- - 7
+  - 0 1 1 1
+  - 1 0 1 0
+- - 8
+  - 1 0 0 0
+  - 1 0 1 1
+- - 9
+  - 1 0 0 1
+  - 1 1 0 0
+
+:::
+
+---
+
+## Conversão com Código Excess-3
+
+**Decimal $\rightarrow$ XS-3**:
+1. Some 3 a cada dígito decimal.
+2. Converta o resultado de cada dígito para binário de 4 bits.
+
+- **Exemplo**: $(24)_{10}$
+  - Dígito 2: $2 + 3 = 5 \rightarrow 0101_2$
+  - Dígito 4: $4 + 3 = 7 \rightarrow 0111_2$
+  - Resultado: $(0101 \ 0111)_{\text{XS-3}}$
+
+---
+
+## Propriedade Self-Complementing no XS-3
+
+::: {.callout-important}
+## Importante
+O **Excess-3** é o **único código não ponderado** usual que possui a propriedade de **auto-complemento**.
+:::
+
+- Inverter todos os bits da representação do $0$ ($0011$) resulta na representação do $9$ ($1100$).
+- Inverter todos os bits da representação do $1$ ($0100$) resulta na representação do $8$ ($1011$).
+
+---
+
+## Regra de Auto-Complemento para Códigos Ponderados
+
+Para verificar se um código **ponderado** com pesos $w_3, w_2, w_1, w_0$ pode ser auto-complementar:
+
+- **Condição**:
+  $$w_3 + w_2 + w_1 + w_0 = 9$$
+
+- **Exemplo 1**: Código 2-4-2-1
+  $$2 + 4 + 2 + 1 = 9 \quad (\checkmark \ \text{Pode ser Auto-Complementar})$$
+
+- **Exemplo 2**: Código 8-4-2-1 (BCD)
+  $$8 + 4 + 2 + 1 = 15 \neq 9 \quad (\mathbf{X} \ \text{Não é Auto-Complementar})$$
+
+---
+
+## Exercícios: Código Excess-3
+
+1. Converta $(16)_{10}$ para $\text{XS-3}$.
+2. Converta $(39)_{10}$ para $\text{XS-3}$.
+3. Converta $(1208)_{10}$ para $\text{XS-3}$.
+4. O código ponderado $5-2-1-1$ é auto-complementar? Justifique com a soma dos pesos.
+
+---
+
+# Código Gray
+
+## Definição e Propriedades
+
+- Também conhecido como **Código Binário Refletido (RBC)** ou **Código Cíclico**.
+- Desenvolvido por **Frank Gray** (Bell Labs).
+- **Código Não Ponderado**.
+- **Código de Distância Unitária**: Apenas **1 bit muda** entre dois valores numéricos sucessivos.
+
+::: {.callout-tip}
+## Aplicação Prática
+Reduz erros digitais em encoders rotativos e minimiza transições de comutação (*switching*) em sistemas de alta velocidade.
+:::
+
+---
+
+## Tabela do Código Gray (4 Bits)
+
+::: {.list-table}
+
+- - Decimal
+  - Binário Puro
+  - Código Gray
+- - 0
+  - 0 0 0 0
+  - 0 0 0 0
+- - 1
+  - 0 0 0 1
+  - 0 0 0 1
+- - 2
+  - 0 0 1 0
+  - 0 0 1 1
+- - 3
+  - 0 0 1 1
+  - 0 0 1 0
+- - 4
+  - 0 1 0 0
+  - 0 1 1 0
+- - 5
+  - 0 1 0 1
+  - 0 1 1 1
+- - 6
+  - 0 1 1 0
+  - 0 1 0 1
+- - 7
+  - 0 1 1 1
+  - 0 1 0 0
+- - 8
+  - 1 0 0 0
+  - 1 1 0 0
+
+:::
+
+---
+
+## Conversão: Binário $\rightarrow$ Gray
+
+### Algoritmo
+1. **MSB**: O bit mais significativo do código Gray é igual ao MSB do binário ($g_3 = b_3$).
+2. **Próximos Bits**: Realize a operação XOR ($\oplus$) entre o bit binário atual e o bit binário à sua esquerda:
+   $$g_i = b_{i+1} \oplus b_i$$
+
+```
+   b3    b2    b1    b0   (Binário)
+   |  \⊕ /  \⊕ /  \⊕ /
+   v    v     v     v
+   g3   g2    g1    g0   (Gray)
+```
+
+---
+
+## Exemplo: Binário $\rightarrow$ Gray
+
+Converter $(1010)_2$ para o código Gray:
+
+$$
+\begin{aligned}
+g_3 &= b_3 = \mathbf{1} \\
+g_2 &= b_3 \oplus b_2 = 1 \oplus 0 = \mathbf{1} \\
+g_1 &= b_2 \oplus b_1 = 0 \oplus 1 = \mathbf{1} \\
+g_0 &= b_1 \oplus b_0 = 1 \oplus 0 = \mathbf{0}
+\end{aligned}
+$$
+
+**Resultado**: $(1010)_2 \rightarrow (\mathbf{1110})_{\text{GRAY}}$
+
+---
+
+## Conversão: Gray $\rightarrow$ Binário
+
+### Algoritmo
+1. **MSB**: O MSB binário é igual ao MSB Gray ($b_3 = g_3$).
+2. **Próximos Bits**: Faça a operação XOR ($\oplus$) entre o bit binário **recém-calculado** e o próximo bit Gray à direita:
+   $$b_i = b_{i+1} \oplus g_i$$
+
+```
+   g3    g2    g1    g0   (Gray)
+   |   ↗ ⊕   ↗ ⊕   ↗ ⊕
+   v  /  v  /  v  /  v
+   b3    b2    b1    b0   (Binário)
+```
+
+---
+
+## Exemplo: Gray $\rightarrow$ Binário
+
+Converter $(1110)_{\text{GRAY}}$ para Binário:
+
+$$
+\begin{aligned}
+b_3 &= g_3 = \mathbf{1} \\
+b_2 &= b_3 \oplus g_2 = 1 \oplus 1 = \mathbf{0} \\
+b_1 &= b_2 \oplus g_1 = 0 \oplus 1 = \mathbf{1} \\
+b_0 &= b_1 \oplus g_0 = 1 \oplus 0 = \mathbf{1}
+\end{aligned}
+$$
+
+**Resultado**: $(1110)_{\text{GRAY}} \rightarrow (\mathbf{1011})_2$
+
+---
+
+## Exercícios: Código Gray
+
+1. Converta para Código Gray:
+   - i) $1001_2$
+   - ii) $1010_2$
+   - iii) $1111_2$
+
+2. Converta para Binário Puro:
+   - i) $1100_{\text{GRAY}}$
+   - ii) $1011_{\text{GRAY}}$
+   - iii) $1000_{\text{GRAY}}$
+
+---
+
+# Detecção e Correção de Erros
+
+## O que é Paridade?
+
+- Técnica para **detectar erros de um único bit** em transmissões digitais.
+- Consiste em adicionar um **bit extra (bit de paridade)** à palavra de dados.
+
+```
+       Tx (Transmissor)                  Rx (Receptor)
+    [ Dados (4 bits) + Paridade ]  --->  [ Verificação ]
+```
+
+---
+
+## Tipos de Paridade
+
+- **Paridade Par (Even Parity)**:
+  - O bit de paridade é ajustado para tornar o número total de 1s **PAR**.
+- **Paridade Ímpar (Odd Parity)**:
+  - O bit de paridade é ajustado para tornar o número total de 1s **ÍMPAR**.
+
+::: {.list-table}
+
+- - Dado Original
+  - Bit de Paridade Par
+  - Dado Transmitido (Par)
+  - Bit de Paridade Ímpar
+- - 0 1 0 0
+  - 1
+  - 0 1 0 0 1
+  - 0
+- - 1 1 0 0
+  - 0
+  - 1 1 0 0 0
+  - 1
+
+:::
+
+---
+
+## Limitação da Paridade Simples
+
+::: {.callout-warning}
+## Atenção
+- A paridade simples detecta apenas **quantidade ímpar de erros em bits** (ex.: erro em 1 bit).
+- Se o ruído alterar **2 bits simultaneamente**, a paridade **não detectará o erro**.
+:::
+
+---
+
+## Código de Hamming
+
+- Criado por **Richard Hamming**.
+- Permite **detectar e corrigir** erros de 1 bit automaticamente.
+- Utiliza múltiplos **bits redundantes (bits de paridade)** posicionados em locais estratégicos.
+
+::: {.callout-note}
+## Equação do Número de Bits Redundantes
+$$2^p \ge n + p + 1$$
+Onde:
+- $n$: quantidade de bits de dados
+- $p$: quantidade de bits de paridade
+:::
+
+---
+
+## Cálculo dos Bits de Paridade (Hamming 7,4)
+
+Para $n = 4$ bits de dados:
+
+- Testando $p = 2$: $2^2 = 4 \ge 4 + 2 + 1 = 7$ ($\mathbf{FALSO}$)
+- Testando $p = 3$: $2^3 = 8 \ge 4 + 3 + 1 = 8$ ($\mathbf{VERDADEIRO}$)
+
+Portanto, precisamos de **3 bits de paridade** para proteger 4 bits de dados (código de 7 bits no total).
+
+---
+
+## Posição dos Bits de Paridade
+
+Os bits de paridade são colocados nas posições que correspondem às **potências de 2** ($1, 2, 4, 8, \dots$):
+
+::: {.list-table}
+
+- - Posição do Bit
+  - 7
+  - 6
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+- - Designação
+  - $D_4$
+  - $D_3$
+  - $D_2$
+  - **$P_3$**
+  - $D_1$
+  - **$P_2$**
+  - **$P_1$**
+- - Representação Binária
+  - 111
+  - 110
+  - 101
+  - 100
+  - 011
+  - 010
+  - 001
+
+:::
+
+---
+
+## Regra de Cobertura dos Bits de Paridade
+
+Cada bit de paridade cobre as posições que possuem bit $1$ em seu respectivo peso binário:
+
+- **$P_1$ (cobre posições com $1^{\circ}$ LSB = 1)**:
+  - Posições: $1, 3, 5, 7$ ($P_1, D_1, D_2, D_4$)
+- **$P_2$ (cobre posições com $2^{\circ}$ LSB = 1)**:
+  - Posições: $2, 3, 6, 7$ ($P_2, D_1, D_3, D_4$)
+- **$P_4$ (cobre posições com $3^{\circ}$ LSB = 1)**:
+  - Posições: $4, 5, 6, 7$ ($P_4, D_2, D_3, D_4$)
+
+---
+
+## Exemplo de Transmissão: Hamming (7,4)
+
+Deseja-se transmitir os dados **$1011$** ($D_4=1, D_3=0, D_2=1, D_1=1$) usando **Paridade Par**:
+
+- **Cálculo de $P_1$** ($P_1, D_1, D_2, D_4 \rightarrow P_1, 1, 1, 1$):
+  - Para paridade par $\rightarrow \mathbf{P_1 = 1}$
+- **Cálculo de $P_2$** ($P_2, D_1, D_3, D_4 \rightarrow P_2, 1, 0, 1$):
+  - Para paridade par $\rightarrow \mathbf{P_2 = 0}$
+- **Cálculo de $P_4$** ($P_4, D_2, D_3, D_4 \rightarrow P_4, 1, 0, 1$):
+  - Para paridade par $\rightarrow \mathbf{P_4 = 0}$
+
+**Palavra Transmitida**: `1 0 1 0 1 0 1` ($D_4 D_3 D_2 P_4 D_1 P_2 P_1$)
+
+---
+
+## Detecção e Correção de Erro no Receptor
+
+Suponha que a palavra recebida foi **`1 0 1 1 0 1 1`**:
+
+1. **Verificação de $P_4$** ($P_4, D_2, D_3, D_4 = 1, 1, 0, 1$):
+   - Quantidade de 1s = 3 (Ímpar $\rightarrow$ Erro) $\implies \mathbf{C_4 = 1}$
+2. **Verificação de $P_2$** ($P_2, D_1, D_3, D_4 = 1, 0, 0, 1$):
+   - Quantidade de 1s = 2 (Par $\rightarrow$ OK) $\implies \mathbf{C_2 = 0}$
+3. **Verificação de $P_1$** ($P_1, D_1, D_2, D_4 = 1, 0, 1, 1$):
+   - Quantidade de 1s = 3 (Ímpar $\rightarrow$ Erro) $\implies \mathbf{C_1 = 1}$
+
+---
+
+## Localização e Correção do Erro
+
+Forma-se a palavra de síndrome $C_4 C_2 C_1$:
+
+$$C_4 C_2 C_1 = (101)_2 = (5)_{10}$$
+
+::: {.callout-tip}
+## Conclusão
+O erro ocorreu exatamente na **Posição 5** ($D_2$).
+:::
+
+- **Palavra Recebida com Erro**: `1 0 [1] 1 0 1 1`
+- **Invertendo o bit 5**: `1 0 [0] 1 0 1 1`
+- **Código Corrigido**: `1 0 0 1 0 1 1`

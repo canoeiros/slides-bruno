@@ -42,6 +42,9 @@ SLIDE_TEMPLATE = """---
 title: "{title}"
 subtitle: "{subtitle}"
 author: {author}
+order: {order}
+index: {index}
+categories: {categories}
 lang: "pt-BR"
 format: 
   revealjs:
